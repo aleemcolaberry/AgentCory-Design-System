@@ -5,7 +5,7 @@ import { Avatar } from '../core/Avatar.jsx';
  * Chat message bubble for the Cory widget. `from="cory"` shows the mascot
  * avatar and a light bubble at inline-start; `from="user"` is a brand bubble at inline-end
  * (right in LTR, left in RTL); `from="system"` is a centred quiet note (handoff, timestamps).
- * `status` on user messages: sending (dimmed), sent, failed (red edge + Retry).
+ * `status` on user messages: sending (labelled, never dimmed), sent, failed (red edge + Retry).
  */
 export function ChatBubble({ from = 'cory', children, time, showAvatar = true, status, onRetry, retryLabel = 'Retry', failedLabel = 'Not sent', style, ...rest }) {
   if (from === 'system') {
@@ -32,7 +32,7 @@ export function ChatBubble({ from = 'cory', children, time, showAvatar = true, s
             background: isUser ? 'var(--gradient-brand-deep)' : 'var(--surface-card)',
             color: isUser ? 'var(--text-on-brand)' : 'var(--text-body)',
             border: failed ? '1px solid var(--fill-danger)' : isUser ? '1px solid transparent' : '1px solid var(--border-subtle)',
-            boxShadow: 'var(--shadow-xs)', opacity: sending ? 'var(--opacity-muted)' : 1,
+            boxShadow: 'var(--shadow-xs)', opacity: 1, /* a sending bubble keeps full contrast: its state is the label under it, not a dim */
             transition: 'opacity var(--duration-base) var(--ease-out)',
           }}
         >

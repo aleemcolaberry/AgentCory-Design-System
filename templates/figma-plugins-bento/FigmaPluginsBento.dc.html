@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Styles load from the markup, not from script, so the first paint is already styled (no flash, no layout shift) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -16,7 +21,7 @@
 <div style="display:flex;gap:10px;align-items:center"><span style="padding:8px 16px;border-radius:999px;background:#0B1F36;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex:none">Part 1</span><span style="padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E3E7EF;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1568D4">Tools that work</span><span style="padding:8px 16px;border-radius:999px;background:linear-gradient(90deg,#1568D4,#0E7F9E);color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex:none">AI Series</span></div>
 <h1 style="margin:0;font-size:68px;line-height:1.02;font-weight:800;letter-spacing:-.03em">6 Figma AI plugins<br><span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">every designer needs</span></h1>
 </div>
-<sc-if value="{{ showTagline }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;text-align:end;padding-bottom:8px;flex:none;"><span style="font-size:22px;font-weight:800;line-height:1.2">Small plugins.<br>Big impact.</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:#5B6B80;line-height:1.6">DESIGN SMARTER<br>CREATE FASTER<br>BUILD BETTER</span></div></sc-if>
+<sc-if value="{{ showTagline }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;text-align:end;padding-bottom:8px;flex:none;"><span style="font-size:22px;font-weight:800;line-height:1.2">Small plugins.<br>Big impact.</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:#4F5F75;line-height:1.6">DESIGN SMARTER<br>CREATE FASTER<br>BUILD BETTER</span></div></sc-if>
 </div>
 <div style="flex:1;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:16px;position:relative">
 <div style="grid-column:1 / 5;grid-row:1;background:linear-gradient(160deg,#0B1F36,#143457);border-radius:28px;padding:28px;display:flex;gap:28px;align-items:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(11,31,54,.18);color:#fff">
@@ -26,7 +31,7 @@
 <div style="display:flex;flex-direction:column;gap:12px;position:relative;min-width:0">
 <span style="font-size:32px;font-weight:800;letter-spacing:-.02em">FigClaw</span>
 <p style="margin:0;font-size:17px;line-height:1.45;color:#C9D5E4;text-wrap:pretty">An AI agent that inspects your canvas, understands its structure and executes Figma Plugin API actions via Claude.</p>
-<sc-if value="{{ showTags }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:8px;flex-wrap:wrap"><span style="padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,#258AFD,#29BEDD);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;flex:none">AI agent</span><span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;flex:none">Inspect</span><span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;flex:none">Automate</span></div></sc-if>
+<sc-if value="{{ showTags }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:8px;flex-wrap:wrap"><span style="padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,#1568D4,#0E7F9E);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;flex:none">AI agent</span><span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;flex:none">Inspect</span><span style="padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;flex:none">Automate</span></div></sc-if>
 <sc-if value="{{ showLinks }}" hint-placeholder-val="{{ true }}"><a href="https://www.figma.com/community/plugin/1674716606574882364/figclaw" style="display:inline-flex;align-items:center;min-height:24px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#8FC8FF">figma.com/community/plugin/…/figclaw ↗</a></sc-if>
 </div>
 </div>
@@ -68,7 +73,7 @@
 </div>
 </div>
 <div style="display:flex;justify-content:space-between;align-items:center;padding-top:22px;border-top:1px solid #DCE1EA;position:relative">
-<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800;white-space:nowrap">Md Abdul Aleem</span><span style="font-size:14px;color:#5B6B80;">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800;white-space:nowrap">Md Abdul Aleem</span><span style="font-size:14px;color:#4F5F75;">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div>
 <span style="display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:#0B1F36;color:#fff;font-size:16px;font-weight:700;flex:none">Save for your Figma toolkit <span style="font-size:18px">→</span></span>
 </div>
 </div></div></div>

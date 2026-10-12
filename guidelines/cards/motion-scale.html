@@ -3,17 +3,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../../styles.css">
 <style>
   body { margin: 0; padding: 22px 24px; background: var(--surface-page); display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: start; }
   @media (max-width: 560px) { body { grid-template-columns: 1fr; } }
+  body > * { min-width: 0; }
   .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 10px; }
   .row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
   .row b { flex: none; min-width: 84px; color: var(--text-strong); font-weight: 600; }
   .track { flex: 1; height: 8px; border-radius: 4px; background: var(--surface-sunken); position: relative; overflow: hidden; }
   .track i { position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 22%; border-radius: 4px; background: var(--gradient-brand-deep); animation: slide 2.4s infinite; }
-  @keyframes slide { 0%,15% { inset-inline-start: 0 } 60%,100% { inset-inline-start: 78% } }
-  .tiles { display: flex; gap: 10px; }
+  /* compositor only: translate, never inset or width (354.5% of a 22% thumb = 78% of the track) */
+  @keyframes slide { 0%,15% { transform: translateX(0) } 60%,100% { transform: translateX(calc(354.5% * var(--dir, 1))) } }
+  .tiles { display: flex; flex-wrap: wrap; gap: 10px; }
   .tile { width: 54px; height: 54px; border-radius: var(--radius-md); background: var(--surface-card); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm); display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); animation: cory-fade-up var(--duration-enter) var(--ease-cinematic) both; animation-delay: calc(var(--i) * var(--stagger)); }
   .names { font-family: var(--font-mono); font-size: 11px; line-height: 1.7; color: var(--text-muted); margin-top: 10px; }
   .names b { color: var(--text-strong); font-weight: 600; }

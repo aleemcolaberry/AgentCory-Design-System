@@ -51,7 +51,6 @@ function ClosingCta({ onDemo }) {
   );
 }
 
-const FooterIcon = ({ name }) => <window.LucideIcon name={name} size={18} />;
 function SiteFooter() {
   const cols = [
     { h: 'Product', items: ['Features', 'How It Works', 'Demo', 'Case Studies'] },
@@ -59,16 +58,17 @@ function SiteFooter() {
     { h: 'Company', items: ['About', 'Careers', 'Privacy Policy', 'Terms of Service'] },
   ];
   return (
-    <footer style={{ background: 'var(--navy-800)', color: 'var(--on-ink-body)' }}>
+    <footer style={{ background: 'var(--surface-ink)', color: 'var(--on-ink-body)' }}>
       <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '56px var(--gutter) 32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: 40 }}>
         <div>
           <img src="../../assets/logo-agentcory-darkmode.svg" alt="AgentCory" style={{ height: 26, marginBottom: 16 }} />
           <p style={{ fontSize: 14, lineHeight: 1.6, margin: '0 0 16px', maxWidth: 260 }}>
             AI-powered admissions assistant that boosts conversions with lightning-fast, multi-channel outreach.
           </p>
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            {['linkedin', 'twitter', 'youtube', 'instagram', 'facebook'].map((n) => (
-              <span key={n} style={{ width: 32, height: 32, borderRadius: '50%', background: 'rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}><FooterIcon name={n} /></span>
+          {/* Social channels as text links: the owned icon set carries no brand marks, and an empty circle names nothing */}
+          <div style={{ display: 'flex', gap: '4px 16px', flexWrap: 'wrap' }}>
+            {['LinkedIn', 'X', 'YouTube', 'Instagram'].map((n) => (
+              <a key={n} href="#" onClick={(e) => e.preventDefault()} style={{ color: 'var(--on-ink-strong)', fontSize: 13, fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 3, padding: '5px 0', minWidth: 24, minHeight: 24, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>{n}</a>
             ))}
           </div>
         </div>
@@ -82,8 +82,8 @@ function SiteFooter() {
         ))}
       </div>
       <div style={{ borderTop: '1px solid var(--on-ink-border)' }}>
-        <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '18px var(--gutter)', display: 'flex', justifyContent: 'space-between', fontSize: 13, flexWrap: 'wrap', gap: 8 }}>
-          <span>© 2025 Agent Cory · Powered by Colaberry</span>
+        <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '18px var(--gutter)', paddingInlineEnd: 'max(var(--gutter), 100px)', display: 'flex', justifyContent: 'space-between', fontSize: 13, flexWrap: 'wrap', gap: 8 }}>
+          <span>© 2026 Agent Cory · Powered by Colaberry</span>
           <span>cory@agentcory.ai · 1-888-465-1991 · Plano, TX</span>
         </div>
       </div>

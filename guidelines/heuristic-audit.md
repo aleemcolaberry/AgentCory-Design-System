@@ -85,6 +85,41 @@ Scope: every page in all six probe sets, run headless in **both themes** for the
 - **Probe.** Theme forcing; visually hidden text skipped; "short label wraps" counts real line boxes and applies to labels and controls (under 16px or inside a control), not to headings or inline spans; `label[for]` counts as a name; scroll containers are not clip ancestors; `data-audit-ok="clip|contrast|overlap"` marks decoration the probe cannot judge (marquee, template rail, giant specimen type, mascot glyphs over SVG, overlay text on images, the contrast card's three failing samples, the card toolbar).
 - **Out of scope:** the nested `AgentCory System Brief/` folder is a separate site, not part of the design system. It has its own audit (`Version 1/Site Audit.dc.html`) and was not changed in this pass.
 
+## Seven-pass review (October 13, 2026)
+Scope: the design system only (the nested `AgentCory System Brief/` site is separate and untouched). Each pass ended with a standing rule in `CLAUDE.md`.
+
+### 1. Responsiveness
+- New probe `_audit/responsive.mjs`: every tracked page at ten widths from 320 to 1920. Fluid pages and all 23 templates already held; 13 guideline cards and the thumbnail overflowed on phones (fixed rows of swatches, tiles and stats). They wrap now. 41 files had no viewport meta; all have one. Result: 0 of 67 pages overflow at any width, both themes.
+- Found by looking, not by the probe: the website kit footer showed five empty circles where social icons should be (the owned icon set has no brand marks), now text links; the chat launcher covered the last footer line; the hero chat card hugged the right edge at tablet width; the Showcase template rail snapped its own heading off screen (`scroll-snap-type: mandatory`); the colour band labels pointed at the wrong bands once the grid wrapped.
+
+### 2. State coverage
+- Components already covered loading, empty, error, offline and retry (ChatWidget, the demo form, the ROI calculator). The gaps were at page level: no `404.html`; the React kits showed a blank page while loading, with scripts blocked, and for ever if a CDN script never arrived. Added `404.html`, `ui_kits/kit-shell.css` and `ui_kits/kit-shell.js` (loading state in the markup, `noscript` message, error with Try again, error boundary).
+- Landing page: the testimonial quote never appeared. `data-reveal="clip"` starts fully clipped, and IntersectionObserver never reports a fully clipped element. `tokens/reveal.js` now reveals those by layout rect.
+
+### 3. Above the fold, content, type, icons
+- Reviewed the first screen of the Showcase, both kits, the landing page, the portfolio and the guide at 1440, 768 and 360. Structure, hierarchy and type scale hold. Corrected copy that no longer matched the repo ("twenty templates" is twenty-three; footer year 2025), and the empty icon tiles above.
+- Three pages were missing from the audit sets (UX Reading List template and two exports); added.
+
+### 4. Motion, hover, cards
+- Hover probe: nav and footer links styled with an inline colour did nothing on hover in the website kit, the landing page and the portfolio; the direction toggle and one mock input did nothing either. `base.css` now carries zero-specificity fallbacks (underline for nav and footer links, a brightness shift for buttons). All keyboard focus rings were already present.
+- ROI calculator panels were three different heights in one row; they stretch now. The motion demo animated `inset`; it animates `transform`.
+
+### 5. Contrast on real pixels
+- New pixel probe (`_audit/contrast-pixels.mjs` and `.py`): hides the text, screenshots the page, and compares each text colour with the pixels behind it. Fluid pages: 1,392 text boxes in both themes, one failure (default placeholder grey on dark, fixed in `base.css`).
+- Templates, exports and cards: 74 failures the DOM probe could not see, because it cannot read gradients. Most were white text on the bright brand gradient (about 2.5:1), in ten templates and three exports, plus bright gradient text on light backgrounds in the exports, grey credit text at 4.3:1 in 18 files, and a chat bubble dimmed with opacity while sending. All fixed: deep gradient under white text, white text on deep-gradient cards, `--gradient-brand-text` stops on light, `#4F5F75` grey, no dimming.
+- Left as they are, with reasons: two display numerals the probe misreads because their boxes overlap the next line (checked by screenshot); the disabled demo controls; the visually hidden "Saving" labels; the placeholder caption under the `MediaFrame` scrim.
+
+### 6. Self-check
+- Re-ran everything after the fixes. Two of my own changes had regressed something and were corrected: mounting the kits before their JSX compiled rendered the older copies in `_ds_bundle.js`, and swapping gradients left navy text on a deep gradient in five templates.
+
+### 7. Performance and files
+- Showcase: the templates section embedded four live pages in iframes. 373 requests and 8.2 MB became 23 requests and 375 KB with static previews (`assets/previews/`, regenerated by `_audit/previews.mjs`).
+- UI kits: 4.6 MB each (Babel standalone and development React) became 556 KB with production React and a precompiled `kit.js` (`scripts/build-kits.mjs`; the JSX stays the source).
+- Templates: styles were injected by script, so the first paint was unstyled and the layout jumped (CLS 1.61 on the portfolio). Styles are linked in the markup; CLS is 0.03.
+- The author avatar was a 498 KB file shown at 56px, copied into twelve folders; it is 256px and 94 KB.
+- Live pages gained preconnects, a direct font link, a favicon link and a meta description.
+- Not changed: about 60 MB of PNG and PDF deliverables in `exports/` and `archive/` are tracked in git. They slow a clone, not a page; moving them is a decision for the owner.
+
 ## Known, intentional
 - The Contrast card's "Never as information" column deliberately renders three failing samples (text-disabled, green-500, red-500) beside their ratios; they are teaching examples, not UI.
 - The Showcase marquee and template rail report "text exceeds container" in the probe: the marquee is `aria-hidden` moving decoration and the rail is scroll-pinned (horizontal scroll-snap below 960 and under reduced motion); both are reachable (keyboard focus scrolls the rail).

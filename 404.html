@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found · AgentCory Design System</title>
+<meta name="robots" content="noindex">
+<!-- GitHub Pages serves this file for any missing path at any depth, so assets resolve from the site root. -->
+<script>(function(){var p=location.pathname.split('/');var b=document.createElement('base');b.href=location.hostname.slice(-10)==='.github.io'&&p[1]?'/'+p[1]+'/':'/';document.head.appendChild(b);try{var t=localStorage.getItem('cory-theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}})();</script>
+<meta name="description" content="Page not found.">
+<link rel="icon" type="image/svg+xml" href="assets/cory-icon.svg">
+<!-- Fonts are linked here as well as imported by styles.css: the browser finds them one round trip sooner -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+  html, body { min-height: 100%; }
+  body { margin: 0; min-height: 100dvh; display: grid; place-items: center; padding: var(--gutter, 24px); box-sizing: border-box; background: var(--surface-page); color: var(--text-body); }
+  main { inline-size: min(100%, 560px); text-align: center; display: grid; gap: 18px; justify-items: center; }
+  .tile { inline-size: 72px; block-size: 72px; border-radius: var(--radius-tile); }
+  .code { font-family: var(--font-mono); font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-link); margin: 0; }
+  h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.1; letter-spacing: -0.03em; margin: 0; color: var(--text-strong); text-wrap: balance; }
+  p.lead { font-size: 17px; line-height: 1.55; margin: 0; color: var(--text-muted); text-wrap: pretty; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 6px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; font-size: 14px; }
+  nav a { padding: 6px 0; }
+</style>
+</head>
+<body>
+<main>
+  <img class="tile" src="assets/cory-tile.svg" alt="">
+  <p class="code">Error 404</p>
+  <h1>I couldn't find that page</h1>
+  <p class="lead">The link may be old, or the page may have moved. Nothing is broken on your side. Here is where most people were heading.</p>
+  <div class="actions">
+    <a class="cory-btn cory-btn-primary" href="index.html">Back to the Showcase</a>
+    <a class="cory-btn cory-btn-secondary" href="ui_kits/website/index.html">Open the website kit</a>
+  </div>
+  <nav aria-label="Other destinations">
+    <a href="templates/landing-page/LandingPage.dc.html">Landing page template</a>
+    <a href="ui_kits/roi-calculator/index.html">ROI calculator</a>
+    <a href="docs/NotebookLM%20Style%20Guide.html">NotebookLM guide</a>
+  </nav>
+</main>
+</body>
+</html>

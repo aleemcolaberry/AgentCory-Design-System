@@ -5,29 +5,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AgentCory, ROI Calculator</title>
+<meta name="description" content="AgentCory ROI calculator UI kit: model contact rate, response time and automation to project annual impact.">
+<link rel="icon" type="image/svg+xml" href="../../assets/cory-icon.svg">
+<!-- Fonts are linked here as well as imported by styles.css: the browser finds them one round trip sooner -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../kit-shell.css">
 <style>
   html, body { margin: 0; background: var(--surface-page); }
   input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 2px solid var(--blue-500); box-shadow: var(--shadow-sm); cursor: pointer; }
   input[type=range]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 2px solid var(--blue-500); box-shadow: var(--shadow-sm); cursor: pointer; }
 </style>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="../../_ds_bundle.js"></script>
+<!-- Production React and a precompiled kit script (scripts/build-kits.mjs). All deferred: nothing blocks the first paint. -->
+<script defer src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+<script defer src="../../_ds_bundle.js"></script>
+<script defer src="kit.js"></script>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel" src="RoiCalculator.jsx"></script>
-<script type="text/babel" data-presets="react">
-  const mount = () => {
-    if (!window.RoiCalculator) { setTimeout(mount, 30); return; }
-    const Root = () => {
-      return <window.RoiCalculator />;
-    };
-    ReactDOM.createRoot(document.getElementById('root')).render(<Root />);
-  };
-  mount();
-</script>
+<div id="root">
+  <!-- Loading state: shown until the app mounts; kit-shell.js replaces it with an error and a way forward if it never does -->
+  <div class="kit-state" role="status" aria-live="polite"><span class="kit-spin" aria-hidden="true"></span><p>Loading the page</p></div>
+</div>
+<noscript>
+  <style>#root { display: none; }</style>
+  <div class="kit-state"><h1>This page needs JavaScript</h1><p>It is an interactive demo built with React. Turn JavaScript on in your browser settings and reload to see it.</p></div>
+</noscript>
+<script defer src="../kit-shell.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function () { kitMount('RoiCalculator'); });</script>
 </body>
 </html>

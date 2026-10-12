@@ -46,6 +46,19 @@ img, video, svg { max-width: 100%; height: auto; display: block; }
 
 a { color: var(--text-link); text-decoration: none; transition: color var(--duration-base) var(--ease-out); }
 a:hover { color: var(--text-link-hover); }
+/* --- Hover is never silent. Fallbacks at zero specificity for controls styled inline (an inline colour beats a:hover),
+   so every link and button answers the pointer even when a component forgot to. Component hover styles override these. --- */
+@media (hover: hover) {
+  :where(nav, footer, [role="navigation"]) a:not(.cory-btn):not(:has(img, svg, picture)):hover { text-decoration: underline !important; text-decoration-thickness: 1.5px !important; text-underline-offset: 4px; }
+  :where(nav, header, footer) a:not(.cory-btn):has(img, svg, picture):hover { filter: brightness(1.12) saturate(1.15); }
+  :where(footer) a:not(.cory-btn)[style*="underline"]:hover { text-decoration-thickness: 2.5px !important; filter: brightness(1.2); }
+  :where(button, [role="button"], [role="tab"], summary):not(:disabled, [aria-disabled="true"]):hover { filter: brightness(0.94); }
+  :where([data-theme="dark"]) :where(button, [role="button"], [role="tab"], summary):not(:disabled, [aria-disabled="true"]):hover { filter: brightness(1.18); }
+}
+:where(button, [role="button"], [role="tab"], summary):not(:disabled, [aria-disabled="true"]) { cursor: pointer; }
+
+/* --- Placeholders follow the theme: the browser default grey fails on dark surfaces. 4.6:1 in both themes. --- */
+::placeholder { color: var(--text-subtle); opacity: 1; }
 
 /* --- Focus: visible ring on keyboard focus only, everywhere --- */
 :focus { outline: none; }

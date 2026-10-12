@@ -39,7 +39,7 @@ function Hero({ onTry, onDemo, onOpenChat }) {
         <div style={{ position: 'relative' }}>
           <div style={{
             background: 'var(--surface-card)', borderRadius: 'var(--radius-2xl)', border: '1px solid var(--border-subtle)',
-            boxShadow: 'var(--shadow-xl)', padding: 18, maxWidth: 400, marginInlineStart: 'auto',
+            boxShadow: 'var(--shadow-xl)', padding: 18, maxWidth: 400, marginInline: 'auto',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '6px 6px 14px', borderBottom: '1px solid var(--border-subtle)', marginBottom: 14 }}>
               <img src="../../assets/cory-tile-dark.svg" alt="" style={{ width: 36, height: 36, borderRadius: 'var(--radius-tile)' }} />

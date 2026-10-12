@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><title>MCP gives AI context — Bento</title>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>MCP gives AI context — Bento</title>
 <link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
 <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script>
@@ -11,16 +12,16 @@ a{color:#1568D4}a:hover{color:#1568D4}
 #stage{transform-origin:top center}
 .post{width:1080px;height:1350px;background:#F4F5FA;padding:44px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:236px 420px minmax(0,1fr) 78px;gap:16px;position:relative;overflow:hidden}
 .post::before{content:"";position:absolute;width:620px;height:620px;right:-240px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.26),transparent 65%);pointer-events:none}
-.gt{background:linear-gradient(90deg,#258AFD,#29BEDD);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gt{background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent}
 .tile{position:relative;border-radius:24px;background:#FFFFFF;border:1px solid #E2E5EE;box-shadow:0 1px 2px rgba(11,31,54,.04),0 8px 24px rgba(11,31,54,.06);padding:28px;min-width:0;min-height:0}
 .head{grid-column:span 12;display:flex;flex-direction:column;justify-content:center;gap:18px;background:transparent;border:none;box-shadow:none;padding:0 4px}
 .pills{display:flex;gap:10px}
 .pills span{white-space:nowrap;height:32px;padding:0 16px;border-radius:999px;display:flex;align-items:center;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#0B1F36;color:#FFFFFF}
-.pills span.g{background:linear-gradient(90deg,#258AFD,#29BEDD)}
+.pills span.g{background:linear-gradient(90deg,#1568D4,#0E7F9E)}
 .head h1{font-size:76px;line-height:1;font-weight:800;letter-spacing:-.035em;color:#0B1F36}
 .head h1 span{display:block;padding-bottom:.12em;margin-bottom:-.12em}
 .tag{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#1568D4;white-space:nowrap}
-.tag i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#258AFD,#29BEDD);color:#FFFFFF;display:grid;place-items:center;font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:0}
+.tag i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#1568D4,#0E7F9E);color:#FFFFFF;display:grid;place-items:center;font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:0}
 .t-src{grid-column:span 7;display:flex;flex-direction:column;gap:22px}
 .ds{display:flex;align-items:center;gap:14px}
 .ds .ic{width:52px;height:52px;border-radius:16px;background:#0B1F36;color:#FFFFFF;display:grid;place-items:center;flex:none}
@@ -32,7 +33,7 @@ a{color:#1568D4}a:hover{color:#1568D4}
 .assets svg{width:24px;height:24px;color:#1568D4}
 .t-mcp{grid-column:span 5;background:linear-gradient(160deg,#E6F1FF 0%,#E6F8FC 100%);border-color:#C2DEFF;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .t-mcp::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-170px;bottom:-170px;background:radial-gradient(circle,rgba(37,138,253,.22),transparent 65%);pointer-events:none}
-.plug{position:relative;z-index:1;width:64px;height:64px;border-radius:20px;background:linear-gradient(135deg,#258AFD,#29BEDD);color:#FFFFFF;display:grid;place-items:center;box-shadow:0 10px 24px rgba(37,138,253,.3)}
+.plug{position:relative;z-index:1;width:64px;height:64px;border-radius:20px;background:linear-gradient(135deg,#1568D4,#0E7F9E);color:#FFFFFF;display:grid;place-items:center;box-shadow:0 10px 24px rgba(37,138,253,.3)}
 .plug svg{width:30px;height:30px}
 .mcpt{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px}
 .mcpt b{font-size:104px;line-height:.9;font-weight:800;letter-spacing:-.045em}
@@ -51,15 +52,15 @@ a{color:#1568D4}a:hover{color:#1568D4}
 .l2{left:518px;top:702px}
 .foot{grid-column:span 12;display:flex;align-items:center;justify-content:space-between;padding:0 4px;background:transparent;border:none;border-top:1px solid #D5D9E4;border-radius:0;box-shadow:none}
 .who{display:flex;align-items:center;gap:14px}
-.av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#258AFD,#29BEDD);color:#FFFFFF;display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
+.av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#1568D4,#0E7F9E);color:#FFFFFF;display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
 .who b{display:block;font-size:17px;font-weight:800;color:#0B1F36}
 .who small{font-size:13.5px;color:#525A6B;font-weight:500}
 .cta{display:flex;gap:10px}
 .cta span{display:flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:999px;border:1px solid #D5D9E4;background:#FFFFFF;font-size:13.5px;font-weight:700;color:#0B1F36;white-space:nowrap}
-.cta span.n{background:linear-gradient(90deg,#258AFD,#29BEDD);border-color:transparent;color:#FFFFFF}
+.cta span.n{background:linear-gradient(90deg,#1568D4,#0E7F9E);border-color:transparent;color:#FFFFFF}
 .cta svg{width:16px;height:16px;color:#1568D4}.cta span.n svg{color:#FFFFFF}
 .bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:8px;padding:6px;border-radius:999px;background:#FFFFFF;border:1px solid #D5D9E4;box-shadow:0 8px 24px rgba(11,31,54,.12);z-index:10}
-.bar button{white-space:nowrap;height:38px;padding:0 16px;border-radius:999px;border:none;background:linear-gradient(90deg,#258AFD,#29BEDD);font:700 13.5px 'Plus Jakarta Sans',sans-serif;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;gap:8px}
+.bar button{white-space:nowrap;height:38px;padding:0 16px;border-radius:999px;border:none;background:linear-gradient(90deg,#1568D4,#0E7F9E);font:700 13.5px 'Plus Jakarta Sans',sans-serif;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;gap:8px}
 .bar button svg{width:16px;height:16px}
 </style></head>
 <body>

@@ -5,6 +5,7 @@
   if (!document.documentElement.lang) document.documentElement.lang = 'en'; // WCAG 3.1.1: DC pages declare a language
   const base = '../..';
   for (const p of ['styles.css']) {
+    if (document.querySelector('link[rel="stylesheet"][href$="/' + p + '"]')) continue; // already linked from the markup
     const l = document.createElement('link');
     l.rel = 'stylesheet'; l.href = base + '/' + p;
     document.head.appendChild(l);

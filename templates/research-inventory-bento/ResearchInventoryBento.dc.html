@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Styles load from the markup, not from script, so the first paint is already styled (no flash, no layout shift) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -57,13 +62,13 @@
 
 <div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;overflow:hidden;min-height:0">
 <div style="padding:18px 20px 12px;display:flex;flex-direction:column;gap:10px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:#0B1F36;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">06</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Calculate the RAS</span></div>
-<div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;border-radius:14px;background:#E6F1FF;"><span style="font-size:18px;font-weight:800;color:#1568D4;white-space:nowrap">RAS =</span><span style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:14px;font-weight:700;line-height:1.1"><span style="white-space:nowrap">Actual user value</span><span style="align-self:stretch;border-top:2px solid #0B1F36"></span><span style="white-space:nowrap">Total possible value</span></span><span style="font-size:18px;font-weight:800;color:#1568D4;white-space:nowrap">× 100</span></div></div>
+<div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;border-radius:14px;background:#E6F1FF;"><span style="font-size:18px;font-weight:800;color:#0F56B3;white-space:nowrap">RAS =</span><span style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:14px;font-weight:700;line-height:1.1"><span style="white-space:nowrap">Actual user value</span><span style="align-self:stretch;border-top:2px solid #0B1F36"></span><span style="white-space:nowrap">Total possible value</span></span><span style="font-size:18px;font-weight:800;color:#0F56B3;white-space:nowrap">× 100</span></div></div>
 <div style="flex:1;min-height:0;background:#E3EFFE;display:flex;align-items:center;justify-content:center;padding:10px 14px"><img src="./art/calc-keys-blue.png" alt="Calculator keys" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
 </div>
 </div>
 
 <div style="flex:none;background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);padding:18px 20px;display:grid;grid-template-columns:200px repeat(4,minmax(0,1fr));gap:10px;align-items:stretch;position:relative">
-<div style="display:flex;flex-direction:column;justify-content:center;gap:6px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:linear-gradient(90deg,#1568D4,#0E7F9E);color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">07</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Read your score</span></div><span style="font-size:14px;font-weight:500;line-height:1.35;color:#5B6B80;text-wrap:pretty">Early-stage features score low, that's normal.</span></div>
+<div style="display:flex;flex-direction:column;justify-content:center;gap:6px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:linear-gradient(90deg,#1568D4,#0E7F9E);color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">07</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Read your score</span></div><span style="font-size:14px;font-weight:500;line-height:1.35;color:#4F5F75;text-wrap:pretty">Early-stage features score low, that's normal.</span></div>
 <div style="border-radius:16px;background:#DCF6EC;padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#127A50;white-space:nowrap">80–100 · Great</span><span style="font-size:15px;font-weight:700;line-height:1.3;text-wrap:pretty">Research is embedded in the culture</span></div>
 <div style="border-radius:16px;background:#E6F1FF;padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#1568D4;white-space:nowrap">55–79 · Good</span><span style="font-size:15px;font-weight:700;line-height:1.3;text-wrap:pretty">High-value recs are shipping</span></div>
 <div style="border-radius:16px;background:#FDF0D9;padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#9A5B00;white-space:nowrap">30–54 · Fair</span><span style="font-size:15px;font-weight:700;line-height:1.3;text-wrap:pretty">Some progress, most value stuck</span></div>
@@ -72,7 +77,7 @@
 
 <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:12px;border-top:1px solid #DCE1EA;position:relative">
 <div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="display:flex;align-items:center;gap:12px;white-space:nowrap"><span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#258AFD,#29BEDD);display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="repeat2W" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="width:20px;height:20px;display:block"></span><span style="font-size:17px;font-weight:800">Save for later &amp; Repost</span></span><sc-if value="{{ showSource }}" hint-placeholder-val="{{ true }}"><span style="font-size:12px;color:#636B7E;">Framework adapted from Utesch &amp; Fitzwater, NN/g</span></sc-if></div>
-<div style="display:flex;align-items:center;gap:14px;flex:none"><div style="display:flex;flex-direction:column;gap:2px;align-items:flex-end;text-align:end;"><span style="font-size:18px;font-weight:800">Md&nbsp;Abdul&nbsp;Aleem</span><span style="font-size:14px;color:#5B6B80">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:54px;height:54px;flex:none;display:block;object-fit:cover;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE1EA"></div>
+<div style="display:flex;align-items:center;gap:14px;flex:none"><div style="display:flex;flex-direction:column;gap:2px;align-items:flex-end;text-align:end;"><span style="font-size:18px;font-weight:800">Md&nbsp;Abdul&nbsp;Aleem</span><span style="font-size:14px;color:#4F5F75">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:54px;height:54px;flex:none;display:block;object-fit:cover;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE1EA"></div>
 </div>
 </div></div></div>
 </x-dc>

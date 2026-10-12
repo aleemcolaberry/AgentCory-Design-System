@@ -352,7 +352,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
  * Chat message bubble for the Cory widget. `from="cory"` shows the mascot
  * avatar and a light bubble at inline-start; `from="user"` is a brand bubble at inline-end
  * (right in LTR, left in RTL); `from="system"` is a centred quiet note (handoff, timestamps).
- * `status` on user messages: sending (dimmed), sent, failed (red edge + Retry).
+ * `status` on user messages: sending (labelled, never dimmed), sent, failed (red edge + Retry).
  */
 function ChatBubble({
   from = 'cory',
@@ -439,7 +439,7 @@ function ChatBubble({
       color: isUser ? 'var(--text-on-brand)' : 'var(--text-body)',
       border: failed ? '1px solid var(--fill-danger)' : isUser ? '1px solid transparent' : '1px solid var(--border-subtle)',
       boxShadow: 'var(--shadow-xs)',
-      opacity: sending ? 'var(--opacity-muted)' : 1,
+      opacity: 1, /* a sending bubble keeps full contrast: its state is the label under it, not a dim */
       transition: 'opacity var(--duration-base) var(--ease-out)'
     }
   }, children), (time || status) && /*#__PURE__*/React.createElement("span", {

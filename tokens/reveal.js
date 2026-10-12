@@ -38,5 +38,11 @@
   new MutationObserver((muts) => { let dirty = false; muts.forEach((m) => m.addedNodes.forEach((n) => { if (n.nodeType === 1 && (n.hasAttribute('data-reveal') || n.hasAttribute('data-stagger') || n.querySelector('[data-reveal],[data-stagger]'))) dirty = true; })); if (dirty) observe(document); }).observe(document.documentElement, { childList: true, subtree: true });
   // Never leave content hidden if the observer never fires (background tabs, capture tools)
   setTimeout(() => document.querySelectorAll('[data-reveal]:not(.is-visible)').forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < innerHeight) show(el); }), 2500);
+  // A fully clipped element (data-reveal="clip" starts at clip-path: inset(100%)) has no visible area, so the observer
+  // never reports it. Its layout box is unaffected, so check those by rect while the reader scrolls.
+  let queued = false;
+  const sweep = () => { queued = false; document.querySelectorAll('[data-reveal="clip"]:not(.is-visible)').forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < innerHeight * 0.88 && r.bottom > 0) show(el); }); };
+  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(sweep); } };
+  addEventListener('scroll', queue, { passive: true }); addEventListener('resize', queue, { passive: true });
   window.coryReveal = { observe, show };
 })();

@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Styles load from the markup, not from script, so the first paint is already styled (no flash, no layout shift) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -15,7 +20,7 @@
 <div style="position:relative;flex:none;display:flex;flex-direction:column;gap:18px">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
 <span style="padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E3E7EF;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1568D4;">The shift in how teams work</span>
-<span style="font-size:14px;font-weight:600;color:#5B6B80;white-space:nowrap">Concept · Tom Goodwin</span>
+<span style="font-size:14px;font-weight:600;color:#4F5F75;white-space:nowrap">Concept · Tom Goodwin</span>
 </div>
 <h1 style="margin:0;font-size:84px;line-height:1;font-weight:800;letter-spacing:-.045em">AI flipped <span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">the ratio.</span></h1>
 <p style="margin:0;max-width:820px;font-size:22px;line-height:1.4;color:#4A5B70;text-wrap:pretty">It used to take a few people to have the idea and a crowd to build it. Now execution is cheap, and the crowd moves to ideas.</p>
@@ -76,15 +81,15 @@
 <span style="font-size:22px;line-height:1.2;font-weight:800;letter-spacing:-.02em">Become the bottleneck</span>
 <span style="font-size:15px;line-height:1.45;color:#5C4A1E;text-wrap:pretty">Knowing what to build is the hard part.</span>
 </div>
-<div style="background:linear-gradient(140deg,#258AFD,#29BEDD);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 28px rgba(37,138,253,.28);min-width:0">
-<span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#0B1F36">YOUR EDGE</span>
+<div style="background:linear-gradient(140deg,#1568D4,#0E7F9E);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 28px rgba(37,138,253,.28);min-width:0">
+<span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#fff">YOUR EDGE</span>
 <span style="font-size:22px;line-height:1.2;font-weight:800;letter-spacing:-.02em;color:#fff">Taste and judgment</span>
-<span style="font-size:15px;line-height:1.45;color:#0B1F36;text-wrap:pretty">Frame the problem. Let AI do the rest.</span>
+<span style="font-size:15px;line-height:1.45;color:#fff;text-wrap:pretty">Frame the problem. Let AI do the rest.</span>
 </div>
 </div>
 <sc-if value="{{ showFooter }}" hint-placeholder-val="{{ true }}">
 <div style="position:relative;flex:none;display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid #DCE1EA">
-<div style="display:flex;align-items:center;gap:14px"><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">Md Abdul Aleem</span><span style="font-size:14px;color:#5B6B80">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div></div>
+<div style="display:flex;align-items:center;gap:14px"><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">Md Abdul Aleem</span><span style="font-size:14px;color:#4F5F75">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div></div>
 <span style="display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:#0B1F36;color:#fff;font-size:16px;font-weight:700;white-space:nowrap">Follow for more <span style="font-size:18px">→</span></span>
 </div>
 </sc-if>

@@ -95,7 +95,7 @@ function RoiCalculator() {
           <p style={{ fontSize: 16, color: 'var(--text-muted)', margin: 0 }}>See how much Cory can save your team and add to enrollment revenue.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--grid-gap)', alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--grid-gap)', alignItems: 'stretch' }}>
           {/* Current metrics */}
           <section style={{ background: 'var(--surface-card)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-xl)', padding: 24 }}>
             <h2 style={{ fontSize: 16, margin: '0 0 18px' }}>Your Current Metrics</h2>

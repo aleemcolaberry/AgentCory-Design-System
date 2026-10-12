@@ -52,6 +52,8 @@ WCAG 2.2 AA is a release gate. The full rule lives in `CLAUDE.md` under "Accessi
 - **No overflow at 320 to 1440 wide or at 200% zoom.** No horizontal page scroll.
 - **Structure.** `lang` set, one `h1`, no skipped heading levels, every control named and keyboard reachable with a visible focus ring, targets 24px (44px on touch), `alt` on images, reduced motion honoured.
 - **Proof.** `python -m http.server 8765`, then `node _audit/run.mjs` runs every set in light and dark and exits 1 on any contrast, clip, name, type, heading, offscreen or overlap finding. `data-audit-ok="clip|contrast|overlap"` is for decoration the probe cannot judge, never for real text.
+- **More rules, same file.** `CLAUDE.md` also holds the responsive rule, the state coverage rule, the design quality rule, the motion, hover and card rule, the pixel contrast rule and the performance and file rule. Their probes live in `_audit/`: `responsive.mjs` (ten widths), `contrast-pixels.mjs` (text against rendered pixels), `perf.mjs` (requests, bytes, LCP, CLS).
+- **Generated files.** After editing any `ui_kits/*/*.jsx` run `node scripts/build-kits.mjs`; after changing a template shown on the Showcase run `node _audit/previews.mjs`.
 
 ## Which control? (decision guide)
 - The one action a screen exists for → `Button variant="primary"` (one per view). Second action → `secondary` (on navy: `onInk`). Icon-only → `IconButton` with `label`.

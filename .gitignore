@@ -7,7 +7,8 @@ desktop.ini
 .idea/
 .vscode/
 
-# Tooling. There is no build step; node_modules only appears if someone installs a local server.
+# Tooling. Pages run as plain files. The only build step is scripts/build-kits.mjs (JSX to ui_kits/*/kit.js);
+# node_modules holds its compiler and the audit browser driver and is never committed.
 node_modules/
 dist/
 .cache/
@@ -27,3 +28,4 @@ AgentCory Design System*.html
 uploads/*
 !uploads/Logo_Cory-BpxDw6Ld.svg
 AgentCory System Brief/uploads/
+.claude/

@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Styles load from the markup, not from script, so the first paint is already styled (no flash, no layout shift) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -62,12 +67,12 @@
 <div style="grid-column:span 4;background:linear-gradient(135deg,#1568D4,#0E7F9E);border-radius:24px;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;gap:10px;position:relative;overflow:hidden;box-shadow:0 10px 28px rgba(21,104,212,.28);min-width:0">
 <div style="position:absolute;inset-inline-end:-80px;top:-120px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),rgba(255,255,255,0) 70%)"></div>
 <span style="position:relative;font-size:34px;line-height:1.12;font-weight:800;letter-spacing:-.025em;color:#fff;text-wrap:balance">The era of always-on AI agents begins.</span>
-<span style="position:relative;font-size:14px;line-height:1.4;color:#E6F2FF">Source: OpenAI DevDay 2026 Recap · <span class="cory-ltr">openai.com</span></span>
+<span style="position:relative;font-size:14px;line-height:1.4;color:#fff">Source: OpenAI DevDay 2026 Recap · <span class="cory-ltr">openai.com</span></span>
 </div>
 </div>
 <sc-if value="{{ showFooter }}" hint-placeholder-val="{{ true }}">
 <div style="flex:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:18px;border-top:1px solid #DCE1EA;position:relative">
-<div style="display:flex;align-items:center;gap:14px;min-width:0"><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none"><div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:18px;font-weight:800">Md Abdul Aleem</span><span style="font-size:14px;color:#5B6B80">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div></div>
+<div style="display:flex;align-items:center;gap:14px;min-width:0"><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none"><div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:18px;font-weight:800">Md Abdul Aleem</span><span style="font-size:14px;color:#4F5F75">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div></div>
 <span style="flex:none;display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:#0B1F36;color:#fff;font-size:16px;font-weight:700">Follow for more <span class="cory-arrow" style="font-size:18px">→</span></span>
 </div>
 </sc-if>

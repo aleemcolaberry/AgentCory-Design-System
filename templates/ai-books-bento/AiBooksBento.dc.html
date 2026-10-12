@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Styles load from the markup, not from script, so the first paint is already styled (no flash, no layout shift) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -17,7 +22,7 @@
 <div style="display:flex;gap:10px;align-items:center"><span style="padding:8px 16px;border-radius:999px;background:#0B1F36;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex:none">Reading list</span><span style="padding:8px 16px;border-radius:999px;background:linear-gradient(90deg,#1568D4,#0E7F9E);color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex:none">8 books</span></div>
 <h1 style="margin:0;font-size:66px;line-height:1.02;font-weight:800;letter-spacing:-.03em;">AI&nbsp;books&nbsp;for<br><span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">UX&nbsp;designers</span></h1>
 </div>
-<sc-if value="{{ showTagline }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;text-align:end;padding-bottom:8px;flex:none;"><span style="font-size:22px;font-weight:800;line-height:1.2">Read&nbsp;smarter.<br>Design&nbsp;for&nbsp;AI.</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:#5B6B80;line-height:1.6">FRAMEWORKS<br>RESEARCH<br>PRACTICE</span></div></sc-if>
+<sc-if value="{{ showTagline }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;text-align:end;padding-bottom:8px;flex:none;"><span style="font-size:22px;font-weight:800;line-height:1.2">Read&nbsp;smarter.<br>Design&nbsp;for&nbsp;AI.</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:#4F5F75;line-height:1.6">FRAMEWORKS<br>RESEARCH<br>PRACTICE</span></div></sc-if>
 </div>
 <div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr));gap:16px;position:relative">
 <div style="grid-column:1 / 8;grid-row:1;background:linear-gradient(160deg,#0B1F36,#143457);border-radius:28px;padding:22px 26px 22px 22px;display:flex;gap:24px;align-items:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(11,31,54,.18);color:#fff;min-height:0">
@@ -90,12 +95,12 @@
 <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
 <span style="font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1">The Anticipatory Design Playbook</span>
 <p style="margin:0;font-size:15px;font-weight:600;line-height:1.4;text-wrap:pretty">A UX Guide to Design AI-Driven Experiences</p>
-<span style="font-size:14px;font-weight:700;color:#0B1F36">Joana Cerejo</span>
+<span style="font-size:14px;font-weight:700;color:#fff">Joana Cerejo</span>
 </div>
 </div>
 </div>
 <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:22px;border-top:1px solid #DCE1EA;position:relative">
-<div style="display:flex;flex-direction:column;gap:2px;flex:none;"><span style="font-size:18px;font-weight:800">Md&nbsp;Abdul&nbsp;Aleem</span><span style="font-size:14px;color:#5B6B80">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div>
+<div style="display:flex;flex-direction:column;gap:2px;flex:none;"><span style="font-size:18px;font-weight:800">Md&nbsp;Abdul&nbsp;Aleem</span><span style="font-size:14px;color:#4F5F75">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div>
 <span style="display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:#0B1F36;color:#fff;font-size:16px;font-weight:700;white-space:nowrap;flex:none">Follow&nbsp;for&nbsp;more <span style="font-size:18px">→</span></span>
 </div>
 </div></div></div>
