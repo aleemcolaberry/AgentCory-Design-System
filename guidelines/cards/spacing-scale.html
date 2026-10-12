@@ -1,0 +1,24 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Spacing Scale" subtitle="8px base grid" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--surface-card); display: flex; gap: 18px; align-items: flex-end; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .bar { background: var(--gradient-brand); border-radius: var(--radius-xs); width: 28px; }
+  .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .lbl b { color: var(--text-strong); display: block; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="col"><div class="bar" style="height:8px"></div><div class="lbl"><b>2</b>8px</div></div>
+  <div class="col"><div class="bar" style="height:16px"></div><div class="lbl"><b>4</b>16px</div></div>
+  <div class="col"><div class="bar" style="height:24px"></div><div class="lbl"><b>6</b>24px</div></div>
+  <div class="col"><div class="bar" style="height:32px"></div><div class="lbl"><b>8</b>32px</div></div>
+  <div class="col"><div class="bar" style="height:48px"></div><div class="lbl"><b>12</b>48px</div></div>
+  <div class="col"><div class="bar" style="height:64px"></div><div class="lbl"><b>16</b>64px</div></div>
+  <div class="col"><div class="bar" style="height:80px"></div><div class="lbl"><b>20</b>80px</div></div>
+</body>
+</html>

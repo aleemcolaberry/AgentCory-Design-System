@@ -1,0 +1,58 @@
+<!-- @dsCard group="Components" viewport="700x500" name="Forms: Input, Select, Checkbox, Toggle" subtitle="Every field shares one label / hint / loading / warning / error / success language" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: var(--surface-card); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 18px 22px; max-width: 560px; }
+  .full { grid-column: 1 / -1; }
+  .stack { display: flex; flex-direction: column; gap: 12px; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../tokens/reveal.js"></script>
+</head>
+<body>
+<div style="position:fixed;top:8px;inset-inline-end:8px;z-index:9;display:flex;gap:6px" dir="ltr">
+<button id="__dir" type="button" aria-label="Toggle right-to-left" style="height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:700 11px var(--font-mono)">RTL</button>
+<button id="__theme" type="button" aria-label="Toggle dark theme" style="width:30px;height:30px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:600 11px var(--font-mono)">◐</button>
+</div>
+<script>(function(){var h=document.documentElement;document.getElementById('__theme').onclick=function(){h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark')};var d=document.getElementById('__dir');d.onclick=function(){var r=h.getAttribute('dir')==='rtl';h.setAttribute('dir',r?'ltr':'rtl');d.textContent=r?'RTL':'LTR'}})()</script>
+<div id="root"></div>
+<script type="text/babel">
+  const { Input, Select, Checkbox, Toggle } = window.DesignSystem_ebeb85;
+  function Demo() {
+    return (
+      <div className="grid" data-stagger="70">
+        <Input label="Full Name" required placeholder="Jane Doe" defaultValue="Dr. Sarah Johnson" />
+        <Select label="Role" required placeholder="Choose…" options={['Director of Admissions','VP Enrollment','Counselor','Other']} />
+        <Input label="Work Email" hint="Only used to schedule your demo" placeholder="sarah@university.edu" success="Looks good" defaultValue="sarah@metrostate.edu" />
+        <Input label="Phone Number" required error="Enter a 10-digit number, e.g. 555 000 0000" defaultValue="555" />
+        <Input label="Personal Email" warning="Not a .edu address. Still send the demo here?" defaultValue="sarah@gmail.com" />
+        <Input label="Institution" loading hint="Looking up your campus…" defaultValue="Metro State" />
+        <Select label="Campus" loading options={[]} />
+        <Select label="Program" options={[]} emptyMessage="Add a program first" />
+        <div className="stack">
+          <Checkbox label="Send me the recording" defaultChecked />
+          <Checkbox label="Select all counselors" indeterminate hint="3 of 8 selected" />
+          <Checkbox label="I agree to the terms" error="Tick this to book your demo" />
+          <Checkbox label="Disabled option" disabled />
+        </div>
+        <div className="stack">
+          <Toggle label="Call me back automatically" defaultChecked />
+          <Toggle label="Weekly summary email" hint="Mondays, 8 AM" />
+          <Toggle label="Saving…" checked loading />
+          <Toggle label="SMS alerts" checked={false} error="Couldn't save. Try again." />
+          <Toggle label="Disabled" disabled size="sm" />
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

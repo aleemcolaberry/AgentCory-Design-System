@@ -1,0 +1,10 @@
+# Leading "/" anchors each entry to the project root.
+# Archive: the previous site, kept for reference and for parts to reuse. Never deployed.
+/Archive
+# Notes, source material and tools
+/docs
+/uploads
+/*.md
+/shared/aiuxaleem.css
+/shared/a11y-audit.js
+/Version 1/Site Audit.dc.html

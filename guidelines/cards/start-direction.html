@@ -1,0 +1,56 @@
+<!-- @dsCard group="Start here" viewport="760x520" name="Direction: LTR and RTL" subtitle="Same components, English left to right and Arabic right to left, from one dir attribute" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 18px; background: var(--surface-page); }
+  .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
+  .panel { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-subtle); display: flex; justify-content: space-between; gap: 8px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .chat { display: flex; flex-direction: column; gap: 8px; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const { Button, Input, Chip, Badge, Toggle, StatCard, ChatBubble, Tabs } = window.DesignSystem_ebeb85;
+  const copy = {
+    en: { tag: 'dir="ltr" · lang="en"', tabs: ['Overview', 'Results', 'Setup'], h: 'Book a demo with Cory', email: 'Work email', hint: 'Only used to schedule your demo', primary: 'Book my demo', secondary: 'Try Cory', chips: ['Voice', 'SMS', 'Email'], badge: 'Live', toggle: 'Call me back automatically', stat: 'Contact rate', sub: 'up from 40%', cory: "Hi, I'm Cory 👋 Ready to see what I can do?", user: 'Do you offer evening classes?' },
+    ar: { tag: 'dir="rtl" · lang="ar"', tabs: ['نظرة عامة', 'النتائج', 'الإعداد'], h: 'احجز عرضاً توضيحياً مع كوري', email: 'البريد الإلكتروني للعمل', hint: 'نستخدمه فقط لتحديد موعد العرض', primary: 'احجز عرضي التوضيحي', secondary: 'جرّب كوري', chips: ['اتصال', 'رسائل', 'بريد'], badge: 'مباشر', toggle: 'اتصل بي تلقائياً', stat: 'معدل التواصل', sub: 'ارتفاعاً من 40%', cory: 'مرحباً، أنا كوري 👋 هل أنت مستعد لترى ما يمكنني فعله؟', user: 'هل تقدمون دروساً مسائية؟' },
+  };
+  function Panel({ dir, lang }) {
+    const c = copy[lang];
+    const [sel, setSel] = React.useState(0);
+    return (
+      <section className="panel" dir={dir} lang={lang}>
+        <div className="tag"><bdi>{c.tag}</bdi><Badge tone="success" size="sm" dot>{c.badge}</Badge></div>
+        <Tabs size="sm" items={c.tabs.map((t, i) => ({ value: String(i), label: t }))} defaultValue="0" />
+        <h3 style={{ fontSize: 'var(--text-h4)' }}>{c.h}</h3>
+        <Input label={c.email} type="email" placeholder="sarah@university.edu" hint={c.hint} required />
+        <div className="row">{c.chips.map((t, i) => <Chip key={i} size="sm" selected={sel === i} onToggle={() => setSel(i)}>{t}</Chip>)}</div>
+        <Toggle label={c.toggle} defaultChecked />
+        <div className="row" style={{ justifyContent: 'space-between' }}>
+          <StatCard value="94%" label={c.stat} sub={c.sub} gradient style={{ gap: 2 }} />
+        </div>
+        <div className="chat">
+          <ChatBubble from="cory">{c.cory}</ChatBubble>
+          <ChatBubble from="user">{c.user}</ChatBubble>
+        </div>
+        <div className="row">
+          <Button size="sm" iconEnd={<span className="cory-arrow">→</span>}>{c.primary}</Button>
+          <Button size="sm" variant="secondary">{c.secondary}</Button>
+        </div>
+      </section>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<div className="pair"><Panel dir="ltr" lang="en" /><Panel dir="rtl" lang="ar" /></div>);
+</script>
+</body>
+</html>

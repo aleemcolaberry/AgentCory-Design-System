@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>MCP gives AI context — Bento v2</title>
+<link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E2E5EE;min-height:100vh}
+body{display:flex;align-items:flex-start;justify-content:center;overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;color:#0B1F36}
+a{color:#1B79EC}a:hover{color:#1568D4}
+#stage{transform-origin:top center}
+.post{width:1080px;height:1350px;background:#F4F5FA;padding:48px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:230px 300px 150px minmax(0,1fr) 76px;gap:16px;position:relative;overflow:hidden}
+.post::before{content:"";position:absolute;width:640px;height:640px;right:-260px;top:-280px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.24),transparent 65%);pointer-events:none}
+.gt{background:linear-gradient(90deg,#258AFD,#29BEDD);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tile{position:relative;border-radius:24px;background:#FFFFFF;border:1px solid #E2E5EE;box-shadow:0 1px 2px rgba(11,31,54,.04),0 8px 24px rgba(11,31,54,.06);padding:28px;min-width:0;min-height:0;overflow:hidden}
+.tag{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#1B79EC;white-space:nowrap}
+.tag i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#258AFD,#29BEDD);color:#FFFFFF;display:grid;place-items:center;font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:0;flex:none}
+.head{grid-column:span 12;display:flex;flex-direction:column;justify-content:center;gap:20px;background:transparent;border:none;box-shadow:none;padding:0 4px;overflow:visible}
+.pill{align-self:flex-start;display:flex;align-items:center;gap:8px;height:34px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1px solid #E2E5EE;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1B79EC;white-space:nowrap}
+.pill svg{width:15px;height:15px}
+.head h1{font-size:78px;line-height:1.02;font-weight:800;letter-spacing:-.035em}
+.head h1 span{display:block;padding-bottom:.1em;margin-bottom:-.1em}
+.t-src{grid-column:span 5;display:flex;flex-direction:column;justify-content:space-between}
+.dsic{width:60px;height:60px;border-radius:18px;background:#0B1F36;color:#FFFFFF;display:grid;place-items:center}
+.dsic svg{width:30px;height:30px}
+.t-src h3{font-size:34px;line-height:1.08;font-weight:800;letter-spacing:-.025em}
+.t-assets{grid-column:span 7;background:#EAF3FF;border-color:#CFE3FF;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;padding:20px}
+.asset{border-radius:18px;background:#FFFFFF;border:1px solid #DCE9FB;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.asset svg{width:26px;height:26px;color:#1B79EC}
+.asset span{font-size:21px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.t-mcp{grid-column:span 12;background:linear-gradient(120deg,#0B1F36 0%,#143457 100%);border:none;box-shadow:0 12px 32px rgba(11,31,54,.2);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 36px}
+.t-mcp::after{content:"";position:absolute;width:460px;height:460px;border-radius:50%;left:-140px;top:-160px;background:radial-gradient(circle,rgba(37,138,253,.4),transparent 65%);pointer-events:none}
+.mcpl{position:relative;z-index:1;display:flex;align-items:center;gap:28px}
+.plug{width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,#258AFD,#29BEDD);color:#FFFFFF;display:grid;place-items:center;box-shadow:0 10px 24px rgba(37,138,253,.35);flex:none}
+.plug svg{width:34px;height:34px}
+.mcpl b{font-size:84px;line-height:1;font-weight:800;letter-spacing:-.045em;padding-bottom:.06em}
+.mcpl p{font-size:28px;line-height:1.1;font-weight:800;letter-spacing:-.02em;color:#FFFFFF;white-space:nowrap}
+.mcpl .tag{color:#7FC4FF;margin-bottom:8px}
+.flow{position:relative;z-index:1;display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:#C9D6E6;white-space:nowrap}
+.flow span{height:38px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);display:flex;align-items:center}
+.flow svg{width:18px;height:18px;color:#29BEDD}
+.t-tools{grid-column:span 12;display:flex;flex-direction:column;gap:20px}
+.th{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.th h3{font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-.03em;margin-top:10px}
+.th small{font-size:15px;font-weight:600;color:#525A6B;white-space:nowrap}
+.grid{flex:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:1fr 1fr;gap:12px;min-height:0}
+.tool{border-radius:18px;background:#F4F5FA;border:1px solid #E2E5EE;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:0}
+.logo{width:72px;height:72px;border-radius:18px;overflow:hidden;box-shadow:0 1px 2px rgba(11,31,54,.06),0 6px 16px rgba(11,31,54,.08);flex:none}
+.logo img{display:block;width:76px;height:76px;margin:-2px}
+.tool span{font-size:18px;font-weight:700;white-space:nowrap}
+.foot{grid-column:span 12;display:flex;align-items:center;justify-content:space-between;padding:0 4px;background:transparent;border:none;border-top:1px solid #D5D9E4;border-radius:0;box-shadow:none;overflow:visible}
+.who{display:flex;align-items:center;gap:14px}
+.av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#258AFD,#29BEDD);color:#FFFFFF;display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
+.who b{display:block;font-size:17px;font-weight:800}
+.who small{font-size:14px;color:#525A6B;font-weight:500;white-space:nowrap}
+.cta{display:flex;gap:10px}
+.cta span{display:flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;border:1px solid #D5D9E4;background:#FFFFFF;font-size:14px;font-weight:700;white-space:nowrap}
+.cta span.n{background:#0B1F36;border-color:transparent;color:#FFFFFF}
+.cta svg{width:16px;height:16px;color:#1B79EC}.cta span.n svg{color:#29BEDD}
+.bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:8px;padding:6px;border-radius:999px;background:#FFFFFF;border:1px solid #D5D9E4;box-shadow:0 8px 24px rgba(11,31,54,.12);z-index:10}
+.bar button{white-space:nowrap;height:38px;padding:0 16px;border-radius:999px;border:none;background:linear-gradient(90deg,#258AFD,#29BEDD);font:700 13.5px 'Plus Jakarta Sans',sans-serif;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;gap:8px}
+.bar button svg{width:16px;height:16px}
+</style></head>
+<body>
+<div id="stage">
+<div class="post" id="post" data-screen-label="MCP gives AI context v2">
+<div class="tile head">
+<span class="pill"><i data-lucide="sparkles"></i>Design systems × AI</span>
+<h1><span>AI can generate.</span><span class="gt">MCP gives it context.</span></h1>
+</div>
+<div class="tile t-src">
+<div class="tag"><i>1</i>The source</div>
+<div class="dsic"><i data-lucide="flower-2"></i></div>
+<h3>Supernova<br>Design System</h3>
+</div>
+<div class="tile t-assets">
+<div class="asset"><i data-lucide="component"></i><span>Components</span></div>
+<div class="asset"><i data-lucide="swatch-book"></i><span>Tokens</span></div>
+<div class="asset"><i data-lucide="book-open-text"></i><span>Documentation</span></div>
+<div class="asset"><i data-lucide="sparkles"></i><span>Skills</span></div>
+</div>
+<div class="tile t-mcp">
+<div class="mcpl">
+<div class="plug"><i data-lucide="plug-zap"></i></div>
+<b class="gt">MCP</b>
+<div><div class="tag"><i>2</i>The bridge</div><p>The connection layer</p></div>
+</div>
+<div class="flow"><span>Design system</span><i data-lucide="arrow-right"></i><span>AI tools</span></div>
+</div>
+<div class="tile t-tools">
+<div class="th"><div><div class="tag"><i>3</i>The output</div><h3>AI <span class="gt">Tools</span></h3></div><small>Context-aware, on-brand output</small></div>
+<div class="grid">
+<div class="tool"><div class="logo"><img src="logos/claude.png" alt="Claude"></div><span>Claude</span></div>
+<div class="tool"><div class="logo"><img src="logos/figma-make.png" alt="Figma Make"></div><span>Figma Make</span></div>
+<div class="tool"><div class="logo"><img src="logos/replit.png" alt="Replit"></div><span>Replit</span></div>
+<div class="tool"><div class="logo"><img src="logos/bolt.png" alt="Bolt"></div><span>Bolt</span></div>
+<div class="tool"><div class="logo"><img src="logos/cursor.png" alt="Cursor"></div><span>Cursor</span></div>
+<div class="tool"><div class="logo"><img src="logos/framer.png" alt="Framer"></div><span>Framer</span></div>
+<div class="tool"><div class="logo"><img src="logos/lovable.png" alt="Lovable"></div><span>Lovable</span></div>
+<div class="tool"><div class="logo"><img src="logos/ux-pilot.png" alt="UX Pilot"></div><span>UX Pilot</span></div>
+</div>
+</div>
+<div class="tile foot">
+<div class="who"><div class="av">MA</div><div><b>Md Abdul Aleem</b><small>Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</small></div></div>
+<div class="cta"><span><i data-lucide="bookmark"></i>Save</span><span class="n"><i data-lucide="repeat-2"></i>Repost &amp; Share</span></div>
+</div>
+</div>
+</div>
+<div class="bar"><button id="dl"><i data-lucide="download"></i>Download PNG</button></div>
+<script>
+lucide.createIcons();
+const post=document.getElementById('post');
+document.getElementById('dl').onclick=async e=>{const b=e.currentTarget,t=b.lastChild.textContent;b.lastChild.textContent='Rendering…';try{await document.fonts.ready;const url=await htmlToImage.toPng(post,{pixelRatio:2,width:1080,height:1350,cacheBust:true});const a=document.createElement('a');a.download='mcp-gives-ai-context-v2.png';a.href=url;a.click()}catch(err){console.error(err);alert('Export failed: '+err.message)}b.lastChild.textContent=t};
+function fit(){const s=Math.max(.1,Math.min(1,innerWidth/1080,(innerHeight-72)/1350));document.getElementById('stage').style.transform='scale('+s+')'}
+addEventListener('resize',fit);addEventListener('load',fit);fit();
+</script>
+</body></html>

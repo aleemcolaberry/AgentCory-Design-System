@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>4 UX Laws — Bento</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#050506;min-height:100vh}
+body{display:flex;align-items:flex-start;justify-content:center;overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;color:#F4F4F6}
+a{color:#C6F432}a:hover{color:#E3FF8A}
+#stage{transform-origin:top center}
+.post{width:1080px;height:1350px;background:#0A0A0C;padding:44px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:200px 310px 330px 280px 78px;gap:16px;position:relative;overflow:hidden}
+.post::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 400px at 0% 0%,rgba(198,244,50,.07),transparent 70%),radial-gradient(500px 500px at 100% 100%,rgba(61,217,240,.06),transparent 70%);pointer-events:none}
+.tile{position:relative;border-radius:28px;background:#131317;border:1px solid rgba(255,255,255,.07);padding:28px;overflow:hidden;min-width:0}
+.tile.glow::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:var(--c);opacity:.10;filter:blur(80px);top:-120px;left:-120px;pointer-events:none}
+.tile{--c:#C6F432}
+.t-fitts{--c:#A874FF;border-color:rgba(168,116,255,.35)}
+.t-miller{--c:#C6F432;border-color:rgba(198,244,50,.32)}
+.t-jacob{--c:#FF5FB0;border-color:rgba(255,95,176,.35)}
+.t-hick{--c:#3DD9F0;border-color:rgba(61,217,240,.35)}
+.head{grid-column:span 8;display:flex;flex-direction:column;justify-content:center;gap:10px;background:#111114}
+.head h1{font-size:84px;line-height:.95;font-weight:800;letter-spacing:-.035em}
+.head h1 span{color:#C6F432}
+.head h2{font-size:38px;line-height:1.1;font-weight:700;letter-spacing:-.02em;color:#E6E6EA}
+.quote{grid-column:span 4;background:#C6F432;border:none;color:#0A0A0C;display:flex;flex-direction:column;justify-content:space-between}
+.quote .ic{width:44px;height:44px;border-radius:14px;background:#0A0A0C;display:grid;place-items:center;color:#C6F432}
+.quote .ic svg{width:24px;height:24px}
+.quote p{font-size:28px;line-height:1.15;font-weight:800;letter-spacing:-.02em}
+.quote p em{font-style:normal;display:block;font-weight:600;opacity:.75}
+.law{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1;min-width:0}
+.law .top{display:flex;align-items:center;gap:10px}
+.num{width:34px;height:34px;border-radius:50%;background:var(--c);color:#0A0A0C;display:grid;place-items:center;font-weight:800;font-size:17px;flex:none}
+.tag{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8C8C96}
+.law h3{font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-.025em}
+.law h3 span{color:var(--c)}
+.law .d{font-size:16.5px;line-height:1.42;color:#C9C9D1;text-wrap:pretty}
+.ex{margin-top:4px;padding-top:12px;border-top:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;gap:6px}
+.ex b{align-self:flex-start;font-size:12.5px;font-weight:700;padding:4px 11px;border-radius:999px;color:var(--c);background:color-mix(in oklab,var(--c) 14%,transparent);border:1px solid color-mix(in oklab,var(--c) 40%,transparent)}
+.ex p{font-size:15px;line-height:1.4;color:#F4F4F6;text-wrap:pretty}
+.t-fitts{grid-column:span 7;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:22px}
+.t-miller{grid-column:span 5;grid-row:span 2;display:flex;flex-direction:column;gap:22px}
+.t-jacob{grid-column:span 7;display:grid;grid-template-columns:minmax(0,1fr) 236px;gap:22px;padding-bottom:0}
+.t-jacob .law{padding-bottom:28px}
+.t-hick{grid-column:span 12;display:grid;grid-template-columns:minmax(0,1fr) 540px;gap:32px;align-items:center}
+.t-hick .law .d{max-width:360px}
+.mock{background:#1A1A20;border:1px solid rgba(255,255,255,.08);border-radius:20px;position:relative;z-index:1}
+.fitts-m{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background-color:#16161B;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:22px 22px}
+.btn-big{position:relative;width:178px;height:58px;border-radius:999px;background:#C6F432;color:#0A0A0C;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 0 36px rgba(198,244,50,.35)}
+.btn-big svg{width:20px;height:20px}
+.btn-big .ptr{position:absolute;right:-8px;bottom:-26px;width:40px;height:40px;color:#fff;fill:#0A0A0C;filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
+.btn-sm{width:138px;height:38px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#B8B8C0;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:10px}
+.cap{font-family:'JetBrains Mono',monospace;font-size:11px;color:#77777F;letter-spacing:.06em}
+.miller-m{flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:0}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.tabs div{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 0;border-radius:14px;font-size:12px;font-weight:600;color:#B8B8C0}
+.tabs div svg{width:20px;height:20px}
+.tabs .on{background:#C6F432;color:#0A0A0C}
+.row{display:flex;align-items:center;gap:14px;padding:0 16px;height:56px;border-radius:14px;background:#22222A;border:1px solid rgba(255,255,255,.06);font-size:15px;font-weight:600;color:#E6E6EA}
+.row svg{width:20px;height:20px;color:#C9C9D1}
+.row .ch{margin-left:auto;width:16px;height:16px;color:#66666E}
+.chunk{display:flex;align-items:center;gap:8px;margin-top:auto;justify-content:center}
+.chunk span{width:8px;height:8px;border-radius:50%;background:#C6F432}
+.chunk span.off{background:#2E2E36}
+.phone{align-self:end;height:302px;border-radius:32px 32px 0 0;border:5px solid #2A2A32;border-bottom:none;background:#101014;padding:12px 14px 0;display:flex;flex-direction:column;gap:12px;overflow:hidden;position:relative;z-index:1}
+.sb{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700}
+.sb i{display:flex;gap:4px}.sb svg{width:13px;height:13px}
+.notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:70px;height:20px;border-radius:12px;background:#000}
+.phone h4{font-size:20px;font-weight:800;letter-spacing:-.01em}
+.srch{display:flex;align-items:center;gap:8px;height:36px;border-radius:11px;background:#1E1E25;padding:0 12px;font-size:12px;color:#8C8C96}
+.srch svg{width:15px;height:15px}
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.cats div{height:74px;border-radius:13px;background:#1E1E25;padding:11px;display:flex;flex-direction:column;justify-content:space-between;font-size:12px;font-weight:600}
+.cats svg{width:22px;height:22px;color:#FF5FB0}
+.filter{padding:20px 22px;display:flex;flex-direction:column;gap:16px}
+.fh{display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:800}
+.fh small{font-size:13px;font-weight:600;color:#8C8C96}
+.fg{display:grid;grid-template-columns:1fr auto;gap:28px}
+.lbl{font-size:12.5px;font-weight:600;color:#A6A6AE;margin-bottom:8px}
+.chips{display:flex;gap:7px}
+.chips span{height:32px;padding:0 13px;border-radius:9px;border:1px solid rgba(255,255,255,.14);font-size:13px;font-weight:600;display:flex;align-items:center;gap:5px;color:#D6D6DC;white-space:nowrap}
+.chips span svg{width:13px;height:13px}
+.chips .on{background:#3DD9F0;border-color:#3DD9F0;color:#0A0A0C}
+.chips .on svg{fill:#0A0A0C}
+.track{height:6px;border-radius:3px;background:#2E2E36;position:relative;margin:6px 0 10px}
+.track::before{content:"";position:absolute;left:0;top:0;bottom:0;width:62%;border-radius:3px;background:#3DD9F0}
+.track::after{content:"";position:absolute;left:62%;top:50%;width:18px;height:18px;border-radius:50%;background:#3DD9F0;transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(61,217,240,.2)}
+.prices{display:flex;justify-content:space-between;font-size:12.5px;color:#A6A6AE;font-weight:600}
+.foot{grid-column:span 12;display:flex;align-items:center;justify-content:space-between;padding:0 26px;background:#111114}
+.who{display:flex;align-items:center;gap:14px;flex:none}.who small{white-space:nowrap}
+.av{width:44px;height:44px;border-radius:50%;background:#C6F432;color:#0A0A0C;display:grid;place-items:center;font-weight:800;font-size:16px}
+.who b{display:block;font-size:17px;font-weight:700}
+.who small{font-size:13.5px;color:#A6A6AE;font-weight:500}
+.cta{display:flex;gap:10px}
+.cta span{display:flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);font-size:13.5px;font-weight:600;color:#E6E6EA}
+.cta svg{width:16px;height:16px;color:#C6F432}
+</style></head>
+<body>
+<div id="stage">
+<div class="post" id="post" data-screen-label="4 UX Laws">
+<div class="tile head">
+<h1>4 UX <span>Laws</span></h1>
+<h2>Every Designer Should Know</h2>
+</div>
+<div class="tile quote">
+<div class="ic"><i data-lucide="brain"></i></div>
+<p>Great UX isn’t magic.<em>It’s psychology.</em></p>
+</div>
+<div class="tile glow t-fitts">
+<div class="law">
+<div class="top"><div class="num">1</div><div class="tag">Target size</div></div>
+<h3>Fitts’s <span>Law</span></h3>
+<p class="d">Bigger and closer targets are easier to tap.</p>
+<div class="ex"><b>Example</b><p>Make important buttons larger and place them near the user’s thumb.</p></div>
+</div>
+<div class="mock fitts-m">
+<div class="btn-big">Add to Cart <i data-lucide="arrow-right"></i><i data-lucide="pointer" class="ptr"></i></div>
+<div class="btn-sm">Add to Cart</div>
+<div class="cap">EASY  vs  HARD</div>
+</div>
+</div>
+<div class="tile glow t-miller">
+<div class="law">
+<div class="top"><div class="num">2</div><div class="tag">Memory limits</div></div>
+<h3>Miller’s <span>Law</span></h3>
+<p class="d">People can only remember a limited amount of information at once (3–4 items).</p>
+<div class="ex"><b>Example</b><p>Show only essential options and avoid overwhelming users.</p></div>
+</div>
+<div class="mock miller-m">
+<div class="tabs">
+<div class="on"><i data-lucide="house"></i>Home</div>
+<div><i data-lucide="search"></i>Search</div>
+<div><i data-lucide="clipboard-list"></i>Orders</div>
+<div><i data-lucide="user"></i>Profile</div>
+</div>
+<div class="row"><i data-lucide="truck"></i>Track Order<i data-lucide="chevron-right" class="ch"></i></div>
+<div class="row"><i data-lucide="refresh-cw"></i>Reorder<i data-lucide="chevron-right" class="ch"></i></div>
+<div class="row"><i data-lucide="circle-help"></i>Help &amp; Support<i data-lucide="chevron-right" class="ch"></i></div>
+<div class="chunk"><span></span><span></span><span></span><span class="off"></span><span class="off"></span><span class="off"></span></div>
+</div>
+</div>
+<div class="tile glow t-jacob">
+<div class="law">
+<div class="top"><div class="num">3</div><div class="tag">Familiarity</div></div>
+<h3>Jacob’s <span>Law</span></h3>
+<p class="d">Users prefer familiar patterns and expect things to work like other popular products.</p>
+<div class="ex"><b>Example</b><p>Use familiar layouts and common icons users already know.</p></div>
+</div>
+<div class="phone">
+<div class="notch"></div>
+<div class="sb"><span>9:41</span><i><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></i></div>
+<h4>Discover</h4>
+<div class="srch"><i data-lucide="search"></i>Search for products…</div>
+<div class="cats">
+<div><i data-lucide="shopping-bag"></i>Fashion</div>
+<div><i data-lucide="laptop"></i>Electronics</div>
+<div><i data-lucide="house"></i>Home</div>
+<div><i data-lucide="spray-can"></i>Beauty</div>
+</div>
+</div>
+</div>
+<div class="tile glow t-hick">
+<div class="law">
+<div class="top"><div class="num">4</div><div class="tag">Decision time</div></div>
+<h3>Hick’s <span>Law</span></h3>
+<p class="d">The more options people have, the longer it takes to make a decision.</p>
+<div class="ex"><b>Example</b><p>Reduce choices to only what’s essential.</p></div>
+</div>
+<div class="mock filter">
+<div class="fh">Filter<small>Clear</small></div>
+<div class="fg">
+<div><div class="lbl">Category</div><div class="chips"><span class="on">All</span><span>Women</span><span>Men</span><span>Kids</span></div></div>
+<div><div class="lbl">Rating</div><div class="chips"><span class="on"><i data-lucide="star"></i>4+</span><span><i data-lucide="star"></i>3+</span><span><i data-lucide="star"></i>2+</span></div></div>
+</div>
+<div><div class="lbl">Price Range</div><div class="track"></div><div class="prices"><span>₹0</span><span>₹5000</span></div></div>
+</div>
+</div>
+<div class="tile foot">
+<div class="who"><div class="av">MA</div><div><b>Md Abdul Aleem</b><small>Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</small></div></div>
+<div class="cta"><span><i data-lucide="bookmark"></i>Save</span><span><i data-lucide="repeat-2"></i>Share with a designer</span></div>
+</div>
+</div>
+</div>
+<script>
+lucide.createIcons();
+function fit(){const s=Math.min(1,innerWidth/1080,innerHeight/1350);document.getElementById('stage').style.transform='scale('+s+')'}
+addEventListener('resize',fit);fit();
+</script>
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="data.js"></script>
+</helmet>
+<footer data-site-footer class="cory-on-ink" style="position:relative; z-index:var(--z-raised); overflow:hidden; isolation:isolate; background:var(--gradient-ink); color:var(--on-ink-body); border-block-start:1px solid var(--on-ink-border);">
+  <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inline-size:min(70vw, 720px); aspect-ratio:1; inset-inline-end:-20%; inset-block-start:-40%; background:var(--glow-cyan); z-index:-1; pointer-events:none;"></div>
+  <div class="cory-container" style="padding-block:var(--space-16) var(--space-8); display:grid; gap:var(--space-10);">
+    <sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:var(--space-6); flex-wrap:wrap; padding-block-end:var(--space-10); border-block-end:1px solid var(--on-ink-border);">
+        <div style="display:grid; gap:var(--space-3); max-inline-size:var(--measure-lead);">
+          <p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ t.footOver }}</p>
+          <p style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--on-ink-strong); text-wrap:balance;">{{ t.footTitle }}</p>
+        </div>
+        <div data-cta-row style="display:flex; gap:var(--space-3); flex-wrap:wrap; align-items:center;">
+          <span data-magnetic style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="onInkSolid" size="lg" href="{{ s.booking }}" target="_blank" rel="noopener" hint-size="auto,52px">{{ t.call }}</x-import></span>
+          <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="onInk" size="lg" href="{{ s.resume }}" target="_blank" rel="noopener" hint-size="auto,52px">{{ t.resume }}</x-import>
+        </div>
+      </div>
+    </sc-if>
+    <div data-stack style="display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap:var(--space-8);">
+      <div style="display:grid; gap:var(--space-3); align-content:start; min-inline-size:0;">
+        <p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-relaxed); color:var(--on-ink-body); max-inline-size:var(--measure-lead);">{{ bio }}</p>
+        <p style="margin:0; display:flex; align-items:center; gap:var(--space-2); font-size:var(--text-body-sm); color:var(--on-ink-muted);"><span aria-hidden="true" style="inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--on-ink-link);"></span><span>{{ loc }}</span></p>
+      </div>
+      <nav aria-label="Site" style="display:grid; gap:var(--space-1); align-content:start;">
+        <sc-for list="{{ nav1 }}" as="n" hint-placeholder-count="5"><a data-link href="{{ n.href }}" style="display:inline-flex; align-items:center; inline-size:fit-content; min-block-size:var(--tap-target); min-inline-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-medium); color:var(--on-ink-body); text-decoration:none;" style-hover="color:var(--on-ink-strong);">{{ n.label }}</a></sc-for>
+      </nav>
+      <nav aria-label="More" style="display:grid; gap:var(--space-1); align-content:start;">
+        <sc-for list="{{ nav2 }}" as="n" hint-placeholder-count="5"><a data-link href="{{ n.href }}" style="display:inline-flex; align-items:center; inline-size:fit-content; min-block-size:var(--tap-target); min-inline-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-medium); color:var(--on-ink-body); text-decoration:none;" style-hover="color:var(--on-ink-strong);">{{ n.label }}</a></sc-for>
+      </nav>
+    </div>
+    <div data-reveal-clip aria-hidden="true" style="overflow:clip;"><span lang="en" dir="ltr" style="display:block; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-mega); line-height:var(--leading-display); letter-spacing:var(--tracking-tighter); color:var(--on-ink-strong); white-space:nowrap; user-select:none;">AIUXAleem</span></div>
+    <div style="display:flex; justify-content:space-between; gap:var(--space-3) var(--space-6); flex-wrap:wrap; align-items:center; padding-block-start:var(--space-5); border-block-start:1px solid var(--on-ink-border); font-size:var(--text-caption); color:var(--on-ink-muted);">
+      <span style="display:flex; gap:var(--space-2) var(--space-4); flex-wrap:wrap; align-items:center;"><span>{{ s.copyright }} · {{ t.privacy }}</span><a data-link data-admin-link href="Admin.dc.html#/sign-in" style="display:inline-flex; align-items:center; justify-content:center; gap:var(--space-2); min-block-size:var(--tap-target); min-inline-size:var(--tap-target); color:var(--on-ink-body); text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>{{ adminLabel }}</span></a></span>
+      <span style="display:flex; gap:var(--space-2) var(--space-5); flex-wrap:wrap; align-items:center;">
+        <button type="button" onClick="{{ copy }}" style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--tap-target); padding:0; border:0; background:transparent; color:var(--on-ink-strong); font-weight:var(--weight-semibold); font-size:var(--text-body-sm); cursor:pointer;"><bdi data-footer-email style="white-space:nowrap;">{{ s.email }}</bdi><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="13" height="13" x="9" y="9" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span role="status" style="color:var(--on-ink-link);">{{ copied }}</span></button>
+        <sc-for list="{{ social }}" as="x" hint-placeholder-count="4"><a data-link href="{{ x.href }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-block-size:var(--tap-target); min-inline-size:var(--tap-target); color:var(--on-ink-body); text-decoration:none;">{{ x.label }}</a></sc-for>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:560},&quot;hideCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { copied: false };
+  componentDidMount() { this.off = window.AX && window.AX.on(() => this.forceUpdate()); this.mo = new MutationObserver(() => this.forceUpdate()); this.mo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] }); }
+  componentWillUnmount() { this.off && this.off(); this.mo && this.mo.disconnect(); }
+  copy = async () => { const s = window.AX.data().site; let ok = false; try { await navigator.clipboard.writeText(s.email); ok = true; } catch (e) {}
+    /* Clipboard blocked (http, old browser, policy): select the address so one keystroke copies it, and say so instead of claiming success */
+    if (!ok) { const el = document.querySelector('[data-footer-email]'); try { const r = document.createRange(); r.selectNodeContents(el); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); } catch (e) {} }
+    this.setState({ copied: ok ? 'ok' : 'manual' }); clearTimeout(this.tm); this.tm = setTimeout(() => this.setState({ copied: false }), ok ? 2000 : 6000); };
+  renderVals() {
+    const AX = window.AX; if (!AX) return { t: {}, s: {}, nav1: [], nav2: [], social: [] };
+    const s = AX.data().site, t = AX.UI[AX.lang()], L = k => AX.t(k);
+    return {
+      t, s, bio: AX.tx(s, 'bio'), loc: AX.tx(s, 'location') + ' · ' + AX.tx(s, 'availability'), showCta: !this.props.hideCta,
+      nav1: [['work', 'Work.dc.html'], ['cases', 'Case Studies.dc.html'], ['services', 'Services.dc.html'], ['read', 'Read.dc.html'], ['videos', 'Videos.dc.html']].map(([k, href]) => ({ label: L(k), href })),
+      nav2: [['about', 'About.dc.html'], ['now', 'Now.dc.html'], ['resume', 'Resume.dc.html'], ['contact', 'Contact.dc.html'], ['sitemap', 'Sitemap.dc.html']].map(([k, href]) => ({ label: L(k), href })),
+      social: [['LinkedIn', s.linkedin], ['Behance', s.behance], ['YouTube', s.youtube], ['GitHub', s.github]].filter(x => x[1]).map(([label, href]) => ({ label, href })),
+      copy: this.copy, copied: this.state.copied === 'ok' ? L('copied') : this.state.copied === 'manual' ? (AX.lang() === 'ar' ? 'محدَّد، اضغط Ctrl+C للنسخ' : 'Selected: press Ctrl+C to copy') : '',
+      adminLabel: AX.lang() === 'ar' ? 'دخول الإدارة' : 'Admin sign-in'
+    };
+  }
+}
+</script>
+</body>
+</html>

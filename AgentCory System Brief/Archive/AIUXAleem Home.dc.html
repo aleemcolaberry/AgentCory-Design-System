@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIUXAleem · AI-first Lead Product Designer</title>
+  <meta name="description" content="Mohammad Abdul Aleem, AI-first Lead Product Designer. 13+ years in fintech and enterprise UX, design systems, product ownership and AI product design. Open to lead design and product roles and client work in KSA, UAE and remote.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIUXAleem">
+  <meta property="og:title" content="AIUXAleem · AI-first Lead Product Designer">
+  <meta property="og:description" content="Mohammad Abdul Aleem, AI-first Lead Product Designer. 13+ years in fintech and enterprise UX, design systems, product ownership and AI product design. Open to lead design and product roles and client work in KSA, UAE and remote.">
+  <meta property="og:image" content="https://aiuxaleem.com/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AIUXAleem: I design AI products people actually trust.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B1F36">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="AIUXAleem Home.dc.html">
+  <link rel="alternate" hreflang="ar" href="AIUXAleem Home.dc.html?lang=ar">
+  <script>(function(){var d=document.documentElement,q=new URLSearchParams(location.search),L='en ar',P='home',t=q.get('theme');if(t!=='light'&&t!=='dark'){try{t=localStorage.getItem('aiuxaleem-theme')}catch(e){}}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';var l=q.get('lang');if(L.split(' ').indexOf(l)<0)l='en';d.setAttribute('data-theme',t);d.lang=l;d.dir=l==='ar'?'rtl':'ltr';d.setAttribute('data-langs',L);d.setAttribute('data-page',P);if(q.get('qa')==='1')d.setAttribute('data-qa','');var fm=q.get('motion');if(fm==null){try{fm=localStorage.getItem('aiuxaleem-force-motion')}catch(e){}}if(fm==='1')d.setAttribute('data-force-motion','');if(q.get('perf')==='1'){var s=document.createElement('script');s.src='vitals.js';document.head.appendChild(s)}if(matchMedia('(prefers-reduced-motion: no-preference)').matches&&!d.hasAttribute('data-qa')){d.setAttribute('data-motion','pending');setTimeout(function(){if(d.hasAttribute('data-motion')){d.removeAttribute('data-motion');d.setAttribute('data-intro-shown','')}},1000)}})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js">
+  <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js">
+  <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js">
+  <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js">
+  <link rel="modulepreload" href="../shared/site.js">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Noto+Kufi+Arabic:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="i18n.js"></script>
+  <script src="./image-slot.js"></script>
+</helmet>
+<dc-import name="Site Header" current="home" hint-size="100%,72px"></dc-import>
+<div data-scene-poster aria-hidden="true" style="position:fixed; inset:0; z-index:var(--z-base); pointer-events:none; background:var(--glow-blue) no-repeat 78% 12% / 72vmax 72vmax, var(--glow-cyan) no-repeat 12% 88% / 56vmax 56vmax;"></div>
+<div data-atmosphere-dots aria-hidden="true" style="position:fixed; inset:0; z-index:var(--z-base); pointer-events:none;"></div>
+<canvas data-scene-canvas aria-hidden="true" style="position:fixed; inset:0; inline-size:100%; block-size:100%; z-index:var(--z-base); pointer-events:none; display:block;"></canvas>
+<main id="main" data-page="home" tabindex="-1" style="position:relative; z-index:var(--z-raised); outline:none;">
+
+  <section id="top" data-section data-hero data-scene-section aria-labelledby="hero-title" style="position:relative; min-block-size:calc(100svh - var(--header-height)); display:flex; flex-direction:column; justify-content:center; padding-block:clamp(var(--space-8), 5svh, var(--space-12)) clamp(var(--space-10), 8svh, var(--space-16)); overflow:clip;">
+    <div class="cory-container" style="display:grid; gap:clamp(var(--space-8), 5svh, var(--space-12));">
+      <div class="cory-split" style="gap:var(--space-10) var(--space-12); align-items:center;">
+        <div style="display:grid; gap:var(--space-6); align-content:center; min-inline-size:0;">
+          <sc-if value="{{ showNotice }}" hint-placeholder-val="{{ false }}">
+            <div role="status" style="display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); padding:var(--space-3) var(--space-4); border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-default); box-shadow:var(--shadow-sm); max-inline-size:var(--measure-lead);">
+              <span style="font-size:var(--text-body-sm); color:var(--text-body);">{{ noticeText }}</span>
+              <x-import component-from-global-scope="DesignSystem_ebeb85.IconButton" variant="ghost" size="md" label="{{ t.notice.dismiss }}" onClick="{{ dismissNotice }}" hint-size="44px,44px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></x-import>
+            </div>
+          </sc-if>
+          <p data-hero-el class="cory-overline" style="margin:0; display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap;"><span style="display:inline-flex; align-items:center; gap:var(--space-2);"><span aria-hidden="true" style="inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-success); flex-shrink:0;"></span><span>{{ t.hero.badge }}</span></span><span aria-hidden="true" style="inline-size:1px; block-size:12px; background:var(--border-strong);"></span><bdi style="color:var(--text-muted);">{{ t.hero.meta }}</bdi></p>
+          <h1 id="hero-title" data-hero-title style="margin:0; max-inline-size:14ch; min-block-size:calc(2 * var(--leading-tight) * 1em); font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-display); line-height:var(--leading-tight); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ t.hero.titleA }}<span style="background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ t.hero.titleAi }}</span>{{ t.hero.titleMid }}<span style="background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ t.hero.titleB }}</span>{{ t.hero.titleC }}</h1>
+          <p data-hero-el style="margin:0; max-inline-size:var(--measure-lead); min-block-size:calc(2 * var(--leading-relaxed) * 1em); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--text-body);">{{ t.hero.sub }}</p>
+          <div data-hero-el data-hero-ctas style="display:flex; gap:var(--space-3); flex-wrap:wrap; align-items:center; min-block-size:var(--space-12);">
+            <span data-magnetic style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="Work.dc.html" hreflang="en" icon-right="{{ iArrowTile }}" hint-size="auto,52px">{{ t.hero.work }}</x-import></span>
+            <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="lg" href="https://drive.google.com/file/d/1cmkjeMQc1S9gIePpRh29T4nFkBBe3izm/view" target="_blank" rel="noopener" icon-right="{{ iExternalTile }}" hint-size="auto,52px">{{ t.hero.resume }}</x-import>
+          </div>
+        </div>
+
+        <div data-hero-el data-hero-deck style="position:relative; display:flex; flex-direction:column; gap:var(--space-4); inline-size:min(100%, 440px); margin-inline-start:auto; touch-action:pan-y;">
+          <div aria-hidden="true" style="position:absolute; inset:-18% -14%; background:var(--glow-cyan) no-repeat 85% 15% / 70% 70%, var(--glow-blue) no-repeat 10% 90% / 65% 65%; z-index:-1; pointer-events:none;"></div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); flex-wrap:wrap;">
+            <p class="cory-overline" style="margin:0;">{{ t.stack.overline }}</p>
+            <div style="display:flex; align-items:center; gap:var(--space-3);">
+              <x-import component-from-global-scope="DesignSystem_ebeb85.IconButton" variant="ink" size="md" dc-props="{{ stackBtnProps }}" label="{{ t.work.prev }}" onClick="{{ stackPrev }}" hint-size="44px,44px"><svg data-dir-icon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg></x-import>
+              <bdi aria-live="polite" style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-muted); font-variant-numeric:tabular-nums; white-space:nowrap;">{{ stackCounter }}</bdi>
+              <x-import component-from-global-scope="DesignSystem_ebeb85.IconButton" variant="ink" size="md" dc-props="{{ stackBtnProps }}" label="{{ t.work.next }}" onClick="{{ stackNext }}" hint-size="44px,44px"><svg data-dir-icon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></x-import>
+            </div>
+          </div>
+          <ul data-hero-stack style="position:relative; inline-size:100%; user-select:none; -webkit-user-select:none; aspect-ratio:4 / 5; max-block-size:max(440px, calc(100svh - var(--header-height) - var(--space-24))); padding-block-start:var(--space-6); perspective:1400px;">
+            <sc-for list="{{ stackCards }}" as="k" hint-placeholder-count="3">
+              <li data-stack-card data-pos="{{ k.pos }}" aria-hidden="{{ k.hidden }}" style="position:absolute; inset:var(--space-6) 0 0; border-radius:var(--radius-xl); overflow:hidden; isolation:isolate; background:var(--gradient-ink); border:1px solid var(--on-ink-border); box-shadow:var(--shadow-lg);">
+                <span aria-hidden="true" style="position:absolute; inline-size:80%; aspect-ratio:1; inset-inline-end:-30%; inset-block-end:-35%; background:var(--glow-cyan); z-index:-1; pointer-events:none;"></span>
+                <a href="{{ k.href }}" tabindex="{{ k.tab }}" draggable="false" style="position:absolute; inset:0; display:flex; flex-direction:column; color:var(--on-ink-strong); text-decoration:none; outline-offset:-3px;">
+                  <span data-stack-caption style="flex:0 0 auto; display:flex; flex-direction:column; align-items:stretch; gap:var(--space-2); padding:var(--space-6) var(--space-6) 0;">
+                    <span style="display:flex; justify-content:space-between; gap:var(--space-3); font-family:var(--font-mono); font-size:var(--text-mono-sm); letter-spacing:var(--tracking-wide); text-transform:uppercase; color:var(--on-ink-link);"><span style="flex:1 1 auto; min-inline-size:0;">{{ k.index }} · {{ k.category }}</span><bdi style="flex:0 0 auto;">{{ k.year }}</bdi></span>
+                    <span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-snug); letter-spacing:var(--tracking-tight); color:var(--on-ink-strong); text-wrap:balance;">{{ k.title }}</span>
+                    <span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--on-ink-body); text-wrap:pretty;">{{ k.result }}</span>
+                    <span style="display:inline-flex; align-items:center; gap:var(--space-1); align-self:flex-start; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--on-ink-link);"><span style="flex:0 1 auto;">{{ t.stack.read }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+                  </span>
+                  <span aria-hidden="true" style="position:relative; flex:1 1 auto; min-block-size:120px; display:block;"><span data-stack-frame style="position:absolute; inset-inline-start:12%; inset-inline-end:-14%; inset-block-start:var(--space-4); inset-block-end:-10%; display:block; border-radius:var(--radius-lg); overflow:hidden; background:var(--surface-card); border:1px solid var(--on-ink-border-strong); box-shadow:var(--shadow-xl); transform:rotate(calc(-4deg * var(--dir-x))); transform-origin:0 100%;">
+                    <span style="display:flex; gap:6px; align-items:center; padding:8px 10px; border-block-end:1px solid var(--border-subtle); background:var(--surface-sunken);"><span style="inline-size:8px; block-size:8px; border-radius:50%; background:var(--border-strong);"></span><span style="inline-size:8px; block-size:8px; border-radius:50%; background:var(--border-strong);"></span><span style="inline-size:8px; block-size:8px; border-radius:50%; background:var(--border-strong);"></span></span>
+                    <sc-if value="{{ k.cover }}" hint-placeholder-val="{{ false }}"><img src="{{ k.cover }}" alt="" loading="{{ k.loading }}" decoding="async" draggable="false" style="display:block; inline-size:100%; block-size:100%; object-fit:cover; object-position:top left;"></sc-if>
+                  </span></span>
+                </a>
+              </li>
+            </sc-for>
+          </ul>
+          <p class="cory-visually-hidden">{{ t.stack.hint }}</p>
+        </div>
+      </div>
+
+      <div data-hero-el data-cq>
+        <ul data-hero-roles data-cq-grid="4" style="display:grid; gap:var(--space-4) var(--space-6);">
+          <sc-for list="{{ heroRoles }}" as="r" hint-placeholder-count="4">
+            <li style="position:relative; display:grid; gap:var(--space-1); align-content:start; padding-block-start:var(--space-3); border-block-start:1px solid var(--border-default);" style-before="content:''; position:absolute; inset-block-start:-1px; inset-inline-start:0; inline-size:var(--space-8); block-size:2px; border-radius:var(--radius-pill); background:var(--gradient-brand);">
+              <span style="display:flex; align-items:center; gap:var(--space-2); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle); white-space:nowrap;"><bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-link); font-variant-numeric:tabular-nums;">{{ r.n }}</bdi><span>{{ r.lead }}</span></span>
+              <span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h3); line-height:var(--leading-snug); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ r.text }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </div>
+    <div data-scroll-cue data-desktop-only aria-hidden="true" style="position:absolute; inset-block-end:var(--space-6); inset-inline-end:var(--gutter); display:flex; flex-direction:column; align-items:center; gap:var(--space-2); pointer-events:none;">
+      <span style="font-family:var(--font-mono); font-size:var(--text-mono-sm); letter-spacing:var(--tracking-wide); text-transform:uppercase; color:var(--text-muted); writing-mode:vertical-rl;">{{ t.hero.scroll }}</span>
+      <span style="display:block; inline-size:1px; block-size:var(--space-12); background:var(--text-strong);"></span>
+    </div>
+  </section>
+
+  <section id="worked-with" data-section aria-labelledby="logos-title" style="position:relative; padding-block:var(--space-10) 0;">
+    <div class="cory-container" data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-4) var(--space-8); flex-wrap:wrap;">
+      <div style="display:grid; gap:var(--space-2);">
+        <p class="cory-overline" style="margin:0;">{{ t.logos.overline }}</p>
+        <h2 id="logos-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ t.logos.title }}</h2>
+        <p class="cory-visually-hidden">{{ logosSummary }}</p>
+      </div>
+      <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-muted); text-wrap:pretty;">{{ t.logos.lead }}</p>
+    </div>
+    <div aria-hidden="true" style="overflow:clip; padding-block:var(--space-8) var(--space-6);">
+      <div style="inline-size:106%; margin-inline:-3%; padding-block:var(--space-5); background:var(--gradient-brand-deep); box-shadow:var(--shadow-brand); transform:rotate(calc(-1.2deg * var(--dir-x)));">
+        <div data-marquee style="color:var(--text-on-brand);">
+          <div data-marquee-track>
+            <ul><sc-for list="{{ logoSet }}" as="lg" hint-placeholder-count="7"><li style="display:inline-flex; align-items:baseline; gap:var(--space-3); white-space:nowrap;"><span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h3); letter-spacing:var(--tracking-tight); line-height:var(--leading-snug);">{{ lg.name }}</span><span class="cory-overline" style="color:var(--text-on-brand);">{{ lg.sector }}</span></li></sc-for></ul>
+            <ul aria-hidden="true"><sc-for list="{{ logoSet }}" as="lg" hint-placeholder-count="7"><li style="display:inline-flex; align-items:baseline; gap:var(--space-3); white-space:nowrap;"><span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h3); letter-spacing:var(--tracking-tight); line-height:var(--leading-snug);">{{ lg.name }}</span><span class="cory-overline" style="color:var(--text-on-brand);">{{ lg.sector }}</span></li></sc-for></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" data-section data-manifesto data-scene-section aria-labelledby="about-title" style="padding-block:var(--section-y);">
+    <div class="cory-container cory-split" style="gap:var(--space-12) var(--space-16); align-items:center;">
+      <div style="display:grid; gap:var(--space-6);">
+        <p data-reveal id="about-title" class="cory-overline" style="margin:0;">{{ t.about.overline }}</p>
+        <h2 data-manifesto-text style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;"><sc-for list="{{ aboutRuns }}" as="run" hint-placeholder-count="1"><span data-accent="{{ run.accent }}" style="{{ run.style }}">{{ run.text }}</span></sc-for></h2>
+        <dl data-reveal style="margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap:var(--space-4) var(--space-6); max-inline-size:var(--measure-body);">
+          <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3">
+            <div style="display:grid; gap:var(--space-1); padding-block-start:var(--space-4); border-block-start:1px solid var(--border-subtle); min-inline-size:0;">
+              <dt style="font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle);">{{ f.k }}</dt>
+              <dd style="margin:0; font-size:var(--text-body); font-weight:var(--weight-semibold); line-height:var(--leading-snug); color:var(--text-strong);">{{ f.v }}</dd>
+            </div>
+          </sc-for>
+        </dl>
+        <a data-link data-reveal href="{{ t.about.href }}" hreflang="en" style="display:inline-flex; align-items:center; gap:var(--space-2); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;">{{ t.about.more }}<svg data-dir-icon width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      </div>
+      <div data-reveal style="display:grid; justify-items:center;">
+        <div data-hero-stage data-cq style="position:relative; inline-size:100%; max-inline-size:520px; aspect-ratio:1; min-inline-size:0;">
+          <div aria-hidden="true" style="position:absolute; inset:0; border-radius:50%; background:repeating-radial-gradient(circle at center, var(--border-default) 0 1px, transparent 1px 11%); -webkit-mask-image:radial-gradient(circle at center, #000 0%, transparent 72%); mask-image:radial-gradient(circle at center, #000 0%, transparent 72%); pointer-events:none;"></div>
+          <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset:12%; border-radius:50%; background:var(--glow-cyan-strong); pointer-events:none;"></div>
+          <div data-img-reveal data-parallax="0.08" style="position:absolute; inset-block-start:10%; inset-inline-start:21%; inline-size:58%; aspect-ratio:var(--aspect-portrait); border-radius:var(--radius-2xl); overflow:hidden; background:var(--gradient-ink); border:1px solid var(--border-subtle); box-shadow:var(--shadow-lg);"><div data-cover-fallback aria-hidden="true" style="align-items:center; justify-content:center; padding:0;"><span lang="en" dir="ltr" style="font-size:var(--text-metric-lg); max-inline-size:none; color:var(--on-ink-muted);">{{ t.about.initials }}</span></div><div style="position:absolute; inset:0;"><image-slot id="about-portrait" shape="rect" src="../assets/author-portrait.jpg" placeholder="{{ t.about.portraitLabel }}"></image-slot></div></div>
+          <span aria-hidden="true" style="position:absolute; inset-block-start:14%; inset-inline-end:7%; inline-size:clamp(36px, 10cqi, 52px); block-size:clamp(36px, 10cqi, 52px); display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--gradient-ink); border:1px solid var(--border-default); color:var(--on-ink-strong); box-shadow:var(--shadow-md);"><svg width="24" height="24" viewBox="0 0 24 24" style="inline-size:46%; block-size:46%;" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg></span>
+          <span aria-hidden="true" style="position:absolute; inset-block-start:46%; inset-inline-start:4%; inline-size:clamp(36px, 10cqi, 52px); block-size:clamp(36px, 10cqi, 52px); display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-default); color:var(--text-link); box-shadow:var(--shadow-md);"><svg width="24" height="24" viewBox="0 0 24 24" style="inline-size:46%; block-size:46%;" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg></span>
+          <span aria-hidden="true" style="position:absolute; inset-block-end:9%; inset-inline-end:16%; inline-size:clamp(36px, 10cqi, 52px); block-size:clamp(36px, 10cqi, 52px); display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--gradient-brand-deep); border:1px solid var(--border-default); color:var(--on-ink-strong); box-shadow:var(--shadow-brand);"><svg width="24" height="24" viewBox="0 0 24 24" style="inline-size:46%; block-size:46%;" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4M22 5h-4"></path></svg></span>
+          <span aria-hidden="true" style="position:absolute; inset-block-end:16%; inset-inline-start:11%; inline-size:clamp(36px, 10cqi, 52px); block-size:clamp(36px, 10cqi, 52px); display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-default); color:var(--text-success); box-shadow:var(--shadow-md);"><svg width="24" height="24" viewBox="0 0 24 24" style="inline-size:46%; block-size:46%;" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lead" data-section data-bg="beam" aria-labelledby="lead-title" style="background:var(--surface-card); border-block:1px solid var(--border-subtle); padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-10);">
+      <div data-reveal style="display:grid; gap:var(--space-3);">
+        <p class="cory-overline" style="margin:0;">{{ t.lead.overline }}</p>
+        <h2 id="lead-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ t.lead.title }}</h2>
+      </div>
+      <div data-cq><ul data-reveal-group data-cq-3 style="display:grid; gap:var(--grid-gap);">
+        <sc-for list="{{ leadItems }}" as="L" hint-placeholder-count="3">
+          <li style="display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <span aria-hidden="true" data-icon-tile style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong);">{{ L.icon }}</span>
+            <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ L.title }}</h3>
+            <p style="margin:0; font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body); text-wrap:pretty;">{{ L.body }}</p>
+            <ul style="display:grid; gap:var(--space-2);">
+              <sc-for list="{{ L.points }}" as="pt" hint-placeholder-count="3"><li style="display:flex; gap:var(--space-2); align-items:baseline; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-strong);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-success)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; transform:translateY(3px);"><path d="M20 6 9 17l-5-5"></path></svg><span>{{ pt }}</span></li></sc-for>
+            </ul>
+            <a data-link href="{{ L.href }}" style="margin-block-start:auto; display:inline-flex; align-items:center; gap:var(--space-1); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span>{{ L.link }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </li>
+        </sc-for>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="skills" data-section data-bg="glow" aria-labelledby="skills-title" style="padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-12);">
+      <div data-reveal style="display:grid; gap:var(--space-3);">
+        <p class="cory-overline" style="margin:0;">{{ t.skills.overline }}</p>
+        <h2 id="skills-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ t.skills.title }}</h2>
+      </div>
+      <div data-bento-cq data-skill-marks>
+        <ul data-reveal-group class="cory-bento">
+          <li class="hero cory-on-ink" data-cq style="position:relative; overflow:hidden; isolation:isolate; display:grid; align-content:center; padding:var(--space-8); border-radius:var(--radius-xl); background:var(--gradient-ink); color:var(--on-ink-body); box-shadow:var(--shadow-md); --mk:var(--on-ink-link); --mk-ink:var(--on-ink-strong); --mk-bg:var(--surface-ink);">
+            <div aria-hidden="true" style="position:absolute; inline-size:80%; aspect-ratio:1; inset-inline-end:-30%; inset-block-start:-40%; background:var(--glow-cyan-strong); z-index:-1; pointer-events:none;"></div>
+            <div data-cq-aside><div style="display:grid; gap:var(--space-5);"><p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ t.skills.groups.core }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--on-ink-strong); text-wrap:balance;"><span style="position:relative; display:inline-flex; align-items:center; padding:0 .38em; border:1.5px solid var(--mk); border-radius:var(--radius-md); color:var(--mk); white-space:nowrap; vertical-align:middle; margin-inline-end:.15em;">{{ s1.w1 }}<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="var(--mk)" stroke="var(--mk)" stroke-width="1.5" stroke-linejoin="round" style="position:absolute; inset-block-start:0; inset-inline-end:0; transform:translate(calc(60% * var(--dir-x)), -60%);"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg></span> {{ s1.rest }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--on-ink-body); text-wrap:pretty;">{{ s1.b }}</p></div>
+            <div data-core-diagram style="display:grid; gap:var(--space-5);">
+              <div aria-hidden="true" style="position:relative; display:grid; place-items:center; inline-size:min(100%, 400px); aspect-ratio:2 / 1; margin-inline:auto;">
+                <svg viewBox="0 0 400 200" fill="none" style="position:absolute; inset:0; inline-size:100%; block-size:100%; overflow:visible;">
+                  <circle cx="200" cy="100" r="78" stroke="var(--on-ink-border)" stroke-dasharray="2 6" stroke-linecap="round"></circle>
+                  <path data-core-link d="M200 100 L72 100" stroke="var(--on-ink-link)" stroke-width="1.5" stroke-linecap="round" style="stroke-dasharray:140; stroke-dashoffset:var(--core-draw, 0);"></path>
+                  <path data-core-link d="M200 100 L328 100" stroke="var(--on-ink-link)" stroke-width="1.5" stroke-linecap="round" style="stroke-dasharray:140; stroke-dashoffset:var(--core-draw, 0);"></path>
+                  <path data-core-link d="M200 100 L200 18" stroke="var(--on-ink-link)" stroke-width="1.5" stroke-linecap="round" style="stroke-dasharray:140; stroke-dashoffset:var(--core-draw, 0);"></path>
+                  <path data-core-link d="M200 100 L200 182" stroke="var(--on-ink-link)" stroke-width="1.5" stroke-linecap="round" style="stroke-dasharray:140; stroke-dashoffset:var(--core-draw, 0);"></path>
+                  <circle cx="200" cy="18" r="4" fill="var(--on-ink-link)"></circle>
+                  <circle cx="200" cy="182" r="4" fill="var(--on-ink-link)"></circle>
+                  <circle cx="72" cy="100" r="4" fill="var(--on-ink-link)"></circle>
+                  <circle cx="328" cy="100" r="4" fill="var(--on-ink-link)"></circle>
+                </svg>
+                <span style="position:relative; display:grid; place-items:center; inline-size:64px; block-size:64px; border-radius:var(--radius-lg); background:var(--gradient-brand-deep); color:var(--text-on-brand); box-shadow:var(--shadow-brand);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path></svg></span>
+                <span style="position:absolute; inset-block-start:9%; inset-inline-start:50%; transform:translate(calc(-50% * var(--dir-x)), -50%);"><span style="display:inline-flex; align-items:center; min-block-size:28px; padding:0 var(--space-3); border-radius:var(--radius-pill); background:var(--surface-ink); border:1px solid var(--on-ink-border-strong); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-strong); white-space:nowrap;">{{ core1 }}</span></span>
+                <span style="position:absolute; inset-block-start:50%; inset-inline-start:18%; transform:translate(calc(-50% * var(--dir-x)), -50%);"><span style="display:inline-flex; align-items:center; min-block-size:28px; padding:0 var(--space-3); border-radius:var(--radius-pill); background:var(--surface-ink); border:1px solid var(--on-ink-border-strong); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-strong); white-space:nowrap;">{{ core2 }}</span></span>
+                <span style="position:absolute; inset-block-start:50%; inset-inline-start:82%; transform:translate(calc(-50% * var(--dir-x)), -50%);"><span style="display:inline-flex; align-items:center; min-block-size:28px; padding:0 var(--space-3); border-radius:var(--radius-pill); background:var(--surface-ink); border:1px solid var(--on-ink-border-strong); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-strong); white-space:nowrap;">{{ core3 }}</span></span>
+                <span style="position:absolute; inset-block-start:91%; inset-inline-start:50%; transform:translate(calc(-50% * var(--dir-x)), -50%);"><span style="display:inline-flex; align-items:center; min-block-size:28px; padding:0 var(--space-3); border-radius:var(--radius-pill); background:var(--surface-ink); border:1px solid var(--on-ink-border-strong); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-strong); white-space:nowrap;">{{ core4 }}</span></span>
+              </div>
+              <p class="cory-visually-hidden">{{ coreSummary }}</p>
+            </div></div>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ t.skills.groups.build }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;">{{ s3.head }} <span style="position:relative; display:inline-block; padding:.06em .45em; border:1.5px solid var(--mk); border-radius:var(--radius-sm); white-space:nowrap; vertical-align:middle; margin-inline-end:.45em; margin-block-end:.3em;" style-before="content:''; position:absolute; inset:0; border:1.5px solid var(--mk); border-radius:var(--radius-sm); transform:translate(calc(.2em * var(--dir-x)), .2em); opacity:.6; z-index:-1;" style-after="content:''; position:absolute; inset:0; border:1.5px solid var(--mk); border-radius:var(--radius-sm); transform:translate(calc(.4em * var(--dir-x)), .4em); opacity:.3; z-index:-1;">{{ s3.lw }}</span></h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s3.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ t.skills.groups.build }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;">{{ s6.head }} <span lang="en" dir="ltr" style="display:inline-flex; align-items:baseline; font-family:var(--font-mono); font-weight:var(--weight-semibold); letter-spacing:var(--tracking-normal); color:var(--mk); white-space:nowrap; vertical-align:middle;"><span aria-hidden="true">&lt;</span>{{ s6.lw }}<span aria-hidden="true">/&gt;</span></span></h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s6.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ t.skills.groups.build }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span aria-hidden="true" style="display:inline-grid; place-items:center; inline-size:1.25em; block-size:1.25em; margin-inline-end:.3em; border:1.5px solid var(--mk); border-radius:var(--radius-pill); color:var(--mk); vertical-align:middle;"><svg width="0.85em" height="0.85em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.5" fill="currentColor"></circle><path d="M5 8.5h14M12 8.5v5M12 13.5l-3 6M12 13.5l3 6"></path></svg></span> {{ s7.t }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s7.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ t.skills.groups.lead }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-inline-size:2em; padding:.06em .42em; border:1.5px solid var(--mk); border-radius:var(--radius-pill); color:var(--mk); white-space:nowrap; vertical-align:middle; margin-inline-end:.45em; margin-block-end:.25em;" style-after="content:''; position:absolute; inset-block-end:-.4em; inset-inline-end:-.3em; inline-size:.7em; block-size:1.5px; border-radius:1px; background:var(--mk); transform:rotate(calc(45deg * var(--dir-x)));">{{ s5.w1 }}</span> {{ s5.rest }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s5.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ t.skills.groups.lead }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span aria-hidden="true" style="display:inline-flex; align-items:center; white-space:nowrap; vertical-align:middle; margin-inline-end:.3em;"><span style="inline-size:1em; block-size:1em; border-radius:var(--radius-pill); background:var(--mk); position:relative; z-index:3;"></span><span style="inline-size:1em; block-size:1em; border-radius:var(--radius-pill); border:1.5px solid var(--mk); margin-inline-start:-.35em; position:relative; z-index:2; background:var(--mk-bg);"></span><span style="inline-size:1em; block-size:1em; border-radius:var(--radius-pill); border:1.5px solid var(--mk); margin-inline-start:-.35em; position:relative; z-index:1; background:var(--mk-bg);"></span></span> {{ s4.t }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s4.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ t.skills.groups.domain }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;">{{ s8.head }} <span style="display:inline-flex; align-items:center; gap:.3em; white-space:nowrap; vertical-align:middle;"><span aria-hidden="true" style="display:grid; gap:.22em; justify-items:end;"><span style="inline-size:.9em; block-size:1.5px; border-radius:1px; background:var(--mk);"></span><span style="inline-size:.55em; block-size:1.5px; border-radius:1px; background:var(--mk);"></span><span style="inline-size:.9em; block-size:1.5px; border-radius:1px; background:var(--mk);"></span></span><span style="display:inline-block; transform:skewX(calc(-10deg * var(--dir-x))); color:var(--mk);">{{ s8.lw }}</span></span></h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s8.b }}</p>
+            <ul aria-label="{{ s8.t }}" style="margin-block-start:auto; display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <sc-for list="{{ skillMotion }}" as="pt" hint-placeholder-count="1">
+                <li style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--space-10); padding:var(--space-2) var(--space-3); border:1.5px dashed var(--border-default); border-radius:var(--radius-lg);"><span aria-hidden="true" style="flex-shrink:0; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-link);"></span><span lang="en" dir="ltr" style="font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); white-space:nowrap;">{{ pt }}</span></li>
+              </sc-for>
+            </ul>
+          </li>
+          <li class="span-2" style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ t.skills.groups.domain }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span aria-hidden="true" style="display:inline-grid; grid-template-columns:.32em minmax(0, 1fr); gap:.1em; inline-size:1.45em; block-size:1.05em; padding:.1em; margin-inline-end:.3em; border:1.5px solid var(--mk); border-radius:.18em; vertical-align:middle;"><span style="grid-row:1 / span 3; border-radius:.06em; background:var(--mk);"></span><span style="block-size:.1em; align-self:center; border-radius:1px; background:var(--mk); opacity:.9;"></span><span style="block-size:.1em; align-self:center; inline-size:70%; border-radius:1px; background:var(--mk); opacity:.9;"></span><span style="block-size:.1em; align-self:center; inline-size:45%; border-radius:1px; background:var(--mk); opacity:.9;"></span></span> {{ s2.t }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s2.b }}</p>
+            <ul aria-label="{{ s2.t }}" style="margin-block-start:auto; display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <sc-for list="{{ skillFin }}" as="pt" hint-placeholder-count="5">
+                <li style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--space-10); padding:var(--space-2) var(--space-3); border:1.5px dashed var(--border-default); border-radius:var(--radius-lg);"><span aria-hidden="true" style="flex-shrink:0; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-link);"></span><span style="font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); white-space:nowrap;">{{ pt }}</span></li>
+              </sc-for>
+            </ul>
+          </li>
+          <li class="span-2" style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ t.skills.groups.business }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span aria-hidden="true" style="display:inline-flex; align-items:flex-end; gap:.14em; block-size:.95em; margin-inline-end:.3em; vertical-align:baseline;"><span style="inline-size:.22em; block-size:.42em; border-radius:1px; background:var(--mk);"></span><span style="inline-size:.22em; block-size:.66em; border-radius:1px; background:var(--mk);"></span><span style="inline-size:.22em; block-size:.95em; border-radius:1px; background:var(--mk);"></span></span> {{ s9.t }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s9.b }}</p>
+            <ul aria-label="{{ s9.t }}" style="margin-block-start:auto; display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <sc-for list="{{ skillBa }}" as="pt" hint-placeholder-count="4">
+                <li style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--space-10); padding:var(--space-2) var(--space-3); border:1.5px dashed var(--border-default); border-radius:var(--radius-lg);"><span aria-hidden="true" style="flex-shrink:0; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-link);"></span><span style="font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); white-space:nowrap;">{{ pt }}</span></li>
+              </sc-for>
+            </ul>
+          </li>
+          <li class="span-2" style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <div style="display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap;"><p class="cory-overline" style="margin:0;">{{ t.skills.groups.business }}</p><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="auto,22px">{{ t.skills.pmStatus }}</x-import></div>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;">{{ s10.head }} <span style="position:relative; display:inline-block; white-space:nowrap; padding-block-end:.42em; margin-block-end:-.42em;">{{ s10.lw }}<span aria-hidden="true" style="position:absolute; inset-inline:0; inset-block-end:0; display:grid; gap:.1em;"><span style="inline-size:48%; block-size:.13em; border-radius:1px; background:var(--mk);"></span><span style="inline-size:52%; margin-inline-start:40%; block-size:.13em; border-radius:1px; background:var(--mk);"></span></span></span></h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s10.b }}</p>
+            <ul aria-label="{{ s10.t }}" style="margin-block-start:auto; display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <sc-for list="{{ skillPm }}" as="pt" hint-placeholder-count="4">
+                <li style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--space-10); padding:var(--space-2) var(--space-3); border:1.5px dashed var(--border-default); border-radius:var(--radius-lg);"><span aria-hidden="true" style="flex-shrink:0; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-link);"></span><span style="font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); white-space:nowrap;">{{ pt }}</span></li>
+              </sc-for>
+            </ul>
+          </li>
+          <li style="grid-column:1 / -1; display:flex; flex-direction:column; gap:var(--space-5); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ t.skills.toolsTitle }}</h3>
+            <div style="display:grid; gap:var(--space-6);">
+              <div style="display:grid; gap:var(--space-3);">
+                <h4 style="margin:0; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); line-height:var(--leading-normal); color:var(--text-muted);">{{ t.skills.toolsAi }}</h4>
+                <ul style="display:flex; flex-wrap:wrap; gap:var(--space-3);">
+                  <sc-for list="{{ toolsAi }}" as="tl" hint-placeholder-count="7">
+                <li style="position:relative; isolation:isolate; display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:36px; padding-block:var(--space-1); padding-inline:var(--space-3) var(--space-4); border-radius:var(--radius-pill); background:{{ tl.bg }}; border:1px solid {{ tl.border }}; box-shadow:{{ tl.shadow }};" style-before="content:''; position:absolute; inset:-1px; z-index:-1; border-radius:inherit; background:{{ tl.ring }};">
+                  <span aria-hidden="true" style="position:relative; inline-size:20px; block-size:20px; flex-shrink:0; display:grid; place-items:center; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-caption); color:{{ tl.fg }};">{{ tl.initial }}<sc-if value="{{ tl.hasLogo }}" hint-placeholder-val="{{ false }}"><img data-logo-light="{{ tl.swap }}" src="{{ tl.light }}" alt="" width="18" height="18" loading="lazy" decoding="async" onError="{{ hideLogo }}" style="position:absolute; inset:0; margin:auto; inline-size:18px; block-size:18px; background:{{ tl.bg }}; display:{{ tl.showLight }};"><img data-logo-dark="{{ tl.swap }}" src="{{ tl.dark }}" alt="" width="18" height="18" loading="lazy" decoding="async" onError="{{ hideLogo }}" style="position:absolute; inset:0; margin:auto; inline-size:18px; block-size:18px; background:{{ tl.bg }};"></sc-if></span>
+                  <span lang="en" dir="ltr" style="flex:0 0 auto; white-space:nowrap; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:{{ tl.fg }};">{{ tl.name }}</span>
+                </li>
+              </sc-for>
+                </ul>
+              </div>
+              <div style="display:grid; gap:var(--space-3);">
+                <h4 style="margin:0; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); line-height:var(--leading-normal); color:var(--text-muted);">{{ t.skills.toolsCore }}</h4>
+                <ul style="display:flex; flex-wrap:wrap; gap:var(--space-3);">
+                  <sc-for list="{{ toolsCore }}" as="tl" hint-placeholder-count="7">
+                <li style="position:relative; isolation:isolate; display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:36px; padding-block:var(--space-1); padding-inline:var(--space-3) var(--space-4); border-radius:var(--radius-pill); background:{{ tl.bg }}; border:1px solid {{ tl.border }}; box-shadow:{{ tl.shadow }};" style-before="content:''; position:absolute; inset:-1px; z-index:-1; border-radius:inherit; background:{{ tl.ring }};">
+                  <span aria-hidden="true" style="position:relative; inline-size:20px; block-size:20px; flex-shrink:0; display:grid; place-items:center; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-caption); color:{{ tl.fg }};">{{ tl.initial }}<sc-if value="{{ tl.hasLogo }}" hint-placeholder-val="{{ false }}"><img data-logo-light="{{ tl.swap }}" src="{{ tl.light }}" alt="" width="18" height="18" loading="lazy" decoding="async" onError="{{ hideLogo }}" style="position:absolute; inset:0; margin:auto; inline-size:18px; block-size:18px; background:{{ tl.bg }}; display:{{ tl.showLight }};"><img data-logo-dark="{{ tl.swap }}" src="{{ tl.dark }}" alt="" width="18" height="18" loading="lazy" decoding="async" onError="{{ hideLogo }}" style="position:absolute; inset:0; margin:auto; inline-size:18px; block-size:18px; background:{{ tl.bg }};"></sc-if></span>
+                  <span lang="en" dir="ltr" style="flex:0 0 auto; white-space:nowrap; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:{{ tl.fg }};">{{ tl.name }}</span>
+                </li>
+              </sc-for>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" data-section data-bg="beam" aria-labelledby="projects-title" style="background:var(--surface-card); border-block:1px solid var(--border-subtle); padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-10);">
+      <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;">
+        <div style="display:grid; gap:var(--space-3);">
+          <p class="cory-overline" style="margin:0;">{{ t.projects.overline }}</p>
+          <h2 id="projects-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ t.projects.title }}</h2>
+        </div>
+        <a data-link href="{{ t.projects.allHref }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:var(--space-1); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; font-size:var(--text-body); color:var(--text-link);"><span>{{ t.projects.all }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+      </div>
+      <div data-cq><ul data-reveal-group data-cq-grid style="display:grid; gap:var(--grid-gap);">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="2">
+          <li style="display:flex; flex-direction:column; border-radius:var(--radius-xl); overflow:hidden; background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <div data-img-reveal style="aspect-ratio:var(--aspect-case); overflow:hidden; background:var(--surface-sunken); border-block-end:1px solid var(--border-subtle);"><img src="{{ p.img }}" alt="{{ p.alt }}" loading="lazy" decoding="async" style="inline-size:100%; block-size:100%; object-fit:cover; object-position:top center;"></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:var(--space-3); padding:var(--space-6);">
+              <span lang="en" dir="ltr" style="display:inline-flex; align-items:center; gap:var(--space-2); font-family:var(--font-mono); font-size:var(--text-mono); color:var(--text-muted);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>aleemcolaberry/{{ p.repo }}</span>
+              <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ p.name }}</h3>
+              <p style="margin:0; font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body);">{{ p.desc }}</p>
+              <ul style="display:flex; flex-wrap:wrap; gap:var(--space-2);"><sc-for list="{{ p.tags }}" as="tg" hint-placeholder-count="4"><li><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="auto,26px">{{ tg }}</x-import></li></sc-for></ul>
+              <div style="margin-block-start:auto; display:flex; flex-wrap:wrap; align-items:center; gap:var(--space-3); padding-block-start:var(--space-3);">
+                <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="md" href="{{ p.git }}" target="_blank" rel="noopener" hint-size="auto,44px">{{ t.projects.gitLabel }}</x-import>
+                <a data-link href="{{ p.live }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:var(--space-1); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span>{{ t.projects.liveLabel }}</span><span class="cory-visually-hidden">: {{ p.name }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+              </div>
+            </div>
+          </li>
+        </sc-for>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="content" data-section data-bg="glow" aria-labelledby="pub-title" style="padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-12);">
+      <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;">
+        <div style="display:grid; gap:var(--space-3);">
+          <p class="cory-overline" style="margin:0;">{{ t.pub.overline }}</p>
+          <h2 id="pub-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ t.pub.title }}</h2>
+          <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-lg); line-height:var(--leading-relaxed); color:var(--text-body); text-wrap:pretty;">{{ t.pub.lead }}</p>
+        </div>
+      </div>
+      <div role="group" aria-labelledby="watch-title" style="display:grid; gap:var(--space-6);">
+        <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-4) var(--space-6); flex-wrap:wrap; padding-block-end:var(--space-4); border-block-end:1px solid var(--border-default);">
+          <div style="display:flex; align-items:center; gap:var(--space-4);">
+            <span aria-hidden="true" data-icon-tile style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong);">{{ iPlayTile }}</span>
+            <div style="display:grid; gap:2px;">
+              <h3 id="watch-title" style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ t.pub.watchTitle }}</h3>
+              <p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted);">{{ t.pub.watchLead }}</p>
+            </div>
+          </div>
+          <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="ink" size="md" href="https://www.youtube.com/@aiuxaleem" target="_blank" rel="noopener" icon-left="{{ iPlay }}" hint-size="auto,44px">{{ t.pub.youtube }}</x-import>
+        </div>
+        <div data-reveal-group data-stack style="display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); gap:var(--grid-gap); align-items:stretch;">
+          <div style="display:grid;"><dc-import name="Video Facade" copy="{{ t.video }}" level="{{ 4 }}" hint-size="100%,420px"></dc-import></div>
+          <div style="display:grid;"><dc-import name="Reel Card" copy="{{ t.reel }}" level="{{ 4 }}" hint-size="100%,420px"></dc-import></div>
+        </div>
+      </div>
+      <div role="group" aria-labelledby="read-title" style="display:grid; gap:var(--space-6);">
+        <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-4) var(--space-6); flex-wrap:wrap; padding-block-end:var(--space-4); border-block-end:1px solid var(--border-default);">
+          <div style="display:flex; align-items:center; gap:var(--space-4);">
+            <span aria-hidden="true" data-icon-tile style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong);">{{ iBookTile }}</span>
+            <div style="display:grid; gap:2px;">
+              <h3 id="read-title" style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ t.pub.readTitle }}</h3>
+              <p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted);">{{ t.pub.readLead }}</p>
+            </div>
+          </div>
+          <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="md" href="https://www.linkedin.com/in/aiuxaleem" target="_blank" rel="noopener" hint-size="auto,44px">{{ t.pub.linkedin }}</x-import>
+        </div>
+        <div data-cq><div data-reveal-group data-cq-3 style="display:grid; gap:var(--grid-gap);">
+          <div style="display:grid;"><dc-import name="Post Card" copy="{{ t.post }}" level="{{ 4 }}" hint-size="100%,340px"></dc-import></div>
+          <div style="display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <p class="cory-overline" style="margin:0;">{{ t.read.seriesKicker }}</p>
+            <h4 style="margin:0; font-size:var(--text-h4); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ t.read.seriesTitle }}</h4>
+            <ul style="display:grid;">
+              <sc-for list="{{ series }}" as="s" hint-placeholder-count="3"><li style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-3); padding-block:var(--space-2); border-block-start:1px solid var(--border-subtle); font-size:var(--text-body-sm); line-height:var(--leading-normal);"><span style="font-weight:var(--weight-semibold); color:var(--text-strong);">{{ s.name }}</span><span style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-muted); font-variant-numeric:tabular-nums; flex-shrink:0;">{{ s.count }}</span></li></sc-for>
+            </ul>
+            <a data-link href="Content.dc.html#posts" hreflang="en" style="margin-block-start:auto; display:inline-flex; align-items:center; gap:var(--space-1); align-self:flex-start; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span style="flex:0 1 auto;">{{ t.read.seriesLink }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+          <div id="guides" data-section style="display:grid; scroll-margin-block-start:calc(var(--header-height) + var(--space-6));"><dc-import name="Bento Tile" kind="guide" copy="{{ t.guide }}" level="{{ 4 }}" hint-size="100%,340px"></dc-import></div>
+        </div></div>
+        <div data-reveal style="display:grid; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-3) var(--space-6); flex-wrap:wrap;">
+            <p class="cory-overline" style="margin:0;">{{ t.pub.articlesKicker }}</p>
+            <a data-link href="Content.dc.html" hreflang="en" style="display:inline-flex; align-items:center; gap:var(--space-1); min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span style="flex:0 1 auto;">{{ t.read.more }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+          <div data-cq><ol data-cq-3 style="display:grid; gap:var(--grid-gap);">
+            <sc-for list="{{ articles }}" as="a" hint-placeholder-count="3">
+              <li style="display:flex; gap:var(--space-4); align-items:flex-start; padding-block-start:var(--space-4); border-block-start:1px solid var(--border-default);">
+                <span aria-hidden="true" style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-subtle); font-variant-numeric:tabular-nums; flex-shrink:0; transform:translateY(3px);">{{ a.n }}</span>
+                <a data-link href="{{ a.href }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:baseline; gap:var(--space-2); min-block-size:var(--tap-target); font-size:var(--text-body); font-weight:var(--weight-semibold); line-height:var(--leading-snug); color:var(--text-link); text-decoration:none; text-wrap:pretty;"><span style="flex:0 1 auto;">{{ a.title }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; transform:translateY(2px);"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+              </li>
+            </sc-for>
+          </ol></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="now" data-section data-bg="beam" aria-labelledby="now-title" style="background:var(--surface-card); border-block:1px solid var(--border-subtle); padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-10);">
+      <div data-reveal style="display:grid; gap:var(--space-3);">
+        <p class="cory-overline" style="margin:0;">{{ t.now.overline }}</p>
+        <h2 id="now-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ t.now.title }}</h2>
+      </div>
+      <div style="display:grid; gap:var(--space-6);">
+        <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ t.now.buildTitle }}</h3>
+        <div data-cq><ul data-reveal-group data-cq-grid="4" style="display:grid; gap:var(--grid-gap);">
+          <sc-for list="{{ nowBuild }}" as="b" hint-placeholder-count="4">
+            <li style="display:flex; flex-direction:column; gap:var(--space-3); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:var(--space-2); flex-wrap:wrap;">
+                <span aria-hidden="true" data-icon-tile style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong);">{{ b.icon }}</span>
+                <x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="{{ b.tone }}" dot="{{ b.dot }}" hint-size="auto,26px">{{ b.status }}</x-import>
+              </div>
+              <h4 style="margin:0; font-size:var(--text-h4); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ b.name }}</h4>
+              <p style="margin:0; margin-block-start:auto; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ b.desc }}</p>
+            </li>
+          </sc-for>
+        </ul></div>
+      </div>
+      <div style="display:grid; gap:var(--space-6);">
+        <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ t.now.learnTitle }}</h3>
+      <div data-bento-cq>
+        <ul data-reveal-group class="cory-bento">
+          <li class="hero" style="position:relative; overflow:hidden; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-6); padding:var(--space-8); border-radius:var(--radius-xl); background:var(--gradient-ink); color:var(--on-ink-body); box-shadow:var(--shadow-md);">
+            <div aria-hidden="true" style="position:absolute; inline-size:80%; aspect-ratio:1; inset-inline-end:-30%; inset-block-start:-40%; background:var(--glow-cyan-strong); z-index:-1; pointer-events:none;"></div>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:var(--space-3);">
+              <span aria-hidden="true" style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--on-ink-fill); color:var(--on-ink-strong);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg></span>
+              <p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ t.now.certTitle }}</p>
+            </div>
+            <h4 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-snug); letter-spacing:var(--tracking-tight); color:var(--on-ink-strong); text-wrap:balance;">{{ t.now.studyTitle }}</h4>
+            <div aria-hidden="true" style="flex:1 1 auto; display:grid; place-items:center; min-block-size:180px;">
+              <svg viewBox="0 0 360 220" fill="none" style="inline-size:min(100%, 380px); block-size:auto; overflow:visible;">
+                <circle cx="180" cy="110" r="100" style="stroke:var(--on-ink-border);" stroke-dasharray="2 6" stroke-linecap="round"></circle>
+                <circle cx="180" cy="110" r="72" style="stroke:var(--on-ink-border);"></circle>
+                <circle cx="180" cy="110" r="44" style="stroke:var(--on-ink-border);"></circle>
+                <circle cx="252" cy="110" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="129" cy="59" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="180" cy="210" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="80" cy="110" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="211" cy="141" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="149" cy="141" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <path d="M180 110 L251 39" style="stroke:var(--on-ink-link);" stroke-width="1.5" stroke-dasharray="4 4"></path>
+                <path d="M180 110 L109 181" style="stroke:var(--on-ink-link);" stroke-width="1.5" stroke-dasharray="4 4"></path>
+                <circle cx="251" cy="39" r="16" style="fill:var(--glow-cyan-strong);"></circle>
+                <circle cx="251" cy="39" r="7" style="fill:var(--on-ink-link);"></circle>
+                <circle cx="109" cy="181" r="16" style="fill:var(--glow-cyan-strong);"></circle>
+                <circle cx="109" cy="181" r="7" style="fill:var(--on-ink-link);"></circle>
+                <text x="270" y="44" style="fill:var(--on-ink-strong); font-family:var(--font-mono); font-size:13px; font-weight:600;">CCAR-F</text>
+                <text x="90" y="186" text-anchor="end" style="fill:var(--on-ink-strong); font-family:var(--font-mono); font-size:13px; font-weight:600;">GenAI Leader</text>
+                <circle cx="180" cy="110" r="26" style="fill:var(--on-ink-fill); stroke:var(--on-ink-border-strong);"></circle>
+                <g transform="translate(168 98)" style="stroke:var(--on-ink-strong);" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></g>
+              </svg>
+            </div>
+            <ul style="display:grid; gap:var(--space-4);">
+              <sc-for list="{{ nowLive }}" as="c" hint-placeholder-count="2">
+                <li style="display:grid; gap:var(--space-1); padding-block-start:var(--space-4); border-block-start:1px solid var(--on-ink-border);">
+                  <span style="display:inline-flex; align-items:center; gap:var(--space-2); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-link);"><span aria-hidden="true" style="inline-size:8px; block-size:8px; border-radius:50%; background:var(--on-ink-link);"></span>{{ c.status }}</span>
+                  <strong style="font-size:var(--text-body-lg); font-weight:var(--weight-bold); line-height:var(--leading-snug); color:var(--on-ink-strong); text-wrap:pretty;">{{ c.name }}</strong>
+                  <span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--on-ink-muted);">{{ c.org }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </li>
+          <sc-for list="{{ nowVerified }}" as="c" hint-placeholder-count="6">
+            <li style="display:flex; flex-direction:column; overflow:hidden; border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+              <button type="button" onClick="{{ c.open }}" aria-haspopup="dialog" style="position:relative; display:block; inline-size:100%; aspect-ratio:4 / 3; padding:0; border:0; border-block-end:1px solid var(--border-subtle); background:var(--surface-sunken); overflow:hidden; cursor:zoom-in;"><img src="{{ c.img }}" alt="" loading="lazy" decoding="async" style="inline-size:100%; block-size:100%; object-fit:contain;"><span class="cory-visually-hidden">{{ t.now.view }}: {{ c.name }}</span><span aria-hidden="true" data-ink-tile style="position:absolute; inset-block-end:var(--space-2); inset-inline-end:var(--space-2); inline-size:36px; block-size:36px; display:grid; place-items:center; border-radius:var(--radius-pill); background:var(--gradient-ink); color:var(--on-ink-strong); box-shadow:var(--shadow-sm);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg></span></button>
+              <div style="flex:1; display:flex; flex-direction:column; gap:var(--space-1); padding:var(--space-5);">
+                <h4 style="margin:0; font-size:var(--text-body); font-weight:var(--weight-bold); line-height:var(--leading-snug); color:var(--text-strong); text-wrap:pretty;">{{ c.name }}</h4>
+                <span style="font-size:var(--text-caption); line-height:var(--leading-normal); color:var(--text-muted);">{{ c.org }}</span>
+                <sc-if value="{{ c.verify }}" hint-placeholder-val="{{ false }}"><a data-link href="{{ c.verify }}" target="_blank" rel="noopener" style="margin-block-start:auto; display:inline-flex; align-items:center; gap:var(--space-1); align-self:flex-start; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span style="flex:0 1 auto;">{{ c.vl }}</span><span class="cory-visually-hidden">: {{ c.name }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></sc-if>
+              </div>
+            </li>
+          </sc-for>
+          <li class="span-2" style="display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <p class="cory-overline" style="margin:0;">{{ t.now.otherTitle }}</p>
+            <ul style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:var(--space-3) var(--space-6);">
+              <sc-for list="{{ nowOther }}" as="c" hint-placeholder-count="4">
+                <li style="display:flex; gap:var(--space-2); align-items:baseline; font-size:var(--text-body-sm); line-height:var(--leading-normal);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-success)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; transform:translateY(3px);"><path d="M20 6 9 17l-5-5"></path></svg><span style="display:grid; gap:2px;"><span style="font-weight:var(--weight-semibold); color:var(--text-strong);">{{ c.name }}</span><span style="font-size:var(--text-caption); color:var(--text-muted);">{{ c.org }}</span></span></li>
+              </sc-for>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <dialog ref="{{ certDlgRef }}" aria-labelledby="cert-dlg-title" onClose="{{ onCertClose }}" onClick="{{ onCertBackdrop }}" style="position:fixed; inset:0; inline-size:100%; block-size:100%; max-inline-size:none; max-block-size:none; margin:0; padding:0; border:0; background:var(--surface-overlay); color:var(--text-body);">
+    <div style="min-block-size:100%; display:grid; place-items:center; padding:var(--gutter);">
+      <div data-cert-card style="display:grid; gap:var(--space-4); inline-size:min(100%, 1080px); padding:var(--space-5); border-radius:var(--radius-2xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-xl);">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:var(--space-4);">
+          <div style="display:grid; gap:var(--space-1); min-inline-size:0;">
+            <h2 id="cert-dlg-title" style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ certCur.name }}</h2>
+            <p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted);">{{ certCur.org }}</p>
+          </div>
+          <span style="flex:0 0 auto; inline-size:44px; block-size:44px; display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.IconButton" variant="secondary" size="md" label="{{ t.now.close }}" onClick="{{ closeCert }}" hint-size="44px,44px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></x-import></span>
+        </div>
+        <div style="display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--surface-sunken); overflow:hidden;"><sc-if value="{{ certCur.full }}" hint-placeholder-val="{{ false }}"><img src="{{ certCur.full }}" alt="{{ certCur.name }}" loading="lazy" decoding="async" style="display:block; max-inline-size:100%; max-block-size:calc(100svh - 14rem); inline-size:auto; block-size:auto; object-fit:contain;"></sc-if></div>
+        <sc-if value="{{ certCur.verify }}" hint-placeholder-val="{{ false }}"><a data-link href="{{ certCur.verify }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:var(--space-1); align-self:flex-start; justify-self:start; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span>{{ certCur.vl }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></sc-if>
+      </div>
+    </div>
+  </dialog>
+
+  <section id="services" data-section data-bg="rings" aria-labelledby="services-title" style="padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-10);">
+      <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;">
+        <div style="display:grid; gap:var(--space-3);">
+          <p class="cory-overline" style="margin:0;">{{ t.services.overline }}</p>
+          <h2 id="services-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ t.services.title }}</h2>
+        </div>
+        <a data-link href="{{ t.services.href }}" hreflang="en" style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--tap-target); font-size:var(--text-body); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;">{{ t.services.link }}<svg data-dir-icon width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      </div>
+      <div data-cq><div data-reveal-group data-cq-3 style="display:grid; gap:var(--grid-gap);">
+        <div style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.FeatureCard" title="{{ t.services.ai.title }}" icon="{{ iconAi }}" tags="{{ t.services.ai.tags }}" hint-size="100%,260px">{{ t.services.ai.body }}</x-import></div>
+        <div style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.FeatureCard" title="{{ t.services.ds.title }}" icon="{{ iconSystem }}" tags="{{ t.services.ds.tags }}" hint-size="100%,260px">{{ t.services.ds.body }}</x-import></div>
+        <div style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.FeatureCard" title="{{ t.services.audit.title }}" icon="{{ iconAudit }}" tags="{{ t.services.audit.tags }}" hint-size="100%,260px">{{ t.services.audit.body }}</x-import></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="contact" data-section data-closing data-scene-section aria-labelledby="contact-title" style="position:relative; padding-block:var(--space-10) var(--space-24);">
+    <div class="cory-container">
+      <div data-reveal style="position:relative; overflow:hidden; isolation:isolate; border-radius:var(--radius-2xl); background:var(--gradient-ink); color:var(--on-ink-body); padding:clamp(var(--space-12), 9vw, var(--space-24)) var(--gutter); display:grid; gap:var(--space-8); justify-items:center; text-align:center; box-shadow:var(--shadow-xl);">
+        <div aria-hidden="true" style="position:absolute; inline-size:60%; aspect-ratio:1; inset-inline-end:-22%; inset-block-start:-35%; background:var(--glow-cyan-strong); z-index:-1; pointer-events:none;"></div>
+        <div aria-hidden="true" style="position:absolute; inline-size:50%; aspect-ratio:1; inset-inline-start:-18%; inset-block-end:-40%; background:var(--glow-blue); z-index:-1; pointer-events:none;"></div>
+        <p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ t.closing.overline }}</p>
+        <h2 id="contact-title" style="margin:0; max-inline-size:20ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-display); line-height:var(--leading-tight); letter-spacing:var(--tracking-tighter); color:var(--on-ink-strong);">{{ t.closing.title }}</h2>
+        <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--on-ink-body);">{{ t.closing.body }}</p>
+        <div style="display:grid; justify-items:center; gap:var(--space-6);">
+          <div data-cta-row style="display:flex; gap:var(--space-3); flex-wrap:wrap; justify-content:center; align-items:center;">
+            <span data-magnetic style="display:inline-block; padding:var(--space-2); margin:calc(var(--space-2) * -1);"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="https://cal.com/md-abdul-aleem-gilsy7/15min?overlayCalendar=true" target="_blank" rel="noopener" icon-left="{{ iCalendar }}" hint-size="auto,52px">{{ t.hero.call }}</x-import></span>
+            <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="onInk" size="lg" href="{{ mailHref }}" icon-left="{{ iMail }}" hint-size="auto,52px">{{ t.closing.email }}</x-import>
+          </div>
+          <div style="display:flex; gap:var(--space-2) var(--space-6); flex-wrap:wrap; justify-content:center; align-items:center; color:var(--on-ink-link); font-size:var(--text-body-sm);">
+            <dc-import name="Email Copy" subject="{{ mailSubject }}" copy-label="{{ ch.copyEmail }}" copied-label="{{ ch.copied }}" fallback-label="{{ ch.pressCopy }}" hint-size="auto,44px"></dc-import>
+            <a data-link href="https://www.linkedin.com/in/aiuxaleem" target="_blank" rel="noopener" lang="en" dir="ltr" style="display:inline-flex; align-items:center; min-block-size:var(--tap-target); font-weight:var(--weight-semibold); color:var(--on-ink-link); text-decoration:none;">linkedin.com/in/aiuxaleem</a>
+            <a data-link href="https://www.youtube.com/@aiuxaleem" target="_blank" rel="noopener" lang="en" dir="ltr" style="display:inline-flex; align-items:center; min-block-size:var(--tap-target); font-weight:var(--weight-semibold); color:var(--on-ink-link); text-decoration:none;">youtube.com/@aiuxaleem</a>
+            <a data-link href="https://drive.google.com/file/d/1cmkjeMQc1S9gIePpRh29T4nFkBBe3izm/view" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; min-block-size:var(--tap-target); font-weight:var(--weight-semibold); color:var(--on-ink-link); text-decoration:none;">{{ t.closing.resumeLink }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<dc-import name="Site Footer" hide-cta="{{ true }}" hint-size="100%,280px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;nodeCount&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:140,&quot;min&quot;:40,&quot;max&quot;:320,&quot;step&quot;:10,&quot;unit&quot;:&quot;nodes&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Node field&quot;}}">
+class Component extends DCLogic {
+  state = { lang: document.documentElement.lang === 'ar' ? 'ar' : 'en', from: Component.q('from'), noticeOff: false, workIndex: 0, stackIndex: 0 };
+  // Hero deck: a choreographed GSAP swap (throw the front card over the fan, pull the next one forward with a soft overshoot). Falls back to an instant swap without GSAP or under reduced motion.
+  stackGo(step) {
+    if (this.stackBusy) return;
+    const n = 3, next = (this.state.stackIndex + step + n) % n, g = window.gsap, cards = this.qa('[data-stack-card]');
+    const reduce = !this.site || !this.site.motionOK();
+    if (!g || reduce || cards.length !== n) { this.setState({ stackIndex: next }); return; }
+    this.stackBusy = true; const deck = this.q('[data-hero-stack]'); deck && deck.setAttribute('data-animating', '');
+    this.tiltReset && this.tiltReset();
+    const dir = this.site.dirX();
+    const P = [{ x: 0, y: 0, xPercent: 0, yPercent: 0, rotation: 0, scale: 1 }, { x: 0, y: 0, xPercent: 9 * dir, yPercent: -7, rotation: 6 * dir, scale: 0.93 }, { x: 0, y: 0, xPercent: -9 * dir, yPercent: -13, rotation: -6 * dir, scale: 0.86 }];
+    cards.forEach(card => g.set(card, P[Number(card.dataset.pos)]));   // GSAP owns the start pose in its own units, so the end pose matches the CSS pose exactly and clearProps causes no jump
+    const Z = [3, 2, 1];
+    const caps = [], frames = [];
+    const tl = g.timeline({ onComplete: () => this.setState({ stackIndex: next }, () => {
+      g.set(cards, { clearProps: 'transform,zIndex' }); g.set(caps, { clearProps: 'opacity,visibility,transform' }); g.set(frames, { clearProps: 'opacity,visibility,transform' }); deck && deck.removeAttribute('data-animating'); this.stackBusy = false; }) });
+    cards.forEach(card => {
+      const from = Number(card.dataset.pos), to = (from - step + n * 2) % n, F = P[to];
+      const cap = card.querySelector('[data-stack-caption]'), frame = card.querySelector('[data-stack-frame]'); caps.push(cap); frames.push(frame);
+      const hide = at => { tl.to(cap, { opacity: 0, y: -8, duration: 0.22, ease: 'power1.out' }, at); tl.to(frame, { opacity: 0, duration: 0.22, ease: 'power1.out' }, at); };
+      const show = at => { tl.fromTo(cap, { opacity: 0, y: 16, visibility: 'visible' }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, at); tl.fromTo(frame, { opacity: 0, y: 24, visibility: 'visible' }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, at + 0.05); };
+      if (from === 0 && to === 2) {            // next: front card lifts, flips over the fan, lands at the back
+        hide(0);
+        tl.to(card, { yPercent: -18, xPercent: -4 * dir, scale: 1.04, rotation: 5 * dir, duration: 0.34, ease: 'power2.out' }, 0);
+        tl.set(card, { zIndex: 1 }, 0.34);
+        tl.to(card, { ...F, duration: 0.6, ease: 'power3.inOut' }, 0.34);
+      } else if (from === 1 && to === 0) {     // next: second card comes forward with a soft overshoot
+        tl.set(card, { zIndex: 3 }, 0.34);
+        tl.to(card, { ...F, duration: 0.75, ease: 'back.out(1.25)' }, 0.26);
+        show(0.55);
+      } else if (from === 0 && to === 1) {     // prev: front card steps back one place
+        hide(0);
+        tl.to(card, { yPercent: -10, scale: 1.02, duration: 0.3, ease: 'power2.out' }, 0);
+        tl.set(card, { zIndex: 2 }, 0.3);
+        tl.to(card, { ...F, duration: 0.55, ease: 'power3.inOut' }, 0.3);
+      } else if (from === 2 && to === 0) {     // prev: back card swings out past the fan and lands in front
+        tl.to(card, { xPercent: -36 * dir, yPercent: -2, rotation: -14 * dir, scale: 0.9, duration: 0.36, ease: 'power2.inOut' }, 0);
+        tl.set(card, { zIndex: 3 }, 0.36);
+        tl.to(card, { ...F, duration: 0.68, ease: 'back.out(1.2)' }, 0.36);
+        show(0.7);
+      } else {                                  // 1 <-> 2: slide within the fan
+        tl.set(card, { zIndex: Z[to] }, 0.3);
+        tl.to(card, { ...F, duration: 0.65, ease: 'power3.inOut' }, 0.12);
+      }
+    });
+  }
+  // Deck interaction: swipe or drag to flip (pointer), arrow keys while the deck has focus, and a gentle 3D tilt toward a fine pointer on the front card.
+  setupDeck(T) {
+    const { gsap } = window; const deck = this.q('[data-hero-deck]'), stack = this.q('[data-hero-stack]'); if (!deck || !stack || this.deckBound) return;
+    this.deckBound = true; const dir = () => this.site.dirX();
+    let sx = 0, sy = 0, dragging = false, moved = false;
+    const down = e => { if (e.button && e.button !== 0) return; sx = e.clientX; sy = e.clientY; dragging = true; moved = false; };
+    const move = e => { if (!dragging) return; const dx = e.clientX - sx, dy = e.clientY - sy; if (!moved && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) { moved = true; } if (moved && T.ok) { const front = stack.querySelector('[data-stack-card][data-pos="0"]'); front && gsap.set(front, { x: dx * 0.35, rotation: dx * 0.02 }); } };
+    const up = e => { if (!dragging) return; dragging = false; const dx = e.clientX - sx; const front = stack.querySelector('[data-stack-card][data-pos="0"]');
+      if (moved && Math.abs(dx) > 48) { front && gsap.set(front, { clearProps: 'transform' }); this.stackGo(dx * dir() < 0 ? 1 : -1); }
+      else if (front && T.ok) gsap.to(front, { x: 0, rotation: 0, duration: T.slow, ease: T.out, clearProps: 'transform' }); };
+    const click = e => { if (moved) { e.preventDefault(); e.stopPropagation(); } };
+    const key = e => { if (e.target.closest('button')) return; if (e.key === 'ArrowRight') { e.preventDefault(); this.stackGo(dir()); } else if (e.key === 'ArrowLeft') { e.preventDefault(); this.stackGo(-dir()); } };
+    stack.addEventListener('pointerdown', down); addEventListener('pointermove', move, { passive: true }); addEventListener('pointerup', up); addEventListener('pointercancel', up); stack.addEventListener('click', click, true); deck.addEventListener('keydown', key);
+    this.deckOff = () => { stack.removeEventListener('pointerdown', down); removeEventListener('pointermove', move); removeEventListener('pointerup', up); removeEventListener('pointercancel', up); stack.removeEventListener('click', click, true); deck.removeEventListener('keydown', key); this.deckBound = false; };
+    if (!T.ok || !matchMedia('(pointer: fine)').matches) return;
+    const rx = gsap.quickTo(stack, 'rotationX', { duration: 0.6, ease: 'power3.out' }), ry = gsap.quickTo(stack, 'rotationY', { duration: 0.6, ease: 'power3.out' });
+    gsap.set(stack, { transformPerspective: 1400, transformStyle: 'preserve-3d' });
+    const tilt = e => { if (dragging || this.stackBusy) return; const r = stack.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5; rx(-py * 6); ry(px * 8); };
+    const reset = () => { rx(0); ry(0); };
+    this.tiltReset = reset;
+    stack.addEventListener('pointermove', tilt, { passive: true }); stack.addEventListener('pointerleave', reset);
+    const off = this.deckOff; this.deckOff = () => { off(); stack.removeEventListener('pointermove', tilt); stack.removeEventListener('pointerleave', reset); gsap.set(stack, { clearProps: 'transform,transformPerspective,transformStyle' }); this.tiltReset = null; };
+  }
+  certDlgRef = React.createRef();
+  openCert = (img, e) => {
+    this.certOpener = e && e.currentTarget;
+    this.setState({ certImg: img }, () => { const d = this.certDlgRef.current; if (d && !d.open) d.showModal(); });
+  };
+  closeCert = () => { const d = this.certDlgRef.current; if (d && d.open) d.close(); };
+  onCertClose = () => { const o = this.certOpener; this.certOpener = null; if (o && o.focus) o.focus(); };
+  onCertBackdrop = e => { const card = e.target.closest && e.target.closest('[data-cert-card]'); if (!card) this.closeCert(); };
+  static q(n) { try { return new URLSearchParams(location.search).get(n) || ''; } catch (e) { return ''; } }
+  S = { order: 0, converge: 0, orderTarget: 0, convergeTarget: 0 }; mouse = { x: 0, y: 0 }; visible = new Set(); canvasOpacity = 1; rafId = 0; splits = []; heroLinesDone = false;
+  statTargets = [{ to: 60, fmt: v => '+' + Math.round(v) + '%' }, { to: 40, fmt: v => '+' + Math.round(v) + '%' }, { to: 1646, fmt: v => Math.round(v).toLocaleString('en-US') }, { to: 5, fmt: v => String(Math.round(v)) }];
+  icons = (() => {
+    // Lucide, 1.75 stroke: sparkles, layers, scan-search (22px tiles); download, calendar, arrow-down, mail (20px buttons)
+    const svg = (paths, extra, size = 22) => React.createElement('svg', { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.75, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true }, ...paths.map((d, i) => React.createElement('path', { key: i, d })), ...(extra || []));
+    // Arrow tiles: 28px round chip inside the hero CTAs; dir-aware arrows flip in RTL
+    const tile = (icon, bg, dir) => React.createElement('span', { 'data-arrow-tile': true, 'data-dir-icon': dir ? true : undefined, 'aria-hidden': true, style: { display: 'inline-grid', placeItems: 'center', inlineSize: 28, blockSize: 28, borderRadius: 'var(--radius-pill)', background: bg, color: 'inherit', flexShrink: 0, marginInlineEnd: 'calc(-1 * var(--space-2))' } }, icon);
+    return {
+      ai: svg(['M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z', 'M20 3v4', 'M22 5h-4', 'M4 17v2', 'M5 18H3']),
+      ds: svg(['M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z', 'M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12', 'M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17']),
+      audit: svg(['M3 7V5a2 2 0 0 1 2-2h2', 'M17 3h2a2 2 0 0 1 2 2v2', 'M21 17v2a2 2 0 0 1-2 2h-2', 'M7 21H5a2 2 0 0 1-2-2v-2', 'm16 16-1.9-1.9'], [React.createElement('circle', { key: 'c', cx: 11, cy: 11, r: 3 })]),
+      download: svg(['M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4', 'm7 10 5 5 5-5', 'M12 15V3'], null, 20),
+      external: svg(['M7 7h10v10', 'M7 17 17 7'], null, 20),
+      calendar: svg(['M8 2v4', 'M16 2v4', 'M3 10h18'], [React.createElement('rect', { key: 'r', x: 3, y: 4, width: 18, height: 18, rx: 2 })], 20),
+      target: svg([], [React.createElement('circle', { key: 'a', cx: 12, cy: 12, r: 10 }), React.createElement('circle', { key: 'b', cx: 12, cy: 12, r: 6 }), React.createElement('circle', { key: 'c', cx: 12, cy: 12, r: 2 })]),
+      users: svg(['M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2', 'M22 21v-2a4 4 0 0 0-3-3.87', 'M16 3.13a4 4 0 0 1 0 7.75'], [React.createElement('circle', { key: 'c', cx: 9, cy: 7, r: 4 })]),
+      megaphone: svg(['m3 11 18-5v12L3 14v-3z', 'M11.6 16.8a3 3 0 1 1-5.8-1.6']),
+      languages: svg(['m5 8 6 6', 'm4 14 6-6 2-3', 'M2 5h12', 'M7 2h1', 'm22 22-5-10-5 10', 'M14 18h6']),
+      trophy: svg(['M6 9H4.5a2.5 2.5 0 0 1 0-5H6', 'M18 9h1.5a2.5 2.5 0 0 0 0-5H18', 'M4 22h16', 'M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22', 'M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22', 'M18 2H6v7a6 6 0 0 0 12 0V2Z']),
+      bot: svg(['M12 8V4H8', 'M2 14h2', 'M20 14h2', 'M15 13v2', 'M9 13v2'], [React.createElement('rect', { key: 'r', width: 16, height: 12, x: 4, y: 8, rx: 2 })]),
+      bookOpen: svg(['M12 7v14', 'M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z']),
+      layoutTemplate: svg([], [React.createElement('rect', { key: 'a', width: 18, height: 7, x: 3, y: 3, rx: 1 }), React.createElement('rect', { key: 'b', width: 9, height: 7, x: 3, y: 14, rx: 1 }), React.createElement('rect', { key: 'c', width: 5, height: 7, x: 16, y: 14, rx: 1 })]),
+      play: svg(['m6 3 14 9-14 9z'], null, 20),
+      playTile: svg(['m10 8 6 4-6 4z'], [React.createElement('circle', { key: 'c', cx: 12, cy: 12, r: 10 })]),
+      book: svg(['M12 7v14', 'M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z']),
+      landmark: svg(['M3 22h18', 'M6 18v-7', 'M10 18v-7', 'M14 18v-7', 'M18 18v-7', 'M12 2 2 7h20z']),
+      compass: svg(['m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z'], [React.createElement('circle', { key: 'c', cx: 12, cy: 12, r: 10 })]),
+      code: svg(['m18 16 4-4-4-4', 'm6 8-4 4 4 4', 'm14.5 4-5 16']),
+      a11y: svg(['M14 8h-4l-4 8h12z', 'M12 16v4', 'M8 20h8'], [React.createElement('circle', { key: 'c', cx: 12, cy: 5, r: 1.5 })]),
+      clapper: svg(['M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z', 'm6.2 5.3 3.1 3.9', 'm12.4 3.4 3.1 4', 'M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z']),
+      arrowRight: svg(['M5 12h14', 'm12 5 7 7-7 7'], null, 20),
+      arrowTile: tile(svg(['M5 12h14', 'm12 5 7 7-7 7'], null, 16), 'var(--on-ink-fill)', true),
+      externalTile: tile(svg(['M7 7h10v10', 'M7 17 17 7'], null, 16), 'var(--surface-sunken)', false),
+      arrowDown: svg(['M12 5v14', 'm19 12-7 7-7-7'], null, 20),
+      mail: svg(['m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'], [React.createElement('rect', { key: 'r', x: 2, y: 4, width: 20, height: 16, rx: 2 })], 20)
+    };
+  })();
+
+  async componentDidMount() {
+    this.site = await import('../shared/site.js');
+    this.site.loadMotion();                       // start GSAP download immediately, in parallel with everything below
+    await this.site.waitFor(() => window.AIUX_COPY); this.forceUpdate(); this.setTitle();
+    window.__aiuxLang = next => this.switchLang(next);
+    this.unobserve = this.site.observeRoot(['dir', 'data-theme'], names => {
+      if (names.includes('data-theme') && this.sceneApi) this.sceneApi.refreshColors();
+      if (names.includes('dir')) { this.sceneApi && this.sceneApi.relayout(); this.rebuild(); }
+    });
+    await this.site.loadMotion();
+    const ok = await this.site.waitFor(() => window.gsap && window.ScrollTrigger && window.SplitText && window.CustomEase && document.querySelector('[data-site-footer]'));
+    document.documentElement.removeAttribute('data-motion');
+    if (!ok) { console.warn('[home] motion libraries did not arrive; page stays static'); return; }
+    if ((Component.q('debug') || '').includes('noinit')) return;
+    const dbg0 = Component.q('debug') || '';
+    if (!dbg0.includes('scene')) this.setupScene().catch(e => console.error('[home] scene', e));   // the field does not need fonts, and must never block init()
+    if (document.fonts) await Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 1200))]);
+    this.init();
+  }
+  componentWillUnmount() {
+    if (window.__aiuxLang) window.__aiuxLang = null;
+    this.unobserve && this.unobserve();
+    if (this.rafId) cancelAnimationFrame(this.rafId);
+    try { this.mm && this.mm.revert(); } catch (e) {}
+    this.ro && this.ro.disconnect(); this.io && this.io.disconnect();
+    this.sceneCleanup && this.sceneCleanup();
+  }
+  q = s => document.querySelector(s); qa = s => Array.from(document.querySelectorAll(s));
+
+  init() {
+    const { gsap, ScrollTrigger, SplitText, CustomEase } = window;
+    gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+    this.T = this.site.motion();
+    this.site.smoothScroll(); this.site.pageTransitions();
+    const dbg = Component.q('debug') || '';
+    if (!dbg.includes('build')) this.build();
+    if (!(Component.q('debug') || '').includes('ro')) {
+      this.site.watchLayout();
+    }
+    if (location.hash) requestAnimationFrame(() => this.site.scrollToId(location.hash));
+  }
+  build() {
+    const { gsap } = window;
+    this.mm = gsap.matchMedia();
+    this.mm.add({ desktop: '(min-width: 768px)', motion: '(prefers-reduced-motion: no-preference)', fine: '(pointer: fine)' }, ctx => {
+      const { desktop, motion, fine } = ctx.conditions; const T = { ...this.T, ok: motion }; const dir = this.site.dirX();
+      const off = (Component.q('debug') || '').split(',');
+      if (!off.includes('hero')) this.setupHero(T);
+      if (!off.includes('manifesto')) this.setupManifesto(T);
+      if (!off.includes('proof')) this.setupProof(T);
+      if (!off.includes('work')) this.setupWork(T, desktop && motion, dir);
+      if (!off.includes('bento')) this.setupBento(T);
+      if (!off.includes('reveals')) this.site.reveals(T);
+      const unsign = this.site.signature(T);
+      this.setupDeck(T);
+      if (!off.includes('scenetr')) this.setupSceneTriggers();
+      return () => {
+        this.splits.forEach(s => { try { s.revert(); } catch (e) {} }); this.splits = []; this.workST = null;
+        const vp = this.q('[data-work-viewport]'); vp && vp.removeAttribute('data-pinned');
+        unsign(); this.deckOff && this.deckOff();
+        if (this.onWorkFocus) { const w = this.q('[data-work]'); w && w.removeEventListener('focusin', this.onWorkFocus); this.onWorkFocus = null; }
+        if (this.workScroller) { this.workScroller.removeEventListener('scroll', this.onWorkScroll); ['overflowX', 'scrollSnapType', 'scrollPaddingInline', 'scrollbarWidth', 'paddingBlockEnd'].forEach(k => { this.workScroller.style[k] = ''; }); this.workScroller = null; this.onWorkScroll = null; }
+      };
+    });
+  }
+  rebuild() {
+    if (!this.mm || this.switching) return;
+    const k = this.pendingKeep || this.site.snapshot(); this.pendingKeep = null;
+    this.mm.revert(); this.build(); window.ScrollTrigger.refresh(); this.site.restore(k);
+  }
+  setTitle() { const d = window.AIUX_COPY && window.AIUX_COPY(this.state.lang); const m = d && d.home && d.home.meta; if (m && m.title) document.title = m.title; }
+  switchLang(next) {
+    if (!this.mm) { this.setState({ lang: next }, () => { this.site.applyLangAttrs(next); this.setTitle(); }); return; }
+    const before = document.documentElement.dir;
+    this.pendingKeep = this.site.snapshot();
+    this.mm.revert(); this.mm = null;           // SplitText restored before React swaps the copy
+    this.setState({ lang: next, from: '' }, () => {
+      this.site.applyLangAttrs(next); this.setTitle();
+      this.sceneApi && this.sceneApi.relayout();
+      const keep = this.pendingKeep; this.pendingKeep = null;
+      const rebuildNow = () => { if (this.mm) return; try { this.build(); window.ScrollTrigger.refresh(); this.site.restore(keep); } catch (e) { console.error('[home] rebuild failed', e); } };
+      if (document.documentElement.dir === before) rebuildNow(); else setTimeout(rebuildNow, 0);
+    });
+  }
+
+  setupHero(T) {
+    const { gsap, SplitText } = window; const h1 = this.q('[data-hero-title]'); if (!h1) return;
+    const shown = document.documentElement.hasAttribute('data-intro-shown');   // boot script already revealed the hero (motion arrived late): never re-hide it
+    const first = !this.heroIntroPlayed && !shown; this.heroIntroPlayed = true;
+    if (!T.ok) return;
+    this.splits.push(SplitText.create(h1, { type: 'lines', mask: 'lines', autoSplit: true, onSplit: self => {
+      gsap.set(self.masks || [], { paddingBlockEnd: '0.16em', marginBlockEnd: '-0.16em' });
+      if (this.heroLinesDone || shown) { this.heroLinesDone = true; return; } this.heroLinesDone = true;
+      return gsap.from(self.lines, { yPercent: 115, duration: T.epic, ease: T.cine, stagger: T.staggerMd });
+    } }));
+    if (first) gsap.from(this.qa('[data-hero-el]'), { y: T.reveal, opacity: 0, duration: T.enter, ease: T.out, stagger: T.stagger, delay: T.slow, clearProps: 'transform,opacity' });
+    const cards = this.qa('[data-stack-card]');
+    if (first && cards.length) { const deck = this.q('[data-hero-stack]'); deck && deck.setAttribute('data-animating', ''); gsap.from(cards, { yPercent: 40, rotation: 0, opacity: 0, duration: T.epic, ease: T.cine, stagger: { each: T.staggerMd, from: 'end' }, delay: T.slow, clearProps: 'transform,opacity', onComplete: () => deck && deck.removeAttribute('data-animating') }); }
+    const cue = this.q('[data-scroll-cue]'); if (cue) gsap.to(cue, { opacity: 0, ease: 'none', scrollTrigger: { trigger: this.q('[data-hero]'), start: 'top top', end: '+=240', scrub: true } });
+  }
+  setupManifesto(T) {
+    // Word-by-word ink-in on scroll, no pin: the statement now shares its screen with the portrait and facts.
+    const { gsap, SplitText } = window; const sec = this.q('[data-manifesto]'), h = this.q('[data-manifesto-text]');
+    if (!T.ok || !h) return;
+    this.splits.push(SplitText.create(h, { type: 'words', autoSplit: true, onSplit: self => {
+      const words = self.words;
+      words.forEach(w => { w.style.setProperty('--w', '0'); if (!w.closest('[data-accent="true"]')) { w.style.color = 'color-mix(in srgb, var(--text-strong) calc(var(--w) * 100%), var(--text-subtle))'; } });
+      const last = words[words.length - 1]; let rule = null;
+      if (last) {
+        last.style.position = 'relative'; rule = document.createElement('span'); rule.setAttribute('aria-hidden', 'true');
+        Object.assign(rule.style, { position: 'absolute', insetInline: '0', insetBlockEnd: '0.02em', blockSize: '0.08em', borderRadius: 'var(--radius-pill)', background: 'var(--gradient-brand)', transform: 'scaleX(0)', transformOrigin: 'var(--origin-inline-start) center', pointerEvents: 'none' });
+        last.appendChild(rule);
+      }
+      const tl = gsap.timeline({ scrollTrigger: { id: 'manifesto', trigger: sec, start: 'top 80%', end: 'center 45%', scrub: 0.6 } });
+      tl.to(words, { '--w': 1, duration: 1, stagger: 1, ease: 'none' });
+      if (rule) tl.to(rule, { scaleX: 1, duration: 2.5, ease: 'none' }, '-=0.6');
+      return tl;
+    } }));
+  }
+  setupProof(T) {
+    const host = this.q('[data-proof]'); if (!host) return;
+    const els = this.qa('[data-stat]');
+    this.site.countUp(T, host, this.statTargets.map((s, i) => ({ ...s, el: els[i] })));
+  }
+  setupWork(T, pin, dir) {
+    const { gsap } = window; const sec = this.q('[data-work]'), track = this.q('[data-work-track]'), cards = this.qa('[data-work-card]'), fill = this.q('[data-work-progress-fill]');
+    this.workCards = cards; if (!sec || !track) return;
+    const viewport = this.q('[data-work-viewport]') || track.parentElement, n = cards.length;
+    if (!pin) {
+      // No pin (reduced motion, GSAP absent, narrow): the row becomes a native horizontal scroller with snap points; stacked under 768 by CSS.
+      gsap.set(track, { clearProps: 'transform' }); cards.forEach(c => { gsap.set(c, { clearProps: 'transform' }); c.style.scrollSnapAlign = 'start'; });
+      Object.assign(viewport.style, { overflowX: 'auto', scrollSnapType: 'x mandatory', scrollPaddingInline: 'var(--gutter)', scrollbarWidth: 'none', paddingBlockEnd: 'var(--space-2)' });
+      this.workScroller = viewport;
+      this.onWorkScroll = () => { const mid = viewport.scrollLeft + viewport.clientWidth / 2; let best = 0, bd = Infinity; cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } }); if (best !== this.state.workIndex) this.setState({ workIndex: best }); if (fill) gsap.set(fill, { scaleX: n > 1 ? best / (n - 1) : 1 }); };
+      viewport.addEventListener('scroll', this.onWorkScroll, { passive: true }); this.onWorkScroll();
+      return;
+    }
+    viewport.setAttribute('data-pinned', '');   // CSS keeps the row a native scroller until this point
+    const dist = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
+    const paint = p => {
+      const mid = innerWidth / 2;
+      cards.forEach(card => {
+        const r = card.getBoundingClientRect(), d = (r.left + r.width / 2 - mid) / innerWidth;
+        gsap.set(card, { scale: 1 - Math.min(0.05, Math.abs(d) * 0.08) });
+        const cover = card.querySelector('[data-work-cover]'); if (cover) gsap.set(cover, { xPercent: d * -6 });
+      });
+      if (fill) gsap.set(fill, { scaleX: p });
+      const i = Math.round(p * (n - 1)); if (i !== this.state.workIndex) this.setState({ workIndex: i });
+    };
+    const tw = gsap.to(track, { x: () => -dist() * dir, ease: 'none', scrollTrigger: {
+      id: 'work', trigger: sec, start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 0.8, anticipatePin: 1, invalidateOnRefresh: true,
+      snap: { snapTo: 1 / (n - 1), duration: { min: T.base, max: T.slow }, delay: 0.05, ease: T.out },
+      onUpdate: s => paint(s.progress), onRefresh: s => paint(s.progress) } });
+    this.workST = tw.scrollTrigger;
+    this.onWorkFocus = e => { const card = e.target.closest('[data-work-card]'); viewport.scrollLeft = 0; sec.scrollLeft = 0; const i = cards.indexOf(card); if (i >= 0) this.goWork(i); };
+    sec.addEventListener('focusin', this.onWorkFocus);
+  }
+  goWork(i) {
+    const cards = this.workCards || []; const n = cards.length; if (!n) return;
+    i = Math.max(0, Math.min(n - 1, i)); const smooth = this.site.motionOK() ? 'smooth' : 'auto'; const st = this.workST;
+    if (st) this.site.scrollTo(st.start + (st.end - st.start) * (i / (n - 1)));
+    else if (this.workScroller && matchMedia('(min-width: 768px)').matches) { const v = this.workScroller, pad = parseFloat(getComputedStyle(v).paddingInlineStart) || 0; v.scrollTo({ left: this.site.dirX() < 0 ? -(v.scrollWidth - cards[i].offsetLeft - cards[i].offsetWidth - pad) : cards[i].offsetLeft - pad, behavior: smooth }); }
+    else this.site.scrollTo(cards[i].getBoundingClientRect().top + scrollY - this.site.cssPx('--header-height') - this.site.cssPx('--space-4'));
+    this.setState({ workIndex: i });
+  }
+  setupCore(T) {
+    // Core card diagram: the four connectors draw out from the model node once the card scrolls in. Static (fully drawn) without motion.
+    const { gsap } = window; const links = this.qa('[data-core-link]'); const root = this.q('[data-core-diagram]');
+    if (!T.ok || !links.length || !root || this.coreShown) return;
+    gsap.fromTo(links, { strokeDashoffset: 140 }, { strokeDashoffset: 0, duration: T.enter, ease: T.out, stagger: T.stagger,
+      scrollTrigger: { trigger: root, start: 'top 85%', once: true }, onStart: () => { this.coreShown = true; } });
+  }
+  setupBento(T) {
+    this.setupCore(T);
+    const { gsap } = window; const tiles = this.qa('[data-tile]').filter(t => !this.tilesShown);
+    if (!T.ok || !tiles.length) return;
+    gsap.from(tiles, { y: T.reveal, opacity: 0, duration: T.enter, ease: T.out, stagger: T.stagger, clearProps: 'transform,opacity',
+      scrollTrigger: { trigger: this.q('[data-bento-grid]'), start: 'top 80%', once: true }, onStart: () => { this.tilesShown = true; } });
+  }
+  setupSceneTriggers() {
+    const ST = window.ScrollTrigger; const S = this.S;
+    const hero = this.q('[data-hero]'), proof = this.q('[data-proof]') || this.q('[data-manifesto]'), closing = this.q('[data-closing]'); if (!hero || !proof || !closing) return;   // the field settles into its lattice by the point-of-view section
+    ST.create({ trigger: hero, start: 'top top', endTrigger: proof, end: 'center center', scrub: true, onUpdate: s => { S.orderTarget = s.progress; } });
+    ST.create({ trigger: proof, start: 'bottom 85%', end: 'bottom 15%', scrub: true, onUpdate: s => this.setCanvasOpacity && this.setCanvasOpacity(1 - s.progress) });
+    ST.create({ trigger: closing, start: 'top bottom', end: 'top 40%', scrub: true, onUpdate: s => this.setCanvasOpacity && this.setCanvasOpacity(s.progress) });
+    ST.create({ trigger: closing, start: 'top 55%', end: 'bottom bottom', scrub: true, onUpdate: s => { S.convergeTarget = s.progress; } });
+  }
+
+  /* ---------- Three.js node field: raw AI (chaos) → design (lattice) → one connected point ---------- */
+  async setupScene() {
+    if (this.sceneStarted) return; this.sceneStarted = true;
+    const canvas = this.q('[data-scene-canvas]'); if (!canvas) return;
+    const d = document.documentElement, nav = navigator;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches && !d.hasAttribute('data-force-motion'), mobile = matchMedia('(max-width: 767px)').matches;
+    const lowPower = d.hasAttribute('data-qa') || (nav.deviceMemory && nav.deviceMemory < 4) || (mobile && nav.hardwareConcurrency && nav.hardwareConcurrency <= 4) || (nav.connection && nav.connection.saveData);
+    const showPoster = () => { canvas.style.display = 'none'; };   // the CSS atmosphere (glows + dot grid) is always on; the field is an enhancement
+    if (reduce || lowPower) return showPoster();
+    let THREE, renderer;
+    THREE = await (this.threeLoad || import('https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js').catch(() => null));
+    if (!THREE) return showPoster();
+    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));   // one frame after first paint
+    try { renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !mobile, powerPreference: 'low-power' }); } catch (e) { return showPoster(); }
+    const dpr = Math.min(devicePixelRatio || 1, mobile ? 1.5 : 2); renderer.setPixelRatio(dpr); renderer.setClearAlpha(0);
+    // GPU reset or tab memory pressure: drop to the CSS atmosphere instead of leaving a frozen canvas
+    canvas.addEventListener('webglcontextlost', e => { e.preventDefault(); this.sceneActive = false; if (this.rafId) cancelAnimationFrame(this.rafId); this.rafId = 0; showPoster(); }, { once: true });
+    const scene = new THREE.Scene(), FOV = 45, CAMZ = 10, camera = new THREE.PerspectiveCamera(FOV, 1, 0.1, 100); camera.position.set(0, 0, CAMZ);
+    const H = 2 * CAMZ * Math.tan(THREE.MathUtils.degToRad(FOV / 2)); let W = H;
+    const cores = nav.hardwareConcurrency || 4;
+    const N = Math.max(24, Math.round((Number(this.props.nodeCount) || 140) * (mobile ? 0.4 : cores <= 4 ? 0.7 : 1)));
+    let seed = 7; const rnd = () => { seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; };
+    const unit = new Float32Array(N * 3), chaos = new Float32Array(N * 3), order = new Float32Array(N * 3), phase = new Float32Array(N * 3), pos = new Float32Array(N * 3), colors = new Float32Array(N * 3);
+    const sizes = new Float32Array(N), alphas = new Float32Array(N), oDelay = new Float32Array(N), cDelay = new Float32Array(N), accent = new Uint8Array(N);
+    for (let i = 0; i < N * 3; i++) { unit[i] = rnd() - 0.5; phase[i] = rnd() * Math.PI * 2; }
+    for (let i = 0; i < N; i++) { accent[i] = rnd() < 0.08 ? 1 : 0; sizes[i] = (0.07 + rnd() * 0.07) * (accent[i] ? 1.6 : 1); cDelay[i] = rnd() * 0.4; }
+    let spacing = 1, dir = this.site.dirX();
+    const layout = () => {
+      dir = this.site.dirX(); W = H * camera.aspect;
+      for (let i = 0; i < N; i++) { const i3 = i * 3; let x = unit[i3] * W * 1.15; if (!mobile && i % 3) x = (Math.abs(x) - W * 0.06) * dir; chaos[i3] = x; chaos[i3 + 1] = unit[i3 + 1] * H * 1.15; chaos[i3 + 2] = unit[i3 + 2] * 3; }
+      const R = Math.min(W, H) * 0.42; spacing = R * Math.sqrt(Math.PI / (0.866 * N));
+      const pts = [], rows = Math.ceil(R / (spacing * 0.866)) + 2, cols = Math.ceil(R / spacing) + 2;
+      for (let r = -rows; r <= rows; r++) for (let c = -cols; c <= cols; c++) { const x = (c + ((r & 1) ? 0.5 : 0)) * spacing, y = r * spacing * 0.866; pts.push([x, y, x * x + y * y]); }
+      pts.sort((a, b) => a[2] - b[2]);
+      const ox = mobile ? 0 : W * 0.14 * dir, maxR = Math.sqrt(pts[N - 1][2]) || 1;
+      for (let i = 0; i < N; i++) { const i3 = i * 3; order[i3] = pts[i][0] + ox; order[i3 + 1] = pts[i][1]; order[i3 + 2] = 0; oDelay[i] = 0.55 * Math.sqrt(pts[i][2]) / maxR; }
+    };
+    const spriteTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d'); g.fillStyle = this.site.cssVar('--white') || 'white'; g.filter = 'blur(6px)'; g.beginPath(); g.arc(32, 32, 16, 0, Math.PI * 2); g.fill(); return new THREE.CanvasTexture(c); })();
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3)); geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geo.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1)); geo.setAttribute('aAlpha', new THREE.BufferAttribute(alphas, 1));
+    const pmat = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, vertexColors: true, uniforms: { uTex: { value: spriteTex }, uScale: { value: 1 }, uGrow: { value: 1 } },
+      vertexShader: 'attribute float aSize; attribute float aAlpha; varying float vA; varying vec3 vC; uniform float uScale; uniform float uGrow; void main(){ vC = color; vA = aAlpha; vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_PointSize = aSize * uGrow * uScale / -mv.z; gl_Position = projectionMatrix * mv; }',
+      fragmentShader: 'uniform sampler2D uTex; varying float vA; varying vec3 vC;\nvoid main(){ vec4 t = texture2D(uTex, gl_PointCoord); if (t.a < 0.02) discard; gl_FragColor = vec4(vC, t.a * vA);\n#include <colorspace_fragment>\n}' });
+    const points = new THREE.Points(geo, pmat);
+    const maxE = N * 3, lpos = new Float32Array(maxE * 6), lcol = new Float32Array(maxE * 6), lgeo = new THREE.BufferGeometry();
+    lgeo.setAttribute('position', new THREE.BufferAttribute(lpos, 3)); lgeo.setAttribute('color', new THREE.BufferAttribute(lcol, 3)); lgeo.setDrawRange(0, 0);
+    const lines = new THREE.LineSegments(lgeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, depthWrite: false }));
+    const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: spriteTex, transparent: true, opacity: 0, depthWrite: false }));
+    scene.add(lines, points, glow);
+    const pA = geo.getAttribute('position'), cA = geo.getAttribute('color'), aA = geo.getAttribute('aAlpha'), lpA = lgeo.getAttribute('position'), lcA = lgeo.getAttribute('color');
+    const lineCol = new THREE.Color(), pageCol = new THREE.Color(), tmp = new THREE.Color();
+    const refreshColors = () => {
+      const col = n => { const c = new THREE.Color(); try { c.setStyle(this.site.cssVar(n)); } catch (e) {} return c; };
+      const base = col('--node-color'), acc = col('--node-accent');
+      for (let i = 0; i < N; i++) { const c = accent[i] ? acc : base; colors[i * 3] = c.r; colors[i * 3 + 1] = c.g; colors[i * 3 + 2] = c.b; }
+      cA.needsUpdate = true; lineCol.copy(col('--node-line')); pageCol.copy(col('--surface-page')); glow.material.color.copy(col('--node-glow'));
+      this.kick && this.kick();
+    };
+    const resize = () => { const w = canvas.clientWidth || innerWidth, h = canvas.clientHeight || innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); pmat.uniforms.uScale.value = (h * dpr) / (2 * Math.tan(THREE.MathUtils.degToRad(FOV / 2))); layout(); };
+    resize(); refreshColors();
+    const clamp01 = x => x < 0 ? 0 : x > 1 ? 1 : x, smooth = x => { x = clamp01(x); return x * x * (3 - 2 * x); };
+    const cx = 0, cy = H * 0.28, S = this.S; let last = 0;
+    // Neighbour search uses a uniform grid (cell = link threshold) instead of N² pairs; the sim runs at most 60 Hz.
+    const cellOf = new Int32Array(N), head = new Int32Array(4096).fill(-1), nextIdx = new Int32Array(N);
+    const FRAME_MIN = 1000 / 60 - 1;
+    const tick = now => {
+      this.rafId = 0; if (!this.sceneActive) return;
+      if (last && now - last < FRAME_MIN) { this.rafId = requestAnimationFrame(tick); return; }
+      const dt = Math.min(0.05, (now - last) / 1000 || 0.016); last = now; const t = now * 0.001, k = 1 - Math.exp(-dt * 6);
+      S.order += (S.orderTarget - S.order) * k; S.converge += (S.convergeTarget - S.converge) * k;
+      const o = clamp01(S.order), c = clamp01(S.converge), amp = (1 - o) * 0.9 + 0.05, speed = 0.5 - 0.35 * o;
+      const rot = t * 0.012 * o * dir, rc = Math.cos(rot), rs = Math.sin(rot), breathe = 1 + 0.012 * Math.sin(t * 0.6) * o;
+      const mx = this.mouse.x * W / 2 + camera.position.x, my = this.mouse.y * H / 2 + camera.position.y, rr = 1.3;
+      for (let i = 0; i < N; i++) {
+        const i3 = i * 3, oi = smooth((o - oDelay[i]) / (1 - oDelay[i])), ci = smooth((c - cDelay[i]) / (1 - cDelay[i]));
+        let x = chaos[i3] + Math.sin(t * speed + phase[i3]) * amp, y = chaos[i3 + 1] + Math.cos(t * speed * 0.9 + phase[i3 + 1]) * amp, z = chaos[i3 + 2] + Math.sin(t * speed * 0.7 + phase[i3 + 2]) * amp * 0.6;
+        if (this.pointerFine && oi < 1) { const dx = x - mx, dy = y - my, d2 = dx * dx + dy * dy; if (d2 < rr * rr && d2 > 0.0001) { const dd = Math.sqrt(d2), f = (1 - dd / rr) * 0.5 * (1 - oi); x += dx / dd * f; y += dy / dd * f; } }
+        const ox = order[i3] * breathe, oy = order[i3 + 1] * breathe, tx = ox * rc - oy * rs, ty = ox * rs + oy * rc;
+        x += (tx - x) * oi; y += (ty - y) * oi; z += (order[i3 + 2] - z) * oi;
+        if (ci > 0) { const rx = x - cx, ry = y - cy, ang = ci * 1.4 * dir, cs = Math.cos(ang), sn = Math.sin(ang), sh = 1 - ci; x = cx + (rx * cs - ry * sn) * sh; y = cy + (rx * sn + ry * cs) * sh; z *= sh; }
+        pos[i3] = x; pos[i3 + 1] = y; pos[i3 + 2] = z; alphas[i] = (0.45 + 0.4 * clamp01((z + 2) / 4)) * (1 - 0.15 * oi) + 0.3 * ci;
+      }
+      pA.needsUpdate = true; aA.needsUpdate = true;
+      const thr = spacing * (1.75 - 0.62 * o), thr2 = thr * thr, fade = 1 - c; let e = 0;
+      if (c < 0.98) {
+        const inv = 1 / thr, GW = 64, OX = W, OY = H; head.fill(-1);
+        for (let i = 0; i < N; i++) { const gx = Math.max(0, Math.min(GW - 1, ((pos[i * 3] + OX) * inv) | 0)), gy = Math.max(0, Math.min(GW - 1, ((pos[i * 3 + 1] + OY) * inv) | 0)); const cell = gy * GW + gx; cellOf[i] = cell; nextIdx[i] = head[cell]; head[cell] = i; }
+        outer: for (let i = 0; i < N; i++) {
+          const i3 = i * 3, ci = cellOf[i], gx = ci % GW, gy = (ci / GW) | 0;
+          for (let oy = -1; oy <= 1; oy++) for (let ox = -1; ox <= 1; ox++) {
+            const nx = gx + ox, ny = gy + oy; if (nx < 0 || ny < 0 || nx >= GW || ny >= GW) continue;
+            for (let j = head[ny * GW + nx]; j !== -1; j = nextIdx[j]) {
+              if (j <= i) continue;
+              const j3 = j * 3, dx = pos[i3] - pos[j3], dy = pos[i3 + 1] - pos[j3 + 1], dz = pos[i3 + 2] - pos[j3 + 2], d2 = dx * dx + dy * dy + dz * dz;
+              if (d2 < thr2) { const k6 = e * 6; lpos[k6] = pos[i3]; lpos[k6 + 1] = pos[i3 + 1]; lpos[k6 + 2] = pos[i3 + 2]; lpos[k6 + 3] = pos[j3]; lpos[k6 + 4] = pos[j3 + 1]; lpos[k6 + 5] = pos[j3 + 2];
+                tmp.copy(pageCol).lerp(lineCol, (0.25 + 0.55 * (1 - Math.sqrt(d2) / thr)) * fade); lcol[k6] = lcol[k6 + 3] = tmp.r; lcol[k6 + 1] = lcol[k6 + 4] = tmp.g; lcol[k6 + 2] = lcol[k6 + 5] = tmp.b;
+                if (++e >= maxE) break outer; }
+            }
+          }
+        }
+      }
+      lgeo.setDrawRange(0, e * 2); lpA.needsUpdate = true; lcA.needsUpdate = true; lines.visible = c < 0.98;
+      pmat.uniforms.uGrow.value = 1 + 0.25 * o + 3.2 * c;
+      glow.position.set(cx, cy, 0); glow.scale.setScalar(0.2 + 3.4 * c); glow.material.opacity = 0.8 * c;
+      camera.position.x += (this.mouse.x * 0.35 - camera.position.x) * 0.04; camera.position.y += (this.mouse.y * 0.25 - camera.position.y) * 0.04; camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+      this.rafId = requestAnimationFrame(tick);
+    };
+    this.kick = () => { if (!this.rafId && this.sceneActive) { last = 0; this.rafId = requestAnimationFrame(tick); } };   // single loop: rafId is the only scheduler
+    this.updateSceneActive = () => { this.sceneActive = this.visible.size > 0 && !document.hidden && this.canvasOpacity > 0.02; this.kick(); };
+    this.setCanvasOpacity = v => { this.canvasOpacity = v; canvas.style.opacity = String(v); this.updateSceneActive(); };
+    this.io = new IntersectionObserver(es => { es.forEach(en => en.isIntersecting ? this.visible.add(en.target) : this.visible.delete(en.target)); this.updateSceneActive(); });
+    this.qa('[data-scene-section]').forEach(s => this.io.observe(s));
+    const onVis = () => this.updateSceneActive(); document.addEventListener('visibilitychange', onVis);
+    let rt; const onResize = () => { clearTimeout(rt); rt = setTimeout(resize, 150); };
+    addEventListener('resize', onResize); addEventListener('orientationchange', onResize);
+    this.pointerFine = matchMedia('(pointer: fine)').matches && !mobile;
+    const onMove = e => { this.mouse.x = (e.clientX / innerWidth) * 2 - 1; this.mouse.y = -((e.clientY / innerHeight) * 2 - 1); };
+    if (this.pointerFine) addEventListener('mousemove', onMove, { passive: true });
+    this.sceneApi = { refreshColors, relayout: layout };
+    this.sceneCleanup = () => { document.removeEventListener('visibilitychange', onVis); removeEventListener('resize', onResize); removeEventListener('orientationchange', onResize); removeEventListener('mousemove', onMove); renderer.dispose(); geo.dispose(); lgeo.dispose(); pmat.dispose(); spriteTex.dispose(); };
+    this.updateSceneActive();
+  }
+
+  renderVals() {
+    const s = this.state; const stress = Component.q('stress') === '1';
+    const d = window.AIUX_COPY ? window.AIUX_COPY(s.lang, stress) : { home: {}, cases: [] };
+    const t = d.home || {}; const cases = d.cases || [];
+    const notice = t.notice || {}; const pages = notice.pages || {};
+    const showNotice = !!s.from && !s.noticeOff && s.lang !== 'en';
+    const mailSubject = 'Role or project conversation';
+    return {
+      t, ch: d.chrome || {}, c1: cases[0] || {}, c2: cases[1] || {}, c3: cases[2] || {},
+      heroRoles: (((t.hero || {}).roles) || []).map((text, i) => ({ text, n: '0' + (i + 1), lead: (t.hero || {}).rolesLead || '' })),
+      ...(() => { const items = ((t.logos || {}).items) || [], lead = (t.logos || {}).overline || ''; return { logoSet: items, logosSummary: lead + ': ' + items.map(x => x.name).join(', ') + '.' }; })(),
+      brands: (t.hero || {}).brands || [], projects: (t.projects || {}).items || [], series: (t.read || {}).series || [], articles: ((t.read || {}).articles || []).map((a, i) => ({ ...a, n: '0' + (i + 1) })), facts: (t.about || {}).facts || [], ossItems: (t.oss || {}).items || [], toolkit: (t.toolkit || {}).items || [],
+      stackCards: cases.slice(0, 3).map((c, i) => { const n = Math.min(3, cases.length) || 1; const pos = (i - s.stackIndex + n) % n; return { pos, hidden: pos !== 0, tab: pos === 0 ? 0 : -1, index: c.index, category: c.role, year: c.year, title: c.title, result: c.result, loading: i ? 'lazy' : 'eager', cover: c.cover || (c.coverId === 'cover-reel-pipeline' ? '../assets/cases/reel-still.webp' : ''), href: c.href }; }),
+      stackCounter: '0' + (s.stackIndex + 1) + ' / 0' + Math.min(3, cases.length),
+      stackNext: () => this.stackGo(1), stackPrev: () => this.stackGo(-1),
+      stackBtnProps: { style: { background: 'var(--gradient-ink)', color: 'var(--on-ink-strong)', border: '1px solid var(--on-ink-border)', boxShadow: 'var(--shadow-sm)' } },
+      aboutRuns: (() => { const text = (t.about || {}).text || '', acc = (t.about || {}).accents || []; const grad = { background: 'var(--gradient-text)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }; if (!acc.length) return [{ text, accent: false, style: null }]; const re = new RegExp('(' + acc.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'g'); return text.split(re).filter(Boolean).map(part => acc.includes(part) ? { text: part, accent: true, style: grad } : { text: part, accent: false, style: null }); })(),
+      closingLabel: (t.closing || {}).def, mailSubject, mailHref: 'mailto:hello@aiuxaleem.com?subject=' + encodeURIComponent(mailSubject),
+      workCounter: '0' + (s.workIndex + 1) + ' / 03', workPrevOff: s.workIndex <= 0, workNextOff: s.workIndex >= 2,
+      workPrev: () => this.goWork(s.workIndex - 1), workNext: () => this.goWork(s.workIndex + 1),
+      showNotice, noticeText: (notice.text || '').replace('{page}', pages[s.from] || s.from), dismissNotice: () => this.setState({ noticeOff: true }),
+      iconAi: this.icons.ai, iconSystem: this.icons.ds, iconAudit: this.icons.audit,
+      skillParts: ((t.skills || {}).parts) || [],
+      ...(() => { const p = ((t.skills || {}).parts) || []; return { core1: p[0] || '', core2: p[1] || '', core3: p[2] || '', core4: p[3] || '', coreSummary: p.join(', ') }; })(), skillBa: ((t.skills || {}).ba) || [], skillMotion: ((t.skills || {}).motion) || [], skillFin: ((t.skills || {}).fin) || [], skillPm: ((t.skills || {}).pm) || [],
+      ...(() => { const items = ((t.skills || {}).items) || [], o = {}; for (let i = 0; i < 10; i++) { const it = items[i] || { t: '', b: '' }, s = it.t || '', k = s.indexOf(' '); const j = s.lastIndexOf(' '); o['s' + (i + 1)] = { t: s, b: it.b || '', w1: k < 0 ? s : s.slice(0, k), rest: k < 0 ? '' : s.slice(k + 1), head: j < 0 ? '' : s.slice(0, j), lw: j < 0 ? s : s.slice(j + 1) }; } return o; })(),
+      ...(() => { const map = l => l.map(x => ({ name: x.name, initial: x.name.slice(0, 1), hasLogo: !!x.slug, light: x.slug ? 'https://cdn.simpleicons.org/' + x.slug + '/0B1F36' : '', dark: x.slug ? 'https://cdn.simpleicons.org/' + x.slug + '/E2E8F0' : '', bg: x.hi ? 'var(--surface-ink)' : 'var(--surface-page)', border: x.hi ? 'transparent' : 'var(--border-default)', shadow: x.hi ? 'var(--shadow-sm)' : 'none', ring: x.hi ? 'var(--gradient-brand)' : 'none', fg: x.hi ? 'var(--on-ink-strong)' : 'var(--text-strong)', swap: x.hi ? 'off' : 'on', showLight: x.hi ? 'none' : 'block' })), all = ((t.skills || {}).tools) || []; return { toolsAi: map(all.filter(x => x.ai)), toolsCore: map(all.filter(x => !x.ai)) }; })(),
+      hideLogo: e => { e.currentTarget.style.display = 'none'; },
+      leadItems: (((t.lead || {}).items) || []).map((it, i) => ({ ...it, icon: [this.icons.target, this.icons.users, this.icons.languages][i] })),
+      nowBuild: (((t.now || {}).build) || []).map((b, i) => ({ ...b, tone: i === 3 ? 'neutral' : 'brand', dot: i !== 3, icon: [this.icons.trophy, this.icons.bot, this.icons.bookOpen, this.icons.layoutTemplate][i] || this.icons.layoutTemplate })),
+      nowLive: (((t.now || {}).certs) || []).filter(c => c.live), nowVerified: (((t.now || {}).certs) || []).filter(c => !c.live && c.img).map(c => ({ ...c, alt: c.name, full: c.img.replace('../assets/certs/', '../assets/certs/full/'), open: e => this.openCert(c.img, e) })),
+      certCur: (() => { const c = (((t.now || {}).certs) || []).find(x => x.img && x.img === s.certImg); return c ? { ...c, full: c.img.replace('../assets/certs/', '../assets/certs/full/') } : { name: '', org: '', full: '' }; })(),
+      certDlgRef: this.certDlgRef, onCertClose: this.onCertClose, onCertBackdrop: this.onCertBackdrop, closeCert: this.closeCert, nowOther: (((t.now || {}).certs) || []).filter(c => !c.live && !c.img),
+      iPlay: this.icons.play, iPlayTile: this.icons.playTile, iBookTile: this.icons.book, iArrowRight: this.icons.arrowRight, iArrowTile: this.icons.arrowTile, iExternalTile: this.icons.externalTile, iDownload: this.icons.download, iExternal: this.icons.external, iCalendar: this.icons.calendar, iArrowDown: this.icons.arrowDown, iMail: this.icons.mail,
+    };
+  }
+}
+</script>
+</body>
+</html>

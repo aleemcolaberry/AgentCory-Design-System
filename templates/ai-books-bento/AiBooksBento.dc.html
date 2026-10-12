@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="AI Books Bento Post" description="4:5 social post: 8 book picks with covers in a bento grid, author footer" -->
+<helmet><script src="./ds-base.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}a{color:#1568D4;text-decoration:none}a:hover{color:#258AFD}</style></helmet>
+<div class="fit-box" style="width:calc(1080px * var(--fit, 1));height:calc(1350px * var(--fit, 1));margin-inline:auto"><div class="fit-canvas" data-fit-canvas style="width:1080px;height:1350px;transform:scale(var(--fit, 1))"><div data-screen-label="AI Books Bento" style="width:1080px;height:1350px;box-sizing:border-box;padding:56px 60px 48px;background:#F4F5FA;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F36;display:flex;flex-direction:column;gap:28px;position:relative;overflow:hidden">
+<div style="position:absolute;inset-inline-end:-180px;top:-220px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.22),rgba(41,190,221,0) 70%);pointer-events:none"></div>
+<div style="position:absolute;inset-inline-start:-200px;bottom:-240px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(37,138,253,.14),rgba(37,138,253,0) 70%);pointer-events:none"></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;position:relative">
+<div style="display:flex;flex-direction:column;gap:16px;flex:none">
+<div style="display:flex;gap:10px;align-items:center"><span style="padding:8px 16px;border-radius:999px;background:#0B1F36;color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex:none">Reading list</span><span style="padding:8px 16px;border-radius:999px;background:linear-gradient(90deg,#1568D4,#0E7F9E);color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex:none">8 books</span></div>
+<h1 style="margin:0;font-size:66px;line-height:1.02;font-weight:800;letter-spacing:-.03em;">AI&nbsp;books&nbsp;for<br><span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">UX&nbsp;designers</span></h1>
+</div>
+<sc-if value="{{ showTagline }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;text-align:end;padding-bottom:8px;flex:none;"><span style="font-size:22px;font-weight:800;line-height:1.2">Read&nbsp;smarter.<br>Design&nbsp;for&nbsp;AI.</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:#5B6B80;line-height:1.6">FRAMEWORKS<br>RESEARCH<br>PRACTICE</span></div></sc-if>
+</div>
+<div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr));gap:16px;position:relative">
+<div style="grid-column:1 / 8;grid-row:1;background:linear-gradient(160deg,#0B1F36,#143457);border-radius:28px;padding:22px 26px 22px 22px;display:flex;gap:24px;align-items:center;position:relative;overflow:hidden;box-shadow:0 12px 32px rgba(11,31,54,.18);color:#fff;min-height:0">
+<div style="position:absolute;inset-inline-end:-140px;bottom:-200px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(37,138,253,.45),rgba(37,138,253,0) 70%)"></div>
+<sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset-inline-end:24px;top:20px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#8FA3BC">01</span></sc-if>
+<img src="./covers/ux-for-ai-nudelman.png" alt="UX for AI cover" style="height:100%;max-height:176px;aspect-ratio:92/128;object-fit:cover;border-radius:10px;flex:none;display:block;box-shadow:0 10px 24px rgba(0,0,0,.35);position:relative">
+<div style="display:flex;flex-direction:column;gap:8px;position:relative;min-width:0">
+<span style="font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.1">UX for AI</span>
+<p style="margin:0;font-size:16px;font-weight:600;line-height:1.4;color:#C9D5E4;text-wrap:pretty">A Framework for Designing AI-Driven Products</p>
+<span style="font-size:14px;color:#8FC8FF;font-weight:600">Greg Nudelman</span>
+</div>
+</div>
+<div style="grid-column:8 / 13;grid-row:1;background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px;display:flex;gap:18px;align-items:center;position:relative;box-shadow:0 1px 3px rgba(11,31,54,.06);min-height:0">
+<sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset-inline-end:20px;top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#636B7E">02</span></sc-if>
+<img src="./covers/ai-engineering.png" alt="AI Engineering cover" style="height:100%;max-height:150px;aspect-ratio:91/128;object-fit:cover;border-radius:8px;flex:none;display:block;box-shadow:0 0 0 1px #E3E7EF,0 6px 16px rgba(11,31,54,.12)">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<span style="font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.15">AI Engineering</span>
+<p style="margin:0;font-size:14px;font-weight:600;line-height:1.4;color:#4A5B70;text-wrap:pretty">Building Applications with Foundation Models</p>
+<span style="font-size:13px;color:#1568D4;font-weight:600">Chip Huyen</span>
+</div>
+</div>
+<div style="grid-column:1 / 6;grid-row:2;background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px;display:flex;gap:18px;align-items:center;position:relative;box-shadow:0 1px 3px rgba(11,31,54,.06);min-height:0">
+<sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset-inline-end:20px;top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#636B7E">03</span></sc-if>
+<img src="./covers/ai-for-ux-designers.png" alt="AI for UX Designers cover" style="height:100%;max-height:150px;aspect-ratio:92/127;object-fit:cover;border-radius:8px;flex:none;display:block;box-shadow:0 0 0 1px #E3E7EF,0 6px 16px rgba(11,31,54,.12)">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<span style="font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.15">AI for UX Designers</span>
+<p style="margin:0;font-size:14px;font-weight:600;line-height:1.4;color:#4A5B70;text-wrap:pretty">Using Artificial Intelligence to Supercharge Your Workflow</p>
+<span style="font-size:13px;color:#1568D4;font-weight:600">Lise Pilot</span>
+</div>
+</div>
+<div style="grid-column:6 / 13;grid-row:2;background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px 26px 20px 20px;display:flex;gap:22px;align-items:center;position:relative;box-shadow:0 1px 3px rgba(11,31,54,.06);min-height:0">
+<sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset-inline-end:20px;top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#636B7E">04</span></sc-if>
+<img src="./covers/ux-for-ai-spaulding.png" alt="UX for AI cover" style="height:100%;max-height:176px;aspect-ratio:92/127;object-fit:cover;border-radius:10px;flex:none;display:block;box-shadow:0 0 0 1px #E3E7EF,0 8px 20px rgba(11,31,54,.14)">
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1">UX for AI</span>
+<p style="margin:0;font-size:15px;font-weight:600;line-height:1.4;color:#4A5B70;text-wrap:pretty">Learn to Research, Plan, Design, and Test the UX of AI-Powered Products</p>
+<span style="font-size:14px;color:#1568D4;font-weight:600">James Spaulding</span>
+</div>
+</div>
+<div style="grid-column:1 / 8;grid-row:3;background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px 26px 20px 20px;display:flex;gap:22px;align-items:center;position:relative;box-shadow:0 1px 3px rgba(11,31,54,.06);min-height:0">
+<sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset-inline-end:20px;top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#636B7E">05</span></sc-if>
+<img src="./covers/designing-human-centric.png" alt="Designing Human-Centric AI Experiences cover" style="height:100%;max-height:176px;aspect-ratio:92/127;object-fit:cover;border-radius:10px;flex:none;display:block;box-shadow:0 0 0 1px #E3E7EF,0 8px 20px rgba(11,31,54,.14)">
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1;padding-inline-end:24px">Designing Human-Centric AI Experiences</span>
+<p style="margin:0;font-size:15px;font-weight:600;line-height:1.4;color:#4A5B70;text-wrap:pretty">Applied UX Design for AI</p>
+<span style="font-size:14px;color:#1568D4;font-weight:600">Akshay Kore</span>
+</div>
+</div>
+<div style="grid-column:8 / 13;grid-row:3;background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px;display:flex;gap:18px;align-items:center;position:relative;box-shadow:0 1px 3px rgba(11,31,54,.06);min-height:0">
+<sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset-inline-end:20px;top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#636B7E">06</span></sc-if>
+<img src="./covers/ai-and-ux.png" alt="AI and UX cover" style="height:100%;max-height:150px;aspect-ratio:92/127;object-fit:cover;border-radius:8px;flex:none;display:block;box-shadow:0 0 0 1px #E3E7EF,0 6px 16px rgba(11,31,54,.12)">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<span style="font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.15">AI and UX</span>
+<p style="margin:0;font-size:14px;font-weight:600;line-height:1.4;color:#4A5B70;text-wrap:pretty">Why Artificial Intelligence Needs User Experience</p>
+<span style="font-size:13px;color:#1568D4;font-weight:600;line-height:1.35">Gavin Lew, Robert M. Schumacher Jr.</span>
+</div>
+</div>
+<div style="grid-column:1 / 6;grid-row:4;background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px;display:flex;gap:18px;align-items:center;position:relative;box-shadow:0 1px 3px rgba(11,31,54,.06);min-height:0">
+<sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset-inline-end:20px;top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#636B7E">07</span></sc-if>
+<img src="./covers/conscious-ux.png" alt="Conscious UX cover" style="height:100%;max-height:150px;aspect-ratio:92/128;object-fit:cover;border-radius:8px;flex:none;display:block;box-shadow:0 0 0 1px #E3E7EF,0 6px 16px rgba(11,31,54,.12)">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+<span style="font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.15">Conscious UX</span>
+<p style="margin:0;font-size:14px;font-weight:600;line-height:1.4;color:#4A5B70;text-wrap:pretty">Leading Human-Centered Design in the Age of AI</p>
+<span style="font-size:13px;color:#1568D4;font-weight:600;line-height:1.35">Rikki Teeters, Brenda Laurel</span>
+</div>
+</div>
+<div style="grid-column:6 / 13;grid-row:4;background:linear-gradient(120deg,#1568D4,#0E7F9E);border-radius:24px;padding:20px 26px 20px 20px;display:flex;gap:22px;align-items:center;position:relative;box-shadow:0 10px 28px rgba(37,138,253,.3);color:#fff;min-height:0">
+<sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset-inline-end:20px;top:18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#fff">08</span></sc-if>
+<img src="./covers/anticipatory-design.png" alt="The Anticipatory Design Playbook cover" style="height:100%;max-height:176px;aspect-ratio:92/128;object-fit:cover;border-radius:10px;flex:none;display:block;box-shadow:0 10px 24px rgba(11,31,54,.25)">
+<div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.1">The Anticipatory Design Playbook</span>
+<p style="margin:0;font-size:15px;font-weight:600;line-height:1.4;text-wrap:pretty">A UX Guide to Design AI-Driven Experiences</p>
+<span style="font-size:14px;font-weight:700;color:#0B1F36">Joana Cerejo</span>
+</div>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:22px;border-top:1px solid #DCE1EA;position:relative">
+<div style="display:flex;flex-direction:column;gap:2px;flex:none;"><span style="font-size:18px;font-weight:800">Md&nbsp;Abdul&nbsp;Aleem</span><span style="font-size:14px;color:#5B6B80">Senior&nbsp;Product&nbsp;Designer&nbsp;@Colaberry</span></div>
+<span style="display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:#0B1F36;color:#fff;font-size:16px;font-weight:700;white-space:nowrap;flex:none">Follow&nbsp;for&nbsp;more <span style="font-size:18px">→</span></span>
+</div>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;showTagline&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showIndex&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return { showTagline: p.showTagline ?? true, showIndex: p.showIndex ?? true };
+  }
+}
+</script>
+</body>
+</html>

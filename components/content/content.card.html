@@ -1,0 +1,85 @@
+<!-- @dsCard group="Components" viewport="700x600" name="Content: Stats, Features, Testimonials, Chat" subtitle="The brand's signature marketing & chat blocks, with delivery states" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: var(--surface-page); }
+  .glabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin: 0 0 12px; }
+  .section { margin-bottom: 26px; }
+  .stats-row { display: flex; flex-wrap: wrap; gap: 24px 36px; align-items: flex-end; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 22px 26px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../tokens/reveal.js"></script>
+</head>
+<body>
+<div style="position:fixed;top:8px;inset-inline-end:8px;z-index:9;display:flex;gap:6px" dir="ltr">
+<button id="__dir" type="button" aria-label="Toggle right-to-left" style="height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:700 11px var(--font-mono)">RTL</button>
+<button id="__theme" type="button" aria-label="Toggle dark theme" style="width:30px;height:30px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:600 11px var(--font-mono)">◐</button>
+</div>
+<script>(function(){var h=document.documentElement;document.getElementById('__theme').onclick=function(){h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark')};var d=document.getElementById('__dir');d.onclick=function(){var r=h.getAttribute('dir')==='rtl';h.setAttribute('dir',r?'ltr':'rtl');d.textContent=r?'RTL':'LTR'}})()</script>
+<div id="root"></div>
+<script type="text/babel">
+  const { StatCard, FeatureCard, Testimonial, ChatBubble, TypingIndicator, Icon: DsIcon } = window.DesignSystem_ebeb85;
+  const Icon = ({ name }) => <DsIcon name={name} size={24} />;
+  function Demo() {
+    return (
+      <React.Fragment>
+        <div className="section">
+          <p className="glabel">StatCard</p>
+          <div className="stats-row">
+            <StatCard value="<60s" label="Response Time" gradient />
+            <StatCard value="94%" label="Contact Rate" />
+            <StatCard value="10x" label="ROI Potential" />
+            <StatCard value="$2.4M" label="Added Revenue" />
+          </div>
+        </div>
+        <div className="section">
+          <p className="glabel">FeatureCard</p>
+          <div className="grid2" data-stagger="100">
+            <FeatureCard icon={<Icon name="zap" />} title="Lightning-Fast Outreach"
+              tags={['30s avg response', 'Natural AI conversation', 'Voicemail detection']}>
+              Cory engages every new inquiry within 60 seconds, ensuring no lead goes cold.
+            </FeatureCard>
+            <FeatureCard icon={<Icon name="messages-square" />} title="Multi-Channel Mastery"
+              tags={['Voice + SMS + Email', 'Perfect timing', 'WhatsApp support']}>
+              Meet prospects where they are with seamless coordination across every channel.
+            </FeatureCard>
+          </div>
+        </div>
+        <div className="section">
+          <p className="glabel">Testimonial</p>
+          <div className="grid2" data-stagger="100">
+            <Testimonial metric="847%" metricLabel="ROI in Year 1"
+              quote="We went from 40% contact rates to 94% overnight, and conversion improved 30%."
+              name="Dr. Sarah Johnson" role="Director of Admissions, Metro State University" />
+            <Testimonial metric="2,100" metricLabel="Hours Saved / Year"
+              quote="Our team focuses on relationships while Cory handles qualification perfectly."
+              name="Michael Chen" role="VP Enrollment, Tech Institute" />
+          </div>
+        </div>
+        <div className="section" style={{marginBottom:0}}>
+          <p className="glabel">ChatBubble + TypingIndicator</p>
+          <div style={{maxWidth:420, display:'flex', flexDirection:'column', gap:10, background:'var(--surface-card)', border:'1px solid var(--border-subtle)', borderRadius:'var(--radius-xl)', padding:18}}>
+            <ChatBubble from="system">Today</ChatBubble>
+            <ChatBubble from="cory" time="9:41 AM">Hi, I'm Cory 👋 Ready to find your program?</ChatBubble>
+            <ChatBubble from="user" status="sent" time="9:42 AM">Do you offer evening MBA classes?</ChatBubble>
+            <ChatBubble from="cory">Yes! Our evening MBA runs Tue/Thu. Want me to book a call with an advisor?</ChatBubble>
+            <ChatBubble from="user" status="failed" onRetry={() => {}}>Can you call me at 4?</ChatBubble>
+            <ChatBubble from="user" status="sending">Or tomorrow morning</ChatBubble>
+            <TypingIndicator />
+            <ChatBubble from="system">Cory handed you to Maria, an admissions counselor</ChatBubble>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

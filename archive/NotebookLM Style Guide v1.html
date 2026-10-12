@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How-to: On-brand NotebookLM outputs, AgentCory Design System</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--slate-50);color:var(--slate-700);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--text-link);text-decoration:none}a:hover{color:var(--blue-700)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.grad{background:var(--gradient-brand);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.overline{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-link)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--slate-150);font-size:13px;font-weight:600;color:var(--navy-800)}
+.pill .dot{width:8px;height:8px;border-radius:99px;background:var(--gradient-brand)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--slate-150)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.hd img{height:28px;display:block}
+.hd nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.hd nav a{font-size:14px;font-weight:600;color:var(--slate-600);white-space:nowrap;padding:8px 0;display:inline-flex;align-items:center;min-height:24px}
+@media (max-width:1000px){.hd nav{flex-wrap:nowrap}.hd nav a:not(:last-child){display:none}}.hd nav a:hover{color:var(--navy-800)}
+.hero{position:relative;overflow:hidden;padding:72px 0 56px}
+.hero:before{content:"";position:absolute;top:-30%;right:-15%;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.18),transparent 65%);pointer-events:none}
+.hero h1{position:relative;font-size:clamp(36px,5.4vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--navy-800);margin:18px 0 18px;max-width:880px;text-wrap:balance}
+.hero p{position:relative;font-size:19px;max-width:680px;color:var(--slate-600);margin:0;text-wrap:pretty}
+.quick{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:40px}
+.qc{background:#fff;border:1px solid var(--slate-150);border-radius:20px;padding:22px;box-shadow:0 2px 10px rgba(11,31,54,.05);transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s;display:flex;flex-direction:column;gap:6px;color:inherit}
+.qc:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(11,31,54,.1);color:inherit}
+.qc b{font-size:18px;color:var(--navy-800)}.qc span{font-size:14px;color:var(--text-muted)}
+.qc i{font-style:normal;font-family:var(--font-mono);font-size:12px;color:var(--text-link)}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding:24px 0 96px}
+.toc{position:sticky;top:88px;align-self:start;display:flex;flex-direction:column;gap:4px}
+.toc a{font-size:14px;font-weight:600;color:var(--text-muted);padding:7px 12px;border-radius:10px}
+.toc a:hover{background:#fff;color:var(--navy-800)}
+.toc .sub{padding-inline-start:24px;font-weight:500;font-size:13px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}.toc{display:none}}
+section.part{padding-top:24px;margin-bottom:72px;scroll-margin-top:80px}
+section.part>h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--navy-800);margin:10px 0 12px}
+section.part>p.lead{font-size:17px;color:var(--slate-600);max-width:720px;margin:0 0 28px;text-wrap:pretty}
+.card{background:#fff;border:1px solid var(--slate-150);border-radius:22px;padding:28px;box-shadow:0 2px 10px rgba(11,31,54,.05)}
+.steps{display:flex;flex-direction:column;gap:14px;counter-reset:s}
+.step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:18px;background:#fff;border:1px solid var(--slate-150);border-radius:20px;padding:22px 24px;box-shadow:0 2px 10px rgba(11,31,54,.04)}
+.num{width:44px;height:44px;border-radius:14px;background:var(--gradient-brand-135);color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(37,138,253,.28)}
+.step h3{margin:2px 0 6px;font-size:19px;font-weight:800;letter-spacing:-.01em;color:var(--navy-800)}
+.step p{margin:0 0 8px;color:var(--slate-600);text-wrap:pretty;max-width:68ch}.step li,.rules li,.spot li,.fx p{max-width:68ch}
+.step ul{margin:6px 0 0;padding-inline-start:20px;color:var(--slate-600)}.step li{margin:4px 0}
+.ui{display:inline-flex;align-items:center;padding:2px 10px;border-radius:8px;background:var(--slate-100);border:1px solid var(--slate-150);font-weight:600;font-size:14px;color:var(--navy-800);white-space:nowrap}
+.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:10px}
+.set{border:1px solid var(--slate-150);border-radius:14px;padding:12px 14px;background:var(--slate-50)}
+.set small{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)}
+.set b{font-size:15px;color:var(--navy-800)}
+.prompt{margin-top:12px;border-radius:16px;background:var(--navy-800);color:#E6EEF8;overflow:hidden}
+.prompt .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.prompt .bar span{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan-400)}
+.prompt pre{margin:0;padding:16px 18px 18px;font-family:var(--font-mono);font-size:13.5px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+.copy{flex:none;align-self:center;border:0;cursor:pointer;border-radius:var(--radius-pill);min-height:36px;padding:8px 16px;font:600 var(--text-ui-sm) var(--font-sans);background:var(--gradient-brand-deep);color:var(--text-on-brand);box-shadow:var(--shadow-brand);transition:transform var(--duration-fast) var(--ease-out),filter var(--duration-base) var(--ease-out)}
+.copy:hover{filter:brightness(1.08)}
+.copy:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
+.copy:active{transform:scale(.97)}
+.copy.done{background:var(--green-700);box-shadow:none}
+.tip{display:flex;gap:10px;margin-top:10px;padding:12px 14px;border-radius:14px;background:var(--blue-100);color:var(--navy-700);font-size:14.5px}
+.tip b{color:var(--blue-700);white-space:nowrap}
+.palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.sw{border-radius:18px;overflow:hidden;border:1px solid var(--slate-150);background:#fff}
+.sw div{height:72px}.sw p{margin:0;padding:10px 14px;font-size:13px;color:var(--slate-600)}
+.sw p b{display:block;color:var(--navy-800);font-size:14px}.sw code{font-family:var(--font-mono);font-size:12px}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+.rules h3{margin:0 0 8px;font-size:14px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.rules ul{margin:0;padding-inline-start:18px;color:var(--slate-600)}.rules li{margin:5px 0}
+.fix{display:grid;gap:12px}
+.fx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:18px;background:#fff;border:1px solid var(--slate-150);border-radius:18px;padding:18px 22px}
+.fx b{color:var(--navy-800)}.fx p{margin:0;color:var(--slate-600)}
+.fx code{font-family:var(--font-mono);font-size:13px;background:var(--slate-100);padding:2px 6px;border-radius:6px;color:var(--navy-700)}
+.ex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media (max-width:760px){.ex{grid-template-columns:1fr}}
+.exc{display:flex;flex-direction:column;gap:10px}
+.exc.tall{grid-row:span 2}
+.exc figcaption{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:var(--text-muted)}.exc figcaption b{color:var(--navy-800)}
+.frame{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--slate-150);box-shadow:0 10px 30px rgba(11,31,54,.08);background:#F4F5FA;container-type:inline-size}
+.r169{aspect-ratio:16/9}
+.hero{overflow:hidden}.glow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.28),transparent 65%);pointer-events:none}
+.mk-pill{display:inline-flex;align-items:center;gap:1cqw;padding:.8cqw 1.8cqw;border-radius:99px;background:#fff;border:1px solid #E2E5EE;font-size:max(11px,2cqw);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1568D4;width:max-content}
+.mk-card{background:#fff;border:1px solid #E2E5EE;border-radius:2.4cqw;box-shadow:0 1cqw 3cqw rgba(11,31,54,.07)}
+.mk-ico{border-radius:1.6cqw;background:#E6F1FF;display:flex;align-items:center;justify-content:center}
+.mk-ico i{display:block;border:.45cqw solid #1B79EC;border-radius:50%}
+.play{position:absolute;inset-inline:3cqw;bottom:2.6cqw;display:flex;align-items:center;gap:2cqw}
+.play i{width:0;height:0;border-left:1.8cqw solid #0B1F36;border-top:1.1cqw solid transparent;border-bottom:1.1cqw solid transparent}
+.play b{flex:1;height:.7cqw;border-radius:99px;background:#D5D9E4;position:relative;overflow:hidden}.play b:after{content:"";position:absolute;inset:0 62% 0 0;background:var(--gradient-brand)}
+.play span{font:600 max(11px,1.8cqw) var(--font-mono);color:#525A6B}
+@media (max-width:640px){.fx{grid-template-columns:1fr;gap:6px}}
+.spot{background:var(--gradient-ink);color:#fff;border-radius:24px;padding:36px;position:relative;overflow:hidden}
+.spot:after{content:"";position:absolute;bottom:-40%;right:-10%;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.25),transparent 65%)}
+.spot h3{margin:0 0 10px;font-size:26px;font-weight:800;letter-spacing:-.02em}
+.spot ol{margin:0;padding-inline-start:20px;color:#C9D6E6;position:relative;z-index:1}.spot li{margin:6px 0}
+footer{border-top:1px solid var(--slate-150);padding:28px 0;color:var(--text-muted);font-size:14px}
+.ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}.ft a{display:inline-flex;align-items:center;min-height:24px;padding:4px 0}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+<a href="../index.html"><img src="../assets/logo-agentcory.svg" alt="AgentCory"></a>
+<nav><a href="#examples">Examples</a><a href="#setup">Setup</a><a href="#video">Video</a><a href="#infographic">Infographic</a><a href="#deck">Slide deck</a><a href="#fix">Troubleshooting</a><a href="../index.html">← Showcase</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<span class="pill"><span class="dot"></span>How-to guide · NotebookLM Studio</span>
+<h1>Make NotebookLM outputs <span class="grad">look like Cory.</span></h1>
+<p>Step-by-step instructions and copy-ready style prompts for generating videos, infographics and slide decks in the AgentCory visual language: navy ink, the blue-to-cyan signal and soft rounded cards.</p>
+<div class="quick">
+<a class="qc" href="#video"><i>01</i><b>Video Overview</b><span>Custom visual style prompt</span></a>
+<a class="qc" href="#infographic"><i>02</i><b>Infographic</b><span>Style, layout and focus prompt</span></a>
+<a class="qc" href="#deck"><i>03</i><b>Slide Deck</b><span>Presenter slides prompt</span></a>
+</div>
+</div></section>
+
+<div class="wrap layout">
+<aside class="toc">
+<a href="#examples">Example results</a>
+<a href="#setup">Before you start</a>
+<a href="#brand">Brand cheat sheet</a>
+<a href="#video">Video Overview</a>
+<a href="#infographic">Infographic</a>
+<a href="#deck">Slide Deck</a>
+<a href="#fix">Troubleshooting</a>
+<a href="#checklist">Final checklist</a>
+</aside>
+<main>
+
+<section class="part" id="examples">
+<span class="overline">What you'll get</span>
+<h2>Example results</h2>
+<p class="lead">Roughly what on-brand output looks like when the prompts work. Use these to judge your results. The numbers are illustrative only.</p>
+<div class="ex">
+<figure class="exc" style="margin:0">
+<div class="frame r169">
+<div class="glow" style="width:60%;aspect-ratio:1;top:-30%;right:-18%"></div>
+<div style="position:absolute;inset:0;padding:5cqw 6cqw;display:flex;flex-direction:column;gap:2cqw">
+<span class="mk-pill">AI impact</span>
+<div style="font-size:5.6cqw;font-weight:800;letter-spacing:-.03em;line-height:1.05;color:#0B1F36;max-width:70%">Designers now ship <span class="grad">2x faster</span> with AI.</div>
+<div style="display:flex;gap:2.4cqw;margin-top:1cqw">
+<div class="mk-card" style="padding:2.4cqw 3cqw"><div class="grad" style="font-size:7cqw;font-weight:800;letter-spacing:-.03em;line-height:1">68%</div><div style="font-size:max(11px,2cqw);color:#525A6B;margin-top:.6cqw">use AI weekly</div></div>
+<div class="mk-card" style="padding:2.4cqw 3cqw"><div style="font-size:7cqw;font-weight:800;letter-spacing:-.03em;line-height:1;color:#0E7A4E">+24%</div><div style="font-size:max(11px,2cqw);color:#525A6B;margin-top:.6cqw">output per sprint</div></div>
+</div></div>
+<div class="play"><i></i><b></b><span>01:12 / 03:05</span></div>
+</div>
+<figcaption><b>Video Overview</b><span>Stat scene</span></figcaption>
+</figure>
+<figure class="exc tall" style="margin:0">
+<div class="frame" style="aspect-ratio:3/4.4">
+<div class="glow" style="width:80%;aspect-ratio:1;top:-18%;right:-30%"></div>
+<div class="glow" style="width:70%;aspect-ratio:1;bottom:8%;left:-35%;opacity:.7"></div>
+<div style="position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;gap:3.6cqw">
+<span class="mk-pill" style="font-size:max(11px,2.8cqw)">State of the designer 2026</span>
+<div style="font-size:8.4cqw;font-weight:800;letter-spacing:-.03em;line-height:1.05;color:#0B1F36">AI, craft and <span class="grad">happiness</span> at work</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:3cqw">
+<div class="mk-card" style="padding:4cqw;display:flex;flex-direction:column;gap:1.4cqw"><div class="mk-ico" style="width:8cqw;height:8cqw"><i style="width:3.4cqw;height:3.4cqw"></i></div><div class="grad" style="font-size:10cqw;font-weight:800;letter-spacing:-.03em;line-height:1">68%</div><div style="font-size:max(11px,3cqw);color:#525A6B;line-height:1.3">use AI tools every week</div></div>
+<div class="mk-card" style="padding:4cqw;display:flex;flex-direction:column;gap:1.4cqw"><div class="mk-ico" style="width:8cqw;height:8cqw"><i style="width:3.4cqw;height:3.4cqw;border-radius:1cqw"></i></div><div class="grad" style="font-size:10cqw;font-weight:800;letter-spacing:-.03em;line-height:1">3 in 5</div><div style="font-size:max(11px,3cqw);color:#525A6B;line-height:1.3">say craft still matters most</div></div>
+<div class="mk-card" style="padding:4cqw;grid-column:span 2;display:flex;flex-direction:column;gap:2cqw"><div style="font-size:max(11px,2.6cqw);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6E7689">Job satisfaction</div>
+<div style="display:flex;align-items:center;gap:2cqw"><div style="flex:1;height:3cqw;border-radius:99px;background:#ECEEF4;overflow:hidden"><div style="width:72%;height:100%;background:var(--gradient-brand);border-radius:99px"></div></div><b style="font-size:3.4cqw;color:#0B1F36">72%</b></div>
+<div style="display:flex;align-items:center;gap:2cqw"><div style="flex:1;height:3cqw;border-radius:99px;background:#ECEEF4;overflow:hidden"><div style="width:48%;height:100%;background:#91C4FE;border-radius:99px"></div></div><b style="font-size:3.4cqw;color:#0B1F36">48%</b></div></div>
+</div>
+<div style="margin-top:auto;background:linear-gradient(160deg,#12304F,#0B1F36);border-radius:3cqw;padding:5cqw;color:#fff"><div style="font-size:max(11px,2.6cqw);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5FD0E8">Key takeaway</div><div style="font-size:4.4cqw;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-top:1.4cqw">AI speeds up the work. Craft still sets designers apart.</div></div>
+</div></div>
+<figcaption><b>Infographic</b><span>Portrait, Standard detail</span></figcaption>
+</figure>
+<figure class="exc" style="margin:0">
+<div class="frame r169" style="background:linear-gradient(160deg,#12304F,#0B1F36);border-color:#12304F">
+<div class="glow" style="width:55%;aspect-ratio:1;bottom:-40%;right:-12%;opacity:.9"></div>
+<div style="position:absolute;inset:0;padding:6cqw;display:flex;flex-direction:column;justify-content:center;gap:2.4cqw">
+<span class="mk-pill" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#5FD0E8">Section 02</span>
+<div style="font-size:6.4cqw;font-weight:800;letter-spacing:-.03em;line-height:1.05;color:#fff;max-width:75%">Where design careers are <span class="grad">heading next</span></div>
+<div style="font-size:max(11px,2.4cqw);color:#BCC7D5;max-width:60%">Three shifts every design leader should plan for.</div>
+</div>
+<div style="position:absolute;inset-inline-end:3cqw;bottom:2.4cqw;font:600 max(11px,1.8cqw) var(--font-mono);color:#9DB0C6">05 / 14</div>
+</div>
+<figcaption><b>Slide Deck</b><span>Section divider</span></figcaption>
+</figure>
+</div>
+</section>
+
+<section class="part" id="setup">
+<span class="overline">Step 0</span>
+<h2>Before you start</h2>
+<p class="lead">Each tool's Customize dialog has its own style field. Set up your notebook once, then follow the section for the output you need.</p>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><h3>Open or create a notebook</h3><p>Go to NotebookLM and open the notebook that holds your topic, or click <span class="ui">+ Create notebook</span>.</p></div></div>
+<div class="step"><div class="num">2</div><div><h3>Add your sources</h3><p>Click <span class="ui">+ Add sources</span> and upload PDFs, docs, links or pasted text. The output only covers what's in the sources, so leave out anything off-topic.</p></div></div>
+<div class="step"><div class="num">3</div><div><h3>Select the sources to use</h3><p>In the Sources panel, tick only the sources this output should draw from.</p></div></div>
+<div class="step"><div class="num">4</div><div><h3>Open the Customize dialog</h3><p>In the <b>Studio</b> panel on the right, click the pencil / customize icon on the tile you want (<span class="ui">Video Overview</span>, <span class="ui">Infographic</span> or <span class="ui">Slide Deck</span>). Clicking the tile itself generates with default styling, so use the pencil.</p></div></div>
+</div>
+</section>
+
+<section class="part" id="brand">
+<span class="overline">Reference</span>
+<h2>Brand cheat sheet</h2>
+<p class="lead">Every prompt below is built from these values. Keep the hex codes in your prompts; they help the generator hold the palette.</p>
+<div class="palette">
+<div class="sw"><div style="background:#0B1F36"></div><p><b>Navy ink</b><code>#0B1F36</code> · text, dark scenes</p></div>
+<div class="sw"><div style="background:linear-gradient(90deg,#258AFD,#29BEDD)"></div><p><b>Signal gradient</b><code>#258AFD → #29BEDD</code></p></div>
+<div class="sw"><div style="background:#F4F5FA"></div><p><b>Surface</b><code>#F4F5FA</code> · backgrounds</p></div>
+<div class="sw"><div style="background:#1FB877"></div><p><b>Positive</b><code>#1FB877</code> · growth only</p></div>
+</div>
+<div class="rules">
+<div class="card"><h3 style="color:var(--text-link)">Always</h3><ul><li>Bold geometric sans, extra-bold headlines</li><li>Big stat numbers as the hero</li><li>White rounded cards, soft shadows</li><li>Pill labels, thin-line icons</li><li>Soft cyan glows, lots of whitespace</li></ul></div>
+<div class="card"><h3 style="color:var(--text-muted)">Never</h3><ul><li>Photos, stock imagery, textures, grain</li><li>Cartoon characters or clip-art</li><li>3D, neon or heavy gradients everywhere</li><li>Busy layouts or long paragraphs</li><li>Bouncy or flashy motion</li></ul></div>
+</div>
+</section>
+
+<section class="part" id="video">
+<span class="overline">Output 01</span>
+<h2>Video Overview</h2>
+<p class="lead">An explainer video in flat, motion-graphics style with UI-like scenes, gradient stats and calm transitions.</p>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><h3>Open Customize Video Overview</h3><p>From the Studio panel, click the pencil on <span class="ui">Video Overview</span>.</p></div></div>
+<div class="step"><div class="num">2</div><div><h3>Choose the visual style</h3><p>Under <b>Choose visual style</b>, select <span class="ui">Custom</span> (the pencil card). Don't use Classic, Whiteboard or Kawaii; they override the brand look.</p></div></div>
+<div class="step"><div class="num">3</div><div><h3>Paste the style prompt</h3><p>Paste this into <b>Describe a custom visual style</b>:</p>
+<div class="prompt"><div class="bar"><span>Full prompt</span><button class="copy" type="button">Copy</button></div><pre>Clean, modern flat vector motion graphics in a bright tech-SaaS style. Cool off-white background (#F4F5FA) with deep navy (#0B1F36) for text and shapes. Signature accent is a blue-to-cyan gradient (#258AFD → #29BEDD), used on key words, big stat numbers and highlights, with soft blurred cyan glows bleeding off the edges of the frame. Green (#1FB877) only for positive metrics. Bold geometric sans-serif headlines (Plus Jakarta Sans style, extra-bold, tight letter spacing), with large numbers as the heroes of each scene. UI-style compositions: white rounded cards (20px corners) with hairline borders and soft navy-tinted shadows, pill-shaped labels and buttons, chat bubbles, dashboard and stat cards. Simple thin-line outline icons in light-blue rounded tiles. Occasional dark navy spotlight scenes with white text for key takeaways. No photos, textures, grain, clutter or cartoon characters. Calm, smooth fades and gentle slide-ups, no bouncing. Feels confident, warm, premium and data-driven.</pre></div>
+<div class="prompt"><div class="bar"><span>Short version (if the field has a character limit)</span><button class="copy" type="button">Copy</button></div><pre>Flat modern tech-SaaS motion graphics: off-white background, deep navy text, blue-to-cyan gradient (#258AFD→#29BEDD) accents with soft glows, bold geometric sans headlines, big gradient stat numbers, white rounded cards with soft shadows, pill labels, thin-line icons, occasional dark navy scenes. No photos, no clutter, smooth fades.</pre></div>
+</div></div>
+<div class="step"><div class="num">4</div><div><h3>Set the focus</h3><p>Under <b>What should the video focus on?</b>, pick a suggested topic chip or write your own. Adding this line keeps the brand's numbers-first habit:</p>
+<div class="prompt"><div class="bar"><span>Focus add-on</span><button class="copy" type="button">Copy</button></div><pre>Lead each point with the key number or stat, then explain the impact in one short line.</pre></div></div></div>
+<div class="step"><div class="num">5</div><div><h3>Generate and review</h3><p>Click <span class="ui">Generate</span>. A video can take several minutes, and you can leave the page while it renders. When it's ready, check it against the <a href="#checklist">final checklist</a>.</p></div></div>
+</div>
+</section>
+
+<section class="part" id="infographic">
+<span class="overline">Output 02</span>
+<h2>Infographic</h2>
+<p class="lead">A single-page visual summary with a clear title, a grid of stat cards and a dark navy takeaway panel.</p>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><h3>Open Customize Infographic</h3><p>From the Studio panel, click the pencil on <span class="ui">Infographic</span>.</p></div></div>
+<div class="step"><div class="num">2</div><div><h3>Choose the settings</h3><p>Avoid Kawaii, Clay, Sketch Note and Anime; they clash with the brand.</p>
+<div class="settings"><div class="set"><small>Visual style</small><b>Auto-select</b></div><div class="set"><small>Level of detail</small><b>Standard</b></div><div class="set"><small>Sources</small><b>Only relevant ones</b></div></div></div></div>
+<div class="step"><div class="num">3</div><div><h3>Paste the style prompt</h3><p>Paste this into <b>Describe the infographic you want to create</b>:</p>
+<div class="prompt"><div class="bar"><span>Full prompt</span><button class="copy" type="button">Copy</button></div><pre>Clean, modern flat vector infographic in a bright tech-SaaS style. Cool off-white background (#F4F5FA). Deep navy (#0B1F36) for headings, body text and dividers. The signature accent is a blue-to-cyan gradient (#258AFD → #29BEDD), used on the 3–5 key stat numbers, highlighted keywords in the headline and chart fills. Add soft, blurred cyan glow circles bleeding off the corners. Use green (#1FB877) only for positive metrics or growth arrows. Bold geometric sans-serif type (Plus Jakarta Sans style, extra-bold headlines, tight letter spacing). Big numbers are the heroes, with short labels underneath. Layout: a clear title at the top, then a grid of white rounded cards (20px corners) with hairline slate borders and soft navy-tinted shadows. Add small uppercase pill labels as section eyebrows and thin-line outline icons in light-blue rounded tiles. Close with one dark navy panel with white text for the key takeaway. Generous whitespace and a strong visual hierarchy. No photos, textures, 3D, cartoon characters, clip-art or clutter.</pre></div>
+<div class="prompt"><div class="bar"><span>Short version</span><button class="copy" type="button">Copy</button></div><pre>Flat modern tech-SaaS infographic: off-white background, deep navy text, blue-to-cyan gradient (#258AFD→#29BEDD) on big stat numbers and key words, soft cyan glows. White rounded cards with soft shadows, uppercase pill labels, thin-line icons in light-blue tiles, and a dark navy takeaway panel at the bottom. Bold geometric sans, lots of whitespace, no photos or clutter.</pre></div>
+<div class="tip"><b>Add focus</b><span>End the prompt with: "Highlight the 3 most important stats from the source."</span></div>
+</div></div>
+<div class="step"><div class="num">4</div><div><h3>Generate and review</h3><p>Click <span class="ui">Generate</span>. If it comes out too busy, regenerate with <b>Concise</b> detail.</p></div></div>
+</div>
+</section>
+
+<section class="part" id="deck">
+<span class="overline">Output 03</span>
+<h2>Slide Deck</h2>
+<p class="lead">A presenter deck with one idea per slide, dark navy title and section slides, and big gradient stats.</p>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><h3>Open Customize Slide Deck</h3><p>From the Studio panel, click the pencil on <span class="ui">Slide Deck</span>.</p></div></div>
+<div class="step"><div class="num">2</div><div><h3>Choose the settings</h3><p>Use <b>Detailed Deck</b> only if the deck will be read without a presenter (for example, emailed). The style prompt works for both formats.</p>
+<div class="settings"><div class="set"><small>Format</small><b>Presenter Slides</b></div><div class="set"><small>Language</small><b>English</b></div><div class="set"><small>Length</small><b>Default</b></div><div class="set"><small>Sources</small><b>Only relevant ones</b></div></div></div></div>
+<div class="step"><div class="num">3</div><div><h3>Paste the style prompt</h3><p>Paste this into <b>Describe the slide deck you want to create</b>:</p>
+<div class="prompt"><div class="bar"><span>Full prompt</span><button class="copy" type="button">Copy</button></div><pre>Create a clean, modern presenter deck in a bright tech-SaaS style. Each slide makes one idea with very little text: a bold headline and up to 3 short points, or one big stat.
+
+Visual style:
+- Cool off-white backgrounds (#F4F5FA), deep navy (#0B1F36) text.
+- A blue-to-cyan gradient (#258AFD → #29BEDD) on key headline words and big stat numbers.
+- Soft, blurred cyan glow circles bleeding off the slide edges.
+- Green (#1FB877) only for positive metrics.
+- Bold geometric sans-serif type (Plus Jakarta Sans style): extra-bold headlines with tight spacing, small uppercase pill labels above the titles.
+- Content in white rounded cards (20px corners) with hairline borders and soft navy-tinted shadows.
+- Thin-line icons in light-blue rounded tiles.
+
+Structure: a dark navy title slide, section dividers in dark navy with white text, stat slides where one huge gradient number is the hero, and a dark navy closing slide with the key takeaway. Lots of whitespace, left-aligned layouts. No photos, clip-art, 3D, textures or busy backgrounds.</pre></div>
+<div class="prompt"><div class="bar"><span>Short version</span><button class="copy" type="button">Copy</button></div><pre>Minimal tech-SaaS presenter deck: off-white slides, deep navy text, blue-to-cyan gradient (#258AFD→#29BEDD) on key words and big stat numbers, soft cyan edge glows. Bold geometric sans headlines, uppercase pill labels, white rounded cards with soft shadows, thin-line icons. Dark navy title, section and closing slides. One idea per slide, max 3 bullets, no photos or clutter.</pre></div>
+</div></div>
+<div class="step"><div class="num">4</div><div><h3>Add an outline and audience (optional)</h3><p>Append these to steer the content. Edit the bracketed parts.</p>
+<div class="prompt"><div class="bar"><span>Outline add-on</span><button class="copy" type="button">Copy</button></div><pre>Outline: problem → key stats → what it means → recommendations → takeaway. Audience: [design leaders]. Tone: confident and data-driven.</pre></div></div></div>
+<div class="step"><div class="num">5</div><div><h3>Generate and review</h3><p>Click <span class="ui">Generate</span>, then flip through the slides and check them against the <a href="#checklist">final checklist</a>.</p></div></div>
+</div>
+</section>
+
+<section class="part" id="fix">
+<span class="overline">If it goes off-brand</span>
+<h2>Troubleshooting</h2>
+<p class="lead">Add the fix line to the end of your prompt and regenerate.</p>
+<div class="fix">
+<div class="fx"><b>Looks cartoonish or illustrated</b><p>Add <code>Minimal infographic style, not illustrated characters.</code></p></div>
+<div class="fx"><b>Wrong colors (purple, orange, rainbow)</b><p>Add <code>Use only navy, white, off-white and the blue-to-cyan gradient. No other colors.</code></p></div>
+<div class="fx"><b>Too much text</b><p>Add <code>Maximum 12 words per card or slide.</code> or switch to Concise / Short.</p></div>
+<div class="fx"><b>Prompt seems cut off</b><p>Use the <b>Short version</b>. Some fields cap the character count.</p></div>
+<div class="fx"><b>Stats don't stand out</b><p>Add <code>Make the key numbers 3x larger than body text, in the gradient.</code></p></div>
+<div class="fx"><b>Photos or stock images appear</b><p>Add <code>Vector shapes and UI cards only. Absolutely no photography.</code></p></div>
+</div>
+</section>
+
+<section class="part" id="checklist">
+<div class="spot">
+<span class="overline" style="color:var(--cyan-400)">Before you share</span>
+<h3>Final checklist</h3>
+<ol>
+<li>The background is off-white or navy, never colorful.</li>
+<li>The blue-to-cyan gradient appears only on key words and numbers.</li>
+<li>Each scene, card or slide has one idea and the numbers lead.</li>
+<li>Corners are rounded, shadows are soft, and there's plenty of whitespace.</li>
+<li>There are no photos, cartoons, textures or clutter.</li>
+<li>The facts match your sources. NotebookLM can make mistakes, so double-check them.</li>
+</ol>
+</div>
+</section>
+
+</main>
+</div>
+<footer><div class="wrap ft"><span>AgentCory Design System · a Colaberry product</span><a href="../index.html">Back to the Showcase</a></div></footer>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+const t=b.closest('.prompt').querySelector('pre').innerText;
+try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}
+b.textContent='Copied';b.classList.add('done');setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1600);
+}));
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- @dsCard group="Motion" viewport="700x240" name="Motion scale" subtitle="5 easings · 8 durations · stagger · keyframe library · reduced-motion safe" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 22px 24px; background: var(--surface-page); display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: start; }
+  @media (max-width: 560px) { body { grid-template-columns: 1fr; } }
+  .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 10px; }
+  .row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .row b { width: 84px; color: var(--text-strong); font-weight: 600; }
+  .track { flex: 1; height: 8px; border-radius: 4px; background: var(--surface-sunken); position: relative; overflow: hidden; }
+  .track i { position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 22%; border-radius: 4px; background: var(--gradient-brand-deep); animation: slide 2.4s infinite; }
+  @keyframes slide { 0%,15% { inset-inline-start: 0 } 60%,100% { inset-inline-start: 78% } }
+  .tiles { display: flex; gap: 10px; }
+  .tile { width: 54px; height: 54px; border-radius: var(--radius-md); background: var(--surface-card); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm); display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); animation: cory-fade-up var(--duration-enter) var(--ease-cinematic) both; animation-delay: calc(var(--i) * var(--stagger)); }
+  .names { font-family: var(--font-mono); font-size: 11px; line-height: 1.7; color: var(--text-muted); margin-top: 10px; }
+  .names b { color: var(--text-strong); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="lbl">Easing</div>
+    <div class="row"><b>ease-out</b><div class="track"><i style="animation-timing-function:var(--ease-out)"></i></div></div>
+    <div class="row"><b>ease-in-out</b><div class="track"><i style="animation-timing-function:var(--ease-in-out)"></i></div></div>
+    <div class="row"><b>ease-spring</b><div class="track"><i style="animation-timing-function:var(--ease-spring)"></i></div></div>
+    <div class="row"><b>ease-cinematic</b><div class="track"><i style="animation-timing-function:var(--ease-cinematic)"></i></div></div>
+    <div class="names"><b>durations</b> instant 80 · fast 140 · base 220 · slow 380 · enter 600 · cinematic 900 · epic 1200 · marquee 32s</div>
+  </div>
+  <div>
+    <div class="lbl">Stagger · --i × --stagger (70ms)</div>
+    <div class="tiles"><div class="tile" style="--i:0">0</div><div class="tile" style="--i:1">1</div><div class="tile" style="--i:2">2</div><div class="tile" style="--i:3">3</div><div class="tile" style="--i:4">4</div></div>
+    <div class="names"><b>keyframes</b> cory-fade-in · fade-up · fade-down · scale-in · blur-in · clip-up · marquee · pulse · glow-drift · shimmer<br><b>helpers</b> .cory-reveal(.is-visible) · .cory-reveal-auto · .cory-reveal-scroll · .cory-parallax · .cory-marquee · .cory-lift<br><b>reduced motion</b> distances → 0, long durations → 1ms, loops off</div>
+  </div>
+</body>
+</html>

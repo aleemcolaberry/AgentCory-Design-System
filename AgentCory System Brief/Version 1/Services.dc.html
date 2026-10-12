@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services · AIUXAleem</title>
+  <meta name="description" content="AI product design, design system builds and UX audits. Open to senior roles in KSA and UAE and to project work.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIUXAleem">
+  <meta property="og:title" content="Services · AIUXAleem">
+  <meta property="og:description" content="AI product design, design system builds and UX audits. Open to senior roles in KSA and UAE and to project work.">
+  <meta property="og:image" content="https://aiuxaleem.com/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <script src="boot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Noto+Kufi+Arabic:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="data.js"></script>
+</helmet>
+<dc-import name="Header" current="services" hint-size="100%,72px"></dc-import>
+<main id="main" tabindex="-1" style="position:relative; z-index:var(--z-raised); outline:none;">
+  <section aria-labelledby="sv-title" style="position:relative; overflow:clip; padding-block:var(--section-y);">
+    <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset-block-start:-30%; inset-inline-end:-10%; inline-size:min(60vw, 640px); aspect-ratio:1; background:var(--glow-cyan); pointer-events:none;"></div>
+    <div class="cory-container cory-split" style="position:relative; gap:var(--space-10) var(--space-12); align-items:center;">
+      <div style="display:grid; gap:var(--space-5); min-inline-size:0;">
+        <p data-hero-el class="cory-overline" style="margin:0;">{{ c.over }}</p>
+        <h1 id="sv-title" data-hero-title style="margin:0; max-inline-size:14ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-display); line-height:var(--leading-tight); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ c.t1 }}<span style="background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ c.t2 }}</span></h1>
+        <p data-hero-el style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--text-body);">{{ c.lead }}</p>
+        <div data-hero-el data-hero-ctas style="display:flex; gap:var(--space-3); flex-wrap:wrap; align-items:center;"><span data-magnetic style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="{{ s.booking }}" target="_blank" rel="noopener" hint-size="auto,52px">{{ t.call }}</x-import></span><a data-link href="#process" style="display:inline-flex; align-items:center; gap:var(--space-1); min-block-size:var(--tap-target); padding-inline:var(--space-2); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;"><span>{{ c.how }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div>
+      </div>
+      <div data-hero-el class="cory-on-ink" style="position:relative; overflow:hidden; isolation:isolate; display:grid; gap:var(--space-2); padding:var(--space-6) var(--space-6) var(--space-2); border-radius:var(--radius-xl); background:var(--gradient-ink); border:1px solid var(--on-ink-border); box-shadow:var(--shadow-lg);">
+        <div aria-hidden="true" style="position:absolute; inline-size:80%; aspect-ratio:1; inset-inline-end:-30%; inset-block-start:-40%; background:var(--glow-cyan-strong); z-index:-1;"></div>
+        <p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ c.twoWays }}</p>
+        <ul style="display:grid;"><sc-for list="{{ ways }}" as="w" hint-placeholder-count="2">
+          <li style="display:grid; gap:var(--space-2); padding-block:var(--space-5); border-block-start:1px solid var(--on-ink-border);">
+            <p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ w.over }}</p>
+            <h2 data-no-split style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); color:var(--on-ink-strong);">{{ w.h }}</h2>
+            <p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-relaxed); color:var(--on-ink-body);">{{ w.p }}</p>
+            <a data-link href="{{ w.href }}" target="{{ w.target }}" rel="noopener" style="display:inline-flex; align-items:center; gap:var(--space-1); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--on-ink-link);"><span>{{ w.link }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </li>
+        </sc-for></ul>
+      </div>
+    </div>
+  </section>
+  <section aria-labelledby="off-title" style="padding-block:0 var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-10);">
+      <div data-reveal style="display:grid; gap:var(--space-3);"><p class="cory-overline" style="margin:0;">{{ c.capOver }}</p><h2 id="off-title" style="margin:0; max-inline-size:22ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ c.capTitle }}</h2></div>
+      <div data-stack-cards style="display:grid; gap:var(--grid-gap);">
+        <sc-for list="{{ offers }}" as="o" hint-placeholder-count="3">
+          <article id="{{ o.anchor }}" data-cq aria-labelledby="{{ o.hid }}" style="scroll-margin-block-start:calc(var(--header-height) + var(--space-6)); padding:var(--space-8) var(--space-6); background:var(--surface-card); border:1px solid var(--border-default); border-radius:var(--radius-xl); box-shadow:var(--shadow-md);">
+            <div data-offer-grid>
+              <div style="display:flex; flex-direction:column; gap:var(--space-5); min-inline-size:0;">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:var(--space-3);"><bdi aria-hidden="true" style="display:grid; place-items:center; inline-size:44px; block-size:44px; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong); font-family:var(--font-mono); font-size:var(--text-body-sm); font-weight:var(--weight-semibold);">{{ o.n }}</bdi><bdi style="font-family:var(--font-mono); font-size:var(--text-mono); color:var(--text-muted); white-space:nowrap;">{{ o.n }} / 03</bdi></div>
+                <h3 id="{{ o.hid }}" style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ o.h }}</h3>
+                <p style="margin:0; font-size:var(--text-body-lg); line-height:var(--leading-relaxed); color:var(--text-body);">{{ o.p }}</p>
+                <dl style="margin:0; display:grid; gap:var(--space-1); padding-block-start:var(--space-4); border-block-start:1px solid var(--border-subtle);"><dt style="font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle);">{{ c.fit }}</dt><dd style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-body);">{{ o.fit }}</dd></dl>
+                <a data-link href="{{ o.href }}" style="margin-block-start:auto; display:inline-flex; align-items:center; gap:var(--space-1); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span>{{ o.link }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+              </div>
+              <div style="display:grid; gap:var(--space-4); align-content:start; padding:var(--space-6); border-radius:var(--radius-lg); background:var(--surface-sunken); border:1px solid var(--border-subtle);">
+                <p style="margin:0; font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle);">{{ c.gets }}</p>
+                <ul style="display:grid; gap:var(--space-3);"><sc-for list="{{ o.gets }}" as="g" hint-placeholder-count="4"><li style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:var(--space-2); align-items:start; font-size:var(--text-body); line-height:var(--leading-normal); color:var(--text-strong);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-success)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-block-start:0.3em;"><path d="M20 6 9 17l-5-5"></path></svg><span>{{ g }}</span></li></sc-for></ul>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  <section id="process" aria-labelledby="pr-title" style="background:var(--surface-card); border-block:1px solid var(--border-subtle); padding-block:var(--section-y);">
+    <div class="cory-container" data-stack style="display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 2fr); gap:var(--space-8) var(--space-12);">
+      <div data-reveal style="display:grid; gap:var(--space-3); align-content:start;"><p class="cory-overline" style="margin:0;">{{ c.howOver }}</p><h2 id="pr-title" style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ c.howTitle }}</h2><p style="margin:0; font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-muted);">{{ c.howLead }}</p></div>
+      <ol data-reveal-group style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap:var(--space-6);"><sc-for list="{{ steps }}" as="x" hint-placeholder-count="4"><li style="display:grid; grid-template-columns:44px minmax(0, 1fr); gap:var(--space-3);"><bdi aria-hidden="true" style="display:grid; place-items:center; inline-size:44px; block-size:44px; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong); font-family:var(--font-mono); font-size:var(--text-body-sm); font-weight:var(--weight-semibold);">{{ x.n }}</bdi><span style="display:grid; gap:var(--space-1);"><strong style="font-size:var(--text-body); color:var(--text-strong);">{{ x.h }}</strong><span style="font-size:var(--text-body-sm); color:var(--text-muted);">{{ x.p }}</span></span></li></sc-for></ol>
+    </div>
+  </section>
+  <section aria-labelledby="faq-title" style="padding-block:var(--section-y);">
+    <div class="cory-container" data-stack style="display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 2fr); gap:var(--space-8) var(--space-12);">
+      <div data-reveal style="display:grid; gap:var(--space-3); align-content:start;"><p class="cory-overline" style="margin:0;">{{ c.faqOver }}</p><h2 id="faq-title" style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ c.faqTitle }}</h2></div>
+      <div data-reveal-group style="display:grid; gap:var(--space-3);"><sc-for list="{{ faq }}" as="q" hint-placeholder-count="3"><details style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); box-shadow:var(--shadow-xs);"><summary style="display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); min-block-size:var(--tap-target); padding:var(--space-4) var(--space-5); font-weight:var(--weight-semibold); color:var(--text-strong);">{{ q.q }}<svg data-chevron width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; transition:transform var(--duration-base) var(--ease-out);"><path d="M6 9l6 6 6-6"></path></svg></summary><p style="margin:0; padding:0 var(--space-5) var(--space-5); font-size:var(--text-body-sm); line-height:var(--leading-relaxed); color:var(--text-body);">{{ q.a }}</p></details></sc-for></div>
+    </div>
+  </section>
+  <section data-contact aria-labelledby="cta-title" style="padding-block:0 var(--section-y);">
+    <div class="cory-container"><div data-reveal data-stack class="cory-on-ink" style="position:relative; overflow:hidden; isolation:isolate; background:var(--gradient-ink); border-radius:var(--radius-2xl); padding:clamp(var(--space-8), 5vw, var(--space-12)); display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:var(--space-8); align-items:center;">
+      <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset-block-end:-40%; inset-inline-end:-5%; inline-size:min(40vw, 420px); aspect-ratio:1; background:var(--glow-cyan); z-index:-1;"></div>
+      <div style="display:grid; gap:var(--space-3);"><p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ c.nextOver }}</p><h2 id="cta-title" style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--on-ink-strong);">{{ c.nextTitle }}</h2><p style="margin:0; color:var(--on-ink-body);">{{ c.nextBody }}</p></div>
+      <div data-cta-row style="display:flex; gap:var(--space-3); flex-wrap:wrap;"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="{{ s.booking }}" target="_blank" rel="noopener" hint-size="auto,52px">{{ t.call }}</x-import><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="onInk" size="lg" href="Contact.dc.html" hint-size="auto,52px">{{ t.email }}</x-import></div>
+    </div></div>
+  </section>
+</main>
+<dc-import name="Footer" hide-cta="{{ true }}" hint-size="100%,560px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  static C = { en: { over: 'What I offer', t1: 'Three things I can do for your ', t2: 'team.', lead: 'Whether you are hiring a senior product designer or need one on a project, the offer is the same: what I do, what you get, and the work that proves it.', how: 'How I work', twoWays: 'Two ways to bring me in',
+      ways: [['Full-time role', "Hiring a senior product designer? That's me.", 'Senior and lead roles in KSA and UAE, on-site or remote. AI products, design systems and enterprise UX, 13+ years in.', 'View resume', 'resume'], ['Project work', 'Need it designed and built, not just advised? Also me.', 'A scoped project where I do the work myself and hand off code and spec files your engineers can ship from.', 'Send a project brief', 'Contact.dc.html?topic=project']],
+      capOver: 'Capabilities', capTitle: 'What I do, what you get, and the proof', fit: 'Good fit when', gets: 'What you get', howOver: 'How I work', howTitle: 'The same four moves, in a team or on a project', howLead: 'You see progress weekly, in the real product, not in a deck.', faqOver: 'Good to know', faqTitle: 'Before you write', nextOver: 'Next step', nextTitle: "Tell me what you're building, or who you're hiring", nextBody: 'A 15-minute call is enough. I reply within 48 hours.' },
+    ar: { over: 'ما أقدّمه', t1: 'ثلاثة أشياء أقدّمها ', t2: 'لفريقك.', lead: 'سواء كنت توظّف مصمّم منتجات أول أو تحتاجه لمشروع، العرض واحد: ما أفعله، وما تحصل عليه، والعمل الذي يثبته.', how: 'كيف أعمل', twoWays: 'طريقتان للعمل معي',
+      ways: [['وظيفة بدوام كامل', 'توظّف مصمّم منتجات أول؟ هذا أنا.', 'وظائف أولى وقيادية في السعودية والإمارات، حضوريًا أو عن بُعد. خبرة تتجاوز 13 عامًا.', 'عرض السيرة الذاتية', 'resume'], ['عمل على مشروع', 'تحتاج من يصمّم وينفّذ، لا من ينصح فقط؟ هذا أنا أيضًا.', 'مشروع محدّد أنجز فيه العمل بنفسي وأسلّم شيفرة وملفات مواصفات.', 'أرسل موجز المشروع', 'Contact.dc.html?topic=project']],
+      capOver: 'القدرات', capTitle: 'ما أفعله، وما تحصل عليه، والدليل', fit: 'مناسب عندما', gets: 'ما تحصل عليه', howOver: 'كيف أعمل', howTitle: 'الخطوات الأربع نفسها، في فريق أو مشروع', howLead: 'ترى التقدّم أسبوعيًا، في المنتج الحقيقي.', faqOver: 'من المفيد معرفته', faqTitle: 'قبل أن تكتب', nextOver: 'الخطوة التالية', nextTitle: 'أخبرني بما تبنيه، أو بمن توظّف', nextBody: 'مكالمة من 15 دقيقة تكفي. أردّ خلال 48 ساعة.' } };
+  componentDidMount() { this.off = window.AX && window.AX.on(() => this.forceUpdate()); this.mo = new MutationObserver(() => this.forceUpdate()); this.mo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] }); import('./motion.js').then(m => m.boot('services')); }
+  componentWillUnmount() { this.off && this.off(); this.mo && this.mo.disconnect(); }
+  renderVals() {
+    const AX = window.AX; if (!AX) return { c: {}, t: {}, s: {}, ways: [], offers: [], steps: [], faq: [] };
+    const lang = AX.lang(), c = Component.C[lang], d = AX.data(), sv = d.services, s = d.site;
+    return { c, t: AX.UI[lang], s,
+      ways: c.ways.map(([over, h, p, link, href]) => ({ over, h, p, link, href: href === 'resume' ? s.resume : href, target: href === 'resume' ? '_blank' : '_self' })),
+      offers: sv.offers.map((o, i) => ({ ...o, h: AX.tx(o, 'h'), n: '0' + (i + 1), anchor: 'offer-' + o.id, hid: 'offer-' + o.id + '-t', href: o.href === 'Work.dc.html' ? 'Work.dc.html' : o.href })),
+      steps: sv.steps.map(([h, p], i) => ({ h, p, n: '0' + (i + 1) })), faq: sv.faq.map(([q, a]) => ({ q, a })) };
+  }
+}
+</script>
+</body>
+</html>

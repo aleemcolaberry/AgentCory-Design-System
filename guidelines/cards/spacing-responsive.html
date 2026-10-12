@@ -1,0 +1,46 @@
+<!-- @dsCard group="Spacing" viewport="700x260" name="Breakpoints & grid" subtitle="Mobile-first 4 / 6 / 12 columns · fluid gutters · bento spans" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: var(--surface-page); display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 560px) { body { grid-template-columns: 1fr; } }
+  .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 10px; }
+  .bps { display: flex; flex-direction: column; gap: 6px; }
+  .bp { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .bp b { width: 32px; color: var(--text-strong); font-weight: 600; }
+  .bp i { height: 10px; border-radius: 3px; background: var(--gradient-brand); opacity: .9; }
+  .bp span { width: 70px; }
+  .mini { display: grid; gap: 4px; margin-top: 10px; }
+  .mini i { height: 14px; border-radius: 3px; background: var(--blue-200); }
+  .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 38px; gap: 6px; }
+  .bento i { border-radius: 8px; background: var(--surface-card); border: 1px solid var(--border-default); box-shadow: var(--shadow-xs); }
+  .bento .h { grid-column: span 2; grid-row: span 2; background: var(--navy-800); border-color: transparent; }
+  .bento .w { grid-column: span 2; background: var(--blue-100); }
+  .bento .t { grid-row: span 2; background: var(--cyan-100); }
+  .note { font-family: var(--font-mono); font-size: 11px; line-height: 1.7; color: var(--text-muted); margin-top: 8px; }
+  .note b { color: var(--text-strong); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="lbl">Breakpoints · --bp-*</div>
+    <div class="bps">
+      <div class="bp"><b>sm</b><span>640px</span><i style="width:30%"></i></div>
+      <div class="bp"><b>md</b><span>768px</span><i style="width:40%"></i></div>
+      <div class="bp"><b>lg</b><span>1024px</span><i style="width:58%"></i></div>
+      <div class="bp"><b>xl</b><span>1280px</span><i style="width:76%"></i></div>
+      <div class="bp"><b>2xl</b><span>1536px</span><i style="width:92%"></i></div>
+    </div>
+    <div class="mini" style="grid-template-columns:repeat(12,1fr)"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="note"><b>--cols</b> 4 → 6 (sm) → 12 (lg) · <b>.cory-grid</b> + <code>--span</code> · <b>.cory-cards</b> auto-fit · <b>--gutter</b> 16–28px · <b>--section-y</b> 56–96px</div>
+  </div>
+  <div>
+    <div class="lbl">.cory-bento · 1 → 2 → 4 columns</div>
+    <div class="bento"><i class="h"></i><i class="w"></i><i></i><i class="t"></i><i></i><i></i><i></i><i></i></div>
+    <div class="note"><b>.hero</b> 2×2 · <b>.span-2</b> / <b>.span-3</b> · <b>.tall</b> row-span 2 · dense auto-flow · collapses to one column under 640px</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x160" name="Semantic" subtitle="Success, warning, error: and their tints" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .pair { display: flex; gap: 8px; align-items: stretch; }
+  .chip { height: 64px; border-radius: var(--radius-md); flex: 2; border: 1px solid rgba(11,31,54,0.06); }
+  .tint { flex: 1; border-radius: var(--radius-md); border: 1px solid rgba(11,31,54,0.06); }
+  .name { font-family: var(--font-mono); font-size: 11px; color: var(--text-strong); margin-top: 8px; font-weight: 600; }
+  .hex { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div><div class="pair"><div class="chip" style="background:var(--green-500)"></div><div class="tint" style="background:var(--green-100)"></div></div><div class="name">green-500 · success</div><div class="hex">#1FB877 / #DCF6EC</div></div>
+    <div><div class="pair"><div class="chip" style="background:var(--amber-500)"></div><div class="tint" style="background:var(--amber-100)"></div></div><div class="name">amber-500 · warning</div><div class="hex">#F5A524 / #FDF0D9</div></div>
+    <div><div class="pair"><div class="chip" style="background:var(--red-500)"></div><div class="tint" style="background:var(--red-100)"></div></div><div class="name">red-500 · error</div><div class="hex">#E5484D / #FBE3E4</div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x170" name="Brand Gradient" subtitle="Blue → cyan, the signature signal" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-card); display: flex; flex-direction: column; gap: 14px; }
+  .bar { height: 56px; border-radius: var(--radius-lg); }
+  .row { display: flex; gap: 14px; align-items: center; }
+  .ink { flex: 1; height: 56px; border-radius: var(--radius-lg); background: var(--gradient-ink); }
+  .name { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .big { font-family: var(--font-display); font-weight: 800; font-size: 30px; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+  <div class="bar" style="background: var(--gradient-brand)"></div>
+  <div class="row">
+    <div class="big cory-gradient-text">in&nbsp;under&nbsp;60&nbsp;seconds</div>
+    <span class="name">--gradient-brand-text for type (≥ 3:1 on light)</span>
+  </div>
+  <div class="row">
+    <div class="ink"></div>
+    <span class="name">--gradient-brand · 90&deg; fills &nbsp;|&nbsp; --gradient-brand-deep under white labels &nbsp;|&nbsp; --gradient-ink (navy)</span>
+  </div>
+</body>
+</html>

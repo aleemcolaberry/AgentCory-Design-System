@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · AIUXAleem</title>
+  <meta name="description" content="Get in touch with Mohammad Abdul Aleem. A 15-minute call is the fastest way to start; replies within 48 hours.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIUXAleem">
+  <meta property="og:title" content="Contact · AIUXAleem">
+  <meta property="og:description" content="Get in touch with Mohammad Abdul Aleem. A 15-minute call is the fastest way to start; replies within 48 hours.">
+  <meta property="og:image" content="https://aiuxaleem.com/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <script src="boot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Noto+Kufi+Arabic:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="data.js"></script>
+</helmet>
+<dc-import name="Header" current="contact" hint-size="100%,72px"></dc-import>
+<main id="main" tabindex="-1" style="position:relative; z-index:var(--z-raised); outline:none;">
+  <section data-contact aria-labelledby="ct-title" style="position:relative; overflow:clip; padding-block:var(--section-y);">
+    <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset-block-start:-30%; inset-inline-end:-10%; inline-size:min(60vw, 640px); aspect-ratio:1; background:var(--glow-cyan); pointer-events:none;"></div>
+    <div class="cory-container cory-split" style="position:relative; gap:var(--space-10) var(--space-12); align-items:start;">
+      <div style="display:grid; gap:var(--space-5); min-inline-size:0;">
+        <p data-hero-el class="cory-overline" style="margin:0;">{{ t.contact }}</p>
+        <h1 id="ct-title" data-hero-title style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-hero); line-height:var(--leading-display); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ c.title }}</h1>
+        <p data-hero-el style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--text-body);">{{ c.lead }}</p>
+        <div data-hero-el data-hero-ctas style="display:flex; gap:var(--space-3); flex-wrap:wrap;"><span data-magnetic style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="{{ s.booking }}" target="_blank" rel="noopener" hint-size="auto,52px">{{ t.call }}</x-import></span><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="lg" href="{{ mailto }}" hint-size="auto,52px">{{ t.email }}</x-import></div>
+        <button data-hero-el type="button" onClick="{{ copy }}" style="display:inline-flex; align-items:center; gap:var(--space-2); inline-size:fit-content; min-block-size:var(--tap-target); padding:0; border:0; background:transparent; color:var(--text-link); font-weight:var(--weight-semibold); font-size:var(--text-body); cursor:pointer; flex-wrap:wrap;"><bdi data-contact-email style="white-space:nowrap;">{{ s.email }}</bdi><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="13" height="13" x="9" y="9" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span class="cory-visually-hidden">{{ t.copy }}</span><span role="status" style="font-size:var(--text-body-sm); color:var(--text-success);">{{ copied }}</span></button>
+        <dl data-hero-el style="margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap:var(--space-4); padding-block:var(--space-5); border-block:1px solid var(--border-subtle);"><div style="display:grid; gap:var(--space-1);"><dt style="font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle);">{{ c.based }}</dt><dd style="margin:0; font-weight:var(--weight-semibold); color:var(--text-strong);">{{ loc }}</dd></div><div style="display:grid; gap:var(--space-1);"><dt style="font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle);">{{ c.avail }}</dt><dd style="margin:0; font-weight:var(--weight-semibold); color:var(--text-strong);">{{ avail }}</dd></div></dl>
+      </div>
+      <form data-hero-el novalidate="" onSubmit="{{ submit }}" aria-labelledby="form-title" style="display:grid; gap:var(--space-5); padding:var(--space-8) var(--space-6); border-radius:var(--radius-2xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-lg);">
+        <div style="display:grid; gap:var(--space-1);"><h2 id="form-title" data-no-split style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-extrabold); color:var(--text-strong);">{{ c.form }}</h2><p style="margin:0; font-size:var(--text-body-sm); color:var(--text-muted);">{{ c.need }}</p></div>
+        <div data-form-messages style="display:grid; gap:var(--space-3); margin-block-start:calc(-1 * var(--space-5));"><div role="status" aria-live="polite" style="display:grid; gap:var(--space-3); padding-block-start:var(--space-5);"><sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}"><div style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:var(--space-3); align-items:start; padding:var(--space-4) var(--space-5); border-radius:var(--radius-lg); background:var(--surface-success); border:1px solid var(--border-success);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-block-start:2px; color:var(--text-success);"><path d="M20 6 9 17l-5-5"></path></svg><span style="display:grid; gap:var(--space-1);"><strong style="font-size:var(--text-body); color:var(--text-strong);">{{ c.sentT }}</strong><span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-body);">{{ c.sentB }}</span></span></div></sc-if><sc-if value="{{ handoff }}" hint-placeholder-val="{{ false }}"><div style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:var(--space-3); align-items:start; padding:var(--space-4) var(--space-5); border-radius:var(--radius-lg); background:var(--surface-info); border:1px solid var(--border-info);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-block-start:2px; color:var(--text-link);"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span style="display:grid; gap:var(--space-1);"><strong style="font-size:var(--text-body); color:var(--text-strong);">{{ c.handT }}</strong><span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-body);">{{ c.handB }}</span><a data-link href="{{ mailto }}" style="inline-size:fit-content; display:inline-flex; align-items:center; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:underline;"><bdi>{{ s.email }}</bdi></a></span></div></sc-if></div>
+        <div role="alert" style="display:grid; gap:var(--space-3);"><sc-if value="{{ failed }}" hint-placeholder-val="{{ false }}"><div style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:var(--space-3); align-items:start; padding:var(--space-4) var(--space-5); border-radius:var(--radius-lg); background:var(--surface-danger); border:1px solid var(--border-danger);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-block-start:2px; color:var(--text-danger);"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4M12 16h.01"></path></svg><span style="display:grid; gap:var(--space-1);"><strong style="font-size:var(--text-body); color:var(--text-strong);">{{ c.failT }}</strong><span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-body);">{{ c.failB }}</span></span></div></sc-if><sc-if value="{{ summary }}" hint-placeholder-val="{{ false }}"><div style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:var(--space-3); align-items:start; padding:var(--space-4) var(--space-5); border-radius:var(--radius-lg); background:var(--surface-danger); border:1px solid var(--border-danger);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-block-start:2px; color:var(--text-danger);"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4M12 16h.01"></path></svg><span style="display:grid; gap:var(--space-1);"><strong style="font-size:var(--text-body); color:var(--text-strong);">{{ summary }}</strong><span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-body);">{{ c.fixB }}</span></span></div></sc-if></div></div>
+        <div role="group" aria-label="{{ c.topic }}" style="display:flex; gap:var(--space-2); flex-wrap:wrap;"><sc-for list="{{ topics }}" as="tp" hint-placeholder-count="3"><x-import component-from-global-scope="DesignSystem_ebeb85.Chip" selected="{{ tp.on }}" onClick="{{ tp.pick }}" hint-size="auto,40px">{{ tp.label }}</x-import></sc-for></div>
+        <x-import component-from-global-scope="DesignSystem_ebeb85.Input" label="{{ c.name }}" value="{{ f.name }}" error="{{ e.name }}" required="{{ true }}" autocomplete="name" onChange="{{ setName }}" onBlur="{{ blurName }}" hint-size="100%,72px"></x-import>
+        <x-import component-from-global-scope="DesignSystem_ebeb85.Input" label="{{ c.email }}" hint="{{ c.emailHint }}" type="email" value="{{ f.email }}" error="{{ e.email }}" required="{{ true }}" autocomplete="email" onChange="{{ setEmail }}" onBlur="{{ blurEmail }}" hint-size="100%,88px"></x-import>
+        <x-import component-from-global-scope="DesignSystem_ebeb85.Input" label="{{ c.msg }}" multiline="{{ true }}" rows="{{ 5 }}" value="{{ f.msg }}" error="{{ e.msg }}" required="{{ true }}" onChange="{{ setMsg }}" onBlur="{{ blurMsg }}" hint-size="100%,160px"></x-import>
+        <div style="display:flex;"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="ink" size="lg" type="submit" loading="{{ sending }}" hint-size="auto,52px">{{ c.send }}</x-import></div>
+      </form>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hide-cta="{{ true }}" hint-size="100%,560px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { f: { name: '', email: '', msg: '' }, e: {}, topic: (window.AX && window.AX.q('topic')) || 'role', sending: false, sent: false, copied: false };
+  static C = { en: { title: 'Get in touch.', lead: 'I reply within 48 hours. A 15-minute call is the fastest way to start.', based: 'Based in', avail: 'Availability', form: 'Send a message', need: 'All three fields are needed.', topic: 'What is it about?', topics: [['role', 'A role'], ['project', 'A project'], ['hello', 'Just hello']], name: 'Your name', email: 'Your email', emailHint: 'Only used to reply to you.', msg: 'Message', send: 'Send message', errName: 'Enter your name.', errEmail: 'Enter an email like name@company.com.', errMsg: 'Write a line or two so I know where to start.', sentT: 'Thanks, your message is on its way.', sentB: 'I reply within 48 hours from my own inbox.', handT: 'Your email app should open with the message ready', handB: 'Press send there. If nothing opened, write to me directly:', failT: 'I could not send that', failB: 'Your words are still in the form. Try again, or email me directly: the button above opens your mail app.', fixOne: '1 field needs a fix', fixMany: '{n} fields need a fix', fixB: 'Each one says what to change.', copyManual: 'Selected: press Ctrl+C to copy' },
+    ar: { title: 'تواصل معي.', lead: 'أردّ خلال 48 ساعة. مكالمة من 15 دقيقة هي أسرع بداية.', based: 'المقر', avail: 'التوفّر', form: 'أرسل رسالة', need: 'الحقول الثلاثة مطلوبة.', topic: 'عن ماذا؟', topics: [['role', 'وظيفة'], ['project', 'مشروع'], ['hello', 'مجرد تحية']], name: 'اسمك', email: 'بريدك', emailHint: 'يُستخدم للردّ عليك فقط.', msg: 'الرسالة', send: 'إرسال', errName: 'اكتب اسمك.', errEmail: 'اكتب بريدًا مثل name@company.com.', errMsg: 'اكتب سطرًا أو سطرين لأعرف من أين أبدأ.', sentT: 'شكرًا، رسالتك في الطريق.', sentB: 'أردّ خلال 48 ساعة من بريدي الشخصي.', handT: 'سيفتح تطبيق البريد ورسالتك جاهزة', handB: 'اضغط إرسال هناك. إن لم يفتح شيء، راسلني مباشرة:', failT: 'لم أتمكّن من الإرسال', failB: 'كلماتك ما زالت في النموذج. حاول مجددًا، أو راسلني مباشرة: الزر أعلاه يفتح تطبيق البريد.', fixOne: 'حقل واحد يحتاج إلى تصحيح', fixMany: '{n} حقول تحتاج إلى تصحيح', fixB: 'كل حقل يوضّح ما يجب تغييره.', copyManual: 'محدَّد، اضغط Ctrl+C للنسخ' } };
+  componentDidMount() { this.off = window.AX && window.AX.on(() => this.forceUpdate()); this.mo = new MutationObserver(() => this.forceUpdate()); this.mo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] }); import('./motion.js').then(m => m.boot('contact')); }
+  componentWillUnmount() { this.off && this.off(); this.mo && this.mo.disconnect(); }
+  c() { return Component.C[window.AX ? window.AX.lang() : 'en']; }
+  check(k, f = this.state.f) { const c = this.c(); if (k === 'name') return f.name.trim() ? '' : c.errName; if (k === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim()) ? '' : c.errEmail; return f.msg.trim().length > 3 ? '' : c.errMsg; }
+  set(k, v) { this.setState(s => ({ f: { ...s.f, [k]: v }, sent: false, handoff: false, failed: false, e: s.e[k] ? { ...s.e, [k]: this.check(k, { ...s.f, [k]: v }) } : s.e })); }
+  blur(k) { this.setState(s => ({ e: { ...s.e, [k]: this.check(k) } })); }
+  submit = ev => {
+    ev.preventDefault(); const e = { name: this.check('name'), email: this.check('email'), msg: this.check('msg') };
+    if (e.name || e.email || e.msg) { this.setState({ e, bad: [e.name, e.email, e.msg].filter(Boolean).length, failed: false }, () => { const first = ['name', 'email', 'msg'].findIndex(k => e[k]); const el = document.querySelectorAll('form input, form textarea')[first]; el && el.focus(); }); return; }
+    this.setState({ sending: true, e: {}, bad: 0, failed: false, handoff: false });
+    const f = this.state.f, topic = this.state.topic, s = window.AX.data().site;
+    try { const k = 'ax-messages-v1', l = JSON.parse(localStorage.getItem(k) || '[]'); l.unshift({ ...f, topic, at: new Date().toISOString() }); localStorage.setItem(k, JSON.stringify(l.slice(0, 50))); } catch (x) {}
+    /* site.formEndpoint (Formspree, a serverless function...) delivers the message. Without one, the mail app does: never claim "sent" for a message that went nowhere. */
+    if (!s.formEndpoint) { const body = f.msg + '\n\n' + f.name + ' · ' + f.email; location.href = 'mailto:' + s.email + '?subject=' + encodeURIComponent('[' + topic + '] from ' + f.name) + '&body=' + encodeURIComponent(body); this.setState({ sending: false, handoff: true }); return; }
+    const ctl = new AbortController(), tm = setTimeout(() => ctl.abort(), 12000);
+    fetch(s.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ ...f, topic }), signal: ctl.signal })
+      .then(r => { if (!r.ok) throw new Error(r.status); this.setState({ sending: false, sent: true, f: { name: '', email: '', msg: '' } }); })
+      .catch(() => this.setState({ sending: false, failed: true }))
+      .finally(() => clearTimeout(tm));
+  };
+  copy = async () => { let ok = false; try { await navigator.clipboard.writeText(window.AX.data().site.email); ok = true; } catch (x) {}
+    if (!ok) { try { const r = document.createRange(); r.selectNodeContents(document.querySelector('[data-contact-email]')); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); } catch (x) {} }
+    this.setState({ copied: ok ? 'ok' : 'manual' }); clearTimeout(this.ct); this.ct = setTimeout(() => this.setState({ copied: false }), ok ? 2000 : 6000); };
+  renderVals() {
+    const AX = window.AX; if (!AX) return { c: {}, t: {}, s: {}, f: {}, e: {}, topics: [] };
+    const lang = AX.lang(), c = Component.C[lang], s = AX.data().site, st = this.state, val = ev => ev && ev.target ? ev.target.value : ev;
+    return { c, t: AX.UI[lang], s, f: st.f, e: st.e, sending: st.sending, sent: st.sent, handoff: !!st.handoff, failed: !!st.failed, summary: st.bad ? (st.bad === 1 ? c.fixOne : c.fixMany.replace('{n}', st.bad)) : '', copied: st.copied === 'ok' ? AX.t('copied') : st.copied === 'manual' ? c.copyManual : '',
+      mailto: 'mailto:' + s.email + '?subject=' + encodeURIComponent('Hello from aiuxaleem.com'), loc: AX.tx(s, 'location'), avail: AX.tx(s, 'availability'),
+      topics: c.topics.map(([id, label]) => ({ label, on: st.topic === id, pick: () => this.setState({ topic: id }) })),
+      setName: ev => this.set('name', val(ev)), setEmail: ev => this.set('email', val(ev)), setMsg: ev => this.set('msg', val(ev)),
+      blurName: () => this.blur('name'), blurEmail: () => this.blur('email'), blurMsg: () => this.blur('msg'), submit: this.submit, copy: this.copy };
+  }
+}
+</script>
+</body>
+</html>

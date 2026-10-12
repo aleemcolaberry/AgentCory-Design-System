@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Site audit · AIUXAleem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../shared/a11y-audit.js"></script>
+</helmet>
+<main style="padding:var(--space-6) var(--gutter); display:grid; gap:var(--space-4); max-inline-size:var(--container-wide); margin-inline:auto; color:var(--text-body);">
+  <div style="display:grid; gap:var(--space-1);">
+    <p class="cory-overline" style="margin:0;">Internal · noindex</p>
+    <h1 style="margin:0; font-size:var(--text-h2); color:var(--text-strong);">Site audit: accessibility, contrast, overflow and source rules</h1>
+    <p style="margin:0; font-size:var(--text-body-sm); color:var(--text-muted);">Every page in site/ in light and dark, with every collection empty (?state=empty), English and Arabic, at 320, 360, 375, 390, 414, 600, 768, 820, 1024, 1280, 1440 and 1920px, a 740×360 landscape phone, ?stress=1, after a live theme switch, under the WCAG 1.4.12 text-spacing override, plus a source lint of each template against CLAUDE.md. Rules live in a11y-audit.js and CLAUDE.md.</p>
+  </div>
+  <p role="status" style="margin:0; font-family:var(--font-mono); font-size:var(--text-mono); font-weight:var(--weight-semibold); color:var(--text-strong);">{{ status }}</p>
+  <pre style="margin:0; padding:var(--space-4); border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-subtle); white-space:pre-wrap; font-family:var(--font-mono); font-size:var(--text-mono-sm); line-height:var(--leading-mono); color:var(--text-body);">{{ report }}</pre>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { done: 0, res: [] };
+  async lint(pages) {
+    const rules = [
+      [/(?:^|[;\s"])(?:color|background(?:-color)?|border(?:-[a-z-]+)?|fill|stroke|box-shadow|outline(?:-color)?)\s*:[^;"]*(?:#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(|\b(?:white|black)\b)/i, 'Raw colour in a template style: use semantic tokens'],
+      [/white-space\s*:\s*nowrap/i, 'white-space:nowrap: allowed only on 1–2 word labels or numbers'],
+      [/text-overflow\s*:\s*ellipsis/i, 'text-overflow:ellipsis is banned'],
+      [/(?:^|[;\s"])(?:margin|padding)-(?:left|right)\s*:|(?:^|[;\s"])(?:left|right)\s*:|text-align\s*:\s*(?:left|right)/i, 'Physical left/right: use logical properties'],
+      [/\b100vh\b/i, '100vh: use min-block-size with svh'],
+      [/outline\s*:\s*(?:none|0)\b/i, 'outline:none removes the focus ring'],
+      [/maximum-scale|user-scalable\s*=\s*no/i, 'Zoom blocked in viewport meta'],
+      [/repeat\(\s*\d+\s*,\s*1fr\s*\)/i, 'Bare repeat(n, 1fr): use minmax(0, 1fr)'],
+      [/font-size\s*:\s*\d+(?:\.\d+)?px/i, 'Literal px font size: use a type token'],
+      [/(?:^|[;\s"])(?:height|block-size)\s*:\s*\d+px/i, 'Fixed pixel height: check it holds no text'],
+    ];
+    const out = [];
+    for (const [file, short] of pages) {
+      let src = ''; try { src = await (await fetch(encodeURI(file), { cache: 'no-store' })).text(); } catch (e) { continue; }
+      const tpl = (src.split('<script type="text/x-dc"')[0] || '').split('</helmet>').pop();
+      tpl.split('\n').forEach((line, i) => {
+        (line.match(/style(?:-[a-z]+)?="[^"]*"/g) || []).forEach(st => rules.forEach(([re, msg]) => { if (/outline/.test(msg) && /<main[^>]*tabindex="-1"/.test(line)) return; if (re.test(st)) { const lvl = /Fixed pixel height|nowrap/.test(msg) ? 'warn' : 'fail'; out.push({ rule: 'source', level: lvl, el: 'line ~' + (i + 1), msg: msg + ' · ' + (st.match(re) || [''])[0].trim().slice(0, 60) }); } }));
+        if (/\u2014/.test(line.replace(/<[^>]*>/g, ''))) out.push({ rule: 'source', level: 'fail', el: 'line ~' + (i + 1), msg: 'Em dash in copy' });
+        if (/style-hover="[^"]*transform/.test(line)) out.push({ rule: 'source', level: 'fail', el: 'line ~' + (i + 1), msg: 'Transform hover in style-hover (not touch-safe): use data-lift or data-pop' });
+        if (/<svg[^>]*width="(1[0-58-9]|[0-9])"/.test(line) && !/data-decor/.test(line)) out.push({ rule: 'source', level: 'warn', el: 'line ~' + (i + 1), msg: 'Off-scale icon size: 16 inline, 20 in buttons, 22 in tiles' });
+        if (/src="data:image/.test(line)) out.push({ rule: 'source', level: 'fail', el: 'line ~' + (i + 1), msg: 'Inline data-URL image: ship a file in assets/' });
+      });
+      if (!/name="viewport"/.test(src)) out.push({ rule: 'source', level: 'fail', el: '', msg: 'No viewport meta' });
+      { const body = tpl; (body.match(/<img [^>]*src="\{\{[^>]*>/g) || []).forEach(x => { const at = body.indexOf(x), pre = body.slice(0, at); if ((pre.match(/<sc-for /g) || []).length <= (pre.match(/<\/sc-for>/g) || []).length || !/loading="lazy"/.test(x)) out.push({ rule: 'source', level: 'fail', el: 'img', msg: 'img with a {{ }} src that is not a lazy list item: the raw template requests the literal URL. Build it with AX.img() in renderVals' }); }); }
+      const helm = src.slice(src.indexOf('<helmet>'), src.indexOf('</helmet>'));
+      if (short !== 'admin') { if (!/og:image/.test(helm)) out.push({ rule: 'source', level: 'fail', el: 'helmet', msg: 'No Open Graph tags: links shared on LinkedIn or WhatsApp show no preview' }); if (!/name="description"/.test(helm)) out.push({ rule: 'source', level: 'fail', el: 'helmet', msg: 'No meta description' }); }
+      if (/fonts\.googleapis/.test(helm) && !/preconnect" href="https:\/\/fonts\.gstatic/.test(helm)) out.push({ rule: 'source', level: 'fail', el: 'helmet', msg: 'Google Fonts without a preconnect to fonts.gstatic.com' });
+      if (/rel="(modulepreload|preload)"/.test(helm)) out.push({ rule: 'source', level: 'warn', el: 'helmet', msg: 'preload in helmet: only for first-view assets' });
+      this.setState(s => ({ res: s.res.concat([{ page: short, label: 'source', issues: out.splice(0) }]) }));
+    }
+  }
+  componentDidMount() {
+    const q = new URLSearchParams(location.search), only = (q.get('pages') || '').split(',').filter(Boolean);
+    const pages = [['Home.dc.html', 'home', true], ['Work.dc.html', 'work', true], ['Project.dc.html', 'project'], ['Case Studies.dc.html', 'cases'], ['Case Study.dc.html', 'case', true], ['Services.dc.html', 'services', true], ['About.dc.html', 'about', true], ['Now.dc.html', 'now'], ['Resume.dc.html', 'resume'], ['Read.dc.html', 'read'], ['Blog.dc.html', 'blog'], ['Post.dc.html', 'post'], ['Videos.dc.html', 'videos'], ['Contact.dc.html', 'contact', true], ['Sitemap.dc.html', 'sitemap'], ['404.dc.html', '404'], ['Admin.dc.html', 'admin']];
+    this.pages = pages;
+    const jobs = [];
+    pages.filter(p => !only.length || only.includes(p[1])).forEach(([file, short, ar]) => {
+      [['light', 1280], ['dark', 1280], ['light', 390], ['dark', 390], ['dark', 320], ['light', 768], ['dark', 1920]].forEach(([theme, w]) => jobs.push({ file, short, theme, w, lang: 'en', mode: 'fresh' }));
+      if (ar) [['light', 1280], ['dark', 390]].forEach(([theme, w]) => jobs.push({ file, short, theme, w, lang: 'ar', mode: 'fresh' }));
+      jobs.push({ file, short, theme: 'light', to: 'dark', w: 1280, lang: 'en', mode: 'live' });
+      jobs.push({ file, short, theme: 'dark', to: 'light', w: 390, lang: 'en', mode: 'live' });
+      [390, 1280].forEach(w => jobs.push({ file, short, theme: 'light', w, lang: 'en', mode: 'spacing' }));
+      [360, 375, 414, 600, 820, 1024, 1440].forEach((w, k) => jobs.push({ file, short, theme: k % 2 ? 'dark' : 'light', w, lang: 'en', mode: 'resp' }));
+      jobs.push({ file, short, theme: 'dark', w: 740, h: 360, lang: 'en', mode: 'resp' });
+      if (ar) [320, 820].forEach(w => jobs.push({ file, short, theme: 'light', w, lang: 'ar', mode: 'resp' }));
+      jobs.push({ file, short, theme: 'light', w: 320, lang: 'en', mode: 'stress' });
+      if (short !== 'admin') { jobs.push({ file, short, theme: 'light', w: 390, lang: 'en', mode: 'empty' }); jobs.push({ file, short, theme: 'dark', w: 1280, lang: 'en', mode: 'empty' }); }
+    });
+    if (!only.length || only.includes('home')) [['light', 'menu'], ['dark', 'menu']].forEach(([theme, m]) => jobs.push({ file: 'Home.dc.html', short: 'home', theme, w: 390, lang: 'en', mode: m, solo: true, clicks: ['[data-hdr-mobile] button'] }));
+    this.lint(pages.filter(p => !only.length || only.includes(p[1])));
+    this.jobs = jobs; this.total = jobs.length; this.live = [];
+    this.host = document.createElement('div'); this.host.style.cssText = 'position:fixed; inset-block-start:0; inset-inline-start:0; inline-size:max-content; opacity:0; pointer-events:none; z-index:-1;'; document.body.appendChild(this.host);
+    window.AIUXA11y = { tick: () => this.tick(), results: () => this.state.res };
+    // Runs by itself. tick() stays exposed for hidden tabs, where timers are throttled. ?manual=1 disables the timer.
+    if (q.get('manual') !== '1') { this.tick(); this.iv = setInterval(() => { if (this.tick() === 0) { clearInterval(this.iv); this.iv = null; this.setState({ finished: true }); } }, 1500); }
+  }
+  componentWillUnmount() { clearInterval(this.iv); this.live && this.live.forEach(x => x.f.remove()); this.host && this.host.remove(); }
+  tick() {
+    const now = Date.now();
+    this.live = this.live.filter(x => {
+      let d; try { d = x.f.contentDocument; } catch (e) {}
+      const ready = d && d.querySelector('main h1') && (d.querySelector('[data-site-footer] nav') || now - x.t > 9000);
+      if (!ready) { if (now - x.t > 45000) { this.finish(x, [{ rule: 'load', level: 'fail', el: '', msg: 'timeout' }]); return false; } return true; }
+      if (!x.s1) { const st = d.createElement('style'); st.textContent = 'html{scrollbar-width:none}html::-webkit-scrollbar{display:none}*,*::before,*::after{transition:none!important}'; d.head.appendChild(st); x.s1 = now; return true; }
+      if (!x.s2 && now - x.s1 > 2500) {
+        // Hidden frames never tick rAF: finish every GSAP tween (reveals, counters, scrubs) so the audit sees the settled page a reader sees
+        const w = x.f.contentWindow; try { if (w.gsap) w.gsap.globalTimeline.getChildren(true, true, false).forEach(t => t.progress(1)); } catch (e) {}
+        if (x.job.mode === 'live') d.documentElement.setAttribute('data-theme', x.job.to);
+        // Frames share one focus: record focus moves as they happen, not at audit time, so parallel frames can't mask the result
+        if (x.job.mode === 'menu') d.addEventListener('focusin', ev => { if (ev.target.closest && ev.target.closest('[role="dialog"]')) x.menuFocused = true; });
+        (x.job.clicks || []).forEach((sel, k) => setTimeout(() => { const b = d.querySelector(sel); if (b) b.click(); else x.missing = (x.missing || []).concat(sel); }, k * 400));
+        if (x.job.mode === 'spacing') { const st = d.createElement('style'); st.textContent = window.AIUX_TEXT_SPACING_CSS; d.head.appendChild(st); }
+        x.s2 = now; return true;
+      }
+      if (x.s2 && now - x.s2 > (x.job.clicks ? 3200 : 1500)) {
+        let r; try { const w = x.f.contentWindow; r = window.AIUXAudit(d, w, { pinned: !!(w.ScrollTrigger && w.ScrollTrigger.getAll().some(s => s.vars && s.vars.pin)) }); } catch (e) { r = [{ rule: 'audit', level: 'fail', el: '', msg: String(e.message || e).slice(0, 120) }]; }
+        if (x.job.mode === 'spacing') r = r.filter(i => i.rule === 'reflow' || i.rule === 'clipped-text' || i.rule === 'offscreen');
+        if (x.job.mode === 'empty') r = r.filter(i => /state|reflow|clipped-text|offscreen|contrast$|card-layout|headings/.test(i.rule));
+        if (x.job.mode === 'resp' || x.job.mode === 'stress') r = r.filter(i => /reflow|clipped-text|offscreen|target-size|card-layout|font-size/.test(i.rule));
+        if (x.missing) r.push({ rule: 'state', level: 'fail', el: '', msg: 'Could not reach state: ' + x.missing.join(', ') });
+        if (x.job.mode === 'menu') { const dlg = d.querySelector('[role="dialog"]'); if (!dlg) r.push({ rule: 'state', level: 'fail', el: '', msg: 'Menu dialog did not open' }); else if (!x.menuFocused && !dlg.contains(d.activeElement)) r.push({ rule: 'focus', level: 'fail', el: '', msg: 'Focus did not move into the open menu (2.4.3)' }); }
+        this.finish(x, r); return false;
+      }
+      return true;
+    });
+    // Focus checks run alone: parallel frames steal focus from each other and make the result flaky
+    while (this.live.length < 8 && this.jobs.length && !this.live.some(x => x.job.solo) && !(this.jobs[0].solo && this.live.length)) {
+      const job = this.jobs.shift(), f = document.createElement('iframe');
+      f.style.cssText = 'inline-size:' + job.w + 'px; max-inline-size:none; block-size:' + (job.h || 900) + 'px; border:0; display:block;';
+      const p = new URLSearchParams({ qa: '1', theme: job.theme }); if (job.lang === 'ar') p.set('lang', 'ar'); if (job.mode === 'stress') p.set('stress', '1'); if (job.mode === 'empty') p.set('state', 'empty');
+      f.src = encodeURI(job.file) + '?' + p.toString(); this.host.appendChild(f); this.live.push({ f, job, t: now });
+    }
+    return this.jobs.length + this.live.length;
+  }
+  finish(x, issues) { x.f.remove(); const j = x.job; const label = j.lang + '-' + j.theme + (j.mode === 'live' ? '>' + j.to + '(live)' : j.mode === 'spacing' ? '+spacing' : j.mode === 'resp' ? (j.h ? '+landscape' : '') : j.mode === 'stress' ? '+stress' : j.mode === 'empty' ? '+empty' : j.mode !== 'fresh' ? '+' + j.mode : '') + '@' + j.w + (j.h ? 'x' + j.h : ''); this.setState(s => ({ done: s.done + 1, res: s.res.concat([{ page: j.short, label, issues }]) })); }
+  renderVals() {
+    const groups = {};
+    this.state.res.forEach(r => r.issues.forEach(i => { const k = r.page + ' | ' + i.level.toUpperCase() + ' ' + i.rule + ' | ' + i.el + ' | ' + i.msg.replace(/\d+\.\d+:1/, 'N:1').replace(/\d+x\d+/, 'WxH'); (groups[k] = groups[k] || { n: 0, states: [], sample: i.msg }).n++; if (groups[k].states.length < 4) groups[k].states.push(r.label); }));
+    const keys = Object.keys(groups).sort((a, b) => (a.includes('FAIL') ? 0 : 1) - (b.includes('FAIL') ? 0 : 1) || a.localeCompare(b));
+    const fails = keys.filter(k => k.includes(' | FAIL')).length;
+    const finished = this.total && this.state.done >= this.total;
+    return { status: (finished ? (fails ? 'Done · FAILED · ' : 'Done · PASSED · ') : 'Running · ') + 'Checked ' + this.state.done + ' / ' + (this.total || '?') + ' states · ' + fails + ' distinct failures · ' + (keys.length - fails) + ' warnings',
+      report: keys.length ? keys.filter(k => new URLSearchParams(location.search).get('fails') !== '1' || k.includes(' | FAIL')).map(k => k.replace(/ \| [^|]*$/, '') + ' | ' + groups[k].sample + '  [' + groups[k].n + '×: ' + groups[k].states.join(', ') + ']').join('\n') : (finished ? 'No issues.' : 'Running… keep this tab in front; background tabs slow the checks down.') };
+  }
+}
+</script>
+</body>
+</html>

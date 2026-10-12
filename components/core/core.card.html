@@ -1,0 +1,85 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Core: Buttons, Chips, Badges, Avatars" subtitle="Actions, selectable chips, metric labels, and the Cory avatar" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: var(--surface-card); }
+  .group { margin-bottom: 22px; }
+  .glabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../tokens/reveal.js"></script>
+</head>
+<body>
+<div style="position:fixed;top:8px;inset-inline-end:8px;z-index:9;display:flex;gap:6px" dir="ltr">
+<button id="__dir" type="button" aria-label="Toggle right-to-left" style="height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:700 11px var(--font-mono)">RTL</button>
+<button id="__theme" type="button" aria-label="Toggle dark theme" style="width:30px;height:30px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:600 11px var(--font-mono)">◐</button>
+</div>
+<script>(function(){var h=document.documentElement;document.getElementById('__theme').onclick=function(){h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark')};var d=document.getElementById('__dir');d.onclick=function(){var r=h.getAttribute('dir')==='rtl';h.setAttribute('dir',r?'ltr':'rtl');d.textContent=r?'RTL':'LTR'}})()</script>
+<div id="root"></div>
+<script type="text/babel">
+  const { Button, Badge, Avatar, Chip, IconButton } = window.DesignSystem_ebeb85;
+  function Demo() {
+    const [sel, setSel] = React.useState('all');
+    return (
+      <React.Fragment>
+        <div className="group">
+          <div className="glabel">Buttons</div>
+          <div className="row" data-stagger="60">
+            <Button variant="primary">Try Cory Now</Button>
+            <Button variant="ink">Book a Demo</Button>
+            <Button variant="secondary">Learn more</Button>
+            <Button variant="ghost" iconEnd={<span className="cory-arrow">→</span>}>Open Chat Widget</Button>
+            <Button variant="primary" size="sm">Small</Button>
+            <Button variant="primary" disabled>Disabled</Button>
+            <Button variant="ink" loading>Sending</Button>
+            <IconButton label="Close">×</IconButton>
+            <IconButton label="Menu" variant="ghost">☰</IconButton>
+            <IconButton label="Send" variant="primary" loading />
+            <IconButton label="Delete" disabled>🗑</IconButton>
+          </div>
+        </div>
+        <div className="group">
+          <div className="glabel">Chips</div>
+          <div className="row" data-stagger="60">
+            {['all','ux','motion','research'].map(v => <Chip key={v} selected={sel===v} onToggle={() => setSel(v)}>{v === 'all' ? 'All work' : v[0].toUpperCase()+v.slice(1)}</Chip>)}
+            <Chip size="sm" removable>Slate CRM</Chip>
+            <Chip size="sm" disabled>Archived</Chip>
+          </div>
+        </div>
+        <div className="group">
+          <div className="glabel">Badges</div>
+          <div className="row" data-stagger="60">
+            <Badge tone="success" dot>94% Contact Rate</Badge>
+            <Badge tone="brand">&lt;5s Answer Time</Badge>
+            <Badge tone="cyan">Voice + SMS</Badge>
+            <Badge tone="ink">Voice</Badge>
+            <Badge tone="warning" dot>Pending</Badge>
+            <Badge tone="neutral">Slate CRM</Badge>
+          </div>
+        </div>
+        <div className="group" style={{marginBottom:0}}>
+          <div className="glabel">Avatars</div>
+          <div className="row" data-stagger="60">
+            <Avatar kind="cory" size={48} />
+            <Avatar kind="cory-light" size={48} />
+            <Avatar kind="initials" name="Sarah Johnson" size={48} ring />
+            <Avatar kind="initials" name="Michael Chen" size={40} />
+            <Avatar kind="image" src="/missing-photo.jpg" name="Priya Patel" size={40} />
+            <Avatar kind="cory" size={40} status="online" statusLabel="Cory is online" />
+            <Avatar kind="cory" size={32} />
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

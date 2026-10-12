@@ -1,0 +1,54 @@
+/* ===========================================================================
+   AgentCory: Direction (LTR and RTL)
+   Set dir (and lang) on <html>, or on any subtree; DirectionToggle does both.
+   Layout everywhere uses logical properties (inline-start / inline-end), so the
+   page mirrors by itself. Only direction-dependent VALUES live in this file.
+   =========================================================================== */
+:root {
+  --dir: 1; /* @kind other */ /* multiply horizontal motion by this: translateX(calc(8px * var(--dir))) */
+}
+
+[dir="rtl"] {
+  --dir: -1; /* @kind other */
+  /* The signal gradient reads in the direction of the script */
+  --gradient-brand: linear-gradient(270deg, #258AFD 0%, #29BEDD 100%); /* @kind color */
+  --gradient-brand-135: linear-gradient(225deg, #258AFD 0%, #29BEDD 100%); /* @kind color */
+  --gradient-brand-deep: linear-gradient(270deg, #1568D4 0%, #0E7F9E 100%); /* @kind color */
+  --gradient-brand-deep-135: linear-gradient(225deg, #1568D4 0%, #0E7F9E 100%); /* @kind color */
+  --gradient-brand-text: linear-gradient(270deg, #1B79EC 0%, #1193B5 100%); /* @kind color */
+  /* Negative tracking breaks connected scripts; RTL runs at zero */
+  --tracking-tighter: 0em; /* @kind other */
+  --tracking-tight: 0em; /* @kind other */
+  --tracking-ui: 0em; /* @kind other */
+  --tracking-overline: 0.04em; /* @kind other */
+}
+
+/* Arabic-script metrics: taller ascenders and descenders need more leading */
+[lang|="ar"], [lang|="fa"], [lang|="ur"] {
+  --leading-tight: 1.3; /* @kind other */
+  --leading-snug: 1.4; /* @kind other */
+  --leading-heading: 1.45; /* @kind other */
+  --leading-normal: 1.7; /* @kind other */
+  --leading-relaxed: 1.85; /* @kind other */
+}
+:is([lang|="ar"], [lang|="fa"], [lang|="ur"]) :is(*, *::before, *::after) { letter-spacing: 0 !important; }
+/* Arabic glyphs read about one step smaller than Latin at the same size: lift the small steps, drop uppercase styling */
+:is([lang|="ar"], [lang|="fa"], [lang|="ur"]) {
+  --text-micro: 12px; /* @kind font */
+  --text-overline: 13px; /* @kind font */
+  --text-caption: 14px; /* @kind font */
+  --text-label: 14px; /* @kind font */
+}
+:is([lang|="ar"], [lang|="fa"], [lang|="ur"]) :is(.cory-overline, .cory-eyebrow-pill) { text-transform: none; }
+
+/* Things that are always LTR, even inside RTL: numbers, code, emails, URLs, phone numbers */
+.cory-ltr, .cory-metric, code, kbd, samp { direction: ltr; unicode-bidi: isolate; text-align: match-parent; }
+pre { direction: ltr; unicode-bidi: isolate; text-align: left; }
+[dir="rtl"] :is(input[type="email"], input[type="tel"], input[type="url"], input[type="number"]) { direction: ltr; text-align: right; }
+
+/* Directional icons mirror; symmetric icons (search, close, check, user) never do */
+[dir="rtl"] :is(.cory-flip-rtl, .lucide-arrow-right, .lucide-arrow-left, .lucide-chevron-right, .lucide-chevron-left, .lucide-chevrons-right, .lucide-chevrons-left, .lucide-arrow-up-right, .lucide-arrow-down-right, .lucide-move-right, .lucide-move-left, .lucide-log-in, .lucide-log-out, .lucide-corner-down-right, .lucide-reply, .lucide-undo-2, .lucide-redo-2) { transform: scaleX(-1); }
+
+/* Text arrows (→) that point "forward": mirror in RTL and nudge forward on hover */
+.cory-arrow { display: inline-block; transform: scaleX(var(--dir)); transition: transform var(--duration-base) var(--ease-out); }
+:is(a, button, .cory-btn):hover > .cory-arrow { transform: translateX(calc(4px * var(--dir))) scaleX(var(--dir)); }

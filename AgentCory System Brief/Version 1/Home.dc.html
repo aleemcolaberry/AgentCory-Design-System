@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIUXAleem · Lead AI Product Designer</title>
+  <meta name="description" content="Mohammad Abdul Aleem, Lead AI Product Designer. Enterprise UX, design systems and AI product design for teams in KSA, UAE and anywhere.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIUXAleem">
+  <meta property="og:title" content="AIUXAleem · Lead AI Product Designer">
+  <meta property="og:description" content="Mohammad Abdul Aleem, Lead AI Product Designer. Enterprise UX, design systems and AI product design for teams in KSA, UAE and anywhere.">
+  <meta property="og:image" content="https://aiuxaleem.com/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0B1F36">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <script src="boot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Noto+Kufi+Arabic:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="data.js"></script>
+</helmet>
+<dc-import name="Header" hint-size="100%,72px"></dc-import>
+<main id="main" tabindex="-1" style="position:relative; z-index:var(--z-raised); outline:none;">
+
+  <section data-hero aria-labelledby="hero-title" style="position:relative; isolation:isolate; min-block-size:calc(100svh - var(--header-height)); display:flex; flex-direction:column; justify-content:center; padding-block:clamp(var(--space-8), 5svh, var(--space-12)) clamp(var(--space-10), 7svh, var(--space-16)); overflow:clip;">
+    <div aria-hidden="true" style="position:absolute; inset:0; z-index:-2; pointer-events:none; background:var(--glow-blue) no-repeat 85% 10% / 70vmax 70vmax, var(--glow-cyan) no-repeat 5% 95% / 50vmax 50vmax;"></div>
+    <canvas data-field aria-hidden="true" style="position:absolute; inset:0; inline-size:100%; block-size:100%; z-index:-1; pointer-events:none; display:block;"></canvas>
+    <div class="cory-container" style="display:grid; gap:clamp(var(--space-8), 5svh, var(--space-12));">
+      <div class="cory-split" style="gap:var(--space-10) var(--space-12); align-items:center;">
+        <div style="display:grid; gap:var(--space-6); align-content:center; min-inline-size:0;">
+          <p data-hero-el class="cory-overline" style="margin:0; display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap;"><span style="display:inline-flex; align-items:center; gap:var(--space-2);"><span aria-hidden="true" class="cory-ring" style="position:relative; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-success); flex-shrink:0;"></span><span>{{ c.badge }}</span></span><span aria-hidden="true" style="inline-size:1px; block-size:12px; background:var(--border-strong);"></span><bdi style="color:var(--text-muted);">{{ c.meta }}</bdi></p>
+          <h1 id="hero-title" data-hero-title style="margin:0; max-inline-size:14ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-display); line-height:var(--leading-tight); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ c.t1 }}<span style="background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ c.tAi }}</span>{{ c.t2 }}<span style="background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ c.tTrust }}</span></h1>
+          <p data-hero-el style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--text-body);">{{ c.sub }}</p>
+          <div data-hero-el data-hero-ctas style="display:flex; gap:var(--space-3); flex-wrap:wrap; align-items:center;">
+            <span data-magnetic style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="Work.dc.html" hint-size="auto,52px">{{ c.seeWork }}</x-import></span>
+            <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="lg" href="{{ s.resume }}" target="_blank" rel="noopener" hint-size="auto,52px">{{ t.resume }}</x-import>
+          </div>
+        </div>
+
+        <sc-if value="{{ hasDeck }}" hint-placeholder-val="{{ true }}"><div data-hero-el data-hero-deck style="position:relative; display:flex; flex-direction:column; gap:var(--space-4); inline-size:min(100%, 440px); margin-inline-start:auto; touch-action:pan-y;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); flex-wrap:wrap;">
+            <p class="cory-overline" style="margin:0;">{{ c.deckOver }}</p>
+            <sc-if value="{{ deckMany }}" hint-placeholder-val="{{ true }}"><div style="display:flex; align-items:center; gap:var(--space-3);">
+              <x-import component-from-global-scope="DesignSystem_ebeb85.IconButton" variant="ink" size="md" label="{{ t.prev }}" onClick="{{ prev }}" hint-size="44px,44px"><svg data-dir-icon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg></x-import>
+              <bdi aria-live="polite" style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-muted); font-variant-numeric:tabular-nums; white-space:nowrap;">{{ counter }}</bdi>
+              <x-import component-from-global-scope="DesignSystem_ebeb85.IconButton" variant="ink" size="md" label="{{ t.next }}" onClick="{{ next }}" hint-size="44px,44px"><svg data-dir-icon width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></x-import>
+            </div></sc-if>
+          </div>
+          <ul data-hero-stack style="position:relative; inline-size:100%; aspect-ratio:4 / 5; max-block-size:max(440px, calc(100svh - var(--header-height) - var(--space-24))); padding-block-start:var(--space-6); user-select:none; -webkit-user-select:none;">
+            <sc-for list="{{ deck }}" as="k" hint-placeholder-count="3">
+              <li data-stack-card data-pos="{{ k.pos }}" aria-hidden="{{ k.hidden }}" style="position:absolute; inset:var(--space-6) 0 0; border-radius:var(--radius-xl); overflow:hidden; isolation:isolate; background:var(--gradient-ink); border:1px solid var(--on-ink-border); box-shadow:var(--shadow-lg);">
+                <span aria-hidden="true" style="position:absolute; inline-size:80%; aspect-ratio:1; inset-inline-end:-30%; inset-block-end:-35%; background:var(--glow-cyan); z-index:-1; pointer-events:none;"></span>
+                <a href="{{ k.href }}" tabindex="{{ k.tab }}" draggable="false" style="position:absolute; inset:0; display:flex; flex-direction:column; color:var(--on-ink-strong); text-decoration:none; outline-offset:-3px;">
+                  <span data-stack-caption style="display:flex; flex-direction:column; gap:var(--space-2); padding:var(--space-6) var(--space-6) 0;">
+                    <span style="display:flex; justify-content:space-between; gap:var(--space-3); font-family:var(--font-mono); font-size:var(--text-mono-sm); letter-spacing:var(--tracking-wide); text-transform:uppercase; color:var(--on-ink-link);"><span>{{ k.number }} · {{ k.category }}</span><bdi style="flex:0 0 auto;">{{ k.year }}</bdi></span>
+                    <span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-snug); letter-spacing:var(--tracking-tight); color:var(--on-ink-strong); text-wrap:balance;">{{ k.title }}</span>
+                    <span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--on-ink-body); text-wrap:pretty;">{{ k.lead }}</span>
+                    <span style="display:inline-flex; align-items:center; gap:var(--space-1); align-self:flex-start; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--on-ink-link);"><span>{{ t.readCase }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+                  </span>
+                  <span aria-hidden="true" style="position:relative; flex:1 1 auto; min-block-size:120px; display:block;"><span data-stack-frame style="position:absolute; inset-inline-start:12%; inset-inline-end:-14%; inset-block-start:var(--space-4); inset-block-end:-10%; display:block; border-radius:var(--radius-lg); overflow:hidden; background:var(--surface-card); border:1px solid var(--on-ink-border-strong); box-shadow:var(--shadow-xl); transform:rotate(calc(-4deg * var(--dir-x))); transform-origin:0 100%;">
+                    <span style="display:flex; gap:6px; align-items:center; padding:8px 10px; border-block-end:1px solid var(--border-subtle); background:var(--surface-sunken);"><span style="inline-size:8px; block-size:8px; border-radius:50%; background:var(--border-strong);"></span><span style="inline-size:8px; block-size:8px; border-radius:50%; background:var(--border-strong);"></span><span style="inline-size:8px; block-size:8px; border-radius:50%; background:var(--border-strong);"></span></span>
+                    {{ k.img }}
+                  </span></span>
+                </a>
+              </li>
+            </sc-for>
+          </ul>
+          <p class="cory-visually-hidden">{{ c.deckHint }}</p>
+        </div></sc-if>
+      </div>
+      <div data-hero-el data-cq style="display:grid; gap:var(--space-4);">
+        <p class="cory-overline" style="margin:0;">{{ c.rolesLead }}</p>
+        <ul data-cq-grid="4" style="display:grid; gap:var(--space-4) var(--space-6);">
+          <sc-for list="{{ roles }}" as="r" hint-placeholder-count="4">
+            <li style="position:relative; display:grid; gap:var(--space-1); align-content:start; padding-block-start:var(--space-3); border-block-start:1px solid var(--border-default);" style-before="content:''; position:absolute; inset-block-start:-1px; inset-inline-start:0; inline-size:var(--space-8); block-size:2px; border-radius:var(--radius-pill); background:var(--gradient-brand);">
+              <bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); font-weight:var(--weight-semibold); color:var(--text-link);">{{ r.n }}</bdi>
+              <span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h3); line-height:var(--leading-snug); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ r.text }}</span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="logos-title" style="padding-block:var(--space-6) 0;">
+    <div class="cory-container" data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-4) var(--space-8); flex-wrap:wrap;">
+      <div style="display:grid; gap:var(--space-2);"><p class="cory-overline" style="margin:0;">{{ c.logosOver }}</p><h2 id="logos-title" data-no-split style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ c.logosTitle }}</h2></div>
+      <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-muted);">{{ c.logosLead }}</p>
+    </div>
+    <div aria-hidden="true" style="overflow:clip; padding-block:var(--space-8);">
+      <div style="inline-size:106%; margin-inline:-3%; padding-block:var(--space-5); background:var(--gradient-brand-deep); box-shadow:var(--shadow-brand); transform:rotate(calc(-1.2deg * var(--dir-x)));">
+        <div data-marquee style="color:var(--text-on-brand);"><div data-marquee-track>
+          <ul><sc-for list="{{ logos }}" as="lg" hint-placeholder-count="7"><li style="display:inline-flex; align-items:baseline; gap:var(--space-3); white-space:nowrap;"><span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h3); letter-spacing:var(--tracking-tight);">{{ lg.name }}</span><span class="cory-overline" style="color:var(--text-on-brand);">{{ lg.sector }}</span></li></sc-for></ul>
+          <ul><sc-for list="{{ logos }}" as="lg" hint-placeholder-count="7"><li style="display:inline-flex; align-items:baseline; gap:var(--space-3); white-space:nowrap;"><span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h3); letter-spacing:var(--tracking-tight);">{{ lg.name }}</span><span class="cory-overline" style="color:var(--text-on-brand);">{{ lg.sector }}</span></li></sc-for></ul>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ hasProjects }}" hint-placeholder-val="{{ true }}"><section data-work aria-labelledby="work-title" style="position:relative; background:var(--surface-card); border-block:1px solid var(--border-subtle);">
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:var(--space-6); min-block-size:100svh; padding-block:calc(var(--header-height) + var(--space-6)) var(--space-8);">
+      <div class="cory-container" style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-4) var(--space-8); flex-wrap:wrap;">
+        <div style="display:grid; gap:var(--space-2);"><p class="cory-overline" style="margin:0;">{{ c.workOver }}</p><h2 id="work-title" style="margin:0; max-inline-size:20ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ c.workTitle }}</h2></div>
+        <a data-link href="Work.dc.html" style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--tap-target); font-size:var(--text-body); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;"><span>{{ c.allProjects }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      </div>
+      <div class="cory-container" data-desktop-only><span aria-hidden="true" style="display:block; block-size:2px; border-radius:var(--radius-pill); background:var(--border-subtle); overflow:hidden;"><span data-work-progress-fill style="display:block; block-size:100%; background:var(--gradient-brand); transform:scaleX(0); transform-origin:var(--origin-inline-start) center;"></span></span></div>
+      <div data-work-viewport style="overflow:hidden;">
+        <ul data-work-track style="display:flex; gap:var(--grid-gap); inline-size:max-content; align-items:stretch;">
+          <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+            <li data-work-card style="flex:0 0 auto; display:grid; min-inline-size:0;">
+              <a href="{{ p.href }}" data-tilt style="display:flex; flex-direction:column; gap:var(--space-5); color:inherit; text-decoration:none; border-radius:var(--radius-xl); outline-offset:4px; transform-style:preserve-3d;">
+                <span data-img-reveal style="position:relative; display:block; aspect-ratio:var(--aspect-case); border-radius:var(--radius-xl); overflow:hidden; background:var(--gradient-ink); border:1px solid var(--border-subtle); box-shadow:var(--shadow-md);">
+                  <span data-tilt-media data-work-cover style="position:absolute; inset:-6%; display:block;"><sc-if value="{{ p.cover }}" hint-placeholder-val="{{ false }}"><img srcset="{{ p.ss }}" sizes="(max-width: 767px) 92vw, 50vw" src="{{ p.cover }}" alt="" loading="lazy" decoding="async" style="display:block; inline-size:100%; block-size:100%; object-fit:cover; object-position:top center;"></sc-if></span>
+                  <sc-if value="{{ p.noCover }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute; inset:0; display:grid; place-items:end start; padding:var(--space-6); font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-snug); color:var(--on-ink-strong); background:var(--glow-cyan-strong) no-repeat 100% 0 / 70% 90%;">{{ p.title }}</span></sc-if>
+                  <span style="position:absolute; inset-block-start:var(--space-4); inset-inline-start:var(--space-4);"><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="auto,26px">{{ p.status }}</x-import></span>
+                </span>
+                <span style="display:grid; gap:var(--space-2);">
+                  <span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ p.title }}</span>
+                  <span style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-3) var(--space-6); flex-wrap:wrap;"><span style="flex:1 1 28ch; font-size:var(--text-body); line-height:var(--leading-normal); color:var(--text-body); max-inline-size:var(--measure-lead);">{{ p.summary }}</span><span style="display:inline-flex; align-items:center; gap:var(--space-1); min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-link);"><span>{{ t.viewProject }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span></span>
+                </span>
+              </a>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </div>
+  </section></sc-if>
+
+  <section data-manifesto aria-labelledby="pov-title" style="padding-block:var(--section-y);">
+    <div class="cory-container cory-split" style="gap:var(--space-12) var(--space-16); align-items:center;">
+      <div style="display:grid; gap:var(--space-6);">
+        <p data-reveal id="pov-title" class="cory-overline" style="margin:0;">{{ c.povOver }}</p>
+        <h2 data-manifesto-text style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;"><sc-for list="{{ povRuns }}" as="run" hint-placeholder-count="1"><sc-if value="{{ run.accent }}" hint-placeholder-val="{{ false }}"><span data-accent style="background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ run.text }}</span></sc-if><sc-if value="{{ run.plain }}" hint-placeholder-val="{{ true }}"><span>{{ run.text }}</span></sc-if></sc-for></h2>
+        <dl data-reveal style="margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap:var(--space-4) var(--space-6);">
+          <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3"><div style="display:grid; gap:var(--space-1); padding-block-start:var(--space-4); border-block-start:1px solid var(--border-subtle);"><dt style="font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle);">{{ f.k }}</dt><dd style="margin:0; font-size:var(--text-body); font-weight:var(--weight-semibold); color:var(--text-strong);">{{ f.v }}</dd></div></sc-for>
+        </dl>
+        <a data-link data-reveal href="About.dc.html" style="display:inline-flex; align-items:center; gap:var(--space-2); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;"><span>{{ c.more }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      </div>
+      <div style="display:grid; justify-items:center;">
+        <div data-pov-stage style="position:relative; inline-size:min(100%, 520px); aspect-ratio:1;">
+          <div aria-hidden="true" style="position:absolute; inset:0; border-radius:50%; background:repeating-radial-gradient(circle at center, var(--border-default) 0 1px, transparent 1px 11%); -webkit-mask-image:radial-gradient(circle, #000, transparent 72%); mask-image:radial-gradient(circle, #000, transparent 72%); pointer-events:none;"></div>
+          <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset:12%; border-radius:50%; background:var(--glow-cyan-strong); pointer-events:none;"></div>
+          <div data-img-reveal data-parallax="0.08" style="position:absolute; inset-block-start:10%; inset-inline-start:21%; inline-size:58%; aspect-ratio:var(--aspect-portrait); border-radius:var(--radius-2xl); overflow:hidden; background:var(--gradient-ink); border:1px solid var(--border-subtle); box-shadow:var(--shadow-lg);"><img src="../assets/media/portrait-aleem-2026.jpg" alt="{{ c.portraitAlt }}" width="720" height="900" loading="lazy" decoding="async" style="inline-size:100%; block-size:100%; object-fit:cover; object-position:center top;"></div>
+          <span aria-hidden="true" style="position:absolute; inset-block-start:14%; inset-inline-end:7%; inline-size:44px; block-size:44px; display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--gradient-ink); border:1px solid var(--border-default); color:var(--on-ink-strong); box-shadow:var(--shadow-md);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg></span>
+          <span aria-hidden="true" style="position:absolute; inset-block-start:46%; inset-inline-start:4%; inline-size:44px; block-size:44px; display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-default); color:var(--text-link); box-shadow:var(--shadow-md);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg></span>
+          <span aria-hidden="true" style="position:absolute; inset-block-end:9%; inset-inline-end:16%; inline-size:44px; block-size:44px; display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--gradient-brand-deep); border:1px solid var(--border-default); color:var(--on-ink-strong); box-shadow:var(--shadow-brand);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4M22 5h-4"></path></svg></span>
+          <span aria-hidden="true" style="position:absolute; inset-block-end:16%; inset-inline-start:11%; inline-size:44px; block-size:44px; display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-default); color:var(--text-success); box-shadow:var(--shadow-md);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lead" data-section data-bg="beam" aria-labelledby="lead-title" style="background:var(--surface-card); border-block:1px solid var(--border-subtle); padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-10);">
+      <div data-reveal style="display:grid; gap:var(--space-3);">
+        <p class="cory-overline" style="margin:0;">{{ h.lead.overline }}</p>
+        <h2 id="lead-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ h.lead.title }}</h2>
+      </div>
+      <div data-cq><ul data-reveal-group data-cq-3 style="display:grid; gap:var(--grid-gap);">
+        <sc-for list="{{ leadItems }}" as="L" hint-placeholder-count="3">
+          <li style="display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <span aria-hidden="true" data-icon-tile style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong);">{{ L.icon }}</span>
+            <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ L.title }}</h3>
+            <p style="margin:0; font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body); text-wrap:pretty;">{{ L.body }}</p>
+            <ul style="display:grid; gap:var(--space-2);">
+              <sc-for list="{{ L.points }}" as="pt" hint-placeholder-count="3"><li style="display:flex; gap:var(--space-2); align-items:baseline; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-strong);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-success)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; transform:translateY(3px);"><path d="M20 6 9 17l-5-5"></path></svg><span>{{ pt }}</span></li></sc-for>
+            </ul>
+            <a data-link href="{{ L.href }}" style="margin-block-start:auto; display:inline-flex; align-items:center; gap:var(--space-1); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span>{{ L.link }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </li>
+        </sc-for>
+      </ul></div>
+    </div>
+  </section>
+
+
+  <section id="skills" data-section data-bg="glow" aria-labelledby="skills-title" style="padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-12);">
+      <div data-reveal style="display:grid; gap:var(--space-3);">
+        <p class="cory-overline" style="margin:0;">{{ h.skills.overline }}</p>
+        <h2 id="skills-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ h.skills.title }}</h2>
+      </div>
+      <div data-bento-cq data-skill-marks>
+        <ul data-reveal-group class="cory-bento">
+          <li class="hero cory-on-ink" data-cq style="position:relative; overflow:hidden; isolation:isolate; display:grid; align-content:center; padding:var(--space-8); border-radius:var(--radius-xl); background:var(--gradient-ink); color:var(--on-ink-body); box-shadow:var(--shadow-md); --mk:var(--on-ink-link); --mk-ink:var(--on-ink-strong); --mk-bg:var(--surface-ink);">
+            <div aria-hidden="true" style="position:absolute; inline-size:80%; aspect-ratio:1; inset-inline-end:-30%; inset-block-start:-40%; background:var(--glow-cyan-strong); z-index:-1; pointer-events:none;"></div>
+            <div data-cq-aside><div style="display:grid; gap:var(--space-5);"><p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ h.skills.groups.core }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--on-ink-strong); text-wrap:balance;"><span style="position:relative; display:inline-flex; align-items:center; padding:0 .38em; border:1.5px solid var(--mk); border-radius:var(--radius-md); color:var(--mk); white-space:nowrap; vertical-align:middle; margin-inline-end:.15em;">{{ s1.w1 }}<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="var(--mk)" stroke="var(--mk)" stroke-width="1.5" stroke-linejoin="round" style="position:absolute; inset-block-start:0; inset-inline-end:0; transform:translate(calc(60% * var(--dir-x)), -60%);"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg></span> {{ s1.rest }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--on-ink-body); text-wrap:pretty;">{{ s1.b }}</p></div>
+            <div data-core-diagram style="display:grid; gap:var(--space-5);">
+              <div aria-hidden="true" style="position:relative; display:grid; place-items:center; inline-size:min(100%, 400px); aspect-ratio:2 / 1; margin-inline:auto;">
+                <svg viewBox="0 0 400 200" fill="none" style="position:absolute; inset:0; inline-size:100%; block-size:100%; overflow:visible;">
+                  <circle cx="200" cy="100" r="78" stroke="var(--on-ink-border)" stroke-dasharray="2 6" stroke-linecap="round"></circle>
+                  <path data-core-link d="M200 100 L72 100" stroke="var(--on-ink-link)" stroke-width="1.5" stroke-linecap="round" style="stroke-dasharray:140; stroke-dashoffset:var(--core-draw, 0);"></path>
+                  <path data-core-link d="M200 100 L328 100" stroke="var(--on-ink-link)" stroke-width="1.5" stroke-linecap="round" style="stroke-dasharray:140; stroke-dashoffset:var(--core-draw, 0);"></path>
+                  <path data-core-link d="M200 100 L200 18" stroke="var(--on-ink-link)" stroke-width="1.5" stroke-linecap="round" style="stroke-dasharray:140; stroke-dashoffset:var(--core-draw, 0);"></path>
+                  <path data-core-link d="M200 100 L200 182" stroke="var(--on-ink-link)" stroke-width="1.5" stroke-linecap="round" style="stroke-dasharray:140; stroke-dashoffset:var(--core-draw, 0);"></path>
+                  <circle cx="200" cy="18" r="4" fill="var(--on-ink-link)"></circle>
+                  <circle cx="200" cy="182" r="4" fill="var(--on-ink-link)"></circle>
+                  <circle cx="72" cy="100" r="4" fill="var(--on-ink-link)"></circle>
+                  <circle cx="328" cy="100" r="4" fill="var(--on-ink-link)"></circle>
+                </svg>
+                <span style="position:relative; display:grid; place-items:center; inline-size:64px; block-size:64px; border-radius:var(--radius-lg); background:var(--gradient-brand-deep); color:var(--text-on-brand); box-shadow:var(--shadow-brand);"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path></svg></span>
+                <span style="position:absolute; inset-block-start:9%; inset-inline-start:50%; transform:translate(calc(-50% * var(--dir-x)), -50%);"><span style="display:inline-flex; align-items:center; min-block-size:28px; padding:0 var(--space-3); border-radius:var(--radius-pill); background:var(--surface-ink); border:1px solid var(--on-ink-border-strong); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-strong); white-space:nowrap;">{{ core1 }}</span></span>
+                <span style="position:absolute; inset-block-start:50%; inset-inline-start:18%; transform:translate(calc(-50% * var(--dir-x)), -50%);"><span style="display:inline-flex; align-items:center; min-block-size:28px; padding:0 var(--space-3); border-radius:var(--radius-pill); background:var(--surface-ink); border:1px solid var(--on-ink-border-strong); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-strong); white-space:nowrap;">{{ core2 }}</span></span>
+                <span style="position:absolute; inset-block-start:50%; inset-inline-start:82%; transform:translate(calc(-50% * var(--dir-x)), -50%);"><span style="display:inline-flex; align-items:center; min-block-size:28px; padding:0 var(--space-3); border-radius:var(--radius-pill); background:var(--surface-ink); border:1px solid var(--on-ink-border-strong); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-strong); white-space:nowrap;">{{ core3 }}</span></span>
+                <span style="position:absolute; inset-block-start:91%; inset-inline-start:50%; transform:translate(calc(-50% * var(--dir-x)), -50%);"><span style="display:inline-flex; align-items:center; min-block-size:28px; padding:0 var(--space-3); border-radius:var(--radius-pill); background:var(--surface-ink); border:1px solid var(--on-ink-border-strong); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-strong); white-space:nowrap;">{{ core4 }}</span></span>
+              </div>
+              <p class="cory-visually-hidden">{{ coreSummary }}</p>
+            </div></div>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ h.skills.groups.build }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;">{{ s3.head }} <span style="position:relative; display:inline-block; padding:.06em .45em; border:1.5px solid var(--mk); border-radius:var(--radius-sm); white-space:nowrap; vertical-align:middle; margin-inline-end:.45em; margin-block-end:.3em;" style-before="content:''; position:absolute; inset:0; border:1.5px solid var(--mk); border-radius:var(--radius-sm); transform:translate(calc(.2em * var(--dir-x)), .2em); opacity:.6; z-index:-1;" style-after="content:''; position:absolute; inset:0; border:1.5px solid var(--mk); border-radius:var(--radius-sm); transform:translate(calc(.4em * var(--dir-x)), .4em); opacity:.3; z-index:-1;">{{ s3.lw }}</span></h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s3.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ h.skills.groups.build }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;">{{ s6.head }} <span lang="en" dir="ltr" style="display:inline-flex; align-items:baseline; font-family:var(--font-mono); font-weight:var(--weight-semibold); letter-spacing:var(--tracking-normal); color:var(--mk); white-space:nowrap; vertical-align:middle;"><span aria-hidden="true">&lt;</span>{{ s6.lw }}<span aria-hidden="true">/&gt;</span></span></h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s6.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ h.skills.groups.build }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span aria-hidden="true" style="display:inline-grid; place-items:center; inline-size:1.25em; block-size:1.25em; margin-inline-end:.3em; border:1.5px solid var(--mk); border-radius:var(--radius-pill); color:var(--mk); vertical-align:middle;"><svg width="0.85em" height="0.85em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.5" fill="currentColor"></circle><path d="M5 8.5h14M12 8.5v5M12 13.5l-3 6M12 13.5l3 6"></path></svg></span> {{ s7.t }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s7.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ h.skills.groups.lead }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span style="position:relative; display:inline-flex; align-items:center; justify-content:center; min-inline-size:2em; padding:.06em .42em; border:1.5px solid var(--mk); border-radius:var(--radius-pill); color:var(--mk); white-space:nowrap; vertical-align:middle; margin-inline-end:.45em; margin-block-end:.25em;" style-after="content:''; position:absolute; inset-block-end:-.4em; inset-inline-end:-.3em; inline-size:.7em; block-size:1.5px; border-radius:1px; background:var(--mk); transform:rotate(calc(45deg * var(--dir-x)));">{{ s5.w1 }}</span> {{ s5.rest }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s5.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ h.skills.groups.lead }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span aria-hidden="true" style="display:inline-flex; align-items:center; white-space:nowrap; vertical-align:middle; margin-inline-end:.3em;"><span style="inline-size:1em; block-size:1em; border-radius:var(--radius-pill); background:var(--mk); position:relative; z-index:3;"></span><span style="inline-size:1em; block-size:1em; border-radius:var(--radius-pill); border:1.5px solid var(--mk); margin-inline-start:-.35em; position:relative; z-index:2; background:var(--mk-bg);"></span><span style="inline-size:1em; block-size:1em; border-radius:var(--radius-pill); border:1.5px solid var(--mk); margin-inline-start:-.35em; position:relative; z-index:1; background:var(--mk-bg);"></span></span> {{ s4.t }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s4.b }}</p>
+          </li>
+          <li style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ h.skills.groups.domain }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;">{{ s8.head }} <span style="display:inline-flex; align-items:center; gap:.3em; white-space:nowrap; vertical-align:middle;"><span aria-hidden="true" style="display:grid; gap:.22em; justify-items:end;"><span style="inline-size:.9em; block-size:1.5px; border-radius:1px; background:var(--mk);"></span><span style="inline-size:.55em; block-size:1.5px; border-radius:1px; background:var(--mk);"></span><span style="inline-size:.9em; block-size:1.5px; border-radius:1px; background:var(--mk);"></span></span><span style="display:inline-block; transform:skewX(calc(-10deg * var(--dir-x))); color:var(--mk);">{{ s8.lw }}</span></span></h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s8.b }}</p>
+            <ul aria-label="{{ s8.t }}" style="margin-block-start:auto; display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <sc-for list="{{ skillMotion }}" as="pt" hint-placeholder-count="1">
+                <li style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--space-10); padding:var(--space-2) var(--space-3); border:1.5px dashed var(--border-default); border-radius:var(--radius-lg);"><span aria-hidden="true" style="flex-shrink:0; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-link);"></span><span lang="en" dir="ltr" style="font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); white-space:nowrap;">{{ pt }}</span></li>
+              </sc-for>
+            </ul>
+          </li>
+          <li class="span-2" style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ h.skills.groups.domain }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span aria-hidden="true" style="display:inline-grid; grid-template-columns:.32em minmax(0, 1fr); gap:.1em; inline-size:1.45em; block-size:1.05em; padding:.1em; margin-inline-end:.3em; border:1.5px solid var(--mk); border-radius:.18em; vertical-align:middle;"><span style="grid-row:1 / span 3; border-radius:.06em; background:var(--mk);"></span><span style="block-size:.1em; align-self:center; border-radius:1px; background:var(--mk); opacity:.9;"></span><span style="block-size:.1em; align-self:center; inline-size:70%; border-radius:1px; background:var(--mk); opacity:.9;"></span><span style="block-size:.1em; align-self:center; inline-size:45%; border-radius:1px; background:var(--mk); opacity:.9;"></span></span> {{ s2.t }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s2.b }}</p>
+            <ul aria-label="{{ s2.t }}" style="margin-block-start:auto; display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <sc-for list="{{ skillFin }}" as="pt" hint-placeholder-count="5">
+                <li style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--space-10); padding:var(--space-2) var(--space-3); border:1.5px dashed var(--border-default); border-radius:var(--radius-lg);"><span aria-hidden="true" style="flex-shrink:0; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-link);"></span><span style="font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); white-space:nowrap;">{{ pt }}</span></li>
+              </sc-for>
+            </ul>
+          </li>
+          <li class="span-2" style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <p class="cory-overline" style="margin:0;">{{ h.skills.groups.business }}</p>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;"><span aria-hidden="true" style="display:inline-flex; align-items:flex-end; gap:.14em; block-size:.95em; margin-inline-end:.3em; vertical-align:baseline;"><span style="inline-size:.22em; block-size:.42em; border-radius:1px; background:var(--mk);"></span><span style="inline-size:.22em; block-size:.66em; border-radius:1px; background:var(--mk);"></span><span style="inline-size:.22em; block-size:.95em; border-radius:1px; background:var(--mk);"></span></span> {{ s9.t }}</h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s9.b }}</p>
+            <ul aria-label="{{ s9.t }}" style="margin-block-start:auto; display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <sc-for list="{{ skillBa }}" as="pt" hint-placeholder-count="4">
+                <li style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--space-10); padding:var(--space-2) var(--space-3); border:1.5px dashed var(--border-default); border-radius:var(--radius-lg);"><span aria-hidden="true" style="flex-shrink:0; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-link);"></span><span style="font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); white-space:nowrap;">{{ pt }}</span></li>
+              </sc-for>
+            </ul>
+          </li>
+          <li class="span-2" style="position:relative; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); --mk:var(--text-link); --mk-ink:var(--text-strong); --mk-bg:var(--surface-card);">
+            <div style="display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap;"><p class="cory-overline" style="margin:0;">{{ h.skills.groups.business }}</p><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="auto,22px">{{ h.skills.pmStatus }}</x-import></div>
+            <h3 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--mk-ink); text-wrap:balance;">{{ s10.head }} <span style="position:relative; display:inline-block; white-space:nowrap; padding-block-end:.42em; margin-block-end:-.42em;">{{ s10.lw }}<span aria-hidden="true" style="position:absolute; inset-inline:0; inset-block-end:0; display:grid; gap:.1em;"><span style="inline-size:48%; block-size:.13em; border-radius:1px; background:var(--mk);"></span><span style="inline-size:52%; margin-inline-start:40%; block-size:.13em; border-radius:1px; background:var(--mk);"></span></span></span></h3>
+            <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ s10.b }}</p>
+            <ul aria-label="{{ s10.t }}" style="margin-block-start:auto; display:flex; flex-wrap:wrap; gap:var(--space-2);">
+              <sc-for list="{{ skillPm }}" as="pt" hint-placeholder-count="4">
+                <li style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--space-10); padding:var(--space-2) var(--space-3); border:1.5px dashed var(--border-default); border-radius:var(--radius-lg);"><span aria-hidden="true" style="flex-shrink:0; inline-size:8px; block-size:8px; border-radius:var(--radius-pill); background:var(--text-link);"></span><span style="font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); white-space:nowrap;">{{ pt }}</span></li>
+              </sc-for>
+            </ul>
+          </li>
+          <li style="grid-column:1 / -1; display:flex; flex-direction:column; gap:var(--space-5); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ h.skills.toolsTitle }}</h3>
+            <div style="display:grid; gap:var(--space-6);">
+              <div style="display:grid; gap:var(--space-3);">
+                <h4 style="margin:0; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); line-height:var(--leading-normal); color:var(--text-muted);">{{ h.skills.toolsAi }}</h4>
+                <ul style="display:flex; flex-wrap:wrap; gap:var(--space-3);">
+                  <sc-for list="{{ toolsAi }}" as="tl" hint-placeholder-count="7">
+                <li style="position:relative; isolation:isolate; display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:36px; padding-block:var(--space-1); padding-inline:var(--space-3) var(--space-4); border-radius:var(--radius-pill); background:{{ tl.bg }}; border:1px solid {{ tl.border }}; box-shadow:{{ tl.shadow }};" style-before="content:''; position:absolute; inset:-1px; z-index:-1; border-radius:inherit; background:{{ tl.ring }};">
+                  <span aria-hidden="true" style="position:relative; inline-size:20px; block-size:20px; flex-shrink:0; display:grid; place-items:center; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-caption); color:{{ tl.fg }};">{{ tl.initial }}<sc-if value="{{ tl.hasLogo }}" hint-placeholder-val="{{ false }}"><img data-logo-light="{{ tl.swap }}" src="{{ tl.light }}" alt="" width="18" height="18" loading="lazy" decoding="async" onError="{{ hideLogo }}" style="position:absolute; inset:0; margin:auto; inline-size:18px; block-size:18px; background:{{ tl.bg }}; display:{{ tl.showLight }};"><img data-logo-dark="{{ tl.swap }}" src="{{ tl.dark }}" alt="" width="18" height="18" loading="lazy" decoding="async" onError="{{ hideLogo }}" style="position:absolute; inset:0; margin:auto; inline-size:18px; block-size:18px; background:{{ tl.bg }};"></sc-if></span>
+                  <span lang="en" dir="ltr" style="flex:0 0 auto; white-space:nowrap; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:{{ tl.fg }};">{{ tl.name }}</span>
+                </li>
+              </sc-for>
+                </ul>
+              </div>
+              <div style="display:grid; gap:var(--space-3);">
+                <h4 style="margin:0; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); line-height:var(--leading-normal); color:var(--text-muted);">{{ h.skills.toolsCore }}</h4>
+                <ul style="display:flex; flex-wrap:wrap; gap:var(--space-3);">
+                  <sc-for list="{{ toolsCore }}" as="tl" hint-placeholder-count="7">
+                <li style="position:relative; isolation:isolate; display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:36px; padding-block:var(--space-1); padding-inline:var(--space-3) var(--space-4); border-radius:var(--radius-pill); background:{{ tl.bg }}; border:1px solid {{ tl.border }}; box-shadow:{{ tl.shadow }};" style-before="content:''; position:absolute; inset:-1px; z-index:-1; border-radius:inherit; background:{{ tl.ring }};">
+                  <span aria-hidden="true" style="position:relative; inline-size:20px; block-size:20px; flex-shrink:0; display:grid; place-items:center; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-caption); color:{{ tl.fg }};">{{ tl.initial }}<sc-if value="{{ tl.hasLogo }}" hint-placeholder-val="{{ false }}"><img data-logo-light="{{ tl.swap }}" src="{{ tl.light }}" alt="" width="18" height="18" loading="lazy" decoding="async" onError="{{ hideLogo }}" style="position:absolute; inset:0; margin:auto; inline-size:18px; block-size:18px; background:{{ tl.bg }}; display:{{ tl.showLight }};"><img data-logo-dark="{{ tl.swap }}" src="{{ tl.dark }}" alt="" width="18" height="18" loading="lazy" decoding="async" onError="{{ hideLogo }}" style="position:absolute; inset:0; margin:auto; inline-size:18px; block-size:18px; background:{{ tl.bg }};"></sc-if></span>
+                  <span lang="en" dir="ltr" style="flex:0 0 auto; white-space:nowrap; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:{{ tl.fg }};">{{ tl.name }}</span>
+                </li>
+              </sc-for>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="content" data-section data-bg="glow" aria-labelledby="pub-title" style="padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-12);">
+      <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;">
+        <div style="display:grid; gap:var(--space-3);">
+          <p class="cory-overline" style="margin:0;">{{ h.pub.overline }}</p>
+          <h2 id="pub-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ h.pub.title }}</h2>
+          <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body-lg); line-height:var(--leading-relaxed); color:var(--text-body); text-wrap:pretty;">{{ h.pub.lead }}</p>
+        </div>
+      </div>
+      <div role="group" aria-labelledby="watch-title" style="display:grid; gap:var(--space-6);">
+        <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-4) var(--space-6); flex-wrap:wrap; padding-block-end:var(--space-4); border-block-end:1px solid var(--border-default);">
+          <div style="display:flex; align-items:center; gap:var(--space-4);">
+            <span aria-hidden="true" data-icon-tile style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong);">{{ iPlayTile }}</span>
+            <div style="display:grid; gap:2px;">
+              <h3 id="watch-title" style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ h.pub.watchTitle }}</h3>
+              <p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted);">{{ h.pub.watchLead }}</p>
+            </div>
+          </div>
+          <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="ink" size="md" href="https://www.youtube.com/@aiuxaleem" target="_blank" rel="noopener" icon-left="{{ iPlay }}" hint-size="auto,44px">{{ h.pub.youtube }}</x-import>
+        </div>
+        <div data-reveal-group data-stack style="display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); gap:var(--grid-gap); align-items:stretch;">
+          <div style="display:grid;"><dc-import name="Video Facade" copy="{{ h.video }}" level="{{ 4 }}" hint-size="100%,420px"></dc-import></div>
+          <div style="display:grid;"><dc-import name="Reel Card" copy="{{ h.reel }}" level="{{ 4 }}" hint-size="100%,420px"></dc-import></div>
+        </div>
+      </div>
+      <div role="group" aria-labelledby="read-title" style="display:grid; gap:var(--space-6);">
+        <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-4) var(--space-6); flex-wrap:wrap; padding-block-end:var(--space-4); border-block-end:1px solid var(--border-default);">
+          <div style="display:flex; align-items:center; gap:var(--space-4);">
+            <span aria-hidden="true" data-icon-tile style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong);">{{ iBookTile }}</span>
+            <div style="display:grid; gap:2px;">
+              <h3 id="read-title" style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ h.pub.readTitle }}</h3>
+              <p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted);">{{ h.pub.readLead }}</p>
+            </div>
+          </div>
+          <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="md" href="https://www.linkedin.com/in/aiuxaleem" target="_blank" rel="noopener" hint-size="auto,44px">{{ h.pub.linkedin }}</x-import>
+        </div>
+        <div data-cq><div data-reveal-group data-cq-3 style="display:grid; gap:var(--grid-gap);">
+          <div style="display:grid;"><dc-import name="Post Card" copy="{{ h.post }}" level="{{ 4 }}" hint-size="100%,340px"></dc-import></div>
+          <div style="display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <p class="cory-overline" style="margin:0;">{{ h.read.seriesKicker }}</p>
+            <h4 style="margin:0; font-size:var(--text-h4); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ h.read.seriesTitle }}</h4>
+            <ul style="display:grid;">
+              <sc-for list="{{ series }}" as="s" hint-placeholder-count="3"><li style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-3); padding-block:var(--space-2); border-block-start:1px solid var(--border-subtle); font-size:var(--text-body-sm); line-height:var(--leading-normal);"><span style="font-weight:var(--weight-semibold); color:var(--text-strong);">{{ s.name }}</span><span style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-muted); font-variant-numeric:tabular-nums; flex-shrink:0;">{{ s.count }}</span></li></sc-for>
+            </ul>
+            <a data-link href="Content.dc.html#posts" hreflang="en" style="margin-block-start:auto; display:inline-flex; align-items:center; gap:var(--space-1); align-self:flex-start; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span style="flex:0 1 auto;">{{ h.read.seriesLink }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+          <div id="guides" data-section style="display:grid; scroll-margin-block-start:calc(var(--header-height) + var(--space-6));"><dc-import name="Bento Tile" kind="guide" copy="{{ h.guide }}" level="{{ 4 }}" hint-size="100%,340px"></dc-import></div>
+        </div></div>
+        <div data-reveal style="display:grid; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-3) var(--space-6); flex-wrap:wrap;">
+            <p class="cory-overline" style="margin:0;">{{ h.pub.articlesKicker }}</p>
+            <a data-link href="Content.dc.html" hreflang="en" style="display:inline-flex; align-items:center; gap:var(--space-1); min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span style="flex:0 1 auto;">{{ h.read.more }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </div>
+          <div data-cq><ol data-cq-3 style="display:grid; gap:var(--grid-gap);">
+            <sc-for list="{{ articles }}" as="a" hint-placeholder-count="3">
+              <li style="display:flex; gap:var(--space-4); align-items:flex-start; padding-block-start:var(--space-4); border-block-start:1px solid var(--border-default);">
+                <span aria-hidden="true" style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-subtle); font-variant-numeric:tabular-nums; flex-shrink:0; transform:translateY(3px);">{{ a.n }}</span>
+                <a data-link href="{{ a.href }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:baseline; gap:var(--space-2); min-block-size:var(--tap-target); font-size:var(--text-body); font-weight:var(--weight-semibold); line-height:var(--leading-snug); color:var(--text-link); text-decoration:none; text-wrap:pretty;"><span style="flex:0 1 auto;">{{ a.title }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; transform:translateY(2px);"><path d="M7 7h10v10M7 17 17 7"></path></svg></a>
+              </li>
+            </sc-for>
+          </ol></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="now" data-section data-bg="beam" aria-labelledby="now-title" style="background:var(--surface-card); border-block:1px solid var(--border-subtle); padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-10);">
+      <div data-reveal style="display:grid; gap:var(--space-3);">
+        <p class="cory-overline" style="margin:0;">{{ h.now.overline }}</p>
+        <h2 id="now-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ h.now.title }}</h2>
+      </div>
+      <div style="display:grid; gap:var(--space-6);">
+        <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ h.now.buildTitle }}</h3>
+        <div data-cq><ul data-reveal-group data-cq-grid="4" style="display:grid; gap:var(--grid-gap);">
+          <sc-for list="{{ nowBuild }}" as="b" hint-placeholder-count="4">
+            <li style="display:flex; flex-direction:column; gap:var(--space-3); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:var(--space-2); flex-wrap:wrap;">
+                <span aria-hidden="true" data-icon-tile style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong);">{{ b.icon }}</span>
+                <x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="{{ b.tone }}" dot="{{ b.dot }}" hint-size="auto,26px">{{ b.status }}</x-import>
+              </div>
+              <h4 style="margin:0; font-size:var(--text-h4); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ b.name }}</h4>
+              <p style="margin:0; margin-block-start:auto; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted); text-wrap:pretty;">{{ b.desc }}</p>
+            </li>
+          </sc-for>
+        </ul></div>
+      </div>
+      <div style="display:grid; gap:var(--space-6);">
+        <h3 style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ h.now.learnTitle }}</h3>
+      <div data-bento-cq>
+        <ul data-reveal-group class="cory-bento">
+          <li class="hero" style="position:relative; overflow:hidden; isolation:isolate; display:flex; flex-direction:column; gap:var(--space-6); padding:var(--space-8); border-radius:var(--radius-xl); background:var(--gradient-ink); color:var(--on-ink-body); box-shadow:var(--shadow-md);">
+            <div aria-hidden="true" style="position:absolute; inline-size:80%; aspect-ratio:1; inset-inline-end:-30%; inset-block-start:-40%; background:var(--glow-cyan-strong); z-index:-1; pointer-events:none;"></div>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:var(--space-3);">
+              <span aria-hidden="true" style="inline-size:44px; block-size:44px; flex-shrink:0; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--on-ink-fill); color:var(--on-ink-strong);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg></span>
+              <p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ h.now.certTitle }}</p>
+            </div>
+            <h4 style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-snug); letter-spacing:var(--tracking-tight); color:var(--on-ink-strong); text-wrap:balance;">{{ h.now.studyTitle }}</h4>
+            <div aria-hidden="true" style="flex:1 1 auto; display:grid; place-items:center; min-block-size:180px;">
+              <svg viewBox="0 0 360 220" fill="none" style="inline-size:min(100%, 380px); block-size:auto; overflow:visible;">
+                <circle cx="180" cy="110" r="100" style="stroke:var(--on-ink-border);" stroke-dasharray="2 6" stroke-linecap="round"></circle>
+                <circle cx="180" cy="110" r="72" style="stroke:var(--on-ink-border);"></circle>
+                <circle cx="180" cy="110" r="44" style="stroke:var(--on-ink-border);"></circle>
+                <circle cx="252" cy="110" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="129" cy="59" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="180" cy="210" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="80" cy="110" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="211" cy="141" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <circle cx="149" cy="141" r="3" style="fill:var(--on-ink-muted);"></circle>
+                <path d="M180 110 L251 39" style="stroke:var(--on-ink-link);" stroke-width="1.5" stroke-dasharray="4 4"></path>
+                <path d="M180 110 L109 181" style="stroke:var(--on-ink-link);" stroke-width="1.5" stroke-dasharray="4 4"></path>
+                <circle cx="251" cy="39" r="16" style="fill:var(--glow-cyan-strong);"></circle>
+                <circle cx="251" cy="39" r="7" style="fill:var(--on-ink-link);"></circle>
+                <circle cx="109" cy="181" r="16" style="fill:var(--glow-cyan-strong);"></circle>
+                <circle cx="109" cy="181" r="7" style="fill:var(--on-ink-link);"></circle>
+                <text x="270" y="44" font-size="13" style="fill:var(--on-ink-strong); font-family:var(--font-mono); font-weight:600;">CCAR-F</text>
+                <text x="90" y="186" text-anchor="end" font-size="13" style="fill:var(--on-ink-strong); font-family:var(--font-mono); font-weight:600;">GenAI Leader</text>
+                <circle cx="180" cy="110" r="26" style="fill:var(--on-ink-fill); stroke:var(--on-ink-border-strong);"></circle>
+                <g transform="translate(168 98)" style="stroke:var(--on-ink-strong);" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></g>
+              </svg>
+            </div>
+            <ul style="display:grid; gap:var(--space-4);">
+              <sc-for list="{{ nowLive }}" as="c" hint-placeholder-count="2">
+                <li style="display:grid; gap:var(--space-1); padding-block-start:var(--space-4); border-block-start:1px solid var(--on-ink-border);">
+                  <span style="display:inline-flex; align-items:center; gap:var(--space-2); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--on-ink-link);"><span aria-hidden="true" style="inline-size:8px; block-size:8px; border-radius:50%; background:var(--on-ink-link);"></span>{{ c.status }}</span>
+                  <strong style="font-size:var(--text-body-lg); font-weight:var(--weight-bold); line-height:var(--leading-snug); color:var(--on-ink-strong); text-wrap:pretty;">{{ c.name }}</strong>
+                  <span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--on-ink-muted);">{{ c.org }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </li>
+          <sc-for list="{{ nowVerified }}" as="c" hint-placeholder-count="6">
+            <li style="display:flex; flex-direction:column; overflow:hidden; border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+              <button type="button" onClick="{{ c.open }}" aria-haspopup="dialog" style="position:relative; display:block; inline-size:100%; aspect-ratio:4 / 3; padding:0; border:0; border-block-end:1px solid var(--border-subtle); background:var(--surface-sunken); overflow:hidden; cursor:zoom-in;"><img src="{{ c.img }}" alt="" loading="lazy" decoding="async" style="inline-size:100%; block-size:100%; object-fit:contain;"><span class="cory-visually-hidden">{{ h.now.view }}: {{ c.name }}</span><span aria-hidden="true" data-ink-tile style="position:absolute; inset-block-end:var(--space-2); inset-inline-end:var(--space-2); inline-size:36px; block-size:36px; display:grid; place-items:center; border-radius:var(--radius-pill); background:var(--gradient-ink); color:var(--on-ink-strong); box-shadow:var(--shadow-sm);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg></span></button>
+              <div style="flex:1; display:flex; flex-direction:column; gap:var(--space-1); padding:var(--space-5);">
+                <h4 style="margin:0; font-size:var(--text-body); font-weight:var(--weight-bold); line-height:var(--leading-snug); color:var(--text-strong); text-wrap:pretty;">{{ c.name }}</h4>
+                <span style="font-size:var(--text-caption); line-height:var(--leading-normal); color:var(--text-muted);">{{ c.org }}</span>
+                <sc-if value="{{ c.verify }}" hint-placeholder-val="{{ false }}"><a data-link href="{{ c.verify }}" target="_blank" rel="noopener" style="margin-block-start:auto; display:inline-flex; align-items:center; gap:var(--space-1); align-self:flex-start; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span style="flex:0 1 auto;">{{ c.vl }}</span><span class="cory-visually-hidden">: {{ c.name }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></sc-if>
+              </div>
+            </li>
+          </sc-for>
+          <li class="span-2" style="display:flex; flex-direction:column; gap:var(--space-4); padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+            <p class="cory-overline" style="margin:0;">{{ h.now.otherTitle }}</p>
+            <ul style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:var(--space-3) var(--space-6);">
+              <sc-for list="{{ nowOther }}" as="c" hint-placeholder-count="4">
+                <li style="display:flex; gap:var(--space-2); align-items:baseline; font-size:var(--text-body-sm); line-height:var(--leading-normal);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-success)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; transform:translateY(3px);"><path d="M20 6 9 17l-5-5"></path></svg><span style="display:grid; gap:2px;"><span style="font-weight:var(--weight-semibold); color:var(--text-strong);">{{ c.name }}</span><span style="font-size:var(--text-caption); color:var(--text-muted);">{{ c.org }}</span></span></li>
+              </sc-for>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <dialog ref="{{ certDlgRef }}" aria-labelledby="cert-dlg-title" onClose="{{ onCertClose }}" onClick="{{ onCertBackdrop }}" style="position:fixed; inset:0; inline-size:100%; block-size:100%; max-inline-size:none; max-block-size:none; margin:0; padding:0; border:0; background:var(--surface-overlay); color:var(--text-body);">
+    <div style="min-block-size:100%; display:grid; place-items:center; padding:var(--gutter);">
+      <div data-cert-card style="display:grid; gap:var(--space-4); inline-size:min(100%, 1080px); padding:var(--space-5); border-radius:var(--radius-2xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-xl);">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:var(--space-4);">
+          <div style="display:grid; gap:var(--space-1); min-inline-size:0;">
+            <h2 id="cert-dlg-title" style="margin:0; font-size:var(--text-h3); font-weight:var(--weight-bold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ certCur.name }}</h2>
+            <p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-muted);">{{ certCur.org }}</p>
+          </div>
+          <span style="flex:0 0 auto; inline-size:44px; block-size:44px; display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.IconButton" variant="secondary" size="md" label="{{ h.now.close }}" onClick="{{ closeCert }}" hint-size="44px,44px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></x-import></span>
+        </div>
+        <div style="display:grid; place-items:center; border-radius:var(--radius-lg); background:var(--surface-sunken); overflow:hidden;"><sc-if value="{{ certCur.full }}" hint-placeholder-val="{{ false }}">{{ certImgEl }}</sc-if></div>
+        <sc-if value="{{ certCur.verify }}" hint-placeholder-val="{{ false }}"><a data-link href="{{ certCur.verify }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:var(--space-1); align-self:flex-start; justify-self:start; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); text-decoration:none; color:var(--text-link);"><span>{{ certCur.vl }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;"><path d="M7 7h10v10M7 17 17 7"></path></svg></a></sc-if>
+      </div>
+    </div>
+  </dialog>
+
+
+  <section id="services" data-section data-bg="rings" aria-labelledby="services-title" style="padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-10);">
+      <div data-reveal style="display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;">
+        <div style="display:grid; gap:var(--space-3);">
+          <p class="cory-overline" style="margin:0;">{{ h.services.overline }}</p>
+          <h2 id="services-title" style="margin:0; max-inline-size:24ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong); text-wrap:balance;">{{ h.services.title }}</h2>
+        </div>
+        <a data-link href="{{ h.services.href }}" hreflang="en" style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--tap-target); font-size:var(--text-body); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;">{{ h.services.link }}<svg data-dir-icon width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      </div>
+      <div data-cq><div data-reveal-group data-cq-3 style="display:grid; gap:var(--grid-gap);">
+        <div style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.FeatureCard" title="{{ h.services.ai.title }}" icon="{{ iconAi }}" tags="{{ h.services.ai.tags }}" hint-size="100%,260px">{{ h.services.ai.body }}</x-import></div>
+        <div style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.FeatureCard" title="{{ h.services.ds.title }}" icon="{{ iconSystem }}" tags="{{ h.services.ds.tags }}" hint-size="100%,260px">{{ h.services.ds.body }}</x-import></div>
+        <div style="display:grid;"><x-import component-from-global-scope="DesignSystem_ebeb85.FeatureCard" title="{{ h.services.audit.title }}" icon="{{ iconAudit }}" tags="{{ h.services.audit.tags }}" hint-size="100%,260px">{{ h.services.audit.body }}</x-import></div>
+      </div></div>
+    </div>
+  </section>
+
+
+  <section id="contact" data-contact data-section data-closing data-scene-section aria-labelledby="contact-title" style="position:relative; padding-block:var(--space-10) var(--space-24);">
+    <div class="cory-container">
+      <div data-reveal style="position:relative; overflow:hidden; isolation:isolate; border-radius:var(--radius-2xl); background:var(--gradient-ink); color:var(--on-ink-body); padding:clamp(var(--space-12), 9vw, var(--space-24)) var(--gutter); display:grid; gap:var(--space-8); justify-items:center; text-align:center; box-shadow:var(--shadow-xl);">
+        <div aria-hidden="true" style="position:absolute; inline-size:60%; aspect-ratio:1; inset-inline-end:-22%; inset-block-start:-35%; background:var(--glow-cyan-strong); z-index:-1; pointer-events:none;"></div>
+        <div aria-hidden="true" style="position:absolute; inline-size:50%; aspect-ratio:1; inset-inline-start:-18%; inset-block-end:-40%; background:var(--glow-blue); z-index:-1; pointer-events:none;"></div>
+        <p class="cory-overline" style="margin:0; color:var(--on-ink-link);">{{ h.closing.overline }}</p>
+        <h2 id="contact-title" style="margin:0; max-inline-size:20ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-display); line-height:var(--leading-tight); letter-spacing:var(--tracking-tighter); color:var(--on-ink-strong);">{{ h.closing.title }}</h2>
+        <p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--on-ink-body);">{{ h.closing.body }}</p>
+        <div style="display:grid; justify-items:center; gap:var(--space-6);">
+          <div data-cta-row style="display:flex; gap:var(--space-3); flex-wrap:wrap; justify-content:center; align-items:center;">
+            <span data-magnetic style="display:inline-block; padding:var(--space-2); margin:calc(var(--space-2) * -1);"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="https://cal.com/md-abdul-aleem-gilsy7/15min?overlayCalendar=true" target="_blank" rel="noopener" icon-left="{{ iCalendar }}" hint-size="auto,52px">{{ h.call }}</x-import></span>
+            <x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="onInk" size="lg" href="{{ mailHref }}" icon-left="{{ iMail }}" hint-size="auto,52px">{{ h.closing.email }}</x-import>
+          </div>
+          <div style="display:flex; gap:var(--space-2) var(--space-6); flex-wrap:wrap; justify-content:center; align-items:center; color:var(--on-ink-link); font-size:var(--text-body-sm);">
+            <dc-import name="Email Copy" email="{{ s.email }}" subject="{{ mailSubject }}" copy-label="{{ h.ch.copyEmail }}" copied-label="{{ h.ch.copied }}" fallback-label="{{ h.ch.pressCopy }}" hint-size="auto,44px"></dc-import>
+            <a data-link href="https://www.linkedin.com/in/aiuxaleem" target="_blank" rel="noopener" lang="en" dir="ltr" style="display:inline-flex; align-items:center; min-block-size:var(--tap-target); font-weight:var(--weight-semibold); color:var(--on-ink-link); text-decoration:none;">linkedin.com/in/aiuxaleem</a>
+            <a data-link href="https://www.youtube.com/@aiuxaleem" target="_blank" rel="noopener" lang="en" dir="ltr" style="display:inline-flex; align-items:center; min-block-size:var(--tap-target); font-weight:var(--weight-semibold); color:var(--on-ink-link); text-decoration:none;">youtube.com/@aiuxaleem</a>
+            <a data-link href="https://drive.google.com/file/d/1cmkjeMQc1S9gIePpRh29T4nFkBBe3izm/view" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; min-block-size:var(--tap-target); font-weight:var(--weight-semibold); color:var(--on-ink-link); text-decoration:none;">{{ h.closing.resumeLink }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hide-cta="{{ true }}" hint-size="100%,560px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { i: 0, certImg: '' };
+  icons = (() => {
+    // Lucide, 1.75 stroke: sparkles, layers, scan-search (22px tiles); download, calendar, arrow-down, mail (20px buttons)
+    const svg = (paths, extra, size = 22) => React.createElement('svg', { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.75, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true }, ...paths.map((d, i) => React.createElement('path', { key: i, d })), ...(extra || []));
+    // Arrow tiles: 28px round chip inside the hero CTAs; dir-aware arrows flip in RTL
+    const tile = (icon, bg, dir) => React.createElement('span', { 'data-arrow-tile': true, 'data-dir-icon': dir ? true : undefined, 'aria-hidden': true, style: { display: 'inline-grid', placeItems: 'center', inlineSize: 28, blockSize: 28, borderRadius: 'var(--radius-pill)', background: bg, color: 'inherit', flexShrink: 0, marginInlineEnd: 'calc(-1 * var(--space-2))' } }, icon);
+    return {
+      ai: svg(['M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z', 'M20 3v4', 'M22 5h-4', 'M4 17v2', 'M5 18H3']),
+      ds: svg(['M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z', 'M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12', 'M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17']),
+      audit: svg(['M3 7V5a2 2 0 0 1 2-2h2', 'M17 3h2a2 2 0 0 1 2 2v2', 'M21 17v2a2 2 0 0 1-2 2h-2', 'M7 21H5a2 2 0 0 1-2-2v-2', 'm16 16-1.9-1.9'], [React.createElement('circle', { key: 'c', cx: 11, cy: 11, r: 3 })]),
+      download: svg(['M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4', 'm7 10 5 5 5-5', 'M12 15V3'], null, 20),
+      external: svg(['M7 7h10v10', 'M7 17 17 7'], null, 20),
+      calendar: svg(['M8 2v4', 'M16 2v4', 'M3 10h18'], [React.createElement('rect', { key: 'r', x: 3, y: 4, width: 18, height: 18, rx: 2 })], 20),
+      target: svg([], [React.createElement('circle', { key: 'a', cx: 12, cy: 12, r: 10 }), React.createElement('circle', { key: 'b', cx: 12, cy: 12, r: 6 }), React.createElement('circle', { key: 'c', cx: 12, cy: 12, r: 2 })]),
+      users: svg(['M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2', 'M22 21v-2a4 4 0 0 0-3-3.87', 'M16 3.13a4 4 0 0 1 0 7.75'], [React.createElement('circle', { key: 'c', cx: 9, cy: 7, r: 4 })]),
+      megaphone: svg(['m3 11 18-5v12L3 14v-3z', 'M11.6 16.8a3 3 0 1 1-5.8-1.6']),
+      languages: svg(['m5 8 6 6', 'm4 14 6-6 2-3', 'M2 5h12', 'M7 2h1', 'm22 22-5-10-5 10', 'M14 18h6']),
+      trophy: svg(['M6 9H4.5a2.5 2.5 0 0 1 0-5H6', 'M18 9h1.5a2.5 2.5 0 0 0 0-5H18', 'M4 22h16', 'M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22', 'M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22', 'M18 2H6v7a6 6 0 0 0 12 0V2Z']),
+      bot: svg(['M12 8V4H8', 'M2 14h2', 'M20 14h2', 'M15 13v2', 'M9 13v2'], [React.createElement('rect', { key: 'r', width: 16, height: 12, x: 4, y: 8, rx: 2 })]),
+      bookOpen: svg(['M12 7v14', 'M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z']),
+      layoutTemplate: svg([], [React.createElement('rect', { key: 'a', width: 18, height: 7, x: 3, y: 3, rx: 1 }), React.createElement('rect', { key: 'b', width: 9, height: 7, x: 3, y: 14, rx: 1 }), React.createElement('rect', { key: 'c', width: 5, height: 7, x: 16, y: 14, rx: 1 })]),
+      play: svg(['m6 3 14 9-14 9z'], null, 20),
+      playTile: svg(['m10 8 6 4-6 4z'], [React.createElement('circle', { key: 'c', cx: 12, cy: 12, r: 10 })]),
+      book: svg(['M12 7v14', 'M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z']),
+      landmark: svg(['M3 22h18', 'M6 18v-7', 'M10 18v-7', 'M14 18v-7', 'M18 18v-7', 'M12 2 2 7h20z']),
+      compass: svg(['m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z'], [React.createElement('circle', { key: 'c', cx: 12, cy: 12, r: 10 })]),
+      code: svg(['m18 16 4-4-4-4', 'm6 8-4 4 4 4', 'm14.5 4-5 16']),
+      a11y: svg(['M14 8h-4l-4 8h12z', 'M12 16v4', 'M8 20h8'], [React.createElement('circle', { key: 'c', cx: 12, cy: 5, r: 1.5 })]),
+      clapper: svg(['M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z', 'm6.2 5.3 3.1 3.9', 'm12.4 3.4 3.1 4', 'M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z']),
+      arrowRight: svg(['M5 12h14', 'm12 5 7 7-7 7'], null, 20),
+      arrowTile: tile(svg(['M5 12h14', 'm12 5 7 7-7 7'], null, 16), 'var(--on-ink-fill)', true),
+      externalTile: tile(svg(['M7 7h10v10', 'M7 17 17 7'], null, 16), 'var(--surface-sunken)', false),
+      arrowDown: svg(['M12 5v14', 'm19 12-7 7-7-7'], null, 20),
+      mail: svg(['m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'], [React.createElement('rect', { key: 'r', x: 2, y: 4, width: 20, height: 16, rx: 2 })], 20)
+    };
+  })();
+  certDlgRef = React.createRef();
+  openCert = (img, e) => {
+    this.certOpener = e && e.currentTarget;
+    this.setState({ certImg: img }, () => { const d = this.certDlgRef.current; if (d && !d.open) d.showModal(); });
+  };
+  closeCert = () => { const d = this.certDlgRef.current; if (d && d.open) d.close(); };
+  onCertClose = () => { const o = this.certOpener; this.certOpener = null; if (o && o.focus) o.focus(); };
+  onCertBackdrop = e => { const card = e.target.closest && e.target.closest('[data-cert-card]'); if (!card) this.closeCert(); };
+
+  static C = {
+    en: { badge: 'Open to work', meta: '13+ years · 5 design systems · GCC hours', t1: 'I design ', tAi: 'AI', t2: ' products people actually ', tTrust: 'trust', sub: 'Lead product designer for fintech and enterprise platforms. I set the direction, grow the team and ship design as code, from roadmap to handoff.', seeWork: 'See all work', deckOver: 'Case studies', deckHint: 'Swipe the cards, or use the arrow keys while the deck has focus, to see the next case study.', rolesLead: 'A designer who', roles: ['solves problems', 'shapes strategy', 'leads decisions', 'drives clarity'],
+      logosOver: 'Worked with', logosTitle: 'Teams I have shipped with', logosLead: 'Fintech, healthcare, enterprise and AI platforms, from first brief to production handoff.', workOver: 'Projects', workTitle: 'What I am building, and what shipped', allProjects: 'All projects',
+      povOver: 'Point of view', pov: 'AI is fast. Trust is slow. I design the gap.', povAccents: ['AI', 'Trust'], more: 'More about me', portraitAlt: 'Portrait of Mohammad Abdul Aleem', facts: [['Based in', 'Hyderabad, India'], ['Education', 'B.Tech (IT), a STEM degree'], ['Focus', 'Enterprise UX to AI products']],
+      leadOver: 'Beyond the canvas', leadTitle: 'I lead the product, not only the pixels', leads: [['Product ownership', 'I turn business goals into a roadmap, pick the metric that matters, then prototype to learn before we build.', 'See how I work', 'Services.dc.html#process'], ['Team and delivery', 'I mentor designers, run hiring and keep multi-quarter work moving across Product, Engineering, Marketing, Sales and AI Research.', 'See my career', 'About.dc.html'], ['Content systems for KSA and UAE', 'In marketing I work as analyst and designer: I find the gap, then build the workflow that fills it, in English and Arabic.', 'Read the reel pipeline case', 'Case Study.dc.html?slug=ai-ad-reel-pipeline']],
+      latestOver: 'In public', latestTitle: 'What I share on YouTube and LinkedIn', allReading: 'Everything I write', watch: 'Latest video', blogOver: 'Latest guide', liOver: 'On LinkedIn this week', closeOver: 'Next step', closeTitle: "Have a product that needs to feel trustworthy? Let's talk", closeBody: 'I reply within 48 hours. A 15-minute call is the fastest way to start.' },
+    ar: { badge: 'متاح للعمل', meta: 'أكثر من 13 عامًا · 5 أنظمة تصميم · بتوقيت الخليج', t1: 'أصمّم منتجات ', tAi: 'ذكاء اصطناعي', t2: ' يثق بها الناس ', tTrust: 'فعلًا', sub: 'مصمّم منتجات قائد للمنصات المالية والمؤسسية. أحدّد الاتجاه، وأطوّر الفريق، وأسلّم التصميم كشيفرة، من خارطة الطريق إلى التسليم.', seeWork: 'كل الأعمال', deckOver: 'دراسات الحالة', deckHint: 'اسحب البطاقات أو استخدم مفاتيح الأسهم لعرض دراسة الحالة التالية.', rolesLead: 'مصمّم', roles: ['يحلّ المشكلات', 'يرسم الاستراتيجية', 'يقود القرارات', 'يصنع الوضوح'],
+      logosOver: 'عملت مع', logosTitle: 'فرق أطلقت معها منتجات', logosLead: 'منصات مالية وصحية ومؤسسية ومنصات ذكاء اصطناعي، من أول موجز إلى التسليم للإنتاج.', workOver: 'المشاريع', workTitle: 'ما أبنيه الآن، وما أُطلق', allProjects: 'كل المشاريع',
+      povOver: 'وجهة نظر', pov: 'الذكاء الاصطناعي سريع. الثقة بطيئة. وأنا أصمّم ما بينهما.', povAccents: ['الذكاء الاصطناعي', 'الثقة'], more: 'المزيد عني', portraitAlt: 'صورة محمد عبد العليم', facts: [['المقر', 'حيدر آباد، الهند'], ['التعليم', 'بكالوريوس تقنية المعلومات'], ['التركيز', 'من تجربة المؤسسات إلى منتجات الذكاء الاصطناعي']],
+      leadOver: 'أبعد من اللوحة', leadTitle: 'أقود المنتج، لا البكسلات فقط', leads: [['امتلاك المنتج', 'أحوّل أهداف العمل إلى خارطة طريق، وأختار المقياس المهم، ثم أصنع نموذجًا لنتعلّم قبل البناء.', 'كيف أعمل', 'Services.dc.html#process'], ['الفريق والتسليم', 'أرشد المصمّمين وأدير التوظيف وأحافظ على تقدّم العمل عبر المنتج والهندسة والتسويق والمبيعات.', 'مسيرتي المهنية', 'About.dc.html'], ['أنظمة محتوى للسعودية والإمارات', 'في التسويق أعمل محلّلًا ومصمّمًا: أجد الفجوة ثم أبني سير العمل الذي يسدّها، بالعربية والإنجليزية.', 'اقرأ دراسة مسار الإعلانات', 'Case Study.dc.html?slug=ai-ad-reel-pipeline']],
+      latestOver: 'في العلن', latestTitle: 'ما أشاركه على YouTube وLinkedIn', allReading: 'كل ما أكتبه', watch: 'أحدث فيديو', blogOver: 'أحدث دليل', liOver: 'على LinkedIn هذا الأسبوع', closeOver: 'الخطوة التالية', closeTitle: 'لديك منتج يجب أن يكون جديرًا بالثقة؟ لنتحدّث', closeBody: 'أردّ خلال 48 ساعة. مكالمة من 15 دقيقة هي أسرع بداية.' }
+  };
+    componentDidMount() {
+    this.off = window.AX && window.AX.on(() => this.forceUpdate());
+    this.mo = new MutationObserver(() => this.forceUpdate()); this.mo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    this.start();
+  }
+  componentWillUnmount() { this.off && this.off(); this.mo && this.mo.disconnect(); this.deckOff && this.deckOff(); }
+  async start() {
+    const m = await import('./motion.js'); this.m = m;
+    m.nodeField(document.querySelector('[data-field]')).then(f => { this.field = f; });
+    await m.boot('home', T => { this.T = T; this.heroScroll(T); this.manifesto(T); this.work(T); this.deck(T); });
+  }
+  heroScroll(T) { const ST = window.ScrollTrigger; ST.create({ trigger: '[data-hero]', start: 'top top', end: 'bottom top', scrub: true, onUpdate: s => this.field && this.field.progress(s.progress * 1.4) }); }
+  manifesto(T) {
+    const { gsap, SplitText } = window, h = document.querySelector('[data-manifesto-text]'); if (!T.ok || !h || !SplitText) return;
+    SplitText.create(h, { type: 'words', autoSplit: true, onSplit: self => {
+      const words = self.words.filter(w => !w.closest('[data-accent]'));
+      words.forEach(w => { w.style.setProperty('--w', '0'); w.style.color = 'color-mix(in srgb, var(--text-strong) calc(var(--w) * 100%), var(--text-subtle))'; });
+      const last = self.words[self.words.length - 1], rule = document.createElement('span'); rule.setAttribute('aria-hidden', 'true');
+      Object.assign(rule.style, { position: 'absolute', insetInline: '0', insetBlockEnd: '0.02em', blockSize: '0.08em', borderRadius: 'var(--radius-pill)', background: 'var(--gradient-brand)', transform: 'scaleX(0)', transformOrigin: 'var(--origin-inline-start) center', pointerEvents: 'none' });
+      if (last) { last.style.position = 'relative'; last.appendChild(rule); }
+      const tl = gsap.timeline({ scrollTrigger: { trigger: h, start: 'top 80%', end: 'bottom 45%', scrub: 0.6 } });
+      tl.to(words, { '--w': 1, duration: 1, stagger: 1, ease: 'none' }); if (last) tl.to(rule, { scaleX: 1, duration: 2.5, ease: 'none' }, '-=0.6');
+      return tl;
+    } });
+  }
+  work(T) {
+    const { gsap } = window, sec = document.querySelector('[data-work]'), track = document.querySelector('[data-work-track]'), vp = document.querySelector('[data-work-viewport]'), fill = document.querySelector('[data-work-progress-fill]');
+    if (!sec || !track || !T.ok || !matchMedia('(min-width: 768px)').matches) return;
+    vp.setAttribute('data-pinned', ''); const dir = document.documentElement.dir === 'rtl' ? -1 : 1, dist = () => Math.max(0, track.scrollWidth - vp.clientWidth);
+    gsap.to(track, { x: () => -dist() * dir, ease: 'none', scrollTrigger: { trigger: sec, start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 0.8, invalidateOnRefresh: true, onUpdate: s => fill && gsap.set(fill, { scaleX: s.progress }) } });
+  }
+  /* Hero deck: front card throws over the fan and lands at the back; the next pulls forward with a soft overshoot */
+  go(step) {
+    if (this.busy) return; const n = this.deckLen || 3, nx = (this.state.i + step + n) % n, g = window.gsap, cards = [...document.querySelectorAll('[data-stack-card]')];
+    if (!g || !this.T || !this.T.ok || cards.length !== n) { this.setState({ i: nx }); return; }
+    this.busy = true; const dk = document.querySelector('[data-hero-stack]'); dk.setAttribute('data-animating', ''); const dir = document.documentElement.dir === 'rtl' ? -1 : 1;
+    const P = [{ x: 0, xPercent: 0, yPercent: 0, rotation: 0, scale: 1 }, { x: 0, xPercent: 9 * dir, yPercent: -7, rotation: 6 * dir, scale: 0.93 }, { x: 0, xPercent: -9 * dir, yPercent: -13, rotation: -6 * dir, scale: 0.86 }];
+    cards.forEach(c => g.set(c, P[+c.dataset.pos]));
+    const parts = [], tl = g.timeline({ onComplete: () => this.setState({ i: nx }, () => { g.set(cards, { clearProps: 'transform,zIndex' }); g.set(parts, { clearProps: 'opacity,visibility,transform' }); dk.removeAttribute('data-animating'); this.busy = false; }) });
+    cards.forEach(c => {
+      const from = +c.dataset.pos, to = (from - step + n * 2) % n, cap = c.querySelector('[data-stack-caption]'), fr = c.querySelector('[data-stack-frame]'); parts.push(cap, fr);
+      if (from === 0) { tl.to([cap, fr], { opacity: 0, y: -8, duration: 0.22 }, 0); tl.to(c, { yPercent: -18, xPercent: -4 * dir, scale: 1.04, rotation: 5 * dir, duration: 0.34, ease: 'power2.out' }, 0); tl.set(c, { zIndex: to === 2 ? 1 : 2 }, 0.34); tl.to(c, { ...P[to], duration: 0.6, ease: 'power3.inOut' }, 0.34); }
+      else if (to === 0) { tl.set(c, { zIndex: 3 }, 0.34); tl.to(c, { ...P[0], duration: 0.75, ease: 'back.out(1.25)' }, 0.26); tl.fromTo(cap, { opacity: 0, y: 16, visibility: 'visible' }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.55); tl.fromTo(fr, { opacity: 0, y: 24, visibility: 'visible' }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.6); }
+      else { tl.set(c, { zIndex: to === 1 ? 2 : 1 }, 0.3); tl.to(c, { ...P[to], duration: 0.65, ease: 'power3.inOut' }, 0.12); }
+    });
+  }
+  deck(T) {
+    const { gsap } = window, stack = document.querySelector('[data-hero-stack]'), deck = document.querySelector('[data-hero-deck]'); if (!stack || this.deckOff) return;
+    if (T.ok && !document.documentElement.hasAttribute('data-intro-shown')) { const cards = stack.querySelectorAll('[data-stack-card]'); stack.setAttribute('data-animating', ''); gsap.from(cards, { yPercent: 40, opacity: 0, duration: T.epic, ease: T.cine, stagger: { each: T.staggerMd, from: 'end' }, delay: T.slow, clearProps: 'transform,opacity', onComplete: () => stack.removeAttribute('data-animating') }); }
+    let sx = 0, sy = 0, down = false, moved = false; const dir = () => document.documentElement.dir === 'rtl' ? -1 : 1;
+    const pd = e => { sx = e.clientX; sy = e.clientY; down = true; moved = false; };
+    const pm = e => { if (!down) return; const dx = e.clientX - sx; if (!moved && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(e.clientY - sy)) moved = true; if (moved && T.ok) { const f = stack.querySelector('[data-pos="0"]'); f && gsap.set(f, { x: dx * 0.35, rotation: dx * 0.02 }); } };
+    const pu = e => { if (!down) return; down = false; const dx = e.clientX - sx, f = stack.querySelector('[data-pos="0"]'); if (moved && Math.abs(dx) > 48) { f && gsap.set(f, { clearProps: 'transform' }); this.go(dx * dir() < 0 ? 1 : -1); } else if (f && moved) gsap.to(f, { x: 0, rotation: 0, duration: T.slow, ease: T.out, clearProps: 'transform' }); };
+    const ck = e => { if (moved) { e.preventDefault(); e.stopPropagation(); } };
+    const kd = e => { if (e.target.closest('button')) return; if (e.key === 'ArrowRight') { e.preventDefault(); this.go(dir()); } if (e.key === 'ArrowLeft') { e.preventDefault(); this.go(-dir()); } };
+    stack.addEventListener('pointerdown', pd); addEventListener('pointermove', pm, { passive: true }); addEventListener('pointerup', pu); stack.addEventListener('click', ck, true); deck.addEventListener('keydown', kd);
+    this.deckOff = () => { stack.removeEventListener('pointerdown', pd); removeEventListener('pointermove', pm); removeEventListener('pointerup', pu); stack.removeEventListener('click', ck, true); deck.removeEventListener('keydown', kd); };
+  }
+  renderVals() {
+    const AX = window.AX; if (!AX) return { c: {}, t: {}, s: {}, deck: [], roles: [], logos: [], projects: [], facts: [], leads: [], video: {}, post: {}, linkedin: [] };
+    const lang = AX.lang(), c = Component.C[lang], s = AX.data().site, cases = AX.list('cases').filter(x => x.home).slice(0, 3), n = cases.length || 1; this.deckLen = n;
+    const v = AX.list('videos')[0], p = AX.list('posts')[0], li = AX.list('linkedin'), projects = AX.list('projects'), side = !!(p || li.length);
+    return {
+      hasDeck: cases.length > 0, deckMany: cases.length > 1, hasProjects: projects.length > 0, hasVideo: !!v, hasPost: !!p, hasLi: li.length > 0, hasSide: side, hasLatest: !!v || side,
+      latestCols: v && side ? 'minmax(0, 1.4fr) minmax(0, 1fr)' : 'minmax(0, 1fr)',
+      c, t: AX.UI[lang], s,
+      ...(() => { const t = AX.home(), mailSubject = 'Role or project conversation'; return { h: t, mailSubject, mailHref: 'mailto:' + s.email + '?subject=' + encodeURIComponent(mailSubject), series: (t.read || {}).series || [], articles: ((t.read || {}).articles || []).map((a, i) => ({ ...a, n: '0' + (i + 1) })),
+      iconAi: this.icons.ai, iconSystem: this.icons.ds, iconAudit: this.icons.audit,
+      ...(() => { const p = ((t.skills || {}).parts) || []; return { core1: p[0] || '', core2: p[1] || '', core3: p[2] || '', core4: p[3] || '', coreSummary: p.join(', ') }; })(), skillBa: ((t.skills || {}).ba) || [], skillMotion: ((t.skills || {}).motion) || [], skillFin: ((t.skills || {}).fin) || [], skillPm: ((t.skills || {}).pm) || [],
+      ...(() => { const items = ((t.skills || {}).items) || [], o = {}; for (let i = 0; i < 10; i++) { const it = items[i] || { t: '', b: '' }, s = it.t || '', k = s.indexOf(' '); const j = s.lastIndexOf(' '); o['s' + (i + 1)] = { t: s, b: it.b || '', w1: k < 0 ? s : s.slice(0, k), rest: k < 0 ? '' : s.slice(k + 1), head: j < 0 ? '' : s.slice(0, j), lw: j < 0 ? s : s.slice(j + 1) }; } return o; })(),
+      ...(() => { const map = l => l.map(x => ({ name: x.name, initial: x.name.slice(0, 1), hasLogo: !!x.slug, light: x.slug ? 'https://cdn.simpleicons.org/' + x.slug + '/0B1F36' : '', dark: x.slug ? 'https://cdn.simpleicons.org/' + x.slug + '/E2E8F0' : '', bg: x.hi ? 'var(--surface-ink)' : 'var(--surface-page)', border: x.hi ? 'transparent' : 'var(--border-default)', shadow: x.hi ? 'var(--shadow-sm)' : 'none', ring: x.hi ? 'var(--gradient-brand)' : 'none', fg: x.hi ? 'var(--on-ink-strong)' : 'var(--text-strong)', swap: x.hi ? 'off' : 'on', showLight: x.hi ? 'none' : 'block' })), all = ((t.skills || {}).tools) || []; return { toolsAi: map(all.filter(x => x.ai)), toolsCore: map(all.filter(x => !x.ai)) }; })(),
+      hideLogo: e => { e.currentTarget.style.display = 'none'; },
+      leadItems: (((t.lead || {}).items) || []).map((it, i) => ({ ...it, icon: [this.icons.target, this.icons.users, this.icons.languages][i] })),
+      nowBuild: (((t.now || {}).build) || []).map((b, i) => ({ ...b, tone: i === 3 ? 'neutral' : 'brand', dot: i !== 3, icon: [this.icons.trophy, this.icons.bot, this.icons.bookOpen, this.icons.layoutTemplate][i] || this.icons.layoutTemplate })),
+      nowLive: (((t.now || {}).certs) || []).filter(c => c.live), nowVerified: (((t.now || {}).certs) || []).filter(c => !c.live && c.img).map(c => ({ ...c, alt: c.name, full: c.img.replace('../assets/certs/', '../assets/certs/full/'), open: e => this.openCert(c.img, e) })),
+      certCur: (() => { const c = (((t.now || {}).certs) || []).find(x => x.img && x.img === this.state.certImg); return c ? { ...c, full: c.img.replace('../assets/certs/', '../assets/certs/full/') } : { name: '', org: '', full: '' }; })(),
+      certImgEl: (() => { const c = (((t.now || {}).certs) || []).find(x => x.img && x.img === this.state.certImg); return c ? React.createElement('img', { key: c.img, src: c.img.replace('../assets/certs/', '../assets/certs/full/'), alt: c.name, decoding: 'async', style: { display: 'block', maxInlineSize: '100%', maxBlockSize: 'calc(100svh - 14rem)', inlineSize: 'auto', blockSize: 'auto', objectFit: 'contain' } }) : null; })(),
+      certDlgRef: this.certDlgRef, onCertClose: this.onCertClose, onCertBackdrop: this.onCertBackdrop, closeCert: this.closeCert, nowOther: (((t.now || {}).certs) || []).filter(c => !c.live && !c.img),
+      iPlay: this.icons.play, iPlayTile: this.icons.playTile, iBookTile: this.icons.book, iArrowRight: this.icons.arrowRight, iArrowTile: this.icons.arrowTile, iExternalTile: this.icons.externalTile, iDownload: this.icons.download, iExternal: this.icons.external, iCalendar: this.icons.calendar, iArrowDown: this.icons.arrowDown, iMail: this.icons.mail,
+      }; })(),
+      povRuns: (() => { const acc = c.povAccents || []; if (!acc.length) return [{ text: c.pov, plain: true }]; const re = new RegExp('(' + acc.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')'); return c.pov.split(re).filter(Boolean).map(text => acc.includes(text) ? { text, accent: true } : { text, plain: true }); })(),
+      deck: cases.map((k, i) => { const pos = (i - this.state.i + n) % n; return { pos, hidden: pos !== 0, tab: pos === 0 ? 0 : -1, number: k.number, category: AX.tx(k, 'category'), year: k.facts.timeline, title: AX.tx(k, 'title'), lead: AX.tx(k, 'lead'), img: AX.img(k.cover, { sizes: '(max-width: 767px) 80vw, 440px', draggable: false, fetchpriority: i === 0 ? 'high' : undefined, style: { display: 'block', inlineSize: '100%', blockSize: '100%', objectFit: 'cover', objectPosition: 'top left' } }), href: 'Case Study.dc.html?slug=' + k.slug }; }),
+      counter: '0' + (this.state.i + 1) + ' / 0' + n, next: () => this.go(1), prev: () => this.go(-1),
+      roles: c.roles.map((text, i) => ({ text, n: '0' + (i + 1) })),
+      logos: [['Colaberry', 'Data and AI'], ['NTT DATA', 'Enterprise IT'], ['Latitude Financial Services', 'Fintech'], ['Teqsar', 'Fintech'], ['Click2Clinic', 'Healthcare'], ['AuctionBazaar', 'Marketplace'], ['Ray SEO', 'Web']].map(([name, sector]) => ({ name, sector })),
+      projects: projects.map(x => ({ title: AX.tx(x, 'title'), summary: AX.tx(x, 'summary'), status: x.status, cover: x.cover, ss: AX.srcset(x.cover), noCover: !x.cover, href: 'Project.dc.html?slug=' + x.slug })),
+      facts: c.facts.map(([k, v]) => ({ k, v })), leads: c.leads.map(([h, p, link, href], i) => ({ h, p, link, href, i1: i === 0, i2: i === 1, i3: i === 2 })),
+      video: { title: AX.tx(v, 'title') },
+      posterImg: v && v.poster ? React.createElement('img', { 'data-tilt-media': '', srcSet: AX.srcset(v.poster), sizes: '(max-width: 767px) 92vw, 50vw', src: v.poster, alt: '', loading: 'lazy', decoding: 'async', style: {"position":"absolute","inset":"-4%","inlineSize":"108%","blockSize":"108%","objectFit":"cover","zIndex":"-2"} }) : null, post: { title: AX.tx(p, 'title'), excerpt: AX.tx(p, 'excerpt'), href: p ? 'Post.dc.html?slug=' + p.slug : 'Read.dc.html' },
+      linkedin: li.slice(0, 3).map(l => ({ title: l.title, href: l.href }))
+    };
+  }
+}
+</script>
+</body>
+</html>

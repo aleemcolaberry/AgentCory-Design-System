@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sitemap · AIUXAleem</title>
+  <meta name="description" content="Every page on aiuxaleem.com and in its admin, as one clickable map.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIUXAleem">
+  <meta property="og:title" content="Sitemap · AIUXAleem">
+  <meta property="og:description" content="Every page on aiuxaleem.com and in its admin, as one clickable map.">
+  <meta property="og:image" content="https://aiuxaleem.com/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <script src="boot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Noto+Kufi+Arabic:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="data.js"></script>
+</helmet>
+<dc-import name="Header" hint-size="100%,72px"></dc-import>
+<main id="main" tabindex="-1" style="position:relative; z-index:var(--z-raised); outline:none;">
+  <section aria-labelledby="sm-title" style="position:relative; overflow:clip; padding-block:var(--section-y) var(--space-10);">
+    <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset-block-start:-30%; inset-inline-end:-10%; inline-size:min(60vw, 640px); aspect-ratio:1; background:var(--glow-cyan); pointer-events:none;"></div>
+    <div class="cory-container" style="position:relative; display:grid; gap:var(--space-5);">
+      <p data-hero-el class="cory-overline" style="margin:0;">{{ t.sitemap }}</p>
+      <h1 id="sm-title" data-hero-title style="margin:0; max-inline-size:14ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-hero); line-height:var(--leading-display); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ c.title }}</h1>
+      <p data-hero-el style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--text-body);">{{ c.lead }}</p>
+      <div data-hero-el style="display:flex; gap:var(--space-2) var(--space-5); flex-wrap:wrap; font-size:var(--text-body-sm); color:var(--text-muted);"><span style="display:inline-flex; align-items:center; gap:var(--space-2);"><span aria-hidden="true" style="inline-size:12px; block-size:12px; border-radius:4px; background:var(--gradient-ink);"></span>{{ c.kSection }}</span><span style="display:inline-flex; align-items:center; gap:var(--space-2);"><span aria-hidden="true" style="inline-size:12px; block-size:12px; border-radius:4px; background:var(--surface-card); border:1px solid var(--border-interactive);"></span>{{ c.kPage }}</span><span style="display:inline-flex; align-items:center; gap:var(--space-2);"><span aria-hidden="true" style="inline-size:12px; block-size:12px; border-radius:4px; border:1px dashed var(--border-interactive);"></span>{{ c.kItem }}</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pub-title" style="padding-block:var(--space-6) var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-8);">
+      <div data-reveal style="display:flex; align-items:center; gap:var(--space-4); flex-wrap:wrap;">
+        <h2 id="pub-title" data-no-split style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); color:var(--text-strong);">{{ c.public }}</h2>
+        <x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="auto,24px">{{ pubCount }}</x-import>
+      </div>
+      <a href="Home.dc.html" data-reveal data-node-root style="justify-self:center; display:inline-flex; align-items:center; gap:var(--space-3); min-block-size:var(--tap-target); padding:var(--space-4) var(--space-6); border-radius:var(--radius-pill); background:var(--gradient-brand-deep); color:var(--text-on-brand); box-shadow:var(--shadow-brand); font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-body-lg); text-decoration:none;"><span aria-hidden="true" style="inline-size:var(--space-4); block-size:var(--space-4); border-radius:var(--radius-tile); background:var(--surface-card);"></span><span>{{ c.home }}</span><bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); font-weight:var(--weight-medium);">/</bdi></a>
+      <div aria-hidden="true" data-trunk style="justify-self:center; inline-size:2px; block-size:var(--space-8); margin-block:calc(-1 * var(--space-8)) 0; background:var(--border-interactive);"></div>
+      <ul data-reveal-group data-tree style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:var(--grid-gap); align-items:start; padding-block-start:var(--space-6); border-block-start:2px solid var(--border-interactive);">
+        <sc-for list="{{ tree }}" as="g" hint-placeholder-count="7">
+          <li style="position:relative; display:grid; gap:var(--space-3);" style-before="content:''; position:absolute; inset-block-start:calc(-1 * var(--space-6) - 2px); inset-inline-start:var(--space-6); inline-size:2px; block-size:var(--space-6); background:var(--border-interactive);">
+            <a href="{{ g.href }}" class="cory-on-ink" style="display:grid; gap:var(--space-1); padding:var(--space-4) var(--space-5); border-radius:var(--radius-lg); background:var(--gradient-ink); color:var(--on-ink-strong); text-decoration:none; box-shadow:var(--shadow-md);" data-lift><span style="display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:var(--space-2); align-items:baseline;"><strong style="font-size:var(--text-body); font-weight:var(--weight-extrabold);">{{ g.label }}</strong><bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--on-ink-link);">{{ g.n }}</bdi></span><bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--on-ink-muted);">{{ g.path }}</bdi></a>
+            <ul style="display:grid; gap:var(--space-2); padding-inline-start:var(--space-5); border-inline-start:2px solid var(--border-default); margin-inline-start:var(--space-6);">
+              <sc-for list="{{ g.kids }}" as="k" hint-placeholder-count="2">
+                <li style="display:grid; gap:var(--space-2);">
+                  <a href="{{ k.href }}" style="display:grid; gap:2px; align-content:center; min-block-size:var(--tap-target); padding:var(--space-2) var(--space-3); border-radius:var(--radius-md); background:var(--surface-card); border:1px solid var(--border-interactive); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); text-decoration:none;" style-hover="border-color:var(--text-link); color:var(--text-link);"><span>{{ k.label }}</span><bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); font-weight:var(--weight-regular); color:var(--text-muted);">{{ k.path }}</bdi></a>
+                  <sc-if value="{{ k.hasItems }}" hint-placeholder-val="{{ false }}"><ul style="display:grid; gap:var(--space-1); padding-inline-start:var(--space-4);"><sc-for list="{{ k.items }}" as="it" hint-placeholder-count="3"><li><a data-link href="{{ it.href }}" style="display:block; padding:var(--space-2) var(--space-3); border-radius:var(--radius-sm); border:1px dashed var(--border-interactive); font-size:var(--text-caption); line-height:var(--leading-snug); color:var(--text-body); text-decoration:none;">{{ it.label }}</a></li></sc-for></ul></sc-if>
+                </li>
+              </sc-for>
+            </ul>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="adm-title" style="background:var(--surface-card); border-block:1px solid var(--border-subtle); padding-block:var(--section-y);">
+    <div class="cory-container" style="display:grid; gap:var(--space-8);">
+      <div data-reveal style="display:flex; align-items:center; gap:var(--space-4); flex-wrap:wrap;">
+        <h2 id="adm-title" data-no-split style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-heading); color:var(--text-strong);">{{ c.admin }}</h2>
+        <x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="auto,24px">{{ admCount }}</x-import>
+        <p style="margin:0; flex-basis:100%; max-inline-size:var(--measure-lead); font-size:var(--text-body-sm); color:var(--text-muted);">{{ c.adminLead }}</p>
+      </div>
+      <a href="Admin.dc.html#/sign-in" data-reveal style="justify-self:center; display:inline-flex; align-items:center; gap:var(--space-3); min-block-size:var(--tap-target); padding:var(--space-3) var(--space-5); border-radius:var(--radius-pill); background:var(--action-ink); color:var(--surface-card); font-weight:var(--weight-bold); text-decoration:none;"><span>{{ c.signin }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg><span>{{ c.dash }}</span></a>
+      <div data-cq><ul data-cq-3 data-reveal-group style="display:grid; gap:var(--grid-gap);">
+        <sc-for list="{{ admin }}" as="g" hint-placeholder-count="3">
+          <li style="display:grid; gap:var(--space-3); align-content:start; padding:var(--space-5); border-radius:var(--radius-xl); background:var(--surface-page); border:1px solid var(--border-subtle);">
+            <p class="cory-overline" style="margin:0;">{{ g.label }}</p>
+            <ul style="display:grid; gap:var(--space-2);"><sc-for list="{{ g.kids }}" as="k" hint-placeholder-count="3"><li style="display:grid; gap:var(--space-1);"><a href="{{ k.href }}" style="display:grid; gap:2px; align-content:center; min-block-size:var(--tap-target); padding:var(--space-2) var(--space-3); border-radius:var(--radius-md); background:var(--surface-card); border:1px solid var(--border-interactive); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong); text-decoration:none;" style-hover="border-color:var(--text-link); color:var(--text-link);"><span>{{ k.label }}</span><bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); font-weight:var(--weight-regular); color:var(--text-muted);">{{ k.path }}</bdi></a><sc-if value="{{ k.hasItems }}" hint-placeholder-val="{{ false }}"><span style="display:flex; gap:var(--space-2); flex-wrap:wrap; padding-inline-start:var(--space-4);"><sc-for list="{{ k.items }}" as="it" hint-placeholder-count="2"><a data-link href="{{ it.href }}" style="display:inline-flex; align-items:center; min-block-size:var(--tap-target); padding:0 var(--space-3); border-radius:var(--radius-sm); border:1px dashed var(--border-interactive); font-size:var(--text-caption); color:var(--text-body); text-decoration:none;">{{ it.label }}</a></sc-for></span></sc-if></li></sc-for></ul>
+          </li>
+        </sc-for>
+      </ul></div>
+    </div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  static C = { en: { title: 'Every page, one map.', lead: 'The whole site and its admin. Every box is a link: tap one to open that page.', kSection: 'Section', kPage: 'Page', kItem: 'Content item', public: 'Public site', home: 'Home', admin: 'Admin', adminLead: 'The owner\u2019s side. Edits are saved as drafts, published to the public pages above, and kept in this browser.', signin: 'Sign in', dash: 'Dashboard', pages: 'pages' },
+    ar: { title: 'كل الصفحات في خريطة واحدة.', lead: 'الموقع كاملًا ولوحة إدارته. كل مربع رابط: اضغط لفتح الصفحة.', kSection: 'قسم', kPage: 'صفحة', kItem: 'عنصر محتوى', public: 'الموقع العام', home: 'الرئيسية', admin: 'الإدارة', adminLead: 'جانب المالك. تُحفظ التعديلات كمسودّات، وتُنشر على الصفحات العامة، وتبقى في هذا المتصفح.', signin: 'تسجيل الدخول', dash: 'لوحة التحكم', pages: 'صفحات' } };
+  componentDidMount() { this.off = window.AX && window.AX.on(() => this.forceUpdate()); this.mo = new MutationObserver(() => this.forceUpdate()); this.mo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] }); import('./motion.js').then(m => m.boot('sitemap')); }
+  componentWillUnmount() { this.off && this.off(); this.mo && this.mo.disconnect(); }
+  renderVals() {
+    const AX = window.AX; if (!AX) return { c: {}, t: {}, tree: [], admin: [] };
+    const lang = AX.lang(), c = Component.C[lang], L = k => AX.t(k), kid = (label, href, path, items) => ({ label, href, path, items: items || [], hasItems: !!(items && items.length) });
+    const proj = AX.list('projects').map(p => ({ label: AX.tx(p, 'title'), href: 'Project.dc.html?slug=' + p.slug }));
+    const cases = AX.list('cases').map(k => ({ label: AX.tx(k, 'title'), href: 'Case Study.dc.html?slug=' + k.slug }));
+    const posts = AX.list('posts').map(p => ({ label: AX.tx(p, 'title'), href: 'Post.dc.html?slug=' + p.slug }));
+    const tags = [...new Set(AX.list('posts').flatMap(p => p.topics || []))].map(t => ({ label: '#' + t, href: 'Blog.dc.html?tag=' + encodeURIComponent(t) }));
+    const offers = AX.data().services.offers.map(o => ({ label: AX.tx(o, 'h'), href: 'Services.dc.html#offer-' + o.id }));
+    const tree = [
+      { label: L('work'), href: 'Work.dc.html', path: '/work', kids: [kid(lang === 'ar' ? 'مشروع' : 'Project', proj[0] ? proj[0].href : 'Project.dc.html', '/work/:slug', proj)] },
+      { label: L('cases'), href: 'Case Studies.dc.html', path: '/case-studies', kids: [kid(lang === 'ar' ? 'دراسة حالة' : 'Case study', cases[0] ? cases[0].href : 'Case Study.dc.html', '/:slug', cases)] },
+      { label: L('services'), href: 'Services.dc.html', path: '/services', kids: [kid(lang === 'ar' ? 'العروض' : 'Offers', 'Services.dc.html#offer-ai', '#offer', offers), kid(lang === 'ar' ? 'كيف أعمل' : 'How I work', 'Services.dc.html#process', '#process')] },
+      { label: L('read'), href: 'Read.dc.html', path: '/read', kids: [kid(L('blog'), 'Blog.dc.html', '/blog', tags), kid(lang === 'ar' ? 'مقال' : 'Post', posts[0] ? posts[0].href : 'Post.dc.html', '/blog/:slug', posts), kid('LinkedIn', 'Read.dc.html#linkedin', '#linkedin')] },
+      { label: L('videos'), href: 'Videos.dc.html', path: '/videos', kids: [] },
+      { label: L('about'), href: 'About.dc.html', path: '/about', kids: [kid(L('now'), 'Now.dc.html', '/now'), kid(L('resume'), 'Resume.dc.html', '/resume')] },
+      { label: L('contact'), href: 'Contact.dc.html', path: '/contact', kids: [kid('404', '404.dc.html', '/*'), kid(L('sitemap'), 'Sitemap.dc.html', '/sitemap')] }
+    ].map((g, i) => ({ ...g, n: '0' + (i + 1) }));
+    const A = r => 'Admin.dc.html#/' + r, d = AX.data();
+    const col = (type, label, nameF) => kid(label, A(type), '/' + type, [{ label: lang === 'ar' ? '+ جديد' : '+ New', href: A(type + '/new') }].concat((d[type] || []).slice(0, 2).map(x => ({ label: (x[nameF] || x.title || '').slice(0, 28), href: A(type + '/' + x.id) }))));
+    const admin = [
+      { label: lang === 'ar' ? 'نظرة عامة' : 'Overview', kids: [kid(lang === 'ar' ? 'الزوّار' : 'Visitors', A('dashboard'), '/admin')] },
+      { label: lang === 'ar' ? 'المحتوى' : 'Content', kids: [col('projects', lang === 'ar' ? 'المشاريع' : 'Projects'), col('cases', lang === 'ar' ? 'دراسات الحالة' : 'Case studies'), col('posts', lang === 'ar' ? 'المقالات' : 'Blog posts'), kid(lang === 'ar' ? 'الفيديو' : 'Videos', A('videos'), '/videos', [{ label: lang === 'ar' ? '+ جديد' : '+ New', href: A('videos/new') }, { label: 'YouTube import', href: A('videos/import') }]), col('linkedin', 'LinkedIn posts'), col('articles', 'LinkedIn articles')] },
+      { label: lang === 'ar' ? 'الموقع' : 'Site', kids: [kid(lang === 'ar' ? 'بيانات الموقع' : 'Site details', A('site'), '/site'), kid(lang === 'ar' ? 'النبذة والمسيرة' : 'About and career', A('career'), '/career'), kid(lang === 'ar' ? 'الصور' : 'Images', A('images'), '/images'), kid(lang === 'ar' ? 'الرسائل' : 'Messages', A('messages'), '/messages')] }
+    ];
+    const cnt = a => a.reduce((n, g) => n + 1 + g.kids.reduce((m, k) => m + 1 + k.items.length, 0), 0);
+    return { c, t: AX.UI[lang], tree, admin, pubCount: (cnt(tree) + 1) + ' ' + c.pages, admCount: (cnt(admin) + 1) + ' ' + c.pages };
+  }
+}
+</script>
+</body>
+</html>

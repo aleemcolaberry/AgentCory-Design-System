@@ -1,0 +1,85 @@
+<!-- @dsCard group="Components" viewport="700x620" name="Feedback: Alert, Toast, Dialog, Tooltip, EmptyState" subtitle="How the system tells the user what happened, what is missing, and what to do next" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: var(--surface-page); }
+  .glabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin: 0 0 12px; }
+  .section { margin-bottom: 24px; }
+  .stack { display: flex; flex-direction: column; gap: 10px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; align-items: start; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../tokens/reveal.js"></script>
+</head>
+<body>
+<div style="position:fixed;top:8px;inset-inline-end:8px;z-index:9;display:flex;gap:6px" dir="ltr">
+<button id="__dir" type="button" aria-label="Toggle right-to-left" style="height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:700 11px var(--font-mono)">RTL</button>
+<button id="__theme" type="button" aria-label="Toggle dark theme" style="width:30px;height:30px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:600 11px var(--font-mono)">◐</button>
+</div>
+<script>(function(){var h=document.documentElement;document.getElementById('__theme').onclick=function(){h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark')};var d=document.getElementById('__dir');d.onclick=function(){var r=h.getAttribute('dir')==='rtl';h.setAttribute('dir',r?'ltr':'rtl');d.textContent=r?'RTL':'LTR'}})()</script>
+<div id="root"></div>
+<script type="text/babel">
+  const { Alert, Toast, ToastRegion, Dialog, Tooltip, EmptyState, Button, IconButton, Icon: DsIcon } = window.DesignSystem_ebeb85;
+  const Icon = ({ name }) => <DsIcon name={name} size={22} />;
+  function Demo() {
+    const [dlg, setDlg] = React.useState(false);
+    const [confirm, setConfirm] = React.useState(false);
+    const [busy, setBusy] = React.useState(false);
+    const [toasts, setToasts] = React.useState([]);
+    const push = (t) => setToasts((l) => [...l.slice(-2), { id: Date.now() + Math.random(), ...t }]);
+    const drop = (id) => setToasts((l) => l.filter((t) => t.id !== id));
+    const submit = () => { setBusy(true); setTimeout(() => { setBusy(false); setDlg(false); push({ tone: 'success', title: 'Call requested', body: "I'll ring you in under 60 seconds." }); }, 1200); };
+    return (
+      <React.Fragment>
+        <div className="section">
+          <p className="glabel">Alert · info / success / warning / danger</p>
+          <div className="stack" data-stagger="70">
+            <Alert tone="info" title="Estimates, not guarantees" compact>Figures assume a 30% application-to-enrollment yield.</Alert>
+            <Alert tone="success" title="Demo booked" compact>I'll call you Tuesday at 10:00. The invite is in your inbox.</Alert>
+            <Alert tone="warning" title="Slate sync is 2 hours behind" compact action={<Button size="sm" variant="secondary">Retry sync</Button>} />
+            <Alert tone="danger" title="I couldn't save your changes" compact onDismiss={() => {}}>Check your connection and try again.</Alert>
+          </div>
+        </div>
+        <div className="grid2 section">
+          <div>
+            <p className="glabel">EmptyState · Cory voice</p>
+            <EmptyState size="sm" scene="empty" title="I haven't booked any calls yet" action={<Button size="sm">Share your number</Button>}>Give me a number and I'll start reaching out within 60 seconds.</EmptyState>
+          </div>
+          <div>
+            <p className="glabel">EmptyState · neutral</p>
+            <EmptyState size="sm" scene="search" title="No inquiries match" action={<Button size="sm" variant="secondary">Clear filters</Button>}>Try a wider date range or fewer filters.</EmptyState>
+          </div>
+        </div>
+        <div className="section" style={{ marginBottom: 0 }}>
+          <p className="glabel">Dialog · Toast · Tooltip</p>
+          <div className="row">
+            <Button variant="ink" onClick={() => setDlg(true)}>Open form dialog</Button>
+            <Button variant="secondary" onClick={() => setConfirm(true)}>Destructive confirm</Button>
+            <Button variant="secondary" onClick={() => push({ tone: 'info', title: 'Draft saved', body: 'Just now', undo: true })}>Show toast</Button>
+            <Tooltip label="Mute notifications"><IconButton label="Mute notifications"><Icon name="bell-off" /></IconButton></Tooltip>
+            <Tooltip label="Copy link" placement="bottom"><IconButton label="Copy link" variant="ghost"><Icon name="link" /></IconButton></Tooltip>
+          </div>
+        </div>
+        <Dialog open={dlg} onClose={() => !busy && setDlg(false)} dismissible={!busy} title="Let me call you" description="A 5-minute live demo of my voice, on your phone."
+          actions={<><Button variant="secondary" onClick={() => setDlg(false)} disabled={busy}>Not now</Button><Button loading={busy} onClick={submit}>Request call</Button></>}>
+          <window.DesignSystem_ebeb85.Input label="Phone number" type="tel" required placeholder="(555) 000-0000" />
+        </Dialog>
+        <Dialog open={confirm} onClose={() => setConfirm(false)} tone="danger" size="sm" title="Delete 3 inquiries?" description="They are removed from Slate too. This cannot be undone."
+          actions={<><Button variant="secondary" onClick={() => setConfirm(false)}>Keep them</Button><Button variant="ink" onClick={() => { setConfirm(false); push({ tone: 'danger', title: '3 inquiries deleted' }); }}>Delete 3 inquiries</Button></>} />
+        <ToastRegion>
+          {toasts.map((t) => <Toast key={t.id} tone={t.tone} title={t.title} onDismiss={() => drop(t.id)} action={t.undo && <Button size="sm" variant="onInk" onClick={() => drop(t.id)}>Undo</Button>}>{t.body}</Toast>)}
+        </ToastRegion>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

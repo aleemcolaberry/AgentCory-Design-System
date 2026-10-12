@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing Landing Page" description="Full AgentCory marketing homepage: hero, how-it-works, features, proof, CTA, footer" -->
+<helmet><script src="./ds-base.js"></script><script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script><style>html{scroll-behavior:smooth}body{margin:0}@media (max-width:1023px){.lp-nav{display:none!important}}.lp-nav a{display:inline-flex;align-items:center;min-height:24px;padding:8px 0}a{color:var(--text-link)}a:hover{color:var(--text-link-hover)}.lp-nav a{position:relative}.lp-nav a::after{content:"";position:absolute;inset-inline:0;bottom:6px;height:2px;border-radius:2px;background:var(--gradient-brand);transform:scaleX(0);transform-origin:left;transition:transform var(--duration-base) var(--ease-out)}.lp-nav a:hover::after{transform:scaleX(1)}[dir="rtl"] .lp-nav a::after{transform-origin:right}.lp-nav a:hover{color:var(--text-strong)}.lp-step{transition:transform var(--duration-base) var(--ease-out)}.lp-step:hover{transform:translateY(var(--lift-hover))}.lp-step:hover .lp-num{background:var(--gradient-brand-deep);transform:rotate(calc(-6deg * var(--dir))) scale(1.06)}.lp-num{transition:transform var(--duration-base) var(--ease-spring),background var(--duration-base) var(--ease-out)}.lp-card{transition:transform var(--duration-base) var(--ease-out),box-shadow var(--duration-base) var(--ease-out),border-color var(--duration-base) var(--ease-out)}.lp-card:hover{transform:translateY(var(--lift-hover));box-shadow:var(--shadow-lg);border-color:var(--border-default)}.lp-card:hover .lp-ico{background:var(--gradient-brand-deep);color:#fff;transform:scale(1.06)}.lp-ico{transition:background var(--duration-base) var(--ease-out),color var(--duration-base) var(--ease-out),transform var(--duration-base) var(--ease-spring)}.lp-chat{transition:transform var(--duration-base) var(--ease-spring),box-shadow var(--duration-base) var(--ease-out)}.lp-chat:hover{transform:translateY(-3px) scale(1.04);box-shadow:var(--shadow-brand),var(--shadow-lg)}.lp-stat{transition:transform var(--duration-base) var(--ease-out)}.lp-stat:hover{transform:translateY(var(--lift-hover))}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style></helmet>
+<div style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--surface-page);color:var(--text-body)">
+<header style="position:sticky;top:0;z-index:var(--z-sticky);background:var(--surface-header);backdrop-filter:blur(var(--blur-header));border-bottom:1px solid var(--border-subtle)">
+<div style="max-width:1200px;margin:0 auto;min-height:72px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);min-width:0">
+<img src="../../assets/logo-agentcory.svg" alt="AgentCory" style="height:28px;display:block;flex:none">
+<nav class="cory-hide-mobile lp-nav" style="display:flex;gap:var(--space-7);font-size:15px;font-weight:600;">
+<a href="#how" class="cory-nowrap" style="color:var(--text-body);text-decoration:none;padding:12px 0;display:inline-block">How Cory Works</a>
+<a href="#features" class="cory-nowrap" style="color:var(--text-body);text-decoration:none;padding:12px 0;display:inline-block">Features</a>
+<a href="#results" class="cory-nowrap" style="color:var(--text-body);text-decoration:none;padding:12px 0;display:inline-block">Results</a>
+<a href="#cta" class="cory-nowrap" style="color:var(--text-body);text-decoration:none;padding:12px 0;display:inline-block">Contact</a>
+</nav>
+<div style="display:flex;align-items:center;gap:8px"><x-import component-from-global-scope="DesignSystem_ebeb85.DirectionToggle" size="sm" hint-size="92px,36px"></x-import><span class="cory-hide-mobile"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="sm" hint-size="150px,40px">Book My Demo</x-import></span></div>
+</div>
+</header>
+<section data-screen-label="Hero" style="padding:var(--section-y) var(--gutter);text-align:center;position:relative;overflow:hidden">
+<div class="cory-glow-drift" style="position:absolute;top:-180px;inset-inline:0;margin-inline:auto;width:min(900px,100%);height:520px;background:radial-gradient(closest-side,rgba(41,190,221,0.16),transparent);pointer-events:none"></div>
+<div style="position:absolute;bottom:-220px;inset-inline-start:-10%;width:min(560px,70vw);aspect-ratio:1;background:var(--glow-blue);filter:blur(var(--blur-glow));pointer-events:none"></div>
+<div data-stagger="110" data-reveal-kind="blur" style="max-width:820px;margin:0 auto;position:relative">
+<span class="cory-eyebrow-pill"><span class="cory-ring" style="width:8px;height:8px;border-radius:50%;background:var(--gradient-brand);flex:none"></span>Answers in under 60 seconds</span>
+<h1 style="margin:24px 0 0;font-size:var(--text-fluid-display);line-height:var(--leading-tight);letter-spacing:var(--tracking-tighter);text-wrap:balance;font-weight:800;color:var(--text-strong)">Boost Admissions with <span class="cory-gradient-text cory-sweep" style="animation-delay:600ms">AI Precision</span></h1>
+<p style="margin:22px auto 0;max-width:620px;font-size:var(--text-fluid-lead);line-height:var(--leading-relaxed);text-wrap:pretty">Hi, I'm Cory 👋 I engage every prospective student in under 60 seconds across call, text, chat, and email, then hand warm, qualified prospects to your counselors.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px">
+<x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="lg" hint-size="220px,54px">Get Called by Cory</x-import>
+<x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="lg" hint-size="180px,54px">Try Cory Now</x-import>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px clamp(24px,6vw,56px);justify-content:center;margin-top:64px">
+<div class="lp-stat" style="padding:8px 14px;border-radius:var(--radius-md)"><div class="cory-metric cory-gradient-text" data-count="60" data-prefix="&lt;" data-suffix="s" style="font-size:clamp(32px,5vw,40px)">&lt;60s</div><div style="font-size:14px;font-weight:600;color:var(--text-muted);margin-top:4px">Response Time</div></div>
+<div class="lp-stat" style="padding:8px 14px;border-radius:var(--radius-md)"><div class="cory-metric cory-gradient-text" data-count="94" data-suffix="%" style="font-size:clamp(32px,5vw,40px)">94%</div><div style="font-size:14px;font-weight:600;color:var(--text-muted);margin-top:4px">Contact Rate</div></div>
+<div class="lp-stat" style="padding:8px 14px;border-radius:var(--radius-md)"><div class="cory-metric cory-gradient-text" data-count="10" data-suffix="x" style="font-size:clamp(32px,5vw,40px)">10x</div><div style="font-size:14px;font-weight:600;color:var(--text-muted);margin-top:4px">More Appointments</div></div>
+</div>
+</div>
+</section>
+<section id="how" data-screen-label="How Cory Works" style="background:var(--surface-card);padding:var(--section-y) var(--gutter)">
+<div style="max-width:1200px;margin:0 auto">
+<div data-stagger="90" style="text-align:center;max-width:640px;margin:0 auto 56px">
+<div class="cory-overline">How Cory works</div>
+<h2 style="margin:14px 0 0;font-size:var(--text-fluid-title);font-weight:800;letter-spacing:var(--tracking-tighter);line-height:var(--leading-snug);text-wrap:balance;color:var(--text-strong)">From first inquiry to booked appointment</h2>
+</div>
+<div data-stagger="140" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:var(--space-8)">
+<div class="lp-step"><div class="lp-num" style="width:48px;height:48px;border-radius:14px;background:var(--gradient-ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px">1</div><h3 style="margin:18px 0 8px;font-size:19px;font-weight:700;color:var(--text-strong)">Instant engagement</h3><p style="margin:0;font-size:15px;line-height:1.6">I reach out across voice, SMS, email, and chat in under 60 seconds, strike while the iron is hot.</p></div>
+<div class="lp-step"><div class="lp-num" style="width:48px;height:48px;border-radius:14px;background:var(--gradient-ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px">2</div><h3 style="margin:18px 0 8px;font-size:19px;font-weight:700;color:var(--text-strong)">Qualify &amp; book</h3><p style="margin:0;font-size:15px;line-height:1.6">I ask the right questions, score intent, and book appointments straight onto your counselors' calendars.</p></div>
+<div class="lp-step"><div class="lp-num" style="width:48px;height:48px;border-radius:14px;background:var(--gradient-ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px">3</div><h3 style="margin:18px 0 8px;font-size:19px;font-weight:700;color:var(--text-strong)">Human handoff</h3><p style="margin:0;font-size:15px;line-height:1.6">Your counselors get a full transcript, a qualification summary, and a warm prospect ready to talk.</p></div>
+</div>
+</div>
+</section>
+<section id="features" data-screen-label="Features" style="padding:var(--section-y) var(--gutter)">
+<div style="max-width:1200px;margin:0 auto">
+<div data-stagger="90" style="text-align:center;max-width:640px;margin:0 auto 56px">
+<div class="cory-overline">Why teams choose Cory</div>
+<h2 style="margin:14px 0 0;font-size:var(--text-fluid-title);font-weight:800;letter-spacing:var(--tracking-tighter);line-height:var(--leading-snug);text-wrap:balance;color:var(--text-strong)">Turn prospects into enrolled students</h2>
+</div>
+<div data-stagger="80" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:var(--grid-gap)">
+<sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+<div class="lp-card" style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:28px">
+<div class="lp-ico" style="width:44px;height:44px;border-radius:12px;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center"><i data-lucide="{{ f.icon }}" style="width:22px;height:22px"></i></div>
+<h3 style="margin:18px 0 8px;font-size:18px;font-weight:700;color:var(--text-strong)">{{ f.title }}</h3>
+<p style="margin:0;font-size:15px;line-height:1.6">{{ f.copy }}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+<section id="results" data-screen-label="Testimonial" style="background:var(--surface-card);padding:var(--section-y) var(--gutter);text-align:center">
+<div data-stagger="160" style="max-width:760px;margin:0 auto">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;justify-content:center"><span class="cory-metric cory-gradient-text" data-count="847" data-suffix="%" style="font-size:clamp(48px,8vw,64px)">847%</span><span style="font-size:16px;font-weight:700;color:var(--text-muted)">ROI in Year 1</span></div>
+<blockquote data-reveal="clip" style="margin:26px 0 0;font-size:clamp(20px,3vw,26px);line-height:1.45;text-wrap:pretty;font-weight:700;letter-spacing:-0.01em;color:var(--text-strong)">"We went from 40% contact rates to 94% overnight. Cory books more appointments in a week than we used to in a month."</blockquote>
+<div style="margin-top:22px;font-size:15px"><strong style="color:var(--text-strong)">Maria Delgado</strong> · Director of Admissions, Riverside College</div>
+</div>
+</section>
+<section id="cta" data-screen-label="CTA" style="padding:40px var(--gutter) var(--section-y)">
+<div data-reveal="scale" style="max-width:1200px;margin:0 auto;background:var(--gradient-ink);border-radius:var(--radius-2xl);padding:clamp(48px,8vw,80px) clamp(20px,4vw,32px);text-align:center;position:relative;overflow:hidden">
+<div class="cory-glow-drift" style="position:absolute;inset-inline-end:-140px;top:-140px;width:420px;height:420px;background:radial-gradient(closest-side,rgba(41,190,221,0.28),transparent);pointer-events:none"></div>
+<div data-stagger="120" style="position:relative">
+<h2 style="margin:0;font-size:var(--text-fluid-title);font-weight:800;letter-spacing:var(--tracking-tighter);line-height:var(--leading-snug);text-wrap:balance;color:#fff">Ready to see what I can do for your admissions team?</h2>
+<p style="margin:16px auto 0;max-width:520px;font-size:17px;line-height:1.6;color:var(--on-ink-body)">Book a 20-minute demo and I'll call you myself, in under 60 seconds.</p>
+<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="lg" hint-size="180px,54px">Book My Demo</x-import><x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="lg" variant="onInk" hint-size="160px,54px">Chat with me</x-import></div>
+</div>
+</div>
+</section>
+<footer style="background:var(--surface-ink);padding:56px var(--gutter) 32px">
+<div style="max-width:1200px;margin:0 auto">
+<div style="display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start">
+<div><img src="../../assets/logo-agentcory-darkmode.svg" alt="AgentCory" style="height:28px;display:block"><p style="margin:14px 0 0;max-width:300px;font-size:14px;line-height:1.6;color:var(--on-ink-body)">AI-powered admissions assistant. A product of Colaberry.</p></div>
+<div style="display:flex;flex-wrap:wrap;gap:32px 64px">
+<div style="display:grid;gap:4px;font-size:14px;"><strong class="cory-overline" style="color:var(--on-ink-strong);margin-bottom:6px">Product</strong><a href="#how" style="color:var(--on-ink-body);text-decoration:none;padding:6px 0;display:inline-block">How Cory Works</a><a href="#features" style="color:var(--on-ink-body);text-decoration:none;padding:6px 0;display:inline-block">Features</a><a href="#results" style="color:var(--on-ink-body);text-decoration:none;padding:6px 0;display:inline-block">Results</a></div>
+<div style="display:grid;gap:4px;font-size:14px;"><strong class="cory-overline" style="color:var(--on-ink-strong);margin-bottom:6px">Company</strong><a href="#" style="color:var(--on-ink-body);text-decoration:none;padding:6px 0;display:inline-block">About Colaberry</a><a href="#" style="color:var(--on-ink-body);text-decoration:none;padding:6px 0;display:inline-block">Security</a><a href="#cta" style="color:var(--on-ink-body);text-decoration:none;padding:6px 0;display:inline-block">Contact</a></div>
+</div>
+</div>
+<div style="margin-top:44px;padding-top:22px;border-top:1px solid var(--on-ink-border);font-size:13px;color:var(--on-ink-muted)">© 2026 Colaberry Inc. · AgentCory</div>
+</div>
+</footer>
+<sc-if value="{{ showChat }}" hint-placeholder-val="{{ true }}">
+<button type="button" class="lp-chat cory-float" aria-label="Chat with Cory" style="position:fixed;inset-inline-end:24px;bottom:24px;width:56px;height:56px;border:0;padding:0;border-radius:18px;background:var(--gradient-brand-deep-135);box-shadow:var(--shadow-brand);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:var(--z-overlay)"><img src="../../assets/cory-icon.svg" alt="" style="width:30px;height:30px"></button>
+</sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showChat&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Page&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() { this._tries = 0; this.icons(); }
+  componentDidUpdate() { this.icons(); }
+  icons() {
+    if (window.lucide) window.lucide.createIcons();
+    else if ((this._tries = (this._tries || 0) + 1) < 20) setTimeout(() => this.icons(), 250);
+  }
+  renderVals() {
+    return {
+      showChat: this.props.showChat ?? true,
+      features: [
+        { icon: 'messages-square', title: 'Omnichannel outreach', copy: 'Meet prospects where they are with seamless coordination across voice, SMS, email, and chat.' },
+        { icon: 'zap', title: 'Speed to lead', copy: 'Every inquiry gets a response in under 60 seconds, any hour, any day.' },
+        { icon: 'clipboard-check', title: 'Smart qualification', copy: 'I score intent, capture program fit, and surface the prospects worth your team\u2019s time.' },
+        { icon: 'calendar-check', title: 'Automated scheduling', copy: 'Appointments land directly on counselor calendars, with reminders that protect show rates.' },
+        { icon: 'users', title: 'Warm human handoff', copy: 'Counselors pick up with full context: transcript, summary, and next best step.' },
+        { icon: 'workflow', title: 'Slate & Banner ready', copy: 'I plug into your CRM and SIS so every touchpoint is logged automatically.' }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

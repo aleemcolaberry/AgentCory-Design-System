@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Before / After AI Bento Post" description="4:5 LinkedIn post: how AI flips the idea-to-execution ratio, bento layout with crowd-dot visual" -->
+<helmet><script src="./ds-base.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}</style></helmet>
+<div class="fit-box" style="width:calc(1080px * var(--fit, 1));height:calc(1350px * var(--fit, 1));margin-inline:auto"><div class="fit-canvas" data-fit-canvas style="width:1080px;height:1350px;transform:scale(var(--fit, 1))"><div data-screen-label="Before After AI Bento" style="width:1080px;height:1350px;box-sizing:border-box;padding:56px;background:#F4F5FA;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F36;display:flex;flex-direction:column;gap:24px;position:relative;overflow:hidden">
+<div style="position:absolute;inset-inline-start:-180px;top:-240px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(37,138,253,.20),rgba(37,138,253,0) 70%);pointer-events:none"></div>
+<div style="position:absolute;inset-inline-end:-160px;top:-160px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(255,197,61,.22),rgba(255,197,61,0) 70%);pointer-events:none"></div>
+<div style="position:relative;flex:none;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+<span style="padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E3E7EF;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1568D4;">The shift in how teams work</span>
+<span style="font-size:14px;font-weight:600;color:#5B6B80;white-space:nowrap">Concept · Tom Goodwin</span>
+</div>
+<h1 style="margin:0;font-size:84px;line-height:1;font-weight:800;letter-spacing:-.045em">AI flipped <span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">the ratio.</span></h1>
+<p style="margin:0;max-width:820px;font-size:22px;line-height:1.4;color:#4A5B70;text-wrap:pretty">It used to take a few people to have the idea and a crowd to build it. Now execution is cheap, and the crowd moves to ideas.</p>
+</div>
+<div style="position:relative;flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px">
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:20px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0;min-height:0">
+<div style="display:flex;flex-direction:column;gap:6px">
+<span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#636B7E;letter-spacing:.06em">01 · BEFORE AI</span>
+<span style="font-size:38px;line-height:1.05;font-weight:800;letter-spacing:-.03em">Before AI</span>
+<span style="font-size:17px;line-height:1.4;color:#4A5B70">A few thinkers. An army of doers.</span>
+</div>
+<div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding-top:18px;border-top:1px dashed #DCE1EA">
+<div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+<div style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#FFC53D;flex:none"></span><span style="font-size:20px;font-weight:800">Idea</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start">
+<sc-for list="{{ beforeIdea }}" as="d" hint-placeholder-count="9"><span style="width:16px;height:16px;border-radius:50%;background:#FFC53D;display:flex;justify-content:center;gap:3px;padding-top:5px;box-sizing:border-box"><sc-if value="{{ showFaces }}" hint-placeholder-val="{{ true }}"><span style="width:3px;height:3px;border-radius:50%;background:#0B1F36"></span><span style="width:3px;height:3px;border-radius:50%;background:#0B1F36"></span></sc-if></span></sc-for>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+<div style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#258AFD;flex:none"></span><span style="font-size:20px;font-weight:800">Execute</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start">
+<sc-for list="{{ beforeExec }}" as="d" hint-placeholder-count="60"><span style="width:16px;height:16px;border-radius:50%;background:#258AFD;display:flex;justify-content:center;gap:3px;padding-top:5px;box-sizing:border-box"><sc-if value="{{ showFaces }}" hint-placeholder-val="{{ true }}"><span style="width:3px;height:3px;border-radius:50%;background:#fff"></span><span style="width:3px;height:3px;border-radius:50%;background:#fff"></span></sc-if></span></sc-for>
+</div>
+</div>
+</div>
+</div>
+<div style="background:linear-gradient(160deg,#0B1F36,#143457);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden;box-shadow:0 14px 36px rgba(11,31,54,.22);min-width:0;min-height:0">
+<div style="position:absolute;inset-inline-start:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,197,61,.28),rgba(255,197,61,0) 70%);pointer-events:none"></div>
+<div style="position:relative;display:flex;flex-direction:column;gap:6px">
+<span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#29BEDD;letter-spacing:.06em">02 · AFTER AI</span>
+<span style="font-size:38px;line-height:1.05;font-weight:800;letter-spacing:-.03em;color:#fff">After AI</span>
+<span style="font-size:17px;line-height:1.4;color:#C3CFDD">An army of thinkers. A few doers.</span>
+</div>
+<div style="position:relative;flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding-top:18px;border-top:1px dashed rgba(255,255,255,.18)">
+<div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+<div style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#FFC53D;flex:none"></span><span style="font-size:20px;font-weight:800;color:#fff">Idea</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start">
+<sc-for list="{{ afterIdea }}" as="d" hint-placeholder-count="190"><span style="width:16px;height:16px;border-radius:50%;background:#FFC53D;display:flex;justify-content:center;gap:3px;padding-top:5px;box-sizing:border-box"><sc-if value="{{ showFaces }}" hint-placeholder-val="{{ true }}"><span style="width:3px;height:3px;border-radius:50%;background:#0B1F36"></span><span style="width:3px;height:3px;border-radius:50%;background:#0B1F36"></span></sc-if></span></sc-for>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+<div style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#29BEDD;flex:none"></span><span style="font-size:20px;font-weight:800;color:#fff">Execute</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start">
+<sc-for list="{{ afterExec }}" as="d" hint-placeholder-count="10"><span style="width:16px;height:16px;border-radius:50%;background:#29BEDD;display:flex;justify-content:center;gap:3px;padding-top:5px;box-sizing:border-box"><sc-if value="{{ showFaces }}" hint-placeholder-val="{{ true }}"><span style="width:3px;height:3px;border-radius:50%;background:#0B1F36"></span><span style="width:3px;height:3px;border-radius:50%;background:#0B1F36"></span></sc-if></span></sc-for>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="position:relative;flex:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#1568D4">EXECUTION</span>
+<span style="font-size:22px;line-height:1.2;font-weight:800;letter-spacing:-.02em">Gets cheap</span>
+<span style="font-size:15px;line-height:1.45;color:#4A5B70;text-wrap:pretty">Agents draft, build and ship in hours.</span>
+</div>
+<div style="background:#FFF6DD;border:1px solid #F7E3A8;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0">
+<span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#7A4F00">IDEAS</span>
+<span style="font-size:22px;line-height:1.2;font-weight:800;letter-spacing:-.02em">Become the bottleneck</span>
+<span style="font-size:15px;line-height:1.45;color:#5C4A1E;text-wrap:pretty">Knowing what to build is the hard part.</span>
+</div>
+<div style="background:linear-gradient(140deg,#258AFD,#29BEDD);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 28px rgba(37,138,253,.28);min-width:0">
+<span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#0B1F36">YOUR EDGE</span>
+<span style="font-size:22px;line-height:1.2;font-weight:800;letter-spacing:-.02em;color:#fff">Taste and judgment</span>
+<span style="font-size:15px;line-height:1.45;color:#0B1F36;text-wrap:pretty">Frame the problem. Let AI do the rest.</span>
+</div>
+</div>
+<sc-if value="{{ showFooter }}" hint-placeholder-val="{{ true }}">
+<div style="position:relative;flex:none;display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid #DCE1EA">
+<div style="display:flex;align-items:center;gap:14px"><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800">Md Abdul Aleem</span><span style="font-size:14px;color:#5B6B80">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div></div>
+<span style="display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:#0B1F36;color:#fff;font-size:16px;font-weight:700;white-space:nowrap">Follow for more <span style="font-size:18px">→</span></span>
+</div>
+</sc-if>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;showFaces&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showFooter&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const n = k => Array.from({ length: k }, (_, i) => i);
+    return {
+      beforeIdea: n(9), beforeExec: n(60), afterIdea: n(190), afterExec: n(10),
+      showFaces: this.props.showFaces ?? true,
+      showFooter: this.props.showFooter ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

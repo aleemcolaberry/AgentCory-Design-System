@@ -1,0 +1,11 @@
+/* ===========================================================================
+   AgentCory: Webfonts
+   NOTE: AgentCory's production typeface could not be extracted from the live
+   site. "Plus Jakarta Sans" is used as a close brand substitute, a friendly,
+   geometric humanist sans that matches the rounded, approachable wordmark and
+   professional SaaS tone. Swap the @font-face src below for the real font
+   files when available. Loaded here via Google Fonts CSS2.
+   Arabic script: IBM Plex Sans Arabic sits second in every stack, so Arabic
+   glyphs render in it automatically while Latin stays in Plus Jakarta Sans.
+   =========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap');

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="UI vs UX Bento Post" description="4:5 social post: UI is what you see and touch, UX is what you experience and remember; bento with billboard photo + author footer" -->
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script><script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}a{color:#1568D4;text-decoration:none}a:hover{color:#258AFD}</style></helmet>
+<button onClick="{{ download }}" style="position:fixed;inset-inline-end:24px;bottom:24px;z-index:50;display:flex;align-items:center;gap:10px;padding:14px 22px;border:0;border-radius:999px;background:#0B1F36;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;font-weight:700;white-space:nowrap;cursor:pointer;box-shadow:0 10px 28px rgba(11,31,54,.3)" style-hover="background:#1B4068">{{ dlLabel }}</button>
+<div class="fit-box" style="width:calc(1080px * var(--fit, 1));height:calc(1350px * var(--fit, 1));margin-inline:auto"><div class="fit-canvas" data-fit-canvas style="width:1080px;height:1350px;transform:scale(var(--fit, 1))"><div ref="{{ canvasRef }}" data-screen-label="UI vs UX Bento" style="width:1080px;height:1350px;box-sizing:border-box;padding:46px 52px 38px;background:#F4F5FA;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F36;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden">
+<div style="position:absolute;inset-inline-end:-200px;top:-240px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.2),rgba(41,190,221,0) 70%);pointer-events:none"></div>
+<div style="position:absolute;inset-inline-start:-220px;bottom:-200px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(37,138,253,.12),rgba(37,138,253,0) 70%);pointer-events:none"></div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:36px 40px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;gap:20px;position:relative;flex:none">
+<span style="align-self:flex-start;padding:6px 12px;border-radius:999px;background:#E6F1FF;color:#1568D4;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap">UI ≠ UX</span>
+<h1 style="margin:0;font-size:58px;line-height:1.08;font-weight:800;letter-spacing:-.035em;text-wrap:pretty"><span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">UI</span> is what you see and touch.<br><span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">UX</span> is what you experience and remember.</h1>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;flex:none;position:relative">
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:30px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;gap:18px;min-width:0">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5B6B80;white-space:nowrap">01 · User Interface</span><div style="display:flex;gap:8px"><span style="width:48px;height:48px;border-radius:14px;background:#E6F1FF;display:flex;align-items:center;justify-content:center"><img data-icon="eye" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="width:24px;height:24px;display:block"></span><span style="width:48px;height:48px;border-radius:14px;background:#E6F1FF;display:flex;align-items:center;justify-content:center"><img data-icon="pointer" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="width:24px;height:24px;display:block"></span></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><h2 style="margin:0;font-size:40px;line-height:1.1;font-weight:800;letter-spacing:-.03em">See &amp; touch</h2><p style="margin:0;font-size:19px;line-height:1.45;color:#3B4253;text-wrap:pretty">The surface, every pixel, tap and control on screen.</p></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span style="padding:8px 14px;border-radius:999px;background:#F4F5FA;border:1px solid #E3E7EF;font-size:16px;font-weight:600;color:#0B1F36;white-space:nowrap">Layout</span><span style="padding:8px 14px;border-radius:999px;background:#F4F5FA;border:1px solid #E3E7EF;font-size:16px;font-weight:600;color:#0B1F36;white-space:nowrap">Color</span><span style="padding:8px 14px;border-radius:999px;background:#F4F5FA;border:1px solid #E3E7EF;font-size:16px;font-weight:600;color:#0B1F36;white-space:nowrap">Typography</span><span style="padding:8px 14px;border-radius:999px;background:#F4F5FA;border:1px solid #E3E7EF;font-size:16px;font-weight:600;color:#0B1F36;white-space:nowrap">Buttons</span><span style="padding:8px 14px;border-radius:999px;background:#F4F5FA;border:1px solid #E3E7EF;font-size:16px;font-weight:600;color:#0B1F36;white-space:nowrap">Icons</span></div>
+</div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:30px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;gap:18px;min-width:0">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5B6B80;white-space:nowrap">02 · User Experience</span><div style="display:flex;gap:8px"><span style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#258AFD,#29BEDD);display:flex;align-items:center;justify-content:center"><img data-icon="heartW" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="width:24px;height:24px;display:block"></span><span style="width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#258AFD,#29BEDD);display:flex;align-items:center;justify-content:center"><img data-icon="brainW" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="width:24px;height:24px;display:block"></span></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><h2 style="margin:0;font-size:40px;line-height:1.1;font-weight:800;letter-spacing:-.03em">Experience &amp; remember</h2><p style="margin:0;font-size:19px;line-height:1.45;color:#3B4253;text-wrap:pretty">The feeling, how the journey flows and what stays with you.</p></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span style="padding:8px 14px;border-radius:999px;background:#E6F1FF;border:1px solid #CFE3FD;font-size:16px;font-weight:600;color:#1568D4;white-space:nowrap">Flow</span><span style="padding:8px 14px;border-radius:999px;background:#E6F1FF;border:1px solid #CFE3FD;font-size:16px;font-weight:600;color:#1568D4;white-space:nowrap">Ease</span><span style="padding:8px 14px;border-radius:999px;background:#E6F1FF;border:1px solid #CFE3FD;font-size:16px;font-weight:600;color:#1568D4;white-space:nowrap">Trust</span><span style="padding:8px 14px;border-radius:999px;background:#E6F1FF;border:1px solid #CFE3FD;font-size:16px;font-weight:600;color:#1568D4;white-space:nowrap">Emotion</span><span style="padding:8px 14px;border-radius:999px;background:#E6F1FF;border:1px solid #CFE3FD;font-size:16px;font-weight:600;color:#1568D4;white-space:nowrap">Memory</span></div>
+</div>
+</div>
+<div style="flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:14px;position:relative">
+<div style="border-radius:24px;overflow:hidden;background:#0B1F36;position:relative;min-height:0"><img src="./art/billboard.png" alt="Night billboard reading: UI is what you see and touch. UX is what you experience and remember." style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 50%;display:block"></div>
+<div style="border-radius:24px;background:linear-gradient(160deg,#0B1F36,#12325A);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:32px;position:relative;overflow:hidden;min-height:0">
+<div style="position:absolute;inset-inline-end:-140px;bottom:-180px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.28),rgba(41,190,221,0) 70%);pointer-events:none"></div>
+<span style="width:56px;height:4px;border-radius:2px;background:linear-gradient(90deg,#258AFD,#29BEDD);position:relative"></span>
+<h3 style="margin:0;font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.1;color:#fff;position:relative;text-wrap:pretty">UI gets noticed.<br>UX gets remembered.</h3>
+<p style="margin:0;font-size:19px;font-weight:500;line-height:1.45;color:#C9D4E3;position:relative;text-wrap:pretty">Design both, people judge the look, but return for the experience.</p>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:14px;border-top:1px solid #DCE1EA;position:relative;flex:none">
+<div style="display:flex;align-items:center;gap:12px;flex:none"><span style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#258AFD,#29BEDD);display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="repeat2W" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="width:22px;height:22px;display:block"></span><span style="font-size:18px;font-weight:800">Save for later &amp; Repost</span></div>
+<div style="display:flex;align-items:center;gap:14px;flex:none"><div style="display:flex;flex-direction:column;gap:2px;align-items:flex-end;text-align:end;"><span style="font-size:18px;font-weight:800">Md&nbsp;Abdul&nbsp;Aleem</span><span style="font-size:14px;color:#5B6B80">UX&nbsp;/&nbsp;Product&nbsp;Designer&nbsp;and&nbsp;Analyst&nbsp;@Colaberry</span></div><img src="./art/avatar.png" alt="Md Abdul Aleem" style="width:56px;height:56px;flex:none;display:block;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE1EA"></div>
+</div>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350}}">
+class Component extends DCLogic {
+  state = { busy: false };
+  canvasRef = React.createRef();
+  icons = {};
+  applyIcons() {
+    const root = this.canvasRef.current; if (!root) return;
+    root.querySelectorAll('img[data-icon]').forEach(img => { const u = this.icons[img.dataset.icon]; if (u && img.src !== u) img.src = u; });
+  }
+  componentDidUpdate() { this.applyIcons(); }
+  componentDidMount() {
+    const list = [['eye','eye','#1568D4'],['pointer','pointer','#1568D4'],['heartW','heart','#ffffff'],['brainW','brain','#ffffff'],['repeat2W','repeat-2','#ffffff']];
+    list.forEach(([k, n, c]) => fetch('https://unpkg.com/lucide-static@0.469.0/icons/' + n + '.svg').then(r => r.text()).then(t => {
+      this.icons[k] = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t.replace(/currentColor/g, c));
+      this.applyIcons();
+    }).catch(() => {}));
+  }
+  download = async () => {
+    const node = this.canvasRef.current;
+    if (!node || !window.htmlToImage || this.state.busy) return;
+    this.setState({ busy: true });
+    try {
+      await document.fonts.ready;
+      const slot = node.querySelector('image-slot');
+      let stand = null;
+      if (slot) {
+        const si = slot.shadowRoot && [...slot.shadowRoot.querySelectorAll('img')].find(i => i.src && i.naturalWidth && getComputedStyle(i).display !== 'none');
+        if (si) {
+          stand = document.createElement('img');
+          stand.src = si.src;
+          stand.style.cssText = 'width:56px;height:56px;border-radius:50%;object-fit:cover;display:block;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE1EA';
+          slot.parentNode.insertBefore(stand, slot);
+          await stand.decode().catch(() => {});
+        }
+        slot.style.display = 'none';
+      }
+      let url;
+      try {
+        url = await window.htmlToImage.toPng(node, { pixelRatio: 2, width: 1080, height: 1350, filter: el => el.tagName !== 'IMAGE-SLOT' });
+      } finally {
+        if (stand) stand.remove();
+        if (slot) slot.style.display = 'block';
+      }
+      const a = document.createElement('a');
+      a.href = url; a.download = 'ui-vs-ux-bento.png';
+      document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) { console.error('PNG export failed', e); }
+    this.setState({ busy: false });
+  };
+  renderVals() {
+    return { canvasRef: this.canvasRef, download: this.download, dlLabel: this.state.busy ? 'Exporting…' : 'Download PNG ↓' };
+  }
+}
+</script>
+</body>
+</html>

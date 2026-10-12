@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case study · AIUXAleem</title>
+  <meta name="description" content="A case study by Mohammad Abdul Aleem: the problem, the process, the decisions and what changed.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIUXAleem">
+  <meta property="og:title" content="Case study · AIUXAleem">
+  <meta property="og:description" content="A case study by Mohammad Abdul Aleem: the problem, the process, the decisions and what changed.">
+  <meta property="og:image" content="https://aiuxaleem.com/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <script src="boot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Noto+Kufi+Arabic:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="data.js"></script>
+</helmet>
+<dc-import name="Header" current="cases" hint-size="100%,72px"></dc-import>
+<div aria-hidden="true" style="position:fixed; inset-block-start:var(--header-height); inset-inline:0; block-size:3px; z-index:var(--z-sticky); pointer-events:none;"><span data-progress style="display:block; block-size:100%; background:var(--gradient-brand); transform:scaleX(0); transform-origin:var(--origin-inline-start) center;"></span></div>
+<main id="main" tabindex="-1" style="position:relative; z-index:var(--z-raised); outline:none;">
+  <sc-if value="{{ missing }}" hint-placeholder-val="{{ false }}"><section aria-labelledby="nf" style="padding-block:var(--section-y);"><div class="cory-container" style="display:grid; gap:var(--space-5); justify-items:start;"><p class="cory-overline" style="margin:0;">404</p><h1 id="nf" style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-display); line-height:var(--leading-tight); color:var(--text-strong);">{{ c.missing }}</h1><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="Case Studies.dc.html" hint-size="auto,52px">{{ c.all }}</x-import></div></section></sc-if>
+  <sc-if value="{{ found }}" hint-placeholder-val="{{ false }}">
+    <article data-article aria-labelledby="k-title">
+      <header style="position:relative; overflow:clip; padding-block:var(--space-10) var(--space-8);">
+        <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset-block-start:-30%; inset-inline-end:-10%; inline-size:min(60vw, 640px); aspect-ratio:1; background:var(--glow-cyan); pointer-events:none;"></div>
+        <div class="cory-container" style="position:relative; display:grid; gap:var(--space-5);">
+          <a data-link href="Case Studies.dc.html" style="display:inline-flex; align-items:center; gap:var(--space-2); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;"><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg><span>{{ c.all }}</span></a>
+          <p data-hero-el style="margin:0; font-family:var(--font-mono); font-size:var(--text-mono-sm); letter-spacing:var(--tracking-wide); text-transform:uppercase; color:var(--text-muted);"><bdi>{{ k.number }}</bdi> · {{ k.category }} · {{ k.read }}</p>
+          <h1 id="k-title" data-hero-title style="margin:0; max-inline-size:18ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-display); line-height:var(--leading-tight); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ k.title }}</h1>
+          <p data-hero-el style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--text-body);">{{ k.lead }}</p>
+          <dl data-hero-el data-cq style="margin:var(--space-4) 0 0; padding-block:var(--space-5); border-block:1px solid var(--border-subtle);"><div data-cq-grid="4" style="display:grid; gap:var(--space-4) var(--space-6);"><sc-for list="{{ facts }}" as="f" hint-placeholder-count="6"><div style="display:grid; gap:var(--space-1);"><dt style="font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle);">{{ f.k }}</dt><dd style="margin:0; font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-strong);">{{ f.v }}</dd></div></sc-for></div></dl>
+        </div>
+      </header>
+      <div class="cory-container" style="padding-block-end:var(--space-12);"><div data-img-reveal style="aspect-ratio:var(--aspect-case); border-radius:var(--radius-2xl); overflow:hidden; background:var(--gradient-ink); box-shadow:var(--shadow-xl);"><sc-if value="{{ k.cover }}" hint-placeholder-val="{{ false }}">{{ heroImg }}</sc-if></div></div>
+      <div class="cory-container" data-case-layout data-stack style="display:grid; grid-template-columns:minmax(0, 220px) minmax(0, 1fr); gap:var(--space-8) var(--space-12); align-items:start; padding-block-end:var(--section-y);">
+        <nav aria-label="{{ c.toc }}" data-case-toc style="position:sticky; inset-block-start:calc(var(--header-height) + var(--space-8)); display:grid; gap:var(--space-1); padding:var(--space-5); border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-subtle);">
+          <p style="margin:0 0 var(--space-2); font-size:var(--text-caption); font-weight:var(--weight-semibold); color:var(--text-subtle);">{{ c.toc }}</p>
+          <sc-for list="{{ toc }}" as="x" hint-placeholder-count="6"><a data-toc href="{{ x.href }}" style="display:flex; gap:var(--space-2); min-block-size:var(--tap-target); align-items:center; padding-inline:var(--space-2); border-radius:var(--radius-sm); border:1px solid transparent; font-size:var(--text-body-sm); color:var(--text-body); text-decoration:none;" style-hover="color:var(--text-strong);"><bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-link);">{{ x.n }}</bdi><span>{{ x.label }}</span></a></sc-for>
+        </nav>
+        <div style="display:grid; gap:var(--space-16); max-inline-size:760px; min-inline-size:0;">
+          <section id="short" aria-labelledby="s1" data-reveal style="display:grid; gap:var(--space-4); padding:var(--space-6) var(--space-8); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); scroll-margin-block-start:calc(var(--header-height) + var(--space-6));">
+            <p class="cory-overline" style="margin:0;">01 · {{ c.read30 }}</p>
+            <h2 id="s1" style="margin:0; font-size:var(--text-h2); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ c.short }}</h2>
+            <ul style="display:grid; gap:var(--space-3);"><sc-for list="{{ k.inShort }}" as="x" hint-placeholder-count="3"><li style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:var(--space-3); align-items:start; font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-success)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0; margin-block-start:0.3em;"><path d="M20 6 9 17l-5-5"></path></svg><span>{{ x }}</span></li></sc-for></ul>
+          </section>
+          <section id="problem" aria-labelledby="s2" style="display:grid; gap:var(--space-4); scroll-margin-block-start:calc(var(--header-height) + var(--space-6));">
+            <p class="cory-overline" style="margin:0;">02 · {{ c.problemOver }}</p>
+            <h2 id="s2" style="margin:0; font-size:var(--text-h2); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ c.problem }}</h2>
+            <p style="margin:0; font-size:var(--text-body-lg); line-height:var(--leading-relaxed); color:var(--text-body);">{{ k.problem }}</p>
+            <h3 style="margin:var(--space-2) 0 0; font-size:var(--text-h4); font-weight:var(--weight-bold); color:var(--text-strong);">{{ c.constraints }}</h3>
+            <ul style="display:grid; gap:var(--space-2);"><sc-for list="{{ k.constraints }}" as="x" hint-placeholder-count="2"><li style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:var(--space-3); align-items:start; font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body);"><span aria-hidden="true" style="flex-shrink:0; inline-size:6px; block-size:6px; border-radius:50%; background:var(--text-link); margin-block-start:0.7em;"></span><span>{{ x }}</span></li></sc-for></ul>
+          </section>
+          <section id="process" aria-labelledby="s3" style="display:grid; gap:var(--space-5); scroll-margin-block-start:calc(var(--header-height) + var(--space-6));">
+            <p class="cory-overline" style="margin:0;">03 · {{ c.processOver }}</p>
+            <h2 id="s3" style="margin:0; font-size:var(--text-h2); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ c.process }}</h2>
+            <ol data-reveal-group style="display:grid; gap:var(--space-3);"><sc-for list="{{ process }}" as="x" hint-placeholder-count="3"><li style="display:grid; grid-template-columns:44px minmax(0, 1fr); gap:var(--space-4); padding:var(--space-5); border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);"><bdi aria-hidden="true" style="display:grid; place-items:center; inline-size:44px; block-size:44px; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong); font-family:var(--font-mono); font-size:var(--text-body-sm); font-weight:var(--weight-semibold);">{{ x.n }}</bdi><span style="display:grid; gap:var(--space-1);"><h3 style="margin:0; font-size:var(--text-body-lg); font-weight:var(--weight-bold); color:var(--text-strong);">{{ x.h }}</h3><span style="font-size:var(--text-body-sm); line-height:var(--leading-relaxed); color:var(--text-body);">{{ x.p }}</span></span></li></sc-for></ol>
+            <sc-for list="{{ k.images }}" as="g" hint-placeholder-count="1"><figure data-tilt style="margin:0; display:grid; gap:var(--space-2);"><div data-img-reveal style="aspect-ratio:var(--aspect-case); border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--border-subtle); box-shadow:var(--shadow-md); background:var(--surface-sunken);"><sc-if value="{{ g.src }}" hint-placeholder-val="{{ false }}"><img data-tilt-media srcset="{{ g.ss }}" sizes="(max-width: 767px) 92vw, 50vw" src="{{ g.src }}" alt="{{ g.cap }}" loading="lazy" decoding="async" style="inline-size:100%; block-size:100%; object-fit:cover; object-position:top center;"></sc-if></div><figcaption style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-muted);">{{ g.cap }}</figcaption></figure></sc-for>
+          </section>
+          <section id="decisions" aria-labelledby="s4" style="display:grid; gap:var(--space-4); scroll-margin-block-start:calc(var(--header-height) + var(--space-6));">
+            <p class="cory-overline" style="margin:0;">04 · {{ c.decisionsOver }}</p>
+            <h2 id="s4" style="margin:0; font-size:var(--text-h2); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ c.decisions }}</h2>
+            <div data-reveal-group style="display:grid; gap:var(--space-3);"><sc-for list="{{ k.decisions }}" as="x" hint-placeholder-count="2"><div style="display:grid; gap:var(--space-2); padding:var(--space-5); border-radius:var(--radius-lg); background:var(--surface-card); border:1px solid var(--border-subtle);"><h3 style="margin:0; font-size:var(--text-body-lg); font-weight:var(--weight-bold); color:var(--text-strong);">{{ x.h }}</h3><p style="margin:0; font-size:var(--text-body-sm); line-height:var(--leading-relaxed); color:var(--text-body);"><strong style="color:var(--text-strong);">{{ c.tradeoff }}</strong> {{ x.p }}</p></div></sc-for></div>
+          </section>
+          <section id="outcomes" aria-labelledby="s5" style="display:grid; gap:var(--space-5); scroll-margin-block-start:calc(var(--header-height) + var(--space-6));">
+            <p class="cory-overline" style="margin:0;">05 · {{ c.outcomesOver }}</p>
+            <h2 id="s5" style="margin:0; font-size:var(--text-h2); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ c.outcomes }}</h2>
+            <div data-cq><ul data-cq-grid data-reveal-group style="display:grid; gap:var(--grid-gap);"><sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3"><li style="display:grid; gap:var(--space-2); align-content:start; padding:var(--space-6); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);"><bdi class="cory-metric" style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-metric-lg); line-height:var(--leading-none); letter-spacing:var(--tracking-tighter); background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;"><span data-count="{{ m.count }}">{{ m.v }}</span></bdi><span style="font-size:var(--text-body-sm); line-height:var(--leading-normal); color:var(--text-body);">{{ m.l }}</span></li></sc-for></ul></div>
+            <blockquote data-reveal class="cory-on-ink" style="margin:0; padding:var(--space-8); border-radius:var(--radius-2xl); background:var(--gradient-ink); box-shadow:var(--shadow-lg); font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-h2); line-height:var(--leading-snug); letter-spacing:var(--tracking-tight); color:var(--on-ink-strong);">{{ k.quote }}</blockquote>
+          </section>
+          <section id="reflection" aria-labelledby="s6" style="display:grid; gap:var(--space-4); scroll-margin-block-start:calc(var(--header-height) + var(--space-6));">
+            <p class="cory-overline" style="margin:0;">06 · {{ c.reflectionOver }}</p>
+            <h2 id="s6" style="margin:0; font-size:var(--text-h2); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong);">{{ c.reflection }}</h2>
+            <ul style="display:grid; gap:var(--space-3);"><sc-for list="{{ k.reflection }}" as="x" hint-placeholder-count="2"><li style="display:grid; grid-template-columns:auto minmax(0, 1fr); gap:var(--space-3); align-items:start; font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body);"><span aria-hidden="true" style="flex-shrink:0; inline-size:6px; block-size:6px; border-radius:50%; background:var(--text-link); margin-block-start:0.7em;"></span><span>{{ x }}</span></li></sc-for></ul>
+            <sc-if value="{{ projHref }}" hint-placeholder-val="{{ false }}"><a data-link href="{{ projHref }}" style="display:inline-flex; align-items:center; gap:var(--space-2); inline-size:fit-content; min-block-size:var(--tap-target); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;"><span>{{ c.seeProject }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></sc-if>
+          </section>
+          <nav aria-label="{{ c.more }}" style="display:flex; justify-content:space-between; gap:var(--space-4); flex-wrap:wrap; padding-block-start:var(--space-6); border-block-start:1px solid var(--border-subtle);">
+            <a data-link href="{{ prev.href }}" style="display:grid; gap:var(--space-1); min-block-size:var(--tap-target); text-decoration:none;"><span style="font-size:var(--text-caption); color:var(--text-muted);">{{ t.prev }}</span><span style="font-weight:var(--weight-semibold); color:var(--text-link);">{{ prev.title }}</span></a>
+            <a data-link href="{{ next.href }}" style="display:grid; gap:var(--space-1); min-block-size:var(--tap-target); text-align:end; text-decoration:none;"><span style="font-size:var(--text-caption); color:var(--text-muted);">{{ t.next }}</span><span style="font-weight:var(--weight-semibold); color:var(--text-link);">{{ next.title }}</span></a>
+          </nav>
+        </div>
+      </div>
+    </article>
+  </sc-if>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  static C = { en: { all: 'All case studies', missing: 'That case study is not here.', toc: 'On this page', read30: '30-second read', short: 'In short', problemOver: 'Problem', problem: 'Problem and context', constraints: 'Constraints', processOver: 'Process', process: 'Process', decisionsOver: 'Decisions', decisions: 'Key decisions and trade-offs', tradeoff: 'Trade-off:', outcomesOver: 'Outcomes', outcomes: 'Outcomes and impact', reflectionOver: 'Reflection', reflection: 'Reflection', seeProject: 'See the project', more: 'More case studies', role: 'Role', company: 'Company', timeline: 'Timeline', team: 'Team', tools: 'Tools', platform: 'Platform' },
+    ar: { all: 'كل دراسات الحالة', missing: 'دراسة الحالة هذه غير موجودة.', toc: 'في هذه الصفحة', read30: 'قراءة في 30 ثانية', short: 'باختصار', problemOver: 'المشكلة', problem: 'المشكلة والسياق', constraints: 'القيود', processOver: 'المنهج', process: 'المنهج', decisionsOver: 'القرارات', decisions: 'القرارات والمفاضلات', tradeoff: 'المفاضلة:', outcomesOver: 'النتائج', outcomes: 'النتائج والأثر', reflectionOver: 'الدروس', reflection: 'ما سأحمله معي', seeProject: 'عرض المشروع', more: 'دراسات أخرى', role: 'الدور', company: 'الشركة', timeline: 'الفترة', team: 'الفريق', tools: 'الأدوات', platform: 'المنصة' } };
+  componentDidMount() {
+    this.off = window.AX && window.AX.on(() => this.forceUpdate()); this.mo = new MutationObserver(() => this.forceUpdate()); this.mo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    import('./motion.js').then(m => m.boot('case', (T, site) => {
+      site.readingProgress(T, document.querySelector('[data-progress]'), document.querySelector('[data-article]'));
+      const links = [...document.querySelectorAll('[data-toc]')];
+      links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) window.ScrollTrigger.create({ trigger: s, start: 'top 40%', end: 'bottom 40%', onToggle: e => { if (e.isActive) links.forEach(l => l === a ? l.setAttribute('aria-current', 'page') : l.removeAttribute('aria-current')); } }); });
+    }));
+  }
+  componentWillUnmount() { this.off && this.off(); this.mo && this.mo.disconnect(); }
+  renderVals() {
+    const AX = window.AX, empty = { c: {}, t: {}, k: {}, facts: [], toc: [], process: [], metrics: [], prev: {}, next: {} }; if (!AX) return empty;
+    const lang = AX.lang(), c = Component.C[lang], all = AX.list('cases'), slug = AX.q('slug') || (all[0] || {}).slug, x = all.find(k => k.slug === slug);
+    if (!x) return { ...empty, c, t: AX.UI[lang], missing: true, found: false };
+    document.title = x.title + ' · AIUXAleem';
+    const i = all.indexOf(x), pv = all[(i - 1 + all.length) % all.length], nx = all[(i + 1) % all.length], f = x.facts || {};
+    return { c, t: AX.UI[lang], found: true, missing: false,
+      heroImg: x.cover ? React.createElement('img', { 'data-parallax': '0.1', srcSet: AX.srcset(x.cover), sizes: '(max-width: 1279px) 92vw, 1200px', src: x.cover, alt: x.coverAlt || '', fetchpriority: 'high', style: { inlineSize: '100%', blockSize: '115%', objectFit: 'cover', objectPosition: 'top center' } }) : null, k: { ...x, title: AX.tx(x, 'title'), category: AX.tx(x, 'category'), lead: AX.tx(x, 'lead'), quote: AX.tx(x, 'quote'), images: (x.images || []).map(g => ({ ...g, ss: AX.srcset(g.src) })), inShort: x.inShort || [], constraints: x.constraints || [], decisions: x.decisions || [], reflection: x.reflection || [] },
+      facts: ['role', 'company', 'timeline', 'team', 'tools', 'platform'].filter(key => f[key]).map(key => ({ k: c[key], v: f[key] })),
+      toc: [['#short', c.short], ['#problem', c.problem], ['#process', c.process], ['#decisions', c.decisionsOver], ['#outcomes', c.outcomes], ['#reflection', c.reflection]].map(([href, label], j) => ({ href, label, n: '0' + (j + 1) })),
+      process: (x.process || []).map((p, j) => ({ ...p, n: '0' + (j + 1) })),
+      metrics: (x.metrics || []).map(m => ({ ...m, count: /^[\d,]+$/.test(m.v) ? m.v.replace(/,/g, '') : '' })),
+      projHref: x.project ? 'Project.dc.html?slug=' + x.project : '',
+      prev: { title: AX.tx(pv, 'title'), href: 'Case Study.dc.html?slug=' + pv.slug }, next: { title: AX.tx(nx, 'title'), href: 'Case Study.dc.html?slug=' + nx.slug } };
+  }
+}
+</script>
+</body>
+</html>

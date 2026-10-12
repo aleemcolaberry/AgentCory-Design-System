@@ -1,0 +1,78 @@
+<!-- @dsCard group="Components" viewport="700x440" name="Status: Skeleton, Spinner, ProgressBar" subtitle="Waiting states that never rely on motion alone" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: var(--surface-page); }
+  .glabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin: 0 0 12px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px 24px; align-items: start; }
+  .card { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 20px; box-shadow: var(--shadow-sm); }
+  .stack { display: flex; flex-direction: column; gap: 16px; }
+  .row { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../tokens/reveal.js"></script>
+</head>
+<body>
+<div style="position:fixed;top:8px;inset-inline-end:8px;z-index:9;display:flex;gap:6px" dir="ltr">
+<button id="__dir" type="button" aria-label="Toggle right-to-left" style="height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:700 11px var(--font-mono)">RTL</button>
+<button id="__theme" type="button" aria-label="Toggle dark theme" style="width:30px;height:30px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:600 11px var(--font-mono)">◐</button>
+</div>
+<script>(function(){var h=document.documentElement;document.getElementById('__theme').onclick=function(){h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark')};var d=document.getElementById('__dir');d.onclick=function(){var r=h.getAttribute('dir')==='rtl';h.setAttribute('dir',r?'ltr':'rtl');d.textContent=r?'RTL':'LTR'}})()</script>
+<div id="root"></div>
+<script type="text/babel">
+  const { Skeleton, Spinner, ProgressBar, Button, Toggle } = window.DesignSystem_ebeb85;
+  function Demo() {
+    const [p, setP] = React.useState(64);
+    React.useEffect(() => { const t = setInterval(() => setP((v) => (v >= 100 ? 12 : v + 4)), 900); return () => clearInterval(t); }, []);
+    return (
+      <div className="grid2">
+        <div>
+          <p className="glabel">Skeleton · mirrors a Testimonial card</p>
+          <div className="card" aria-busy="true" style={{ display: 'grid', gap: 14 }}>
+            <Skeleton variant="rect" width={96} height={34} radius="var(--radius-sm)" />
+            <Skeleton lines={3} />
+            <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+              <Skeleton variant="circle" width={40} />
+              <Skeleton lines={2} width="55%" height="0.8em" />
+            </div>
+          </div>
+        </div>
+        <div className="stack">
+          <div>
+            <p className="glabel">Spinner</p>
+            <div className="row">
+              <Spinner size={16} label="Loading" />
+              <Spinner />
+              <Spinner size={28} showLabel label="Finding your programs…" />
+              <span style={{ display: 'inline-flex', padding: '8px 14px', borderRadius: 'var(--radius-pill)', background: 'var(--surface-ink)' }}><Spinner tone="onInk" size={16} showLabel label="Syncing" /></span>
+            </div>
+          </div>
+          <div>
+            <p className="glabel">In controls</p>
+            <div className="row">
+              <Button loading size="sm">Sending…</Button>
+              <Toggle label="Weekly summary" checked loading />
+            </div>
+          </div>
+          <div>
+            <p className="glabel">ProgressBar</p>
+            <div className="stack" style={{ gap: 14 }}>
+              <ProgressBar label="Importing 2,100 inquiries" value={p} showValue />
+              <ProgressBar label="Syncing with Slate" />
+              <ProgressBar size="sm" tone="success" value={100} label="Step 4 of 4" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

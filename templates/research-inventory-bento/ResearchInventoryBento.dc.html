@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Research Inventory Bento Post" description="4:5 social post: Recommendation-Adoption Score (RAS) in 7 steps, illustrated bento + author footer" -->
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script><script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}a{color:#1568D4;text-decoration:none}a:hover{color:#258AFD}</style></helmet>
+<button onClick="{{ download }}" style="position:fixed;inset-inline-end:24px;bottom:24px;z-index:50;display:flex;align-items:center;gap:10px;padding:14px 22px;border:0;border-radius:999px;background:#0B1F36;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;font-weight:700;white-space:nowrap;cursor:pointer;box-shadow:0 10px 28px rgba(11,31,54,.3)" style-hover="background:#1B4068">{{ dlLabel }}</button>
+<div class="fit-box" style="width:calc(1080px * var(--fit, 1));height:calc(1350px * var(--fit, 1));margin-inline:auto"><div class="fit-canvas" data-fit-canvas style="width:1080px;height:1350px;transform:scale(var(--fit, 1))"><div ref="{{ canvasRef }}" data-screen-label="Research Inventory Bento" style="width:1080px;height:1350px;box-sizing:border-box;padding:40px 44px 30px;background:#F4F5FA;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F36;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden">
+<div style="position:absolute;inset-inline-end:-220px;bottom:-240px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.16),rgba(41,190,221,0) 70%);pointer-events:none"></div>
+
+<div style="height:392px;flex:none;border-radius:24px;background:#E9F2FD;border:1px solid #D6E6FA;display:grid;grid-template-columns:420px minmax(0,1fr);overflow:hidden;position:relative">
+<div style="padding:30px 10px 28px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;position:relative;z-index:1">
+<span style="align-self:flex-start;padding:6px 12px;border-radius:999px;background:#fff;color:#1568D4;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap">Research ops</span>
+<div style="display:flex;flex-direction:column;gap:14px"><h1 style="margin:0;color:#0B1F36;font-size:48px;line-height:1.02;font-weight:800;letter-spacing:-.04em">Treat research<br>recs <span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">like<br>inventory.</span></h1><p style="margin:0;font-size:19px;line-height:1.4;font-weight:600;color:#3B4253;text-wrap:pretty">Turn research impact into a trackable metric.</p></div>
+<span style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#0B1F36;"><span style="padding:5px 11px;border-radius:999px;background:#0B1F36;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px">7 steps</span>Backlog → production</span>
+</div>
+<img src="./art/hero-blue.png" alt="Research insights dropping through a funnel onto a conveyor of boxes" style="width:100%;height:100%;object-fit:cover;object-position:35% 40%;display:block">
+</div>
+
+<div style="flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:14px;position:relative">
+
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;overflow:hidden;min-height:0">
+<div style="padding:18px 20px 12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:#B42318;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">01</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Breakage is real</span></div><span style="font-size:16px;font-weight:500;line-height:1.38;color:#3B4253;text-wrap:pretty">Study, report, present… then silence. Recs sit in a backlog, forgotten.</span></div>
+<img src="./art/breakage-blue.png" alt="Dusty boxes of forgotten recommendations under cobwebs" style="flex:1;min-height:0;width:100%;object-fit:cover;object-position:center 40%;display:block">
+</div>
+
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;overflow:hidden;min-height:0">
+<div style="padding:18px 20px 12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:#1568D4;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">02</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Meet the RAS</span></div><span style="font-size:16px;font-weight:500;line-height:1.38;color:#3B4253;text-wrap:pretty">Recommendation-Adoption Score: how much research value reaches production.</span></div>
+<img src="./art/ras-blue.png" alt="Stacked boxes spelling R A S" style="flex:1;min-height:0;width:100%;object-fit:cover;object-position:center 35%;display:block">
+</div>
+
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;overflow:hidden;min-height:0">
+<div style="padding:18px 20px 12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:#0E7F9E;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">03</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Pick your scope</span></div><span style="font-size:16px;font-weight:500;line-height:1.38;color:#3B4253;text-wrap:pretty">Choose a <b style="color:#0B1F36">feature, product or program</b> and gather every rec tied to it.</span></div>
+<div style="flex:1;min-height:0;background:#F3F8FF;display:flex;align-items:center;justify-content:center;padding:4px 16px 14px"><img src="./art/pills-blue.png" alt="Feature, Product, Program options with a pointing cursor" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+</div>
+
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;overflow:hidden;min-height:0">
+<div style="padding:18px 20px 12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:#F5A524;color:#0B1F36;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">04</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Assign a status</span></div><span style="font-size:16px;font-weight:500;line-height:1.38;color:#3B4253;text-wrap:pretty">File every recommendation into one clear category.</span></div>
+<img src="./art/folders-blue.png" alt="Folder tabs: Canceled, Communicated, Committed, Adopted" style="flex:1;min-height:0;width:100%;object-fit:cover;object-position:center bottom;display:block">
+</div>
+
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;gap:12px;padding:18px 20px 18px;min-height:0">
+<div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:#0E7A4E;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">05</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Score user value</span></div><span style="font-size:16px;font-weight:500;line-height:1.38;color:#3B4253;text-wrap:pretty">Points earned vs. points possible at full impact.</span></div>
+<div style="flex:1;min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-auto-rows:minmax(0,1fr);border:1px solid #E3E7EF;border-radius:14px;overflow:hidden;font-size:14px">
+<span style="padding:0 10px;display:flex;align-items:center;background:#0B1F36;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Status</span><span style="padding:0 6px;white-space:nowrap;display:flex;align-items:center;background:#0B1F36;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Impact</span><span style="padding:0 10px;display:flex;align-items:center;justify-content:flex-end;background:#0B1F36;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Value</span>
+<span style="padding:0 10px;display:flex;align-items:center;font-weight:800;background:#DCF6EC;color:#127A50">Adopted</span><span style="padding:0 6px;white-space:nowrap;display:flex;align-items:center;background:#DCF6EC;color:#3B4253;white-space:nowrap">High–Low</span><span style="padding:0 10px;display:flex;align-items:center;justify-content:flex-end;font-weight:800;background:#DCF6EC;font-family:'JetBrains Mono',monospace;white-space:nowrap">3·2·1</span>
+<span style="padding:0 10px;display:flex;align-items:center;font-weight:800">Committed</span><span style="padding:0 6px;white-space:nowrap;display:flex;align-items:center;color:#3B4253">All</span><span style="padding:0 10px;display:flex;align-items:center;justify-content:flex-end;font-weight:800;font-family:'JetBrains Mono',monospace">0.66</span>
+<span style="padding:0 10px;display:flex;align-items:center;font-weight:800;background:#F4F5FA">Communicated</span><span style="padding:0 6px;white-space:nowrap;display:flex;align-items:center;background:#F4F5FA;color:#3B4253">All</span><span style="padding:0 10px;display:flex;align-items:center;justify-content:flex-end;font-weight:800;background:#F4F5FA;font-family:'JetBrains Mono',monospace">0</span>
+<span style="padding:0 10px;display:flex;align-items:center;font-weight:800;color:#636B7E">Canceled</span><span style="padding:0 6px;white-space:nowrap;display:flex;align-items:center;color:#636B7E">All</span><span style="padding:0 10px;display:flex;align-items:center;justify-content:flex-end;font-weight:700;color:#636B7E;white-space:nowrap">No value</span>
+</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;overflow:hidden;min-height:0">
+<div style="padding:18px 20px 12px;display:flex;flex-direction:column;gap:10px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:#0B1F36;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">06</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Calculate the RAS</span></div>
+<div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 14px;border-radius:14px;background:#E6F1FF;"><span style="font-size:18px;font-weight:800;color:#1568D4">RAS =</span><span style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:14px;font-weight:700;line-height:1.1"><span>Actual user value</span><span style="align-self:stretch;border-top:2px solid #0B1F36"></span><span>Total possible value</span></span><span style="font-size:18px;font-weight:800;color:#1568D4">× 100</span></div></div>
+<div style="flex:1;min-height:0;background:#E3EFFE;display:flex;align-items:center;justify-content:center;padding:10px 14px"><img src="./art/calc-keys-blue.png" alt="Calculator keys" style="max-width:100%;max-height:100%;object-fit:contain;display:block"></div>
+</div>
+</div>
+
+<div style="flex:none;background:#fff;border:1px solid #E3E7EF;border-radius:24px;box-shadow:0 1px 3px rgba(11,31,54,.06);padding:18px 20px;display:grid;grid-template-columns:200px repeat(4,minmax(0,1fr));gap:10px;align-items:stretch;position:relative">
+<div style="display:flex;flex-direction:column;justify-content:center;gap:6px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 9px;border-radius:999px;background:linear-gradient(90deg,#1568D4,#0E7F9E);color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">07</span></sc-if><span style="font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Read your score</span></div><span style="font-size:14px;font-weight:500;line-height:1.35;color:#5B6B80;text-wrap:pretty">Early-stage features score low, that's normal.</span></div>
+<div style="border-radius:16px;background:#DCF6EC;padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#127A50;white-space:nowrap">80–100 · Great</span><span style="font-size:15px;font-weight:700;line-height:1.3;text-wrap:pretty">Research is embedded in the culture</span></div>
+<div style="border-radius:16px;background:#E6F1FF;padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#1568D4;white-space:nowrap">55–79 · Good</span><span style="font-size:15px;font-weight:700;line-height:1.3;text-wrap:pretty">High-value recs are shipping</span></div>
+<div style="border-radius:16px;background:#FDF0D9;padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#9A5B00;white-space:nowrap">30–54 · Fair</span><span style="font-size:15px;font-weight:700;line-height:1.3;text-wrap:pretty">Some progress, most value stuck</span></div>
+<div style="border-radius:16px;background:#FBE3E4;padding:12px 14px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#B4262B;white-space:nowrap">0–29 · Poor</span><span style="font-size:15px;font-weight:700;line-height:1.3;text-wrap:pretty">Research is largely ignored</span></div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:12px;border-top:1px solid #DCE1EA;position:relative">
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="display:flex;align-items:center;gap:12px;white-space:nowrap"><span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#258AFD,#29BEDD);display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="repeat2W" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="width:20px;height:20px;display:block"></span><span style="font-size:17px;font-weight:800">Save for later &amp; Repost</span></span><sc-if value="{{ showSource }}" hint-placeholder-val="{{ true }}"><span style="font-size:12px;color:#636B7E;">Framework adapted from Utesch &amp; Fitzwater, NN/g</span></sc-if></div>
+<div style="display:flex;align-items:center;gap:14px;flex:none"><div style="display:flex;flex-direction:column;gap:2px;align-items:flex-end;text-align:end;"><span style="font-size:18px;font-weight:800">Md&nbsp;Abdul&nbsp;Aleem</span><span style="font-size:14px;color:#5B6B80">UX&nbsp;/&nbsp;Product&nbsp;Designer&nbsp;and&nbsp;Analyst&nbsp;@Colaberry</span></div><image-slot id="research-inventory-author-avatar" shape="circle" placeholder="+" style="width:54px;height:54px;flex:none;display:block;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE1EA"></image-slot></div>
+</div>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;showNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showSource&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { busy: false };
+  canvasRef = React.createRef();
+  icons = {};
+  applyIcons() {
+    const root = this.canvasRef.current; if (!root) return;
+    root.querySelectorAll('img[data-icon]').forEach(img => { const u = this.icons[img.dataset.icon]; if (u && img.src !== u) img.src = u; });
+  }
+  componentDidUpdate() { this.applyIcons(); }
+  componentDidMount() {
+    fetch('https://unpkg.com/lucide-static@0.469.0/icons/repeat-2.svg').then(r => r.text()).then(t => {
+      this.icons.repeat2W = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t.replace(/currentColor/g, '#ffffff'));
+      this.applyIcons();
+    }).catch(() => {});
+  }
+  download = async () => {
+    const node = this.canvasRef.current;
+    if (!node || !window.htmlToImage || this.state.busy) return;
+    this.setState({ busy: true });
+    try {
+      await document.fonts.ready;
+      const slot = node.querySelector('image-slot');
+      let stand = null;
+      if (slot) {
+        const si = slot.shadowRoot && [...slot.shadowRoot.querySelectorAll('img')].find(i => i.src && i.naturalWidth && getComputedStyle(i).display !== 'none');
+        if (si) {
+          stand = document.createElement('img');
+          stand.src = si.src;
+          stand.style.cssText = 'width:54px;height:54px;border-radius:50%;object-fit:cover;display:block;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE1EA';
+          slot.parentNode.insertBefore(stand, slot);
+          await stand.decode().catch(() => {});
+        }
+        slot.style.display = 'none';
+      }
+      let url;
+      try {
+        url = await window.htmlToImage.toPng(node, { pixelRatio: 2, width: 1080, height: 1350, filter: el => el.tagName !== 'IMAGE-SLOT' });
+      } finally {
+        if (stand) stand.remove();
+        if (slot) slot.style.display = 'block';
+      }
+      const a = document.createElement('a');
+      a.href = url; a.download = 'research-inventory-bento.png';
+      document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) { console.error('PNG export failed', e); }
+    this.setState({ busy: false });
+  };
+  renderVals() {
+    const p = this.props;
+    return { canvasRef: this.canvasRef, download: this.download, dlLabel: this.state.busy ? 'Exporting…' : 'Download PNG ↓', showNumbers: p.showNumbers ?? true, showSource: p.showSource ?? true };
+  }
+}
+</script>
+</body>
+</html>

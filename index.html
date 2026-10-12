@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentCory Design System, Showcase</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>try{var __d=localStorage.getItem('cory-dir');if(__d==='rtl'){document.documentElement.setAttribute('dir','rtl');document.documentElement.setAttribute('lang','ar')}}catch(e){}if(window.gsap&&window.ScrollTrigger)document.documentElement.classList.add('anim');</script>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--surface-page);color:var(--text-body);font-size:16px;line-height:var(--leading-normal);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:var(--text-link);text-decoration:none}
+a:hover{color:var(--text-link-hover)}
+img{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter);width:100%;min-width:0}
+.mono{font-family:var(--font-mono)}
+.grad-text{background:var(--gradient-brand-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.overline{font-size:var(--text-overline);font-weight:var(--weight-bold);letter-spacing:var(--tracking-overline);text-transform:uppercase;color:var(--text-link)}
+.eyebrow-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:var(--white);border:1px solid var(--border-subtle);box-shadow:0 2px 10px rgba(11,31,54,.06);font-size:13px;font-weight:var(--weight-semibold);color:var(--navy-800)}
+.eyebrow-pill .dot{width:8px;height:8px;border-radius:99px;background:var(--gradient-brand)}
+/* CTAs use the system's .cory-btn classes (base.css) */
+/* Animation initial states (only when GSAP loaded) */
+html.anim .reveal{opacity:0;transform:translateY(28px)}
+html.anim [data-split] .ch{display:inline-block;opacity:0;transform:perspective(600px) translateY(.55em) rotateX(-40deg);transform-origin:50% 100%;backface-visibility:hidden}
+html.anim [data-split] .grad-text.ch{transform:translateY(.4em)}
+html.anim .hero-fade{opacity:0;transform:translateY(24px)}
+html.anim .hero-chip{opacity:0;transform:translateY(30px) scale(.85)}
+.grad-sweep{background-size:220% 100%;background-position:100% 0}
+.eyebrow-pill .dot{animation:cory-pulse 2.4s var(--ease-in-out) infinite}
+.hero-scroll-cue{position:absolute;inset-inline-start:50%;bottom:22px;transform:translateX(calc(-50% * var(--dir)));display:flex;flex-direction:column;align-items:center;gap:6px;font-family:var(--font-mono);font-size:var(--text-mono-sm);letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.hero-scroll-cue i{width:1px;height:34px;background:linear-gradient(180deg,var(--border-focus),transparent);transform-origin:top;animation:cue 1.8s var(--ease-in-out) infinite}
+@keyframes cue{0%{transform:scaleY(0);opacity:0}40%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1) translateY(10px);opacity:0}}
+html.anim .color-band{transform:scaleY(0)}
+html.anim .voice-bubble{opacity:0;transform:translateY(18px) scale(.94)}
+html.no-motion *{animation:none!important}
+html.no-motion .hero-chip,html.no-motion .hero-title .ch,html.no-motion .hero-fade{transform:none}
+html.no-motion .tpl-pin{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:8px}
+html.no-motion .tpl-card{scroll-snap-align:start}
+/* Preloader */
+#preloader{position:fixed;inset:0;z-index:100;background:var(--navy-800);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+html:not(.anim) #preloader{display:none}
+#pre-logo{width:64px;height:64px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;transform:scale(.7);opacity:0}
+#pre-logo img{width:38px}
+#pre-bar{width:120px;height:3px;border-radius:99px;background:rgba(255,255,255,.15);overflow:hidden}
+#pre-bar i{display:block;height:100%;background:var(--gradient-brand);transform:scaleX(0);transform-origin:left}
+[dir="rtl"] #pre-bar i,[dir="rtl"] .progress{transform-origin:right}
+/* Header */
+#site-header{position:fixed;top:0;inset-inline:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+#site-header.scrolled{border-color:var(--border-subtle);box-shadow:0 4px 20px rgba(11,31,54,.06)}
+.header-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px;min-width:0}
+.header-in .logo img{height:30px}
+.nav-links{display:flex;gap:28px;align-items:center;min-width:0;flex:0 1 auto}
+.nav-links a:not(.cory-btn){font-size:14px;font-weight:var(--weight-semibold);color:var(--slate-600);white-space:nowrap;padding:8px 0;min-height:24px;display:inline-flex;align-items:center}
+.nav-links a:not(.cory-btn):hover{color:var(--navy-800)}
+/* Hero */
+#hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 56px;overflow:hidden;width:100%}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-glow{position:absolute;top:-20%;inset-inline-end:0;width:min(60vw,560px);height:min(60vw,560px);border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.16),transparent 65%);pointer-events:none}
+.hero-in{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px}
+.hero-title{font-family:var(--font-display);font-weight:var(--weight-extrabold);font-size:clamp(40px,8.5vw,104px);max-width:100%;line-height:var(--leading-tight);letter-spacing:var(--tracking-tighter);color:var(--navy-800);margin:0;text-wrap:balance}
+.hero-sub{font-size:clamp(16px,2vw,19px);line-height:var(--leading-relaxed);color:var(--text-muted);max-width:600px;margin:0;text-wrap:pretty}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.hero-art{position:absolute;inset:0;pointer-events:none}
+.hero-chip{position:absolute;white-space:nowrap;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:18px;box-shadow:0 14px 34px rgba(11,31,54,.1);padding:14px 18px;will-change:transform}
+.chip-btn{background:var(--gradient-brand-deep);color:var(--text-on-brand);border:0;border-radius:var(--radius-pill);font-weight:var(--weight-semibold);font-size:var(--text-ui-sm);padding:10px 20px;box-shadow:var(--shadow-brand)}
+.chip-stat b{display:block;font-size:26px;font-weight:var(--weight-extrabold);color:var(--navy-800);letter-spacing:var(--tracking-tight)}
+.chip-stat span{font-size:12px;color:var(--text-muted);font-weight:var(--weight-semibold)}
+.chip-swatches{display:flex;gap:6px}
+.chip-swatches i{width:22px;height:22px;border-radius:7px}
+.chip-badge{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:var(--weight-bold);color:var(--text-link)}
+.chip-avatar{display:flex;align-items:center;gap:10px}
+.chip-avatar .tile{width:38px;height:38px;border-radius:10px;background:var(--slate-50);display:flex;align-items:center;justify-content:center}
+.chip-avatar .tile img{width:24px}
+.chip-avatar b{font-size:14px;color:var(--navy-800)}
+.chip-avatar span{display:block;font-size:var(--text-micro);color:var(--text-success);font-weight:var(--weight-bold)}
+.c1{top:16%;inset-inline-start:6%}.c2{top:58%;inset-inline-start:3%}.c3{top:20%;inset-inline-end:6%}.c4{top:62%;inset-inline-end:4%}.c5{top:40%;inset-inline-end:14%}
+.hero-stats{position:relative;display:flex;justify-content:center;gap:clamp(28px,6vw,76px);margin-top:60px;flex-wrap:wrap}
+.hero-stats .hs b{font-family:var(--font-mono);font-size:clamp(26px,3.4vw,40px);font-weight:600;letter-spacing:-.02em;display:block}
+.hero-stats .hs b{background:var(--gradient-brand-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stats .hs span{font-size:12px;font-weight:var(--weight-bold);letter-spacing:var(--tracking-overline);text-transform:uppercase;color:var(--text-muted)}
+/* Marquee */
+.marquee{background:var(--gradient-brand-deep);color:#fff;overflow:hidden;padding:18px 0;transform:rotate(calc(-1.2deg * var(--dir)));direction:ltr;margin:-14px 0;width:100%}
+.marquee-track{display:flex;gap:48px;white-space:nowrap;width:max-content;font-weight:var(--weight-extrabold);font-size:20px;letter-spacing:var(--tracking-tight)}
+.marquee-track span{display:flex;align-items:center;gap:48px}
+.marquee-track em{font-style:normal;opacity:.85;font-family:var(--font-mono);font-weight:500;font-size:16px}
+/* Sections */
+section.block{padding:clamp(80px,10vw,140px) 0;position:relative}
+.sec-head{max-width:720px;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-title{font-family:var(--font-display);font-weight:var(--weight-extrabold);font-size:clamp(32px,4.6vw,56px);line-height:var(--leading-snug);letter-spacing:var(--tracking-tighter);color:var(--navy-800);margin:14px 0 16px;text-wrap:balance}
+.sec-sub{font-size:17px;line-height:var(--leading-relaxed);color:var(--text-muted);margin:0;text-wrap:pretty}
+/* Colors */
+#colors .bands{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;height:clamp(240px,32vw,380px);align-items:end}
+.color-band{height:100%;border-radius:16px;position:relative;display:flex;align-items:flex-end;padding:14px;will-change:transform}
+.color-band small{font-family:var(--font-mono);font-size:var(--text-micro);line-height:1.2;font-weight:600;color:#fff;background:rgba(11,31,54,.55);padding:3px 7px;border-radius:6px}
+.color-band.light small{color:var(--navy-800);background:rgba(255,255,255,.7)}
+.band-labels{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:12px}
+.band-labels span{font-size:12px;font-weight:var(--weight-bold);color:var(--text-muted);text-align:center}
+/* Type */
+#type{overflow:hidden;background:var(--white);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)}
+.type-giant{direction:ltr;unicode-bidi:isolate;text-align:center;padding-inline:var(--gutter);font-family:var(--font-display);font-weight:var(--weight-extrabold);font-size:clamp(56px,14vw,240px);letter-spacing:var(--tracking-tighter);line-height:1;color:var(--navy-800);margin:0 0 40px;text-wrap:balance}
+.type-giant em{font-style:normal;background:var(--gradient-brand-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.type-rows{display:grid;gap:0;border-top:1px solid var(--border-subtle)}
+.type-row{display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--border-subtle)}
+.type-row small{font-family:var(--font-mono);font-size:12px;color:var(--text-subtle)}
+.type-row .spec{font-family:var(--font-display);color:var(--navy-800);letter-spacing:var(--tracking-tight);min-width:0;overflow-wrap:break-word}
+.type-row span.w{font-size:12px;font-weight:var(--weight-bold);color:var(--text-muted)}
+/* Components */
+.comp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.comp-card{background:var(--white);border:1px solid var(--border-subtle);border-radius:22px;padding:28px;box-shadow:0 2px 10px rgba(11,31,54,.05);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;display:flex;flex-direction:column;gap:20px;min-height:220px}
+.comp-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(11,31,54,.12)}
+.comp-card h3{margin:0;font-size:15px;font-weight:var(--weight-bold);color:var(--navy-800);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.comp-card h3 small{font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);font-weight:400;flex:none;white-space:nowrap}
+.comp-demo{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px}
+.demo-badges{display:flex;gap:8px;flex-wrap:wrap}
+.d-badge{padding:5px 12px;border-radius:999px;font-size:12px;font-weight:var(--weight-bold)}
+.d-input{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--border-default);font-family:var(--font-sans);font-size:15px;color:var(--text-body);background:var(--white);transition:border-color .2s,box-shadow .2s;outline:none}
+.d-input:focus{border-color:var(--blue-500);box-shadow:0 0 0 4px var(--focus-ring)}
+.d-stat b{font-family:var(--font-mono);font-size:34px;font-weight:600;background:var(--gradient-brand-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:block;letter-spacing:-.02em}
+.d-stat span{font-size:13px;color:var(--text-muted);font-weight:var(--weight-semibold)}
+.d-stat em{font-style:normal;font-size:12px;color:var(--text-success);font-weight:var(--weight-bold)}
+.d-bubble{background:var(--slate-100);border-radius:18px;border-end-start-radius:6px;padding:12px 16px;font-size:14px;color:var(--navy-800);max-width:100%}
+.d-bubble.me{background:var(--gradient-brand-deep);color:#fff;border-radius:18px;border-end-end-radius:6px;align-self:flex-end}
+.d-avatar{display:flex;gap:10px;align-items:center}
+.d-avatar .tile{width:44px;height:44px;border-radius:12px;background:var(--navy-800);display:flex;align-items:center;justify-content:center}
+.d-avatar .tile img{width:26px}
+/* Templates */
+#templates{background:var(--surface-ink);color:#fff;overflow:hidden}
+#templates .sec-title{color:#fff}
+#templates .sec-sub{color:var(--navy-200)}
+.tpl-pin{overflow:hidden}
+.tpl-rail{display:flex;gap:24px;padding:8px 0 24px;will-change:transform}
+.tpl-card{flex:0 0 auto;width:min(480px,84vw);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:16px;transition:border-color .3s,background .3s}
+.tpl-card:hover{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08)}
+.tpl-shot{position:relative;height:300px;border-radius:14px;overflow:hidden;background:var(--slate-50)}
+.tpl-shot iframe{position:absolute;top:0;inset-inline-start:0;border:0;transform-origin:top left;pointer-events:none}[dir="rtl"] .tpl-shot iframe{transform-origin:top right}
+.tpl-meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tpl-meta b{font-size:18px;font-weight:var(--weight-bold);color:#fff;display:block}
+.tpl-meta small{font-size:13px;color:var(--navy-200)}
+.tpl-open{flex:0 0 auto}
+/* Voice */
+#voice{background:var(--white);border-top:1px solid var(--border-subtle)}
+.voice-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,80px);align-items:center}
+.voice-thread{display:flex;flex-direction:column;gap:14px;max-width:440px}
+.voice-bubble{display:flex;gap:10px;align-items:flex-end}
+.voice-bubble .tile{flex:0 0 34px;width:34px;height:34px;border-radius:9px;background:var(--navy-800);display:flex;align-items:center;justify-content:center}
+.voice-bubble .tile img{width:20px}
+.voice-bubble p{margin:0;background:var(--slate-100);border-radius:18px;border-end-start-radius:6px;padding:13px 17px;font-size:15px;color:var(--navy-800);line-height:1.5}
+.voice-bubble.me{flex-direction:row-reverse}
+.voice-bubble.me p{background:var(--gradient-brand-deep);color:#fff;border-radius:18px;border-end-start-radius:18px;border-end-end-radius:6px}
+.voice-points{display:flex;flex-direction:column;gap:18px;margin-top:28px}
+.voice-points .vp{display:flex;gap:14px;align-items:flex-start}
+.voice-points .vp i{flex:0 0 36px;width:36px;height:36px;border-radius:10px;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800;font-size:15px}
+.voice-points .vp b{color:var(--navy-800);font-size:15px}
+.voice-points .vp span{display:block;font-size:14px;color:var(--text-muted)}
+/* CTA */
+#cta{background:var(--gradient-ink);position:relative;overflow:hidden}
+#cta .glow{position:absolute;top:-40%;inset-inline-start:50%;transform:translateX(calc(-50% * var(--dir)));width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(37,138,253,.22),transparent 62%);pointer-events:none}
+.cta-in{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px}
+.cta-in h2{font-family:var(--font-display);font-weight:var(--weight-extrabold);font-size:clamp(34px,5vw,60px);letter-spacing:var(--tracking-tighter);line-height:var(--leading-snug);color:#fff;margin:0;max-width:700px;text-wrap:balance}
+.cta-in p{color:var(--navy-200);font-size:17px;margin:0;max-width:520px}
+/* Footer */
+footer{background:var(--navy-900);padding:36px 0}
+.foot-in{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.foot-in img{height:26px}
+.foot-in nav{display:flex;flex-wrap:wrap;gap:4px 22px;justify-content:center;min-width:0}
+.foot-in nav a{font-size:13px;font-weight:var(--weight-semibold);color:var(--navy-200);padding:8px 0;display:inline-block}
+.foot-in nav a:hover{color:#fff}
+.foot-in small{font-size:12px;color:var(--navy-200)}
+/* ---- Hover language: every interactive surface answers the pointer ---- */
+.hero-chip{transition:box-shadow var(--duration-base) var(--ease-out),border-color var(--duration-base) var(--ease-out);pointer-events:auto}
+.hero-chip:hover{box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
+.hero-stats .hs{position:relative;padding:6px 10px;border-radius:var(--radius-md);transition:background var(--duration-base) var(--ease-out),transform var(--duration-base) var(--ease-out)}
+.hero-stats .hs:hover{background:var(--surface-card);transform:translateY(var(--lift-hover))}
+.hero-stats .hs:hover b{filter:saturate(1.2)}
+.color-band{cursor:pointer;transition:transform var(--duration-slow) var(--ease-out),box-shadow var(--duration-slow) var(--ease-out),flex var(--duration-slow) var(--ease-out)}
+.color-band:hover{transform:translateY(-10px) scale(1.02);box-shadow:var(--shadow-xl);z-index:1}
+.color-band small{transition:opacity var(--duration-base) var(--ease-out),transform var(--duration-base) var(--ease-out)}
+.color-band:hover small{opacity:1;transform:translateY(-4px)}
+.type-row{transition:background var(--duration-base) var(--ease-out),padding-inline-start var(--duration-slow) var(--ease-out)}
+.type-row:hover{background:var(--surface-page);padding-inline-start:12px}
+.type-row:hover small{color:var(--text-link)}
+.comp-card{position:relative;isolation:isolate;overflow:hidden}
+.comp-card::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(37,138,253,.10),transparent 60%);opacity:0;transition:opacity var(--duration-slow) var(--ease-out);pointer-events:none;z-index:-1}
+.comp-card:hover::before{opacity:1}
+.comp-card h3 small{transition:color var(--duration-base) var(--ease-out)}
+.comp-card:hover h3 small{color:var(--text-link)}
+.d-badge{transition:transform var(--duration-fast) var(--ease-spring)}
+.d-badge:hover{transform:translateY(-2px) scale(1.04)}
+.d-bubble{transition:transform var(--duration-base) var(--ease-out)}
+.d-bubble:hover{transform:translateX(calc(3px * var(--dir)))}.d-bubble.me:hover{transform:translateX(calc(-3px * var(--dir)))}
+.tpl-card{transition:border-color var(--duration-slow) var(--ease-out),background var(--duration-slow) var(--ease-out),transform var(--duration-slow) var(--ease-out),box-shadow var(--duration-slow) var(--ease-out)}
+.tpl-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-glow),var(--shadow-xl)}
+.tpl-shot{transition:transform var(--duration-slow) var(--ease-out)}
+.tpl-card:hover .tpl-shot{transform:scale(1.015)}
+.tpl-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(11,31,54,.35));opacity:0;transition:opacity var(--duration-slow) var(--ease-out);pointer-events:none}
+.tpl-card:hover .tpl-shot::after{opacity:1}
+.voice-points .vp{padding:8px 10px;margin:-8px -10px;border-radius:var(--radius-md);transition:background var(--duration-base) var(--ease-out)}
+.voice-points .vp:hover{background:var(--surface-page)}
+.voice-points .vp i{transition:transform var(--duration-base) var(--ease-spring),background var(--duration-base) var(--ease-out),color var(--duration-base) var(--ease-out)}
+.voice-points .vp:hover i{transform:rotate(calc(-6deg * var(--dir))) scale(1.08);background:var(--gradient-brand-deep);color:#fff}
+.voice-bubble p{transition:transform var(--duration-base) var(--ease-out),box-shadow var(--duration-base) var(--ease-out)}
+.voice-bubble:hover p{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.nav-links a:not(.cory-btn){position:relative;padding:8px 0;flex:none}
+.nav-links a:not(.cory-btn)::after{content:"";position:absolute;inset-inline:0;bottom:2px;height:2px;border-radius:2px;background:var(--gradient-brand);transform:scaleX(0);transform-origin:right;transition:transform var(--duration-base) var(--ease-out)}
+.nav-links a:not(.cory-btn):hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
+[dir="rtl"] .nav-links a:not(.cory-btn)::after{transform-origin:left}[dir="rtl"] .nav-links a:not(.cory-btn):hover::after,[dir="rtl"] .nav-links a.active::after{transform-origin:right}
+.foot-in nav a{position:relative;transition:color var(--duration-base) var(--ease-out)}
+.cory-btn .arrow{display:inline-block;transform:scaleX(var(--dir));transition:transform var(--duration-base) var(--ease-out)}
+.cory-btn:hover .arrow{transform:translateX(calc(4px * var(--dir))) scaleX(var(--dir))}
+/* magnetic CTA (JS sets --tx/--ty) */
+.magnetic{transform:translate(var(--tx,0),var(--ty,0));transition:transform var(--duration-slow) var(--ease-out)}
+/* ---- Scroll craft ---- */
+.hero-stats .hs b{display:inline-block}
+.sec-head .overline{display:inline-block}
+html.anim .sec-head .overline{opacity:0;transform:translateX(calc(-12px * var(--dir)))}
+html.anim .sec-sub{opacity:0}
+.line-draw{height:1px;background:var(--border-default);transform:scaleX(0);transform-origin:left}
+.progress{position:fixed;top:0;inset-inline-start:0;height:2px;width:100%;background:var(--gradient-brand);transform:scaleX(0);transform-origin:left;z-index:60;pointer-events:none}
+/* Arabic: small caps-style labels become readable sentence labels */
+[lang|="ar"] :is(.overline,.hero-stats .hs span,.eyebrow-pill,.band-labels span,.chip-avatar span,.d-badge){font-size:14px;text-transform:none;letter-spacing:0}
+[lang|="ar"] :is(.tpl-meta small,.foot-in small,.foot-in nav a,.nav-links a:not(.cory-btn)){font-size:14px}
+[lang|="ar"] .hero-title{font-size:clamp(40px,7.5vw,92px)}
+[lang|="ar"] .sec-title{line-height:1.35}
+@media (max-width:480px){.nav-links .cory-btn{display:none}.nav-links{gap:8px}}
+/* Color bands: 2 columns on phones (declared after the 960 rule so it wins) */
+@media (max-width:640px){#colors .bands{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,1fr);height:420px}}
+.color-band{min-width:0}.color-band small{max-width:100%;overflow-wrap:anywhere}
+/* Floating chips only where there is room beside the headline */
+@media (max-width:1279px){.hero-chip{display:none!important}}
+.sec-sub i{font-style:normal;font-weight:var(--weight-bold);color:var(--text-strong)}
+/* Direction: numbers, code labels and token names never mirror */
+.hero-stats .hs b,.chip-stat b,.d-stat b,.comp-card h3 small,.color-band small,.type-row small,.type-row .spec.mono,.type-row span.w{direction:ltr;unicode-bidi:isolate;text-align:match-parent}
+.dir-toggle{flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 14px;border-radius:var(--radius-pill);border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);font:600 var(--text-ui-sm)/1.2 var(--font-sans);cursor:pointer;white-space:nowrap;transition:background var(--duration-base) var(--ease-out)}
+.dir-toggle:hover{background:var(--surface-page)}
+/* Responsive */
+@media (max-width:960px){
+ .comp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .nav-links a:not(.cory-btn){display:none}
+ .nav-links{gap:12px}
+ #colors .bands{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:1fr 1fr;height:400px}
+ .band-labels{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .voice-grid{grid-template-columns:1fr}
+ .tpl-pin{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:8px}
+ .tpl-rail{padding-inline-end:20px}
+ .tpl-card{scroll-snap-align:start}
+ .c5{display:none}
+ .type-row{grid-template-columns:110px 1fr;grid-template-rows:auto auto}
+ .type-row span.w{grid-column:2}
+}
+@media (max-width:640px){
+ .nav-links{gap:12px}
+ .nav-links a:not(.cory-btn){display:none}
+ .nav-links .cory-btn{padding:8px 12px}
+ .header-in .logo{flex:0 1 auto;min-width:0}
+ .header-in .logo img{height:24px}
+ .foot-in{justify-content:center;text-align:center}
+ #colors .bands{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,1fr);height:420px}
+ .type-row{grid-template-columns:1fr;gap:6px}
+ .voice-grid{gap:40px}
+ .hero-stats{gap:16px 24px}
+ .nav-links a:not(.cory-btn){display:none}
+ .comp-grid{grid-template-columns:1fr}
+ .hero-chip{display:none}
+ .c1,.c3{display:block;padding:10px 14px}
+ .c1{top:12%;inset-inline-start:4%}.c3{top:14%;inset-inline-end:4%}
+ #colors .bands{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:1fr 1fr;height:400px}
+ .band-labels{display:none}
+ .color-band small{font-size:var(--text-micro)}
+ .tpl-shot{height:240px}
+ .hero-stats{gap:24px}
+}
+</style>
+</head>
+<body>
+<div id="preloader"><div id="pre-logo"><img src="assets/cory-icon.svg" alt=""></div><div id="pre-bar"><i></i></div></div>
+<div class="progress" aria-hidden="true"></div>
+<header id="site-header"><div class="wrap header-in">
+<a class="logo" href="#hero"><img src="assets/logo-agentcory.svg" alt="AgentCory"></a>
+<nav class="nav-links">
+<a href="#colors">Color</a><a href="#type">Type</a><a href="#components">Components</a><a href="#voice">Voice</a><a href="docs/NotebookLM Style Guide.html">Guide</a>
+<button id="dir-toggle" class="dir-toggle" type="button" lang="ar">العربية</button>
+<a class="cory-btn cory-btn-primary cory-btn-sm" href="#templates">Explore templates</a>
+</nav>
+</div></header>
+
+<section id="hero">
+<canvas id="hero-canvas"></canvas><div class="hero-glow"></div>
+<div class="hero-art">
+<div class="hero-chip c1 chip-avatar"><div class="tile"><img src="assets/cory-icon.svg" alt=""></div><div><b>Cory</b><span>● Online</span></div></div>
+<div class="hero-chip c2 chip-stat"><b>94%</b><span>Contact rate</span></div>
+<div class="hero-chip c3"><span class="chip-badge">⚡ &lt;60s response</span></div>
+<div class="hero-chip c4 chip-stat"><b>10x</b><span>Engagement</span></div>
+<div class="hero-chip c5 chip-swatches"><i style="background:var(--navy-800)"></i><i style="background:var(--blue-500)"></i><i style="background:var(--cyan-500)"></i><i style="background:var(--green-500)"></i></div>
+</div>
+<div class="wrap hero-in">
+<span class="eyebrow-pill hero-fade" style="opacity:1;transform:none"><span class="dot"></span>AgentCory Design System · v1</span>
+<h1 class="hero-title" data-split>A design system<br>with a <span class="grad-text grad-sweep">voice.</span></h1>
+<p class="hero-sub hero-fade">Every token, component, and template behind Cory, the AI admissions assistant that answers in under 60 seconds. Built to ship, ready to copy.</p>
+<div class="hero-ctas hero-fade">
+<a class="cory-btn cory-btn-primary cory-btn-lg magnetic" href="#templates">Explore the templates <span class="arrow" aria-hidden="true">→</span></a>
+<a class="cory-btn cory-btn-secondary cory-btn-lg" href="#components">Meet the components</a>
+</div>
+<div class="hero-stats">
+<div class="hs hero-fade"><b data-count="60" data-prefix="&lt;" data-suffix="s">&lt;60s</b><span>Response time</span></div>
+<div class="hs hero-fade"><b data-count="94" data-suffix="%">94%</b><span>Contact rate</span></div>
+<div class="hs hero-fade"><b data-count="847" data-suffix="%">847%</b><span>Avg. ROI</span></div>
+<div class="hs hero-fade"><b data-count="2100">2,100</b><span>Hours saved</span></div>
+</div>
+</div>
+<div class="hero-scroll-cue hero-fade" aria-hidden="true"><span>scroll</span><i></i></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+<span>Hi, I'm Cory 👋 <em>voice</em> Call <em>·</em> Text <em>·</em> Chat <em>·</em> Email <em>&lt;60s</em> Strike while the iron is hot <em>94%</em> Turn prospects into enrolled students <em>10x</em></span>
+<span>Hi, I'm Cory 👋 <em>voice</em> Call <em>·</em> Text <em>·</em> Chat <em>·</em> Email <em>&lt;60s</em> Strike while the iron is hot <em>94%</em> Turn prospects into enrolled students <em>10x</em></span>
+</div></div>
+
+<section id="colors" class="block"><div class="wrap">
+<div class="sec-head">
+<span class="overline">Foundations · Color</span>
+<h2 class="sec-title" data-split>Navy ink. <span class="grad-text">Signal gradient.</span></h2>
+<p class="sec-sub reveal">A two-part identity: deep navy for the words that ground you, a blue→cyan sweep for the moments that move you. Cool slate neutrals on an off-white surface.</p>
+</div>
+<div class="bands">
+<div class="color-band" style="background:var(--navy-800)"><small>--navy-800</small></div>
+<div class="color-band" style="background:var(--blue-500)"><small>--blue-500</small></div>
+<div class="color-band" style="background:var(--cyan-500)"><small>--cyan-500</small></div>
+<div class="color-band" style="background:var(--gradient-brand-135)"><small>--gradient-brand</small></div>
+<div class="color-band" style="background:var(--green-500)"><small>--green-500</small></div>
+<div class="color-band light" style="background:var(--slate-150)"><small>--slate-150</small></div>
+</div>
+<div class="band-labels"><span>Ink</span><span>Signal start</span><span>Signal end</span><span>The gradient</span><span>Positive</span><span>Neutral</span></div>
+</div></section>
+
+<section id="type" class="block">
+<h2 class="type-giant" aria-hidden="true">Plus Jakarta <em>Sans</em></h2>
+<div class="wrap">
+<div class="sec-head">
+<span class="overline">Foundations · Typography</span>
+<h2 class="sec-title" data-split>Friendly, geometric, <span class="grad-text">extrabold.</span></h2>
+<p class="sec-sub reveal">One family across the whole brand, JetBrains Mono for the numbers that do the talking. Display weights run heavy with tight tracking.</p>
+</div>
+<div class="type-rows">
+<div class="type-row reveal"><small>display / 72</small><div class="spec" style="font-size:clamp(34px,5vw,64px);font-weight:800;line-height:1.05">Boost admissions</div><span class="w">Extrabold · -0.03em</span></div>
+<div class="type-row reveal"><small>h2 / 28</small><div class="spec" style="font-size:28px;font-weight:700">Why teams choose Cory</div><span class="w">Bold · -0.018em</span></div>
+<div class="type-row reveal"><small>body / 16</small><div class="spec" style="font-size:16px;font-weight:400;color:var(--slate-700)">Meet prospects where they are, voice, SMS, email, and chat.</div><span class="w">Regular · 1.5</span></div>
+<div class="type-row reveal"><small>metric / mono</small><div class="spec mono" style="font-size:clamp(26px,3.4vw,40px);font-weight:600;background:var(--gradient-brand-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">&lt;60s · 94% · 847%</div><span class="w">JetBrains Mono</span></div>
+</div>
+</div></section>
+
+<section id="components" class="block"><div class="wrap">
+<div class="sec-head center">
+<span class="overline">The kit</span>
+<h2 class="sec-title" data-split>Twenty-nine components, <span class="grad-text">zero guesswork.</span></h2>
+<p class="sec-sub reveal">Pill buttons, soft corners, navy-tinted shadows. Every piece ships as a ready-to-import React component; six of them are previewed here.</p>
+</div>
+<div class="comp-grid">
+<div class="comp-card reveal"><h3>Button <small>core/Button</small></h3><div class="comp-demo">
+<button class="cory-btn cory-btn-primary">Book My Demo</button>
+<button class="cory-btn cory-btn-secondary">Try Cory Now</button>
+</div></div>
+<div class="comp-card reveal" data-delay="0.06"><h3>Badge <small>core/Badge</small></h3><div class="comp-demo"><div class="demo-badges">
+<span class="d-badge" style="background:var(--blue-100);color:var(--blue-700)">⚡ &lt;60s Response</span>
+<span class="d-badge" style="background:var(--green-100);color:var(--text-success)">+54% yield</span>
+<span class="d-badge" style="background:var(--navy-800);color:#fff">New</span>
+<span class="d-badge" style="background:var(--gradient-brand-deep);color:#fff">AI-Powered</span>
+</div></div></div>
+<div class="comp-card reveal" data-delay="0.12"><h3>StatCard <small>content/StatCard</small></h3><div class="comp-demo"><div class="d-stat"><b>94%</b><span>Contact rate </span><em>▲ from 40%</em></div></div></div>
+<div class="comp-card reveal"><h3>ChatBubble <small>content/ChatBubble</small></h3><div class="comp-demo" style="align-items:stretch">
+<div class="d-bubble">Hi, I'm Cory 👋 Ready to see what I can do?</div>
+<div class="d-bubble me">Show me the fall deadlines</div>
+</div></div>
+<div class="comp-card reveal" data-delay="0.06"><h3>Input <small>forms/Input</small></h3><div class="comp-demo" style="align-items:stretch"><input class="d-input" type="text" placeholder="you@university.edu" aria-label="Email"><span style="font-size:12px;color:var(--text-muted)">Focus me, blue ring, soft glow.</span></div></div>
+<div class="comp-card reveal" data-delay="0.12"><h3>Avatar <small>core/Avatar</small></h3><div class="comp-demo"><div class="d-avatar"><div class="tile"><img src="assets/cory-icon.svg" alt="Cory"></div><div><b style="color:var(--navy-800);font-size:15px">Cory</b><span style="display:block;font-size:12px;color:var(--text-success);font-weight:700">● Always on</span></div></div></div></div>
+</div>
+</div></section>
+
+<section id="templates" class="block"><div class="tpl-pin"><div class="wrap" style="max-width:none;padding-inline-start:clamp(20px,4vw,48px)">
+<div class="sec-head">
+<span class="overline" style="color:var(--cyan-400)">Templates</span>
+<h2 class="sec-title" data-split>Four starting points, <span class="grad-text">ready to copy.</span></h2>
+<p class="sec-sub reveal">Live previews of four of the twenty templates, every one built entirely from the system you just scrolled through.</p>
+</div>
+<div class="tpl-rail">
+<div class="tpl-card"><div class="tpl-shot"><iframe src="templates/landing-page/LandingPage.dc.html" width="1280" height="900" style="transform:scale(0.344)" loading="lazy" title="Landing page template" tabindex="-1"></iframe></div><div class="tpl-meta"><div><b>Landing Page</b><small>Full marketing homepage, hero to footer</small></div><a class="tpl-open cory-btn cory-btn-on-ink-solid cory-btn-sm" href="templates/landing-page/LandingPage.dc.html">Open <span class="arrow" aria-hidden="true">→</span></a></div></div>
+<div class="tpl-card"><div class="tpl-shot"><iframe src="templates/pitch-deck/PitchDeck.dc.html" width="1280" height="820" style="transform:scale(0.344)" loading="lazy" title="Pitch deck template" tabindex="-1"></iframe></div><div class="tpl-meta"><div><b>Pitch Deck</b><small>6-slide 16:9 sales deck</small></div><a class="tpl-open cory-btn cory-btn-on-ink-solid cory-btn-sm" href="templates/pitch-deck/PitchDeck.dc.html">Open <span class="arrow" aria-hidden="true">→</span></a></div></div>
+<div class="tpl-card"><div class="tpl-shot"><iframe src="templates/one-pager/OnePager.dc.html" width="816" height="1056" style="transform:scale(0.54)" loading="lazy" title="One-pager template" tabindex="-1"></iframe></div><div class="tpl-meta"><div><b>One-Pager</b><small>Printable Letter-size overview</small></div><a class="tpl-open cory-btn cory-btn-on-ink-solid cory-btn-sm" href="templates/one-pager/OnePager.dc.html">Open <span class="arrow" aria-hidden="true">→</span></a></div></div>
+<div class="tpl-card"><div class="tpl-shot"><iframe src="templates/outreach-email/OutreachEmail.dc.html" width="680" height="1100" style="transform:scale(0.647)" loading="lazy" title="Outreach email template" tabindex="-1"></iframe></div><div class="tpl-meta"><div><b>Outreach Email</b><small>600px marketing email from Cory</small></div><a class="tpl-open cory-btn cory-btn-on-ink-solid cory-btn-sm" href="templates/outreach-email/OutreachEmail.dc.html">Open <span class="arrow" aria-hidden="true">→</span></a></div></div>
+</div>
+</div></div></section>
+
+<section id="voice" class="block"><div class="wrap voice-grid">
+<div>
+<span class="overline">Brand voice</span>
+<h2 class="sec-title" data-split>Cory speaks in <span class="grad-text">first person.</span></h2>
+<p class="sec-sub reveal">The defining trait of the brand. Section labels talk <i>about</i> Cory; CTAs and conversation come <i>from</i> Cory. Confident, benefit-led, warm, and always quantified.</p>
+<div class="voice-points">
+<div class="vp reveal"><i>I</i><div><b>"I", never "it"</b><span>"Ready to see what I can do for your admissions team?"</span></div></div>
+<div class="vp reveal"><i>#</i><div><b>Numbers do the talking</b><span>Lead with the figure: &lt;60s, 94%, 10x, $2.4M.</span></div></div>
+<div class="vp reveal"><i>U</i><div><b>"You", not "we"</b><span>Copy centers your team, your counselors, your yield.</span></div></div>
+</div>
+</div>
+<div class="voice-thread">
+<div class="voice-bubble"><div class="tile"><img src="assets/cory-icon.svg" alt=""></div><p>Hi, I'm Cory 👋 Ready to see what I can do for your admissions team?</p></div>
+<div class="voice-bubble me"><p>We're losing inquiries after hours.</p></div>
+<div class="voice-bubble"><div class="tile"><img src="assets/cory-icon.svg" alt=""></div><p>Not anymore. I answer every inquiry in under 60 seconds, call, text, chat, or email. Want me to call you and show you?</p></div>
+<div class="voice-bubble"><div class="tile"><img src="assets/cory-icon.svg" alt=""></div><p>Strike while the iron is hot. ⚡</p></div>
+</div>
+</div></section>
+
+<section id="cta" class="block"><div class="glow"></div><div class="wrap cta-in">
+<span class="eyebrow-pill reveal" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff"><span class="dot"></span>Open source of truth</span>
+<h2 class="reveal">Build your next surface with Cory's system.</h2>
+<p class="reveal">Tokens, components, guidelines, and four copy-ready templates, everything in one place, consistent by default.</p>
+<div class="hero-ctas reveal">
+<a class="cory-btn cory-btn-primary cory-btn-lg magnetic" href="#templates">Start from a template <span class="arrow" aria-hidden="true">→</span></a>
+<a class="cory-btn cory-btn-on-ink cory-btn-lg" href="#colors">Review the foundations</a>
+<a class="cory-btn cory-btn-on-ink cory-btn-lg" href="docs/NotebookLM Style Guide.html">NotebookLM how-to guide</a>
+</div>
+</div></section>
+
+<footer><div class="wrap foot-in">
+<img src="assets/logo-agentcory-darkmode.svg" alt="AgentCory">
+<nav><a href="#colors">Color</a><a href="#type">Type</a><a href="#components">Components</a><a href="#templates">Templates</a><a href="#voice">Voice</a><a href="docs/NotebookLM Style Guide.html">Guide</a></nav>
+<small>AgentCory Design System · a Colaberry product</small>
+</div></footer>
+<script src="scripts/showcase-i18n.js"></script>
+<script src="scripts/showcase.js"></script>
+</body>
+</html>

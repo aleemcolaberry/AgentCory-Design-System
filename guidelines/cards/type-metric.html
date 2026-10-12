@@ -1,0 +1,25 @@
+<!-- @dsCard group="Type" viewport="700x180" name="Metric & Mono" subtitle="JetBrains Mono for data readouts; gradient stat numbers" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--surface-card); display: flex; gap: 40px; align-items: center; }
+  .stat { text-align: start; }
+  .num { font-family: var(--font-display); font-weight: 800; font-size: 52px; letter-spacing: -0.03em; line-height: 1; }
+  .lbl { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+  .mono { font-family: var(--font-mono); font-size: 13px; color: var(--text-body); line-height: 1.7; }
+  .mono .k { color: var(--text-link); }
+</style>
+</head>
+<body>
+  <div class="stat"><div class="num cory-gradient-text">&lt;60s</div><div class="lbl">Response Time</div></div>
+  <div class="stat"><div class="num" style="color:var(--navy-800)">94%</div><div class="lbl">Contact Rate</div></div>
+  <div class="mono">
+    <span class="k">response_time</span>: 4.2s<br>
+    <span class="k">contact_rate</span>: 0.94<br>
+    <span class="k">channel</span>: "voice"
+  </div>
+</body>
+</html>

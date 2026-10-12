@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog · AIUXAleem</title>
+  <meta name="description" content="Guides and articles on design systems and designing AI products.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIUXAleem">
+  <meta property="og:title" content="Blog · AIUXAleem">
+  <meta property="og:description" content="Guides and articles on design systems and designing AI products.">
+  <meta property="og:image" content="https://aiuxaleem.com/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <script src="boot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Noto+Kufi+Arabic:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="data.js"></script>
+</helmet>
+<dc-import name="Header" current="read" hint-size="100%,72px"></dc-import>
+<main id="main" tabindex="-1" style="position:relative; z-index:var(--z-raised); outline:none;">
+  <section aria-labelledby="bl-title" style="position:relative; overflow:clip; padding-block:var(--section-y) var(--space-10);">
+    <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset-block-start:-30%; inset-inline-end:-10%; inline-size:min(60vw, 640px); aspect-ratio:1; background:var(--glow-cyan); pointer-events:none;"></div>
+    <div class="cory-container" style="position:relative; display:grid; gap:var(--space-5);">
+      <sc-if value="{{ tag }}" hint-placeholder-val="{{ false }}"><a data-link href="Blog.dc.html" style="display:inline-flex; align-items:center; gap:var(--space-2); inline-size:fit-content; min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-link); text-decoration:none;"><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg><span>{{ c.allPosts }}</span></a></sc-if>
+      <p data-hero-el class="cory-overline" style="margin:0;">{{ t.read }}</p>
+      <h1 id="bl-title" data-hero-title style="margin:0; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-hero); line-height:var(--leading-display); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ title }}</h1>
+      <p data-hero-el style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--text-body);">{{ c.lead }}</p>
+      <sc-if value="{{ hasTopics }}" hint-placeholder-val="{{ true }}"><div data-hero-el role="group" aria-label="{{ c.topics }}" style="display:flex; align-items:center; gap:var(--space-2) var(--space-3); flex-wrap:wrap;"><span style="font-size:var(--text-body-sm); color:var(--text-muted);">{{ c.topics }}</span><sc-for list="{{ topics }}" as="tp" hint-placeholder-count="2"><x-import component-from-global-scope="DesignSystem_ebeb85.Chip" selected="{{ tp.on }}" onClick="{{ tp.go }}" hint-size="auto,40px">{{ tp.label }}</x-import></sc-for></div></sc-if>
+      <p data-hero-el role="status" style="margin:0; font-size:var(--text-body-sm); color:var(--text-muted);">{{ count }}</p>
+    </div>
+  </section>
+  <section aria-label="{{ title }}" style="padding-block:0 var(--section-y);">
+    <div class="cory-container" data-cq><ul data-cq-3 style="display:grid; gap:var(--grid-gap);"><sc-for list="{{ posts }}" as="p" hint-placeholder-count="1"><li style="display:grid;"><a href="{{ p.href }}" data-tilt style="display:flex; flex-direction:column; border-radius:var(--radius-xl); overflow:hidden; background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm); text-decoration:none; color:inherit;" style-hover="box-shadow:var(--shadow-lg);"><span class="cory-on-ink" style="position:relative; display:grid; align-items:end; aspect-ratio:var(--aspect-case); padding:var(--space-6); background:var(--gradient-ink); overflow:hidden;"><span aria-hidden="true" data-tilt-media style="position:absolute; inset:-10%; background:var(--glow-cyan-strong) no-repeat 100% 0 / 70% 90%;"></span><span style="position:relative; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-h2); line-height:var(--leading-snug); color:var(--on-ink-strong);">{{ p.title }}</span></span><span style="flex:1; display:flex; flex-direction:column; gap:var(--space-3); padding:var(--space-6);"><bdi style="font-family:var(--font-mono); font-size:var(--text-mono-sm); color:var(--text-muted);">{{ p.meta }}</bdi><span style="font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body);">{{ p.excerpt }}</span><span style="display:flex; gap:var(--space-2); flex-wrap:wrap;"><sc-for list="{{ p.topics }}" as="tg" hint-placeholder-count="1"><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="auto,24px">{{ tg }}</x-import></sc-for></span><span style="margin-block-start:auto; display:inline-flex; align-items:center; gap:var(--space-1); min-block-size:var(--tap-target); font-size:var(--text-body-sm); font-weight:var(--weight-semibold); color:var(--text-link);"><span>{{ t.readPost }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span></span></a></li></sc-for></ul><sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}"><div data-empty-state style="display:grid; gap:var(--space-4); justify-items:start; padding:var(--space-8); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);"><span aria-hidden="true" style="display:grid; place-items:center; inline-size:44px; block-size:44px; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong); flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8M16 17H8M10 9H8"></path></svg></span><h2 style="margin:0; font-family:var(--font-display); font-size:var(--text-h3); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ emptyT }}</h2><p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body); text-wrap:pretty;">{{ emptyP }}</p><sc-if value="{{ tag }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="md" onClick="{{ clearTag }}" hint-size="auto,44px">{{ c.allPosts }}</x-import></sc-if><sc-if value="{{ noTag }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="md" href="{{ s.linkedin }}" target="_blank" rel="noopener" hint-size="auto,44px">{{ c.follow }}</x-import></sc-if></div></sc-if></div>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tag: (window.AX && window.AX.q('tag')) || '' };
+  static C = { en: { title: 'Blog', tagged: 'Posts tagged {t}', lead: 'Guides and articles on design systems and designing AI products.', allPosts: 'All posts', topics: 'Topics', count: '{n} posts', none: 'No posts yet', noneP: 'The first guide is being written. Follow along on LinkedIn in the meantime.', follow: 'Follow on LinkedIn', noneTag: 'Nothing tagged {t} yet', noneTagP: 'Try another topic, or go back to every post.' }, ar: { title: 'المدوّنة', tagged: 'مقالات بموضوع {t}', lead: 'أدلة ومقالات عن أنظمة التصميم وتصميم منتجات الذكاء الاصطناعي.', allPosts: 'كل المقالات', topics: 'المواضيع', count: '{n} مقالات', none: 'لا توجد مقالات بعد', noneP: 'أكتب الدليل الأول الآن. تابعني على LinkedIn حتى ذلك الحين.', follow: 'تابعني على LinkedIn', noneTag: 'لا شيء بموضوع {t} بعد', noneTagP: 'جرّب موضوعًا آخر، أو عد إلى كل المقالات.' } };
+  componentDidMount() { this.off = window.AX && window.AX.on(() => this.forceUpdate()); this.mo = new MutationObserver(() => this.forceUpdate()); this.mo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] }); import('./motion.js').then(m => m.boot('blog')); }
+  componentWillUnmount() { this.off && this.off(); this.mo && this.mo.disconnect(); }
+  setTag(tag) { this.setState({ tag }); try { const u = new URL(location.href); if (tag) u.searchParams.set('tag', tag); else u.searchParams.delete('tag'); history.replaceState(null, '', u); } catch (e) {} }
+  renderVals() {
+    const AX = window.AX; if (!AX) return { c: {}, t: {}, topics: [], posts: [] };
+    const lang = AX.lang(), c = Component.C[lang], all = AX.list('posts'), tag = this.state.tag, list = tag ? all.filter(p => (p.topics || []).includes(tag)) : all;
+    return { c, t: AX.UI[lang], s: AX.data().site, hasTopics: all.some(p => (p.topics || []).length), tag: !!tag, noTag: !tag, empty: !list.length, emptyT: tag ? c.noneTag.replace('{t}', tag) : c.none, emptyP: tag ? c.noneTagP : c.noneP, clearTag: () => this.setTag(''), title: tag ? c.tagged.replace('{t}', tag) : c.title, count: c.count.replace('{n}', list.length),
+      topics: [...new Set(all.flatMap(p => p.topics || []))].map(label => ({ label, on: tag === label, go: () => this.setTag(tag === label ? '' : label) })),
+      posts: list.map(p => ({ title: AX.tx(p, 'title'), excerpt: AX.tx(p, 'excerpt'), topics: p.topics || [], meta: (p.updated ? 'Updated ' : '') + AX.fmtDate(p.date) + ' · ' + p.read, href: 'Post.dc.html?slug=' + p.slug })) };
+  }
+}
+</script>
+</body>
+</html>

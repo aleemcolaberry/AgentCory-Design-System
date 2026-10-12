@@ -1,0 +1,49 @@
+<!-- @dsCard group="Motion" viewport="700x300" name="Reveal engine" subtitle="data-reveal + data-stagger on any element; counters with data-count; reduced-motion safe" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../tokens/reveal.js"></script>
+<style>
+  body { margin: 0; padding: 20px 24px; background: var(--surface-page); display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 560px) { body { grid-template-columns: 1fr; } }
+  .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 10px; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tile { height: 64px; border-radius: var(--radius-md); background: var(--surface-card); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm); display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .metric { display: flex; gap: 24px; align-items: baseline; margin-top: 12px; }
+  pre { margin: 10px 0 0; padding: 12px 14px; border-radius: var(--radius-md); background: var(--surface-ink); color: var(--on-ink-body); font: 500 11px/1.65 var(--font-mono); white-space: pre-wrap; }
+  pre b { color: var(--cyan-400); font-weight: 500; }
+  button { margin-top: 10px; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="lbl">data-stagger cascade · kinds: up fade scale blur clip left</div>
+    <div class="tiles" data-stagger="90" id="demo"><div class="tile">up</div><div class="tile" data-reveal="scale">scale</div><div class="tile" data-reveal="blur">blur</div><div class="tile" data-reveal="clip">clip</div><div class="tile" data-reveal="left">left</div><div class="tile" data-reveal="fade">fade</div></div>
+    <div class="metric" data-reveal="fade" data-delay="500"><span class="cory-metric cory-gradient-text" data-count="94" data-suffix="%" style="font-size:40px">94%</span><span class="cory-metric" data-count="2100" style="font-size:40px">2,100</span><span style="font-size:13px;color:var(--text-muted)">data-count</span></div>
+    <button class="cory-btn cory-btn-secondary cory-btn-sm" id="replay" type="button">Replay</button>
+  </div>
+  <div>
+    <div class="lbl">Usage</div>
+<pre>&lt;script src="<b>tokens/reveal.js</b>"&gt;&lt;/script&gt;
+
+&lt;section <b>data-stagger</b>="90"&gt;        cascades children
+  &lt;h2&gt;…&lt;/h2&gt; &lt;p&gt;…&lt;/p&gt;
+&lt;/section&gt;
+&lt;blockquote <b>data-reveal</b>="clip"&gt;   one element
+&lt;b <b>data-count</b>="847" data-suffix="%"&gt;847%&lt;/b&gt;
+
+Helpers: .cory-float · .cory-ring · .cory-sweep
+         .cory-draw · .cory-glow-drift · .cory-lift
+Timing:  --duration-enter 600 · --ease-cinematic
+Reduced motion: everything shows instantly.</pre>
+  </div>
+  <script>
+    document.getElementById('replay').addEventListener('click', () => {
+      document.querySelectorAll('[data-reveal]').forEach(e => e.classList.remove('is-visible'));
+      requestAnimationFrame(() => requestAnimationFrame(() => window.coryReveal.observe(document)));
+    });
+  </script>
+</body>
+</html>

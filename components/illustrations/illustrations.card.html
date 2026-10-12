@@ -1,0 +1,50 @@
+<!-- @dsCard group="Brand" viewport="700x560" name="Illustrations" subtitle="Cory spot scenes: solid mascot tile, duotone props from the icon set, brand glow. Tokens for every colour." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px; background: var(--surface-page); color: var(--text-body); font-family: var(--font-sans); }
+  .glabel { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin: 0 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .cell { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 14px 10px 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 0; }
+  .cell span { font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); }
+  .ink { margin-top: 18px; background: var(--gradient-ink); border-radius: var(--radius-xl); padding: 22px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+  .ink h3 { margin: 0 0 6px; font-family: var(--font-display); font-size: var(--text-h4); font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+  .ink p { margin: 0; font-size: var(--text-ui-sm); color: var(--on-ink-body); max-width: 40ch; line-height: 1.5; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+<div style="position:fixed;top:8px;inset-inline-end:8px;z-index:9;display:flex;gap:6px" dir="ltr">
+<button id="__dir" type="button" aria-label="Toggle right-to-left" style="height:30px;padding:0 10px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:700 11px var(--font-mono)">RTL</button>
+<button id="__theme" type="button" aria-label="Toggle dark theme" style="width:30px;height:30px;border-radius:999px;border:1px solid var(--border-interactive);background:var(--surface-card);color:var(--text-strong);cursor:pointer;font:600 11px var(--font-mono)">◐</button>
+</div>
+<script>(function(){var h=document.documentElement;document.getElementById('__theme').onclick=function(){h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark')};var d=document.getElementById('__dir');d.onclick=function(){var r=h.getAttribute('dir')==='rtl';h.setAttribute('dir',r?'ltr':'rtl');d.textContent=r?'RTL':'LTR'}})()</script>
+<div id="root"></div>
+<script type="text/babel">
+  const { Illustration, ILLUSTRATION_SCENES } = window.DesignSystem_ebeb85;
+  const scenes = ILLUSTRATION_SCENES || ['empty', 'search', 'error', 'offline', 'success', 'connect', 'invite', 'launch', 'not-found', 'hero', 'cover', 'email'];
+  function Demo() {
+    if (!Illustration) return <p className="glabel">Bundle not compiled yet. Reload.</p>;
+    return (
+      <React.Fragment>
+        <p className="glabel">Scenes · empty states, failures, onboarding, marketing</p>
+        <div className="grid">
+          {scenes.map((s) => <div className="cell" key={s}><Illustration scene={s} width={124} /><span>{s}</span></div>)}
+        </div>
+        <div className="ink">
+          <Illustration scene="cover" width={170} onInk />
+          <div><h3>On ink</h3><p>Pass onInk on navy panels, dark slides and email headers: the tile turns light, lines go cyan, tints go translucent white.</p></div>
+        </div>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

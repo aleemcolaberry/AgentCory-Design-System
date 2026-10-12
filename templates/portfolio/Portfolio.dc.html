@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Portfolio: Signature Moments" description="Md Abdul Aleem portfolio: node-field hero, scroll-revealed manifesto, sticky work stack. Light + dark, 320–1440." -->
+<helmet><script src="./ds-base.js"></script><style>html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden}.pf-nav a{display:inline-flex;align-items:center;min-height:24px;padding:8px 0}@media (max-width:1023px){.pf-nav{display:none!important}}</style></helmet>
+<div style="font-family:var(--font-sans);background:var(--surface-page);color:var(--text-body);min-height:100vh">
+<header class="cory-header" data-screen-label="Header">
+<div class="cory-container" style="height:100%;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)">
+<a href="#top" style="display:flex;align-items:center;gap:var(--space-3);color:var(--text-strong);font-weight:var(--weight-bold);font-size:var(--text-ui);letter-spacing:var(--tracking-ui);min-width:0;flex:0 1 auto"><img src="./author-avatar.png" alt="" style="width:36px;height:36px;border-radius:var(--radius-pill);object-fit:cover;border:var(--border-width) solid var(--border-default)">Md Abdul Aleem</a>
+<nav class="pf-nav" style="display:flex;gap:var(--space-7);font-size:var(--text-ui-sm);font-weight:var(--weight-semibold)">
+<a href="#manifesto" style="color:var(--text-body)">Manifesto</a>
+<a href="#work" style="color:var(--text-body)">Work</a>
+<a href="#contact" style="color:var(--text-body)">Contact</a>
+</nav>
+<div style="display:flex;align-items:center;gap:var(--space-3);flex:none">
+<x-import component-from-global-scope="DesignSystem_ebeb85.DirectionToggle" size="sm" hint-size="92px,36px"></x-import>
+<x-import component-from-global-scope="DesignSystem_ebeb85.ThemeToggle" size="sm" hint-size="36px,36px"></x-import>
+<span class="cory-hide-mobile"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="sm" href="#contact" hint-size="120px,36px">Say hello</x-import></span>
+</div>
+</div>
+</header>
+
+<section id="top" data-screen-label="Node field hero" style="position:relative;overflow:hidden;min-height:calc(100svh - var(--header-height));display:grid;align-items:center">
+<canvas ref="{{ canvasRef }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:var(--z-base)"></canvas>
+<div aria-hidden="true" class="cory-glow-drift" style="position:absolute;width:min(70vw,720px);aspect-ratio:1;inset-inline-end:-20%;top:-25%;background:var(--glow-cyan);filter:blur(var(--blur-glow));pointer-events:none"></div>
+<div aria-hidden="true" style="position:absolute;width:min(60vw,560px);aspect-ratio:1;inset-inline-start:-20%;bottom:-30%;background:var(--glow-blue);filter:blur(var(--blur-glow));pointer-events:none"></div>
+<div class="cory-container cory-section" style="position:relative;z-index:var(--z-raised);display:grid;gap:var(--space-8)">
+<div class="cory-reveal-auto" style="--i:0;display:flex;align-items:center;gap:var(--space-3)">
+<span class="cory-eyebrow-pill" style="white-space:nowrap">Product Designer · Colaberry</span>
+</div>
+<h1 class="cory-reveal-auto" style="--i:1;font-size:var(--text-fluid-display);font-weight:var(--weight-extrabold);line-height:var(--leading-tight);letter-spacing:var(--tracking-tighter);color:var(--text-strong);max-width:var(--measure-display);margin:0">I design the places where <span class="cory-gradient-text">people meet AI</span>, and stay.</h1>
+<p class="cory-reveal-auto" style="--i:2;font-size:var(--text-fluid-lead);line-height:var(--leading-relaxed);color:var(--text-body);max-width:var(--measure-lead);margin:0">Systems, catalogs, and conversational products for Colaberry and Agent Cory. Research first, numbers always, polish last, but never skipped.</p>
+<div class="cory-reveal-auto" style="--i:3;display:flex;flex-wrap:wrap;gap:var(--space-3)">
+<x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="lg" href="#work" hint-size="170px,52px">See the work</x-import>
+<x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="lg" variant="secondary" href="#manifesto" hint-size="170px,52px">Read the manifesto</x-import>
+</div>
+<div class="cory-reveal-auto" style="--i:4;display:flex;flex-wrap:wrap;gap:var(--space-8);padding-top:var(--space-4)">
+<div><div class="cory-metric" style="font-size:var(--text-metric-sm)">{{ nodeCount }}</div><div style="font-size:var(--text-caption);font-weight:var(--weight-semibold);color:var(--text-muted);margin-top:var(--space-1)">live nodes in this field</div></div>
+<div><div class="cory-metric" style="font-size:var(--text-metric-sm)">6 yrs</div><div style="font-size:var(--text-caption);font-weight:var(--weight-semibold);color:var(--text-muted);margin-top:var(--space-1)">designing data &amp; AI products</div></div>
+<div><div class="cory-metric" style="font-size:var(--text-metric-sm)">2</div><div style="font-size:var(--text-caption);font-weight:var(--weight-semibold);color:var(--text-muted);margin-top:var(--space-1)">design systems shipped</div></div>
+</div>
+</div>
+</section>
+
+<section id="manifesto" data-screen-label="Manifesto reveal" style="background:var(--surface-card);border-top:var(--border-width) solid var(--border-subtle);border-bottom:var(--border-width) solid var(--border-subtle)">
+<div class="cory-container" style="padding-block:var(--section-y)">
+<div style="display:grid;gap:var(--space-6);max-width:var(--container-narrow)">
+<span class="cory-overline">Manifesto</span>
+<p ref="{{ manifestoRef }}" style="font-size:var(--text-fluid-title);font-weight:var(--weight-extrabold);line-height:var(--leading-snug);letter-spacing:var(--tracking-tight);color:var(--text-strong);margin:0">Good AI design is quiet. It answers before you finish asking, shows its reasoning when you lean in, and never makes the person on the other side feel small. I measure my work by the moment someone stops noticing the interface, and starts trusting it.</p>
+<div style="display:flex;align-items:center;gap:var(--space-3);padding-top:var(--space-4)">
+<img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:48px;height:48px;border-radius:var(--radius-pill);object-fit:cover">
+<div><div style="font-weight:var(--weight-bold);color:var(--text-strong);font-size:var(--text-ui)">Md Abdul Aleem</div><div style="font-size:var(--text-caption);color:var(--text-muted)">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="work" data-screen-label="Work stack" class="cory-container" style="padding-block:var(--section-y)">
+<div data-stagger="90" style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;margin-bottom:var(--space-10)">
+<div style="display:grid;gap:var(--space-3)"><span class="cory-overline">Selected work</span><h2 style="font-size:var(--text-fluid-h2);font-weight:var(--weight-extrabold);letter-spacing:var(--tracking-tighter);color:var(--text-strong);margin:0">Four problems, four systems.</h2></div>
+<span style="font-family:var(--font-mono);font-size:var(--text-mono);color:var(--text-subtle)">scroll ↓ cards stack</span>
+</div>
+<div ref="{{ workRef }}" style="display:grid;gap:var(--space-6)">
+
+<article data-screen-label="Work 01" style="position:sticky;top:calc(var(--header-height) + var(--space-6));background:var(--surface-card);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-2xl);box-shadow:var(--shadow-md);padding:var(--space-6);transform-origin:top center;will-change:transform;transition:box-shadow var(--duration-base) var(--ease-out)">
+<div class="cory-split">
+<div data-stagger="80" style="display:grid;gap:var(--space-4);align-content:start">
+<div style="display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-mono);font-size:var(--text-mono);color:var(--text-subtle)"><span>01</span><span style="width:var(--space-8);height:var(--border-width);background:var(--border-strong)"></span><span>2025 · Product design</span></div>
+<h3 style="font-size:var(--text-h2);letter-spacing:var(--tracking-tight);color:var(--text-strong);margin:0">Agent Cory, admissions AI that answers in under 60 seconds</h3>
+<p style="margin:0;font-size:var(--text-md);line-height:var(--leading-relaxed);max-width:var(--measure-lead)">Voice, SMS, chat, and email in one persona. I designed the conversation model, the counselor handoff, and the marketing system you're looking at now.</p>
+<div style="display:flex;gap:var(--space-8);flex-wrap:wrap"><div><div class="cory-metric cory-gradient-text" data-count="94" data-suffix="%" style="font-size:var(--text-metric-md)">94%</div><div style="font-size:var(--text-caption);color:var(--text-muted);font-weight:var(--weight-semibold)">contact rate</div></div><div><div class="cory-metric cory-gradient-text" data-count="10" data-suffix="×" style="font-size:var(--text-metric-md)">10×</div><div style="font-size:var(--text-caption);color:var(--text-muted);font-weight:var(--weight-semibold)">more appointments</div></div></div>
+<div style="display:flex;gap:var(--space-2);flex-wrap:wrap"><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="brand" hint-size="90px,26px">Conversation design</x-import><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="90px,26px">Design system</x-import></div>
+</div>
+<x-import component-from-global-scope="DesignSystem_ebeb85.MediaFrame" alt="Agent Cory chat + counselor handoff" ratio="4 / 3" hint-size="100%,320px"></x-import>
+</div>
+</article>
+
+<article data-screen-label="Work 02" style="position:sticky;top:calc(var(--header-height) + var(--space-6) + var(--space-3));background:var(--surface-card);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-2xl);box-shadow:var(--shadow-md);padding:var(--space-6);transform-origin:top center;will-change:transform;transition:box-shadow var(--duration-base) var(--ease-out)">
+<div class="cory-split">
+<div data-stagger="80" style="display:grid;gap:var(--space-4);align-content:start">
+<div style="display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-mono);font-size:var(--text-mono);color:var(--text-subtle)"><span>02</span><span style="width:var(--space-8);height:var(--border-width);background:var(--border-strong)"></span><span>2025 · Enterprise UX</span></div>
+<h3 style="font-size:var(--text-h2);letter-spacing:var(--tracking-tight);color:var(--text-strong);margin:0">AIXcelerator, an enterprise catalog built on a knowledge graph</h3>
+<p style="margin:0;font-size:var(--text-md);line-height:var(--leading-relaxed);max-width:var(--measure-lead)">Audit, information architecture, and a component rebuild so analysts find the right dataset in three clicks instead of thirty.</p>
+<div style="display:flex;gap:var(--space-8);flex-wrap:wrap"><div><div class="cory-metric cory-gradient-text" data-count="3" style="font-size:var(--text-metric-md)">3</div><div style="font-size:var(--text-caption);color:var(--text-muted);font-weight:var(--weight-semibold)">clicks to any asset</div></div><div><div class="cory-metric cory-gradient-text" style="font-size:var(--text-metric-md)">AA</div><div style="font-size:var(--text-caption);color:var(--text-muted);font-weight:var(--weight-semibold)">WCAG 2.2 across the catalog</div></div></div>
+<div style="display:flex;gap:var(--space-2);flex-wrap:wrap"><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="cyan" hint-size="90px,26px">UX audit</x-import><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="90px,26px">Next.js + shadcn</x-import></div>
+</div>
+<x-import component-from-global-scope="DesignSystem_ebeb85.MediaFrame" alt="AIXcelerator catalog, graph view" ratio="4 / 3" hint-size="100%,320px"></x-import>
+</div>
+</article>
+
+<article data-screen-label="Work 03" style="position:sticky;top:calc(var(--header-height) + var(--space-6) + var(--space-6));background:var(--surface-card);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-2xl);box-shadow:var(--shadow-md);padding:var(--space-6);transform-origin:top center;will-change:transform;transition:box-shadow var(--duration-base) var(--ease-out)">
+<div class="cory-split">
+<div data-stagger="80" style="display:grid;gap:var(--space-4);align-content:start">
+<div style="display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-mono);font-size:var(--text-mono);color:var(--text-subtle)"><span>03</span><span style="width:var(--space-8);height:var(--border-width);background:var(--border-strong)"></span><span>2026 · Design systems</span></div>
+<h3 style="font-size:var(--text-h2);letter-spacing:var(--tracking-tight);color:var(--text-strong);margin:0">AgentCory Design System, tokens, themes, motion, and 14 components</h3>
+<p style="margin:0;font-size:var(--text-md);line-height:var(--leading-relaxed);max-width:var(--measure-lead)">From a brand audit to a two-theme, AA-checked system with a motion scale and responsive grid, the one rendering this page.</p>
+<div style="display:flex;gap:var(--space-8);flex-wrap:wrap"><div><div class="cory-metric cory-gradient-text" data-count="282" style="font-size:var(--text-metric-md)">282</div><div style="font-size:var(--text-caption);color:var(--text-muted);font-weight:var(--weight-semibold)">design tokens</div></div><div><div class="cory-metric cory-gradient-text" data-count="2" style="font-size:var(--text-metric-md)">2</div><div style="font-size:var(--text-caption);color:var(--text-muted);font-weight:var(--weight-semibold)">themes, one toggle</div></div></div>
+<div style="display:flex;gap:var(--space-2);flex-wrap:wrap"><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="success" hint-size="90px,26px">WCAG 2.2 AA</x-import><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="90px,26px">React</x-import></div>
+</div>
+<x-import component-from-global-scope="DesignSystem_ebeb85.MediaFrame" alt="Design system, token sheet, light and dark" ratio="4 / 3" hint-size="100%,320px"></x-import>
+</div>
+</article>
+
+<article data-screen-label="Work 04" style="position:sticky;top:calc(var(--header-height) + var(--space-6) + var(--space-10));background:var(--surface-card);border:var(--border-width) solid var(--border-subtle);border-radius:var(--radius-2xl);box-shadow:var(--shadow-md);padding:var(--space-6);transform-origin:top center;will-change:transform;transition:box-shadow var(--duration-base) var(--ease-out)">
+<div class="cory-split">
+<div data-stagger="80" style="display:grid;gap:var(--space-4);align-content:start">
+<div style="display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-mono);font-size:var(--text-mono);color:var(--text-subtle)"><span>04</span><span style="width:var(--space-8);height:var(--border-width);background:var(--border-strong)"></span><span>2026 · Content & motion</span></div>
+<h3 style="font-size:var(--text-h2);letter-spacing:var(--tracking-tight);color:var(--text-strong);margin:0">Colaberry Reel Studio, a branded pipeline for 9:16 story ads</h3>
+<p style="margin:0;font-size:var(--text-md);line-height:var(--leading-relaxed);max-width:var(--measure-lead)">Paper-collage motion language, a recurring cast, burned captions, and a repeatable template so one idea becomes a finished reel in an afternoon.</p>
+<div style="display:flex;gap:var(--space-8);flex-wrap:wrap"><div><div class="cory-metric cory-gradient-text" data-count="19" style="font-size:var(--text-metric-md)">19</div><div style="font-size:var(--text-caption);color:var(--text-muted);font-weight:var(--weight-semibold)">social templates</div></div><div><div class="cory-metric cory-gradient-text" style="font-size:var(--text-metric-md)">9:16</div><div style="font-size:var(--text-caption);color:var(--text-muted);font-weight:var(--weight-semibold)">native story format</div></div></div>
+<div style="display:flex;gap:var(--space-2);flex-wrap:wrap"><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="warning" hint-size="90px,26px">Motion design</x-import><x-import component-from-global-scope="DesignSystem_ebeb85.Badge" tone="neutral" hint-size="90px,26px">Templates</x-import></div>
+</div>
+<x-import component-from-global-scope="DesignSystem_ebeb85.MediaFrame" alt="Reel Studio, story frame" ratio="4 / 3" hint-size="100%,320px"></x-import>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="contact" data-screen-label="Contact" class="cory-container" style="padding-block:0 var(--section-y)">
+<div class="cory-ink" data-reveal="scale" style="padding:var(--section-y) var(--gutter);display:grid;gap:var(--space-6);justify-items:start"><div data-stagger="110" style="display:contents">
+<span class="cory-overline" style="color:var(--on-ink-link)">Contact</span>
+<h2 style="font-size:var(--text-fluid-title);font-weight:var(--weight-extrabold);letter-spacing:var(--tracking-tighter);line-height:var(--leading-tight);margin:0;max-width:var(--measure-display)">Building something people have to trust? Let's talk.</h2>
+<p style="margin:0;font-size:var(--text-body-lg);line-height:var(--leading-relaxed);max-width:var(--measure-lead);color:var(--on-ink-body)">Open to senior product-design roles and AI-platform engagements in 2026. Riyadh, Dallas, or remote.</p>
+<div style="display:flex;flex-wrap:wrap;gap:var(--space-3)">
+<x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="lg" href="mailto:hello@example.com" hint-size="180px,52px">Email me</x-import>
+<x-import component-from-global-scope="DesignSystem_ebeb85.Button" size="lg" variant="onInk" href="https://www.linkedin.com/" hint-size="150px,52px">LinkedIn</x-import>
+</div>
+</div></div>
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);padding-top:var(--space-6);font-size:var(--text-caption);color:var(--text-subtle)">
+<span>© 2026 Md Abdul Aleem · Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span>
+<span style="font-family:var(--font-mono)">Built on the AgentCory Design System</span>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;low&quot;,&quot;medium&quot;,&quot;high&quot;],&quot;default&quot;:&quot;medium&quot;,&quot;tsType&quot;:&quot;'low' | 'medium' | 'high'&quot;,&quot;section&quot;:&quot;Node field&quot;},&quot;fieldMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Node field&quot;},&quot;stackCards&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Work scroll&quot;}}">
+class Component extends DCLogic {
+  state = { nodeCount: 0 };
+  canvasRef = React.createRef();
+  manifestoRef = React.createRef();
+  workRef = React.createRef();
+
+  renderVals() { return { canvasRef: this.canvasRef, manifestoRef: this.manifestoRef, workRef: this.workRef, nodeCount: this.state.nodeCount || '-' }; }
+
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.readTokens();
+    this.initField();
+    this.splitManifesto();
+    this.onScroll = () => { if (!this.scrollRaf) this.scrollRaf = requestAnimationFrame(() => { this.scrollRaf = 0; this.updateScroll(); }); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.updateScroll();
+    this.themeObs = new MutationObserver(() => { this.readTokens(); if (this.reduced) this.drawField(0); });
+    this.themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  }
+  componentDidUpdate(prev) {
+    if (prev.density !== this.props.density || prev.fieldMotion !== this.props.fieldMotion) this.initField();
+    if (prev.stackCards !== this.props.stackCards) this.applyStackMode();
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf); cancelAnimationFrame(this.scrollRaf);
+    window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onScroll);
+    this.ro && this.ro.disconnect(); this.themeObs && this.themeObs.disconnect();
+    const c = this.canvasRef.current; if (c) { c.removeEventListener('pointermove', this.onMove); c.removeEventListener('pointerleave', this.onLeave); }
+  }
+
+  /* --- tokens → canvas colors (re-read on theme change so dark mode is honoured) --- */
+  readTokens() {
+    const cs = getComputedStyle(document.documentElement);
+    const v = (n) => cs.getPropertyValue(n).trim();
+    const toRgb = (hex) => { const h = hex.replace('#', ''); const n = parseInt(h.length === 3 ? h.split('').map(x => x + x).join('') : h, 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+    const strong = v('--text-strong'); const sub = v('--text-subtle');
+    this.col = {
+      blue: toRgb(v('--blue-500')), cyan: toRgb(v('--cyan-500')),
+      line: strong.startsWith('#') ? toRgb(strong) : [255, 255, 255],
+      dot: sub.startsWith('#') ? toRgb(sub) : [255, 255, 255],
+      dark: document.documentElement.getAttribute('data-theme') === 'dark',
+    };
+  }
+
+  /* --- node field --- */
+  initField() {
+    cancelAnimationFrame(this.raf);
+    const c = this.canvasRef.current; if (!c) return;
+    const ctx = c.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const sec = c.parentElement;
+    const fit = () => { const r = sec.getBoundingClientRect(); c.width = r.width * dpr; c.height = r.height * dpr; c.style.width = r.width + 'px'; c.style.height = r.height + 'px'; this.w = r.width; this.h = r.height; this.seed(); if (this.reduced) this.drawField(0); };
+    this.ro && this.ro.disconnect();
+    this.ro = new ResizeObserver(fit); this.ro.observe(sec);
+    this.ctx = ctx; this.dpr = dpr;
+    this.pointer = null;
+    this.onMove = (e) => { const r = c.getBoundingClientRect(); this.pointer = { x: e.clientX - r.left, y: e.clientY - r.top }; };
+    this.onLeave = () => { this.pointer = null; };
+    sec.addEventListener('pointermove', this.onMove); sec.addEventListener('pointerleave', this.onLeave);
+    fit();
+    if (!this.reduced && (this.props.fieldMotion ?? true)) { this.t0 = performance.now(); const loop = (t) => { this.drawField((t - this.t0) / 1000); this.raf = requestAnimationFrame(loop); }; this.raf = requestAnimationFrame(loop); }
+    else this.drawField(0);
+  }
+  seed() {
+    const per = { low: 14000, medium: 9000, high: 5500 }[this.props.density || 'medium'];
+    const n = Math.max(24, Math.min(160, Math.round((this.w * this.h) / per)));
+    this.nodes = Array.from({ length: n }, (_, i) => ({ x: Math.random() * this.w, y: Math.random() * this.h, vx: (Math.random() - 0.5) * 0.18, vy: (Math.random() - 0.5) * 0.18, r: 1.2 + Math.random() * 1.8, hue: i % 3 === 0 ? 'cyan' : 'blue', ph: Math.random() * Math.PI * 2 }));
+    this.setState({ nodeCount: n });
+  }
+  drawField(t) {
+    const { ctx, dpr, w, h, nodes, col } = this; if (!ctx || !nodes) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+    const link = Math.min(150, Math.max(90, w * 0.11));
+    const p = this.pointer; const lineA = col.dark ? 0.22 : 0.10;
+    for (const n of nodes) {
+      if (!this.reduced) {
+        n.x += n.vx + Math.sin(t * 0.6 + n.ph) * 0.06; n.y += n.vy + Math.cos(t * 0.5 + n.ph) * 0.06;
+        if (p) { const dx = p.x - n.x, dy = p.y - n.y, d = Math.hypot(dx, dy); if (d < 220 && d > 1) { n.x += dx / d * 0.35 * (1 - d / 220); n.y += dy / d * 0.35 * (1 - d / 220); } }
+        if (n.x < -20) n.x = w + 20; if (n.x > w + 20) n.x = -20; if (n.y < -20) n.y = h + 20; if (n.y > h + 20) n.y = -20;
+      }
+    }
+    ctx.lineWidth = 1;
+    for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+      const a = nodes[i], b = nodes[j]; const d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (d < link) {
+        const k = 1 - d / link; const near = p && Math.hypot((a.x + b.x) / 2 - p.x, (a.y + b.y) / 2 - p.y) < 200;
+        const c = near ? col.cyan : col.line;
+        ctx.strokeStyle = `rgba(${c[0]},${c[1]},${c[2]},${(near ? 0.55 : lineA) * k})`;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+    }
+    for (const n of nodes) {
+      const c = col[n.hue]; const pulse = this.reduced ? 1 : 0.75 + 0.25 * Math.sin(t * 1.4 + n.ph);
+      const near = p && Math.hypot(n.x - p.x, n.y - p.y) < 200;
+      ctx.fillStyle = `rgba(${c[0]},${c[1]},${c[2]},${(near ? 0.95 : col.dark ? 0.8 : 0.6) * pulse})`;
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r * (near ? 1.6 : 1), 0, Math.PI * 2); ctx.fill();
+    }
+  }
+
+  /* --- manifesto: split into words once (text stays editable in source) --- */
+  splitManifesto() {
+    const el = this.manifestoRef.current; if (!el || el.dataset.split) return;
+    const words = el.textContent.trim().split(/\s+/);
+    el.textContent = '';
+    this.words = words.map((wd) => { const s = document.createElement('span'); s.textContent = wd + ' '; s.style.display = 'inline-block'; s.style.whiteSpace = 'pre-wrap'; s.style.opacity = this.reduced ? 1 : 0.18; s.style.transform = this.reduced ? 'none' : 'translateY(0.12em)'; s.style.transition = 'opacity var(--duration-enter) var(--ease-cinematic), transform var(--duration-enter) var(--ease-cinematic)'; el.appendChild(s); return s; });
+    el.dataset.split = '1';
+  }
+  updateScroll() {
+    const vh = window.innerHeight;
+    const m = this.manifestoRef.current;
+    if (m && this.words && !this.reduced) {
+      const r = m.getBoundingClientRect();
+      const prog = Math.max(0, Math.min(1, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
+      const lit = Math.round(prog * this.words.length);
+      if (lit !== this.lit) { this.lit = lit; this.words.forEach((s, i) => { const on = i < lit; s.style.opacity = on ? 1 : 0.18; s.style.transform = on ? 'none' : 'translateY(0.12em)'; }); }
+    }
+    this.updateStack();
+  }
+
+  /* --- work stack: cards shrink + dim slightly as the next one covers them --- */
+  cards() { const w = this.workRef.current; return w ? Array.from(w.children) : []; }
+  applyStackMode() {
+    const stack = this.props.stackCards ?? true;
+    this.cards().forEach((c) => { c.style.position = stack ? 'sticky' : 'relative'; c.style.transform = 'none'; c.style.opacity = 1; });
+    if (stack) this.updateStack();
+  }
+  updateStack() {
+    if (!(this.props.stackCards ?? true) || this.reduced || window.innerWidth < 1024) { this.cards().forEach((c) => { c.style.transform = 'none'; c.style.opacity = 1; }); return; }
+    const cards = this.cards();
+    cards.forEach((c, i) => {
+      const next = cards[i + 1]; if (!next) { c.style.transform = 'none'; return; }
+      const a = c.getBoundingClientRect(), b = next.getBoundingClientRect();
+      const prog = Math.max(0, Math.min(1, (a.bottom - b.top) / (a.height * 0.9)));
+      const scale = 1 - prog * 0.05 * (cards.length - 1 - i) / Math.max(1, cards.length - 1) - prog * 0.02;
+      c.style.transform = `scale(${scale.toFixed(4)})`;
+      c.style.opacity = String(1 - prog * 0.35);
+      c.style.boxShadow = prog > 0.02 ? 'var(--shadow-lg)' : 'var(--shadow-md)';
+    });
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Shadows" subtitle="Soft, cool, low-spread elevation" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 28px 24px; background: var(--surface-page); display: flex; gap: 22px; align-items: center; justify-content: space-between; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .box { width: 88px; height: 64px; background: var(--surface-card); border-radius: var(--radius-lg); }
+  .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .lbl b { color: var(--text-strong); display: block; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-xs)"></div><div class="lbl"><b>xs</b></div></div>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-sm)"></div><div class="lbl"><b>sm</b></div></div>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-md)"></div><div class="lbl"><b>md</b></div></div>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-lg)"></div><div class="lbl"><b>lg</b></div></div>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-xl)"></div><div class="lbl"><b>xl</b></div></div>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-brand)"></div><div class="lbl"><b>brand</b></div></div>
+</body>
+</html>

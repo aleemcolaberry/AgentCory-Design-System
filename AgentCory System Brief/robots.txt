@@ -1,0 +1,7 @@
+# aiuxaleem.com
+User-agent: *
+Allow: /
+# The previous version, the admin and the audit tool: never index
+Disallow: /Archive/
+Disallow: /Version%201/Admin.dc.html
+Disallow: /Version%201/Site%20Audit.dc.html

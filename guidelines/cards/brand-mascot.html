@@ -1,0 +1,23 @@
+<!-- @dsCard group="Brand" viewport="700x180" name="Mascot & Avatars" subtitle="The Cory icon tile: light, dark, transparent" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--surface-card); display: flex; gap: 32px; align-items: center; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+  .tile { width: 88px; height: 88px; border-radius: var(--radius-tile); }
+  .icon-wrap { width: 88px; height: 88px; display: flex; align-items: center; justify-content: center; }
+  img { display: block; }
+</style>
+</head>
+<body>
+  <div class="item"><img class="tile" src="../../assets/cory-tile.svg" alt="Cory tile light"><div class="lbl">tile · light</div></div>
+  <div class="item"><img class="tile" src="../../assets/cory-tile-dark.svg" alt="Cory tile dark"><div class="lbl">tile · dark</div></div>
+  <div class="item"><div class="icon-wrap"><img src="../../assets/cory-icon.svg" style="width:64px" alt="Cory icon"></div><div class="lbl">glyph only</div></div>
+  <div class="item"><img class="tile" src="../../assets/cory-tile.svg" style="width:48px;height:48px" alt=""><div class="lbl">avatar 48</div></div>
+  <div class="item"><img class="tile" src="../../assets/cory-tile-dark.svg" style="width:32px;height:32px" alt=""><div class="lbl">avatar 32</div></div>
+</body>
+</html>

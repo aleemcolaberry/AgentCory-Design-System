@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="HCD Maps Bento Post" description="4:5 social post: Journey, Service and Ecosystem maps for AI-native product design, with illustrated hero + author footer" -->
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script><script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}a{color:#1568D4;text-decoration:none}a:hover{color:#258AFD}</style></helmet>
+<button onClick="{{ download }}" style="position:fixed;inset-inline-end:24px;bottom:24px;z-index:50;display:flex;align-items:center;gap:10px;padding:14px 22px;border:0;border-radius:999px;background:#0B1F36;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;font-weight:700;white-space:nowrap;cursor:pointer;box-shadow:0 10px 28px rgba(11,31,54,.3)" style-hover="background:#1B4068">{{ dlLabel }}</button>
+<div class="fit-box" style="width:calc(1080px * var(--fit, 1));height:calc(1350px * var(--fit, 1));margin-inline:auto"><div class="fit-canvas" data-fit-canvas style="width:1080px;height:1350px;transform:scale(var(--fit, 1))"><div ref="{{ canvasRef }}" data-screen-label="HCD Maps Bento" style="width:1080px;height:1350px;box-sizing:border-box;padding:46px 52px 38px;background:#F4F5FA;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F36;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden">
+<div style="position:absolute;inset-inline-end:-200px;top:-240px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.2),rgba(41,190,221,0) 70%);pointer-events:none"></div>
+<div style="position:absolute;inset-inline-start:-220px;top:-200px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(37,138,253,.14),rgba(37,138,253,0) 70%);pointer-events:none"></div>
+
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;position:relative;padding:0 4px">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="align-self:flex-start;padding:6px 12px;border-radius:999px;background:#E6F1FF;color:#1568D4;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap">Human-centered AI design</span><h1 style="margin:0;font-size:44px;line-height:1.04;font-weight:800;letter-spacing:-.035em">Different&nbsp;maps.<br>A&nbsp;clearer&nbsp;product. <span style="background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">A&nbsp;bigger&nbsp;impact.</span></h1></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex:none;padding-bottom:6px"><div style="display:flex;align-items:flex-end;gap:14px"><div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span style="width:18px;height:18px;border-radius:50%;background:#258AFD"></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#1568D4;white-space:nowrap">Person</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span style="width:30px;height:30px;border-radius:50%;background:#29BEDD"></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#095A70;white-space:nowrap">Service</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span style="width:46px;height:46px;border-radius:50%;background:#1FB877"></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#127A50;white-space:nowrap">Ecosystem</span></div></div><span style="font-size:14px;font-weight:700;color:#5B6B80;">Zoom out, one map at a time →</span></div>
+</div>
+
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:18px 26px 14px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;gap:10px;position:relative">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px">
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 10px;border-radius:999px;background:#1568D4;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">01</span></sc-if><span style="font-size:28px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Journey Map</span></div><span style="font-size:17px;font-weight:500;line-height:1.35;color:#3B4253;">Goals, needs, emotions and moments across a journey.</span></div>
+<sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}"><div style="display:flex;align-items:center;gap:8px;padding-bottom:3px;flex-direction:column;align-items:flex-end;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5B6B80">Capture</span><span style="font-size:15px;font-weight:700;color:#1568D4">Intent · Context · Needs · Pain points · Opportunities</span></div></sc-if>
+</div>
+<div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:8px;position:relative">
+<div style="position:absolute;inset-inline-start:8.3%;inset-inline-end:8.3%;top:79px;border-top:2px dashed #91C4FE"></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative"><img src="./art/j_user.png" alt="User" style="height:70px;display:block"><span style="width:14px;height:14px;border-radius:50%;background:#0B1F36;box-shadow:0 0 0 4px #fff"></span><span style="font-size:16px;font-weight:800;white-space:nowrap">User intent</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative"><div style="height:70px;display:flex;align-items:flex-end"><img src="./art/j_explore.png" alt="" style="height:56px;display:block"></div><span style="width:14px;height:14px;border-radius:50%;background:#258AFD;box-shadow:0 0 0 4px #fff"></span><span style="font-size:16px;font-weight:800;white-space:nowrap">Explore</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative"><div style="height:70px;display:flex;align-items:flex-end"><img src="./art/j_learn.png" alt="" style="height:60px;display:block"></div><span style="width:14px;height:14px;border-radius:50%;background:#258AFD;box-shadow:0 0 0 4px #fff"></span><span style="font-size:16px;font-weight:800;white-space:nowrap">Learn</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative"><div style="height:70px;display:flex;align-items:flex-end"><img src="./art/j_try.png" alt="" style="height:64px;display:block"></div><span style="width:14px;height:14px;border-radius:50%;background:#258AFD;box-shadow:0 0 0 4px #fff"></span><span style="font-size:16px;font-weight:800;white-space:nowrap">Try</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative"><div style="height:70px;display:flex;align-items:flex-end"><img src="./art/j_value.png" alt="" style="height:52px;display:block"></div><span style="width:14px;height:14px;border-radius:50%;background:#258AFD;box-shadow:0 0 0 4px #fff"></span><span style="font-size:16px;font-weight:800;white-space:nowrap">Get value</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;position:relative"><div style="height:70px;display:flex;align-items:flex-end"><img src="./art/j_grow.png" alt="" style="height:56px;display:block"></div><span style="width:14px;height:14px;border-radius:50%;background:#29BEDD;box-shadow:0 0 0 4px #fff"></span><span style="font-size:16px;font-weight:800;white-space:nowrap">Grow</span></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:8px;align-items:center;padding:8px 0 2px;border-top:1px solid #EEF1F6">
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1568D4;text-align:center;white-space:nowrap">How it feels</span>
+<div style="display:flex;justify-content:center"><img src="./art/f_sad1.png" alt="" style="height:34px;display:block"></div>
+<div style="display:flex;justify-content:center"><img src="./art/f_sad2.png" alt="" style="height:36px;display:block"></div>
+<div style="display:flex;justify-content:center"><img src="./art/f_happy.png" alt="" style="height:34px;display:block"></div>
+<div style="display:flex;justify-content:center"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#1568D4;white-space:nowrap;padding:4px 8px;border-radius:999px;background:#E6F1FF">moment that matters</span></div>
+<div style="display:flex;justify-content:center"><img src="./art/f_sad3.png" alt="" style="height:34px;display:block"></div>
+</div>
+</div>
+
+<div style="flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;position:relative">
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:18px 22px 20px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;gap:12px;min-height:0">
+<div style="display:flex;flex-direction:column;gap:4px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 10px;border-radius:999px;background:#0E7F9E;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">02</span></sc-if><span style="font-size:28px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Service Map</span></div><span style="font-size:16px;font-weight:500;line-height:1.35;color:#3B4253;text-wrap:pretty">How people, touchpoints, AI agents and teams deliver value together.</span></div>
+<div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:0">
+<div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr) auto;align-items:start;column-gap:4px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="height:64px;display:flex;align-items:flex-end"><img src="./art/s_user.png" alt="" style="height:60px;display:block"></div><span style="font-size:14px;font-weight:800;white-space:nowrap">User</span></div>
+<div style="height:64px;display:flex;align-items:center"><div style="flex:1;border-top:2px solid #29BEDD"></div><span style="width:0;height:0;border-inline-start:7px solid #29BEDD;border-top:5px solid transparent;border-bottom:5px solid transparent"></span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="height:64px;display:flex;align-items:flex-end"><img src="./art/s_chat.png" alt="" style="height:44px;display:block"></div><span style="font-size:14px;font-weight:800;white-space:nowrap">Touchpoint</span></div>
+<div style="height:64px;display:flex;align-items:center"><div style="flex:1;border-top:2px solid #29BEDD"></div><span style="width:0;height:0;border-inline-start:7px solid #29BEDD;border-top:5px solid transparent;border-bottom:5px solid transparent"></span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="height:64px;display:flex;align-items:flex-end"><img src="./art/s_agent.png" alt="" style="height:64px;display:block"></div><span style="font-size:14px;font-weight:800;white-space:nowrap">AI Agent</span></div>
+<div style="height:64px;display:flex;align-items:center"><span style="width:0;height:0;border-inline-end:7px solid #29BEDD;border-top:5px solid transparent;border-bottom:5px solid transparent"></span><div style="flex:1;border-top:2px solid #29BEDD"></div><span style="width:0;height:0;border-inline-start:7px solid #29BEDD;border-top:5px solid transparent;border-bottom:5px solid transparent"></span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div style="height:64px;display:flex;align-items:flex-end"><img src="./art/s_team.png" alt="" style="height:50px;display:block"></div><span style="font-size:14px;font-weight:800;white-space:nowrap">Human Team</span></div>
+</div>
+<div style="display:flex;justify-content:center"><div style="height:18px;border-inline-start:2px dashed #95E1F0"></div></div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:10px 12px 12px;border:2px dashed #95E1F0;border-radius:18px;background:#F4FBFD">
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#095A70;text-align:center;">Backstage · powers every step</span>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><img src="./art/s_content.png" alt="" style="height:44px;display:block"><span style="font-size:14px;font-weight:700;line-height:1.2;white-space:nowrap">Content &amp; Knowledge</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><img src="./art/s_systems.png" alt="" style="height:44px;display:block"><span style="font-size:14px;font-weight:700;line-height:1.2;white-space:nowrap">Systems &amp; Tools</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><img src="./art/s_data.png" alt="" style="height:44px;display:block"><span style="font-size:14px;font-weight:700;line-height:1.2;white-space:nowrap">Data</span></div>
+</div>
+</div>
+</div>
+<sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}"><div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5B6B80">Handoffs</span><span style="font-size:15px;font-weight:700;color:#095A70">Context · Trust · Human oversight</span></div></sc-if>
+<div style="padding:14px 18px;border-radius:16px;background:#0B1F36;color:#fff;font-size:17px;font-weight:700;line-height:1.3">Orchestrate people + AI for seamless experiences.</div>
+</div>
+
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:18px 22px 20px;box-shadow:0 1px 3px rgba(11,31,54,.06);display:flex;flex-direction:column;gap:12px;min-height:0">
+<div style="display:flex;flex-direction:column;gap:4px"><div style="display:flex;align-items:center;gap:10px"><sc-if value="{{ showNumbers }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 10px;border-radius:999px;background:#0E7A4E;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700">03</span></sc-if><span style="font-size:28px;font-weight:800;letter-spacing:-.02em;white-space:nowrap">Ecosystem Map</span></div><span style="font-size:16px;font-weight:500;line-height:1.35;color:#3B4253;text-wrap:pretty">The bigger picture: people, products, partners, systems, and the risks and value between them.</span></div>
+<div style="flex:1;min-height:0;position:relative">
+<div style="position:absolute;inset-inline-start:14%;inset-inline-end:14%;top:14%;bottom:14%;border:2px dashed #9FE3C5;border-radius:50%"></div>
+<div style="position:absolute;inset-inline-start:50%;top:50%;width:104px;height:104px;transform:translate(calc(-50% * var(--dir, 1)),-50%);border-radius:50%;background:radial-gradient(circle,#CBF2E0,#DCF6EC 70%);box-shadow:0 0 0 6px #fff,0 0 0 8px #9FE3C5;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="./art/e_agent.png" alt="AI agent" style="height:78px;display:block;border-radius:50%"></div>
+<div style="position:absolute;inset-inline-start:50%;top:0;transform:translateX(calc(-50% * var(--dir, 1)));display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px #D6E6FA;display:flex;align-items:center;justify-content:center"><img src="./art/e_users.png" alt="" style="height:28px;display:block"></span><span style="font-size:13px;font-weight:800;white-space:nowrap">Users</span></div>
+<div style="position:absolute;inset-inline-start:14%;top:6%;transform:translateX(calc(-50% * var(--dir, 1)));display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px #D6E6FA;display:flex;align-items:center;justify-content:center"><img src="./art/e_partners.png" alt="" style="height:26px;display:block"></span><span style="font-size:13px;font-weight:800;white-space:nowrap">Partners</span></div>
+<div style="position:absolute;inset-inline-start:86%;top:6%;transform:translateX(calc(-50% * var(--dir, 1)));display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center"><span style="width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px #D6E6FA;display:flex;align-items:center;justify-content:center"><img src="./art/e_inst.png" alt="" style="height:28px;display:block"></span><span style="font-size:13px;font-weight:800;line-height:1.15;white-space:nowrap">Institutions<br>&amp; Governance</span></div>
+<div style="position:absolute;inset-inline-start:9%;top:50%;transform:translate(calc(-50% * var(--dir, 1)),-30%);display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center"><span style="width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px #D6E6FA;display:flex;align-items:center;justify-content:center"><img src="./art/e_models.png" alt="" style="height:22px;display:block"></span><span style="font-size:13px;font-weight:800;line-height:1.15;white-space:nowrap">AI Models<br>&amp; Platforms</span></div>
+<div style="position:absolute;inset-inline-start:91%;top:50%;transform:translate(calc(-50% * var(--dir, 1)),-30%);display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center"><span style="width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px #D6E6FA;display:flex;align-items:center;justify-content:center"><img src="./art/e_other.png" alt="" style="height:28px;display:block"></span><span style="font-size:13px;font-weight:800;line-height:1.15;white-space:nowrap">Other<br>Products</span></div>
+<div style="position:absolute;inset-inline-start:14%;bottom:0;transform:translateX(calc(-50% * var(--dir, 1)));display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px #D6E6FA;display:flex;align-items:center;justify-content:center"><img src="./art/e_datasrc.png" alt="" style="height:28px;display:block"></span><span style="font-size:13px;font-weight:800;white-space:nowrap">Data Sources</span></div>
+<div style="position:absolute;inset-inline-start:50%;bottom:0;transform:translateX(calc(-50% * var(--dir, 1)));display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:48px;height:48px;border-radius:50%;background:#DCF6EC;box-shadow:0 0 0 2px #1FB877;display:flex;align-items:center;justify-content:center"><img src="./art/e_product.png" alt="" style="height:28px;display:block"></span><span style="font-size:13px;font-weight:800;white-space:nowrap;color:#127A50">Our Product</span></div>
+<div style="position:absolute;inset-inline-start:86%;bottom:0;transform:translateX(calc(-50% * var(--dir, 1)));display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px #D6E6FA;display:flex;align-items:center;justify-content:center"><img src="./art/e_community.png" alt="" style="height:28px;display:block"></span><span style="font-size:13px;font-weight:800;white-space:nowrap">Community</span></div>
+</div>
+<div style="padding:14px 18px;border-radius:16px;background:#0B1F36;color:#fff;font-size:17px;font-weight:700;line-height:1.3">Find the connections. Design a healthier, more open ecosystem.</div>
+</div>
+</div>
+
+<div style="height:220px;flex:none;border-radius:24px;background:linear-gradient(135deg,#E6F1FF,#E6F8FC);border:1px solid #D6E6FA;display:grid;grid-template-columns:340px minmax(0,1fr);position:relative;overflow:hidden">
+<img src="./art/hero.png" alt="Designer sketching maps at her desk" style="position:absolute;inset-inline-start:-8px;bottom:-6px;height:226px;display:block">
+<div></div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:18px;align-items:center;padding:20px 24px 20px 12px;position:relative">
+<div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+<div style="display:flex;gap:10px;align-items:center"><img src="./art/bulb.png" alt="" style="height:50px;display:block;flex:none"><span style="font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.1;">From insights to design<br>for an <span style="color:#1568D4">AI-native future.</span></span></div>
+<div style="display:grid;grid-template-columns:repeat(2,max-content);gap:10px 22px">
+<div style="display:flex;gap:9px;align-items:center"><span style="width:22px;height:22px;border-radius:7px;background:#1568D4;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">✓</span><span style="font-size:16px;font-weight:700;white-space:nowrap">More human-centered AI</span></div>
+<div style="display:flex;gap:9px;align-items:center"><span style="width:22px;height:22px;border-radius:7px;background:#1568D4;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">✓</span><span style="font-size:16px;font-weight:700;white-space:nowrap">Better decisions</span></div>
+<div style="display:flex;gap:9px;align-items:center"><span style="width:22px;height:22px;border-radius:7px;background:#1568D4;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">✓</span><span style="font-size:16px;font-weight:700;white-space:nowrap">Seamless experiences</span></div>
+<div style="display:flex;gap:9px;align-items:center"><span style="width:22px;height:22px;border-radius:7px;background:#1568D4;color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">✓</span><span style="font-size:16px;font-weight:700;white-space:nowrap">Greater, lasting impact</span></div>
+</div>
+</div>
+<img src="./art/mug.png" alt="Mug: better experiences for people and AI together" style="height:140px;display:block">
+</div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:14px;border-top:1px solid #DCE1EA;position:relative">
+<span style="display:flex;align-items:center;gap:12px;flex:none"><span style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#258AFD,#29BEDD);display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="repeat2W" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" style="width:22px;height:22px;display:block"></span><span style="font-size:18px;font-weight:800">Save for later &amp; Repost</span></span>
+<div style="display:flex;align-items:center;gap:14px;flex:none"><div style="display:flex;flex-direction:column;gap:2px;align-items:flex-end;text-align:end;"><span style="font-size:18px;font-weight:800">Md&nbsp;Abdul&nbsp;Aleem</span><span style="font-size:14px;color:#5B6B80">Senior&nbsp;Product&nbsp;Designer&nbsp;@Colaberry</span></div><image-slot id="hcd-maps-author-avatar" shape="circle" placeholder="+" style="width:56px;height:56px;flex:none;display:block;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE1EA"></image-slot></div>
+</div>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;showNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { busy: false };
+  canvasRef = React.createRef();
+  icons = {};
+  applyIcons() {
+    const root = this.canvasRef.current; if (!root) return;
+    root.querySelectorAll('img[data-icon]').forEach(img => { const u = this.icons[img.dataset.icon]; if (u && img.src !== u) img.src = u; });
+  }
+  componentDidUpdate() { this.applyIcons(); }
+  componentDidMount() {
+    fetch('https://unpkg.com/lucide-static@0.469.0/icons/repeat-2.svg').then(r => r.text()).then(t => {
+      this.icons.repeat2W = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t.replace(/currentColor/g, '#ffffff'));
+      this.applyIcons();
+    }).catch(() => {});
+  }
+  download = async () => {
+    const node = this.canvasRef.current;
+    if (!node || !window.htmlToImage || this.state.busy) return;
+    this.setState({ busy: true });
+    try {
+      await document.fonts.ready;
+      const slot = node.querySelector('image-slot');
+      let stand = null;
+      if (slot) {
+        const si = slot.shadowRoot && [...slot.shadowRoot.querySelectorAll('img')].find(i => i.src && i.naturalWidth && getComputedStyle(i).display !== 'none');
+        if (si) {
+          stand = document.createElement('img');
+          stand.src = si.src;
+          stand.style.cssText = 'width:56px;height:56px;border-radius:50%;object-fit:cover;display:block;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3px #DCE1EA';
+          slot.parentNode.insertBefore(stand, slot);
+          await stand.decode().catch(() => {});
+        }
+        slot.style.display = 'none';
+      }
+      let url;
+      try {
+        url = await window.htmlToImage.toPng(node, { pixelRatio: 2, width: 1080, height: 1350, filter: el => el.tagName !== 'IMAGE-SLOT' });
+      } finally {
+        if (stand) stand.remove();
+        if (slot) slot.style.display = 'block';
+      }
+      const a = document.createElement('a');
+      a.href = url; a.download = 'hcd-maps-bento.png';
+      document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) { console.error('PNG export failed', e); }
+    this.setState({ busy: false });
+  };
+  renderVals() {
+    const p = this.props;
+    return { canvasRef: this.canvasRef, download: this.download, dlLabel: this.state.busy ? 'Exporting…' : 'Download PNG ↓', showNumbers: p.showNumbers ?? true, showNotes: p.showNotes ?? true };
+  }
+}
+</script>
+</body>
+</html>

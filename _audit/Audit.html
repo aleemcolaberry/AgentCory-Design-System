@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Heuristic audit harness</title>
+<style>body{margin:0;font:11px/1.35 ui-monospace,Menlo,monospace;color:#0B1F36;background:#fff;padding:8px}#stage{position:fixed;inset-inline-end:0;top:0;width:200px;height:140px;overflow:hidden;opacity:.4;pointer-events:none}#stage iframe{transform:scale(.15);transform-origin:top left}#out{word-break:break-word;columns:2;column-gap:16px}#out div{padding:1px 0;border-bottom:1px solid #E2E5EE;break-inside:avoid}#details{margin-top:10px;columns:2;column-gap:16px}.blk{break-inside:avoid;margin-bottom:8px;padding:6px;border:1px solid #D5D9E4;border-radius:6px}.blk b{display:block;color:#1568D4;margin-bottom:2px}</style>
+</head>
+<body>
+<div id="out"></div>
+<div id="details"></div>
+<div id="stage"></div>
+<script>
+window.AUDIT_PAGES = (new URLSearchParams(location.search).get('set') === 'type' ? [
+ ['pages/Aleem 90-Day Saudi Career Plan.html','1280x900',3000],['docs/NotebookLM Style Guide.html','1280x900',2500],['exports/mcp-linkedin/MCP Context Bento v2.html','1280x1500',3000],['exports/ux-laws-linkedin/UX Laws Bento v2.html','1280x1500',3000],['templates/portfolio/Portfolio.dc.html','1280x900',4500],['templates/landing-page/LandingPage.dc.html','1280x900',4000],['templates/pitch-deck/PitchDeck.dc.html','1280x900',4000],['templates/one-pager/OnePager.dc.html','1000x1200',4000],['templates/outreach-email/OutreachEmail.dc.html','800x1200',3500],['templates/devday-recap-bento/DevdayRecapBento.dc.html','1280x1500',4000]
+] : new URLSearchParams(location.search).get('set') === 'templates' ? [
+ ['templates/ai-books-bento/AiBooksBento.dc.html','1280x1500',4000],['templates/ai-books-carousel/AiBooksCarousel.dc.html','1280x1500',4500],['templates/before-after-ai-bento/BeforeAfterAiBento.dc.html','1280x1500',4000],['templates/claude-skills-bento/ClaudeSkillsBento.dc.html','1280x1500',4000],['templates/component-specs-bento/ComponentSpecsBento.dc.html','1280x1500',4000],['templates/component-specs-cover/ComponentSpecsCover.dc.html','1280x1500',4000],['templates/design-feedback-bento/DesignFeedbackBento.dc.html','1280x1500',4000],['templates/figma-plugins-bento/FigmaPluginsBento.dc.html','1280x1500',4000],['templates/hcd-funnel-bento/HcdFunnelBento.dc.html','1280x1500',4000],['templates/hcd-maps-bento/HcdMapsBento.dc.html','1280x1500',4000],['templates/mcp-bento/McpBento.dc.html','1280x1500',4000],['templates/research-inventory-bento/ResearchInventoryBento.dc.html','1280x1500',4000],['templates/ui-ux-bento/UiUxBento.dc.html','1280x1500',4000],['templates/ux-audit-tools-bento/UxAuditToolsBento.dc.html','1280x1500',4000],['templates/ux-roles-2026-bento/UxRoles2026Bento.dc.html','1280x1500',4000],['templates/ux-books-carousel/UxBooksCarousel.dc.html','1280x1500',4500],['templates/devday-recap-bento/DevdayRecapBento.dc.html','1280x1500',4000],
+ ['templates/landing-page/LandingPage.dc.html','1280x900',4000],['templates/one-pager/OnePager.dc.html','1000x1200',4000],['templates/outreach-email/OutreachEmail.dc.html','800x1200',3500],['templates/pitch-deck/PitchDeck.dc.html','1280x900',4000],['templates/portfolio/Portfolio.dc.html','1280x900',4500]
+] : new URLSearchParams(location.search).get('set') === 'mobile' ? [
+ ['templates/landing-page/LandingPage.dc.html','390x844',4000],['templates/portfolio/Portfolio.dc.html','390x844',4500],['index.html','390x844',4000],['ui_kits/website/index.html','390x844',4000],['ui_kits/roi-calculator/index.html','390x844',3500],['docs/NotebookLM Style Guide.html','390x844',2500]
+] : new URLSearchParams(location.search).get('set') === 'responsive' ? [360,768,1024,1440].flatMap(w => [
+ ['index.html',w+'x800',4000],['docs/NotebookLM Style Guide.html',w+'x800',2500],['ui_kits/website/index.html',w+'x800',3500],['ui_kits/roi-calculator/index.html',w+'x800',3000],['templates/landing-page/LandingPage.dc.html',w+'x800',3500],['templates/portfolio/Portfolio.dc.html',w+'x800',4000],['templates/outreach-email/OutreachEmail.dc.html',w+'x800',3000],['pages/Aleem 90-Day Saudi Career Plan.html',w+'x800',3000]
+]) : new URLSearchParams(location.search).get('set') === 'fit' ? [
+ ['pages/Aleem 90-Day Saudi Career Plan.html','360x800',3000],['pages/Aleem 90-Day Saudi Career Plan.html','768x800',3000],['index.html','640x800',4000],['ui_kits/website/index.html','400x800',3500],
+ ['templates/mcp-bento/McpBento.dc.html','390x800',3500],['templates/ux-books-carousel/UxBooksCarousel.dc.html','390x800',4000],['templates/component-specs-bento/ComponentSpecsBento.dc.html','390x800',3500],['templates/pitch-deck/PitchDeck.dc.html','390x800',3500],['templates/one-pager/OnePager.dc.html','390x800',3500],['templates/pitch-deck/PitchDeck.dc.html','1024x800',3500],['templates/hcd-maps-bento/HcdMapsBento.dc.html','768x800',3500]
+] : new URLSearchParams(location.search).get('set') === 'one' ? [
+ [new URLSearchParams(location.search).get('page'), new URLSearchParams(location.search).get('vp') || '1280x1500', 4000]
+] : [
+ ['guidelines/cards/start-here.html','900x600'],['guidelines/cards/start-which-control.html','900x600'],['guidelines/cards/start-states.html','900x600'],['guidelines/cards/start-direction.html','900x600'],
+ ['guidelines/cards/brand-logo.html','700x400'],['guidelines/cards/brand-mascot.html','700x400'],['guidelines/cards/brand-voice.html','700x400'],
+ ['guidelines/cards/color-navy.html','700x400'],['guidelines/cards/color-blue.html','700x400'],['guidelines/cards/color-cyan.html','700x400'],['guidelines/cards/color-neutral.html','700x400'],['guidelines/cards/color-semantic.html','700x400'],['guidelines/cards/color-gradient.html','700x400'],['guidelines/cards/color-dark.html','700x400'],['guidelines/cards/color-contrast.html','700x400'],
+ ['guidelines/cards/type-display.html','700x400'],['guidelines/cards/type-headings.html','700x400'],['guidelines/cards/type-body.html','700x400'],['guidelines/cards/type-metric.html','700x400'],['guidelines/cards/type-rules.html','700x430'],
+ ['guidelines/cards/spacing-scale.html','700x400'],['guidelines/cards/spacing-radius.html','700x400'],['guidelines/cards/spacing-shadow.html','700x400'],['guidelines/cards/spacing-responsive.html','700x400'],
+ ['guidelines/cards/motion-reveal.html','700x400'],['guidelines/cards/motion-scale.html','700x400'],
+ ['components/core/core.card.html','700x400'],['components/surfaces/surfaces.card.html','700x400'],['components/content/content.card.html','700x400'],['components/forms/forms.card.html','700x400'],['components/feedback/feedback.card.html','700x400'],['components/status/status.card.html','700x400'],
+ ['ui_kits/website/index.html','1280x900',4000],['ui_kits/roi-calculator/index.html','1280x900',3500],
+ ['index.html','1280x900',4500],['docs/NotebookLM Style Guide.html','1280x900',2500],['thumbnail.html','1280x854',1500]
+]).map(([path, viewport, wait]) => ({ path: '../' + path, viewport, wait }));
+</script>
+<script src="audit.js"></script>
+</body>
+</html>

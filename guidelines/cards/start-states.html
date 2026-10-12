@@ -1,0 +1,48 @@
+<!-- @dsCard group="Start here" viewport="700x330" name="States: every surface answers six" subtitle="Default, loading, empty, error, partial, success: which component, and the rules that keep them kind" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: var(--surface-page); display: grid; grid-template-columns: 1.25fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { body { grid-template-columns: 1fr; } }
+  table { width: 100%; border-collapse: collapse; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; }
+  th, td { text-align: start; padding: 7px 11px; font-size: 11.5px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+  th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-subtle); font-weight: 600; background: var(--surface-sunken); }
+  td b { color: var(--text-strong); font-weight: 700; }
+  td { color: var(--text-body); line-height: 1.4; }
+  tr:last-child td { border-bottom: 0; }
+  .st { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-inline-end: 6px; vertical-align: middle; }
+  .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 8px; }
+  .rules { display: grid; gap: 8px; }
+  .rule { display: flex; gap: 10px; align-items: flex-start; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 9px 12px; }
+  .rule i { flex: none; width: 22px; height: 22px; border-radius: 999px; background: var(--gradient-brand-deep); color: #fff; font: 700 11px/22px var(--font-sans); text-align: center; font-style: normal; }
+  .rule b { display: block; font-size: 12.5px; color: var(--text-strong); }
+  .rule span { font-size: 11.5px; color: var(--text-muted); line-height: 1.45; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="lbl">The six states, and what renders them</div>
+    <table>
+      <tr><th style="width:24%">State</th><th>Use</th></tr>
+      <tr><td><span class="st" style="background:var(--navy-800)"></span><b>Default</b></td><td>The component itself. One primary action per view.</td></tr>
+      <tr><td><span class="st" style="background:var(--blue-500)"></span><b>Loading</b></td><td><b>Skeleton</b> when layout is known · <b>Spinner</b> / <b>Button loading</b> for one action · <b>ProgressBar</b> when measurable · <b>TypingIndicator</b> in chat. Region gets <code>aria-busy</code>.</td></tr>
+      <tr><td><span class="st" style="background:var(--cyan-500)"></span><b>Empty</b></td><td><b>EmptyState</b>: what belongs here + the one action that fills it. Cory voice on conversational surfaces, neutral on admin.</td></tr>
+      <tr><td><span class="st" style="background:var(--red-500)"></span><b>Error</b></td><td>Field: <code>error</code> prop (Input, Select, Checkbox, Toggle) · Region: <b>Alert danger</b> + Retry · Chat: <code>status="failed"</code> + Retry. Say how to fix it.</td></tr>
+      <tr><td><span class="st" style="background:var(--amber-500)"></span><b>Partial</b></td><td><b>Alert warning</b> (stale data, degraded sync) · Input <code>warning</code> · Select <code>emptyMessage</code> · disabled with a visible reason.</td></tr>
+      <tr><td><span class="st" style="background:var(--green-500)"></span><b>Success</b></td><td><b>Toast</b> after an action (6 s, Undo if reversible) · <b>Alert success</b> when it must stay · Input / Select <code>success</code>.</td></tr>
+    </table>
+  </div>
+  <div>
+    <div class="lbl">Rules that keep states kind</div>
+    <div class="rules">
+      <div class="rule"><i>1</i><div><b>Explain, don't disable</b><span>Keep submit enabled and show the field error. Disable only when the reason is visible beside the control.</span></div></div>
+      <div class="rule"><i>2</i><div><b>Validate on blur, summarise on submit</b><span>Never on every keystroke. On submit, focus the first invalid field; its message has <code>role="alert"</code>.</span></div></div>
+      <div class="rule"><i>3</i><div><b>Nothing silent, nothing blocking</b><span>Every wait over 300 ms shows a state; every change is announced (role=status / aria-live). Destructive actions confirm via <b>Dialog tone="danger"</b>, never a bare "OK".</span></div></div>
+      <div class="rule"><i>4</i><div><b>Never motion or colour alone</b><span>Spinners fall back to dots + label under reduced motion; every tone carries a glyph and words.</span></div></div>
+    </div>
+  </div>
+</body>
+</html>

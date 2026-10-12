@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case studies · AIUXAleem</title>
+  <meta name="description" content="Three products, one method: understand the workflow, redesign it, build it with AI, validate it with people.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIUXAleem">
+  <meta property="og:title" content="Case studies · AIUXAleem">
+  <meta property="og:description" content="Three products, one method: understand the workflow, redesign it, build it with AI, validate it with people.">
+  <meta property="og:image" content="https://aiuxaleem.com/assets/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <script src="boot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Noto+Kufi+Arabic:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="../shared/site.css">
+  <script src="../_ds/agentcory-design-system-ebeb8591-9d98-4009-838b-178d8ac72f26/_ds_bundle.js"></script>
+  <script src="data.js"></script>
+</helmet>
+<dc-import name="Header" current="cases" hint-size="100%,72px"></dc-import>
+<main id="main" tabindex="-1" style="position:relative; z-index:var(--z-raised); outline:none;">
+  <section aria-labelledby="cs-title" style="position:relative; overflow:clip; padding-block:var(--section-y) var(--space-12);">
+    <div aria-hidden="true" class="cory-glow-drift" style="position:absolute; inset-block-start:-30%; inset-inline-end:-10%; inline-size:min(60vw, 640px); aspect-ratio:1; background:var(--glow-cyan); pointer-events:none;"></div>
+    <div class="cory-container" style="position:relative; display:grid; gap:var(--space-5);">
+      <p data-hero-el class="cory-overline" style="margin:0;">{{ c.over }}</p>
+      <h1 id="cs-title" data-hero-title style="margin:0; max-inline-size:14ch; font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-hero); line-height:var(--leading-display); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ c.t1 }}<span style="background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ c.t2 }}</span></h1>
+      <p data-hero-el style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-fluid-lead); line-height:var(--leading-relaxed); color:var(--text-body);">{{ c.lead }}</p>
+      <div data-hero-el data-hero-ctas style="display:flex; gap:var(--space-3); flex-wrap:wrap;"><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="primary" size="lg" href="{{ s.booking }}" target="_blank" rel="noopener" hint-size="auto,52px">{{ t.call }}</x-import><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="lg" href="{{ s.resume }}" target="_blank" rel="noopener" hint-size="auto,52px">{{ t.resume }}</x-import></div>
+    </div>
+  </section>
+  <section aria-label="{{ c.over }}" style="padding-block:0 var(--section-y);">
+    <ol class="cory-container" style="display:grid; gap:var(--space-16);">
+      <sc-for list="{{ items }}" as="k" hint-placeholder-count="3">
+        <li data-reveal>
+          <a href="{{ k.href }}" data-case-row data-stack style="display:grid; grid-template-columns:minmax(0, 1.25fr) minmax(0, 1fr); gap:var(--space-6) var(--space-12); align-items:center; color:inherit; text-decoration:none;">
+            <span data-tilt style="display:block; border-radius:var(--radius-2xl); transform-style:preserve-3d;"><span data-img-reveal style="position:relative; display:block; aspect-ratio:var(--aspect-case); border-radius:var(--radius-2xl); overflow:hidden; background:var(--gradient-ink); box-shadow:var(--shadow-xl);"><sc-if value="{{ k.cover }}" hint-placeholder-val="{{ false }}"><img data-tilt-media srcset="{{ k.ss }}" sizes="(max-width: 767px) 92vw, 50vw" src="{{ k.cover }}" alt="" loading="lazy" decoding="async" style="position:absolute; inset:-5%; inline-size:110%; block-size:110%; object-fit:cover; object-position:top center;"></sc-if></span></span>
+            <span style="display:grid; gap:var(--space-4); align-content:center;">
+              <span style="display:flex; align-items:baseline; gap:var(--space-4);"><bdi aria-hidden="true" style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-metric-lg); line-height:var(--leading-none); background:var(--gradient-text); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ k.number }}</bdi><span style="font-family:var(--font-mono); font-size:var(--text-mono-sm); letter-spacing:var(--tracking-wide); text-transform:uppercase; color:var(--text-muted);">{{ k.category }} · {{ k.read }}</span></span>
+              <span style="font-family:var(--font-display); font-weight:var(--weight-extrabold); font-size:var(--text-fluid-title); line-height:var(--leading-snug); letter-spacing:var(--tracking-tighter); color:var(--text-strong);">{{ k.title }}</span>
+              <span style="font-size:var(--text-body-lg); line-height:var(--leading-relaxed); color:var(--text-body); max-inline-size:var(--measure-lead);">{{ k.lead }}</span>
+              <span style="display:inline-flex; align-items:center; gap:var(--space-2); min-block-size:var(--tap-target); font-weight:var(--weight-semibold); color:var(--text-link);"><span>{{ t.readCase }}</span><svg data-dir-icon width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+            </span>
+          </a>
+        </li>
+      </sc-for>
+    </ol>
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}"><div class="cory-container"><div data-empty-state style="display:grid; gap:var(--space-4); justify-items:start; padding:var(--space-8); border-radius:var(--radius-xl); background:var(--surface-card); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);"><span aria-hidden="true" style="display:grid; place-items:center; inline-size:44px; block-size:44px; border-radius:var(--radius-md); background:var(--gradient-ink); color:var(--on-ink-strong); flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg></span><h2 style="margin:0; font-family:var(--font-display); font-size:var(--text-h3); font-weight:var(--weight-extrabold); line-height:var(--leading-heading); letter-spacing:var(--tracking-tight); color:var(--text-strong); text-wrap:balance;">{{ c.none }}</h2><p style="margin:0; max-inline-size:var(--measure-lead); font-size:var(--text-body); line-height:var(--leading-relaxed); color:var(--text-body); text-wrap:pretty;">{{ c.noneP }}</p><x-import component-from-global-scope="DesignSystem_ebeb85.Button" variant="secondary" size="md" href="Work.dc.html" hint-size="auto,44px">{{ c.toWork }}</x-import></div></div></sc-if>
+  </section>
+</main>
+<dc-import name="Footer" hint-size="100%,560px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  static C = { en: { over: 'Selected work', t1: 'Three products, ', t2: 'one method.', lead: 'Understand the workflow, redesign it, build it with AI, validate it with people. Each case below is that method applied to a different kind of trust problem.', none: 'Case studies are being written up', noneP: 'The projects behind them are already live. Start there.', toWork: 'See the projects' },
+    ar: { over: 'أعمال مختارة', t1: 'ثلاثة منتجات، ', t2: 'منهج واحد.', lead: 'افهم سير العمل، أعد تصميمه، ابنه بالذكاء الاصطناعي، وتحقّق منه مع الناس. كل حالة أدناه هي هذا المنهج مطبّقًا على مشكلة ثقة مختلفة.', none: 'أكتب دراسات الحالة الآن', noneP: 'المشاريع التي تقف خلفها متاحة بالفعل. ابدأ من هناك.', toWork: 'عرض المشاريع' } };
+    componentDidMount() { this.off = window.AX && window.AX.on(() => this.forceUpdate()); this.mo = new MutationObserver(() => this.forceUpdate()); this.mo.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] }); import('./motion.js').then(m => m.boot('case-studies')); }
+  componentWillUnmount() { this.off && this.off(); this.mo && this.mo.disconnect(); }
+  renderVals() {
+    const AX = window.AX; if (!AX) return { c: {}, t: {}, s: {}, items: [] };
+    const lang = AX.lang();
+    const all = AX.list('cases');
+    return { c: Component.C[lang], t: AX.UI[lang], s: AX.data().site, empty: !all.length,
+      items: all.map(k => ({ number: k.number, title: AX.tx(k, 'title'), category: AX.tx(k, 'category'), read: k.read, lead: AX.tx(k, 'lead'), cover: k.cover, ss: AX.srcset(k.cover), href: 'Case Study.dc.html?slug=' + k.slug })) };
+  }
+}
+</script>
+</body>
+</html>
