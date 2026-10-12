@@ -68,7 +68,7 @@ section.part>p.lead{font-size:var(--text-fluid-lead);line-height:var(--leading-r
 .set small{display:block;font-size:var(--text-micro);font-weight:var(--weight-bold);letter-spacing:.12em;text-transform:uppercase;color:var(--text-subtle)}
 .set b{font-size:var(--text-ui);font-weight:var(--weight-semibold);color:var(--text-strong)}
 .prompt{margin-top:12px;border-radius:var(--radius-lg);background:var(--gradient-ink);color:var(--on-ink-body);overflow:hidden}
-.prompt .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 20px;border-bottom:1px solid var(--on-ink-border)}
+.prompt .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 20px;border-bottom:1px solid var(--on-ink-border)}
 .prompt .bar>span{font-size:var(--text-overline);font-weight:var(--weight-bold);letter-spacing:var(--tracking-overline);text-transform:uppercase;color:var(--on-ink-link)}
 .prompt pre{margin:0;padding:18px 20px 20px;font-family:var(--font-sans);font-weight:var(--weight-regular);font-size:var(--text-ui);line-height:var(--leading-relaxed);color:var(--on-ink-body);max-width:72ch;white-space:pre-wrap;overflow-wrap:break-word}
 .copy{flex:none;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;border-radius:var(--radius-pill);min-height:36px;padding:8px 16px;font:var(--weight-semibold) var(--text-ui-sm) var(--font-sans);background:var(--gradient-brand-deep);color:var(--text-on-brand);box-shadow:var(--shadow-brand);transition:transform var(--duration-base) var(--ease-spring),filter var(--duration-base) var(--ease-out),background var(--duration-base) var(--ease-out)}
@@ -77,7 +77,7 @@ section.part>p.lead{font-size:var(--text-fluid-lead);line-height:var(--leading-r
 .copy:active{transform:scale(var(--press-scale))}
 .copy .ck{display:none;width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-3px}
 .copy.done{background:var(--green-700);box-shadow:none}.copy.done .ck{display:inline-block}
-.tip{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:10px;padding:12px 14px;border-radius:var(--radius-md);background:var(--surface-info);border:1px solid var(--border-info);color:var(--navy-700);font-size:var(--text-body-sm)}
+.tip{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:10px;padding:12px 14px;border-radius:var(--radius-md);background:var(--surface-info);border:1px solid var(--border-info);color:var(--text-strong);font-size:var(--text-body-sm)}
 .tip b{color:var(--text-info);flex:none}
 .palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 .sw{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-subtle);background:var(--surface-card)}
@@ -88,8 +88,8 @@ section.part>p.lead{font-size:var(--text-fluid-lead);line-height:var(--leading-r
 .rules ul{margin:0;padding-inline-start:18px;color:var(--text-muted)}.rules li{margin:5px 0}
 .fix{display:grid;gap:12px}
 .fx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:18px;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-lg);padding:18px 22px}
-.fx b{color:var(--text-strong);font-weight:var(--weight-semibold)}.fx p{margin:0;color:var(--text-muted)}
-.fx code{display:inline;font-family:var(--font-mono);font-size:var(--text-mono);font-weight:var(--weight-medium);background:var(--surface-sunken);padding:2px 6px;border-radius:var(--radius-xs);color:var(--navy-700);white-space:normal;overflow-wrap:anywhere;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.fx b{color:var(--text-strong);font-weight:var(--weight-semibold)}.fx p{margin:0;color:var(--text-muted);padding-inline-end:6px}
+.fx code{display:inline;font-family:var(--font-mono);font-size:var(--text-mono);font-weight:var(--weight-medium);background:var(--surface-sunken);padding:2px 6px;border-radius:var(--radius-xs);color:var(--text-strong);white-space:normal;overflow-wrap:anywhere;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 @media (max-width:640px){.fx{grid-template-columns:1fr;gap:6px}}
 .ex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 @media (max-width:760px){.ex{grid-template-columns:1fr}}
@@ -153,7 +153,7 @@ footer{border-top:1px solid var(--border-subtle);padding:28px 0;color:var(--text
 <p class="lead">Roughly what on-brand output looks like when the prompts work. Use these to judge your results. The numbers are illustrative only.</p>
 <div class="ex" data-stagger="60">
 <figure class="exc">
-<div class="frame r169">
+<div class="frame r169" data-theme="light">
 <div class="glow" style="width:60%;aspect-ratio:1;top:-30%;inset-inline-end:-18%"></div>
 <div style="position:absolute;inset:0;padding:5cqw 6cqw;display:flex;flex-direction:column;gap:2cqw">
 <span class="mk-pill">AI impact</span>
@@ -167,7 +167,7 @@ footer{border-top:1px solid var(--border-subtle);padding:28px 0;color:var(--text
 <figcaption><b>Video Overview</b><span>Stat scene</span></figcaption>
 </figure>
 <figure class="exc tall">
-<div class="frame" style="aspect-ratio:3/4.4">
+<div class="frame" data-theme="light" style="aspect-ratio:3/4.4">
 <div class="glow" style="width:80%;aspect-ratio:1;top:-18%;inset-inline-end:-30%"></div>
 <div class="glow" style="width:70%;aspect-ratio:1;bottom:8%;inset-inline-start:-35%;opacity:.7"></div>
 <div style="position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;gap:3.6cqw">
@@ -185,7 +185,7 @@ footer{border-top:1px solid var(--border-subtle);padding:28px 0;color:var(--text
 <figcaption><b>Infographic</b><span>Portrait, Standard detail</span></figcaption>
 </figure>
 <figure class="exc">
-<div class="frame r169" style="background:linear-gradient(160deg,#12304F,#0B1F36);border-color:#12304F">
+<div class="frame r169" data-theme="light" style="background:linear-gradient(160deg,#12304F,#0B1F36);border-color:#12304F">
 <div class="glow" style="width:55%;aspect-ratio:1;bottom:-40%;inset-inline-end:-12%;opacity:.9"></div>
 <div style="position:absolute;inset:0;padding:6cqw;display:flex;flex-direction:column;justify-content:center;gap:2.4cqw">
 <span class="mk-pill" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#5FD0E8">Section 02</span>

@@ -9,7 +9,7 @@
   @media (max-width: 560px) { body { grid-template-columns: 1fr; } }
   .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 10px; }
   .row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
-  .row b { width: 84px; color: var(--text-strong); font-weight: 600; }
+  .row b { flex: none; min-width: 84px; color: var(--text-strong); font-weight: 600; }
   .track { flex: 1; height: 8px; border-radius: 4px; background: var(--surface-sunken); position: relative; overflow: hidden; }
   .track i { position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 22%; border-radius: 4px; background: var(--gradient-brand-deep); animation: slide 2.4s infinite; }
   @keyframes slide { 0%,15% { inset-inline-start: 0 } 60%,100% { inset-inline-start: 78% } }
@@ -25,7 +25,7 @@
     <div class="row"><b>ease-out</b><div class="track"><i style="animation-timing-function:var(--ease-out)"></i></div></div>
     <div class="row"><b>ease-in-out</b><div class="track"><i style="animation-timing-function:var(--ease-in-out)"></i></div></div>
     <div class="row"><b>ease-spring</b><div class="track"><i style="animation-timing-function:var(--ease-spring)"></i></div></div>
-    <div class="row"><b>ease-cinematic</b><div class="track"><i style="animation-timing-function:var(--ease-cinematic)"></i></div></div>
+    <div class="row"><b style="white-space:nowrap">ease-cinematic</b><div class="track"><i style="animation-timing-function:var(--ease-cinematic)"></i></div></div>
     <div class="names"><b>durations</b> instant 80 · fast 140 · base 220 · slow 380 · enter 600 · cinematic 900 · epic 1200 · marquee 32s</div>
   </div>
   <div>

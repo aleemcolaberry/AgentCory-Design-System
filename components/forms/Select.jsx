@@ -10,7 +10,7 @@ export function Select({ label, hint, error, success, required = false, disabled
   const msgId = fieldId ? `${fieldId}-msg` : undefined;
   const empty = !loading && options.length === 0;
   const inert = disabled || loading || empty;
-  const border = error ? 'var(--fill-danger)' : success ? 'var(--fill-success)' : focus ? 'var(--border-focus)' : 'var(--border-strong)';
+  const border = error ? 'var(--fill-danger)' : success ? 'var(--fill-success)' : focus ? 'var(--border-focus)' : 'var(--border-interactive)';
   const msg = error || success || hint;
   const msgColor = error ? 'var(--text-danger)' : success ? 'var(--text-success)' : 'var(--text-muted)';
   const ph = loading ? loadingMessage : empty ? emptyMessage : placeholder;

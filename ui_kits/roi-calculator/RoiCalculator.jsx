@@ -4,7 +4,7 @@ function Field({ label, value, onChange, prefix, suffix, step = 1, min = 0, erro
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
       <label htmlFor={id} style={{ fontSize: 13.5, fontWeight: 600, color: 'var(--text-strong)' }}>{label}</label>
-      <div style={{ display: 'flex', alignItems: 'center', border: `1px solid ${error ? 'var(--fill-danger)' : 'var(--border-strong)'}`, borderRadius: 'var(--radius-md)', background: 'var(--surface-card)', overflow: 'hidden' }}>
+      <div style={{ display: 'flex', alignItems: 'center', border: `1px solid ${error ? 'var(--fill-danger)' : 'var(--border-interactive)'}`, borderRadius: 'var(--radius-md)', background: 'var(--surface-card)', overflow: 'hidden' }}>
         {prefix && <span style={{ paddingInlineStart: 14, color: 'var(--text-muted)', fontSize: 15 }}>{prefix}</span>}
         <input id={id} type="number" inputMode="decimal" value={value} step={step} min={min} aria-invalid={!!error || undefined} aria-describedby={error ? `${id}-err` : undefined}
           onChange={(e) => { const n = parseFloat(e.target.value); onChange(Number.isFinite(n) ? Math.max(min, n) : 0); }}
@@ -131,8 +131,8 @@ function RoiCalculator() {
               </EmptyState>
             ) : (
             <React.Fragment>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 24 }}>
-              <span className="cory-metric cory-gradient-text" style={{ fontSize: 60 }}>{roi}%</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '4px 10px', marginBottom: 24 }}>
+              <span className="cory-metric cory-gradient-text" style={{ fontSize: 'clamp(40px, 5vw, 60px)', minWidth: 0, overflowWrap: 'anywhere' }}>{roi}%</span>
               <span style={{ fontSize: 14, color: 'var(--on-ink-body)' }}>Estimated<br />Annual ROI</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>

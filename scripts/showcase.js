@@ -102,7 +102,7 @@
     .to('#preloader', { yPercent: -100, duration: 0.7, ease: 'power4.inOut' }, '+=0.1')
     .set('#preloader', { display: 'none' })
     .from('#site-header', { y: -60, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.55')
-    .to('.hero-title .ch', { y: 0, opacity: 1, rotateX: 0, transformPerspective: 600, duration: 0.8, stagger: 0.018, ease: 'power4.out', onComplete: function () { gsap.set(this.targets(), { clearProps: 'transform' }); } }, '-=0.45')
+    .to('.hero-title .ch', { y: 0, opacity: 1, rotateX: 0, transformPerspective: 600, duration: 0.8, stagger: 0.018, ease: 'power4.out', onComplete: function () { this.targets().forEach((t) => { t.style.transform = 'none'; }); } }, '-=0.45')
     .to('.grad-sweep', { backgroundPosition: '0% 0', duration: 1.1, ease: 'power2.inOut' }, '-=0.35')
     .to('.hero-fade', { y: 0, opacity: 1, duration: 0.7, stagger: 0.09, ease: 'power3.out' }, '-=1.0')
     .to('.hero-chip', { y: 0, opacity: 1, scale: 1, duration: 0.7, stagger: 0.08, ease: 'back.out(1.6)' }, '-=0.5');
@@ -143,7 +143,7 @@
     gsap.to(el.querySelectorAll('.ch'), {
       y: 0, opacity: 1, rotateX: 0, transformPerspective: 600, duration: 0.7, stagger: 0.014, ease: 'power4.out',
       scrollTrigger: { trigger: el, start: 'top 85%' },
-      onComplete: function () { gsap.set(this.targets(), { clearProps: 'transform' }); }
+      onComplete: function () { this.targets().forEach((t) => { t.style.transform = 'none'; }); }
     });
   });
 

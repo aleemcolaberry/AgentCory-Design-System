@@ -14,7 +14,7 @@ export function Input({
   const fieldId = id || (label ? `f-${String(label).replace(/\s+/g, '-').toLowerCase()}` : undefined);
   const msgId = fieldId ? `${fieldId}-msg` : undefined;
   const Tag = multiline ? 'textarea' : 'input';
-  const border = error ? 'var(--fill-danger)' : warning ? 'var(--fill-warning)' : success ? 'var(--fill-success)' : focus ? 'var(--border-focus)' : 'var(--border-strong)';
+  const border = error ? 'var(--fill-danger)' : warning ? 'var(--fill-warning)' : success ? 'var(--fill-success)' : focus ? 'var(--border-focus)' : 'var(--border-interactive)';
   const msg = error || warning || success || hint;
   const msgColor = error ? 'var(--text-danger)' : warning ? 'var(--text-warning)' : success ? 'var(--text-success)' : 'var(--text-muted)';
   const pad = multiline ? '12px 14px' : '11px 14px';

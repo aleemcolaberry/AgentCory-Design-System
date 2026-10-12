@@ -61,7 +61,7 @@ function ChatWidget({ open, onToggle }) {
             <label htmlFor="cory-chat-input" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }}>Your message</label>
             <input id="cory-chat-input" ref={inputRef} value={val} onChange={(e) => setVal(e.target.value)} autoComplete="off"
               placeholder="Type your question…" style={{
-                flex: 1, minWidth: 0, border: '1px solid var(--border-strong)', borderRadius: 'var(--radius-pill)', background: 'var(--surface-card)',
+                flex: 1, minWidth: 0, border: '1px solid var(--border-interactive)', borderRadius: 'var(--radius-pill)', background: 'var(--surface-card)',
                 padding: '10px 16px', fontSize: 14, fontFamily: 'var(--font-sans)', color: 'var(--text-strong)',
               }} />
             <IconButton type="submit" label="Send message" variant="primary" size="sm" disabled={!val.trim()}><window.LucideIcon name="send" size={16} /></IconButton>

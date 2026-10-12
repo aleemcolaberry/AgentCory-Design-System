@@ -44,6 +44,15 @@ transformation company.
 - Headlines use fluid sizes (`--text-fluid-*`) and `text-wrap: balance`; body uses `text-wrap: pretty`. Long-form copy sits in `.cory-prose` (68ch body, 56ch lead).
 - Dark and brand surfaces carry `.cory-on-ink` (the `Card` ink and brand variants add it) so headings and links switch to on-ink tones; navy type must never sit on navy.
 
+## Accessibility gate (every new page)
+WCAG 2.2 AA is a release gate. The full rule lives in `CLAUDE.md` under "Accessibility and quality gate"; the short form:
+- **Tokens only.** Text, surfaces and borders use semantic tokens (`--text-*`, `--surface-*`, `--border-*`, `--on-ink-*`), never a hex or a raw palette step, so both themes flip together.
+- **Both themes or one pinned theme.** Fluid pages must pass in light and dark. Fixed artboards (posts, slides, one-pagers, emails, print pages, exports) carry `data-theme="light"` or `"dark"` beside `data-screen-label`.
+- **Contrast.** 4.5:1 for text, 3:1 for large text, control boundaries and focus rings.
+- **No overflow at 320 to 1440 wide or at 200% zoom.** No horizontal page scroll.
+- **Structure.** `lang` set, one `h1`, no skipped heading levels, every control named and keyboard reachable with a visible focus ring, targets 24px (44px on touch), `alt` on images, reduced motion honoured.
+- **Proof.** `python -m http.server 8765`, then `node _audit/run.mjs` runs every set in light and dark and exits 1 on any contrast, clip, name, type, heading, offscreen or overlap finding. `data-audit-ok="clip|contrast|overlap"` is for decoration the probe cannot judge, never for real text.
+
 ## Which control? (decision guide)
 - The one action a screen exists for → `Button variant="primary"` (one per view). Second action → `secondary` (on navy: `onInk`). Icon-only → `IconButton` with `label`.
 - Filters / multi-select → `Chip`. Read-only status or metric → `Badge`.

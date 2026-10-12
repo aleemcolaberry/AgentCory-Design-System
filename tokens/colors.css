@@ -2,9 +2,14 @@
    AgentCory: Color tokens
    Brand: deep navy ink + blue→cyan signal gradient on cool off-white surfaces.
    Two themes: light (default) and dark. Switch with <html data-theme="dark">;
+   any element may also carry data-theme="light" or "dark" to pin a subtree (fixed artboards, previews);
    ThemeToggle (or the one-line script at the bottom) applies the OS preference.
    =========================================================================== */
-:root {
+/* A pinned subtree must not inherit the page theme's text colour: `color` inherits as a computed value,
+   so re-resolve it against the subtree's own tokens. Zero specificity, any class or inline style still wins. */
+:where([data-theme]) { color: var(--text-body); }
+
+:root, [data-theme="light"] {
   color-scheme: light;
   /* --- Brand: Navy (the Cory mascot ink) --- */
   --navy-950: #040C16;

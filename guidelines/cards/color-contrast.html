@@ -10,7 +10,9 @@
   .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; }
   .r { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; }
   .r code { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
-  .pill { font-family: var(--font-mono); font-size: 11px; padding: 2px 7px; border-radius: 999px; }
+  .note { margin: 2px 0 0; font-size: 11px; line-height: 1.45; color: var(--text-muted); }
+  .note code { font-family: var(--font-mono); font-size: 11px; }
+  .pill { font-family: var(--font-mono); font-size: 11px; padding: 2px 7px; border-radius: 999px; white-space: nowrap; flex: none; }
   .ok { background: var(--green-100); color: var(--green-700); }
   .lg { background: var(--amber-100); color: var(--amber-700); }
   .no { background: var(--red-100); color: var(--red-700); }
@@ -19,7 +21,7 @@
 </head>
 <body>
   <div class="col">
-    <div class="h" style="color:var(--green-700)">Body text · ≥ 4.5:1</div>
+    <div class="h" style="color:var(--text-success)">Body text · ≥ 4.5:1</div>
     <div class="r"><span style="color:var(--text-strong);font-weight:700">text-strong</span><span class="pill ok">15.3</span></div>
     <div class="r"><span style="color:var(--text-body)">text-body</span><span class="pill ok">9.2</span></div>
     <div class="r"><span style="color:var(--text-muted)">text-muted</span><span class="pill ok">6.4</span></div>
@@ -28,21 +30,22 @@
     <div class="r"><span class="btn" style="background:var(--gradient-brand-deep)">Primary CTA</span><span class="pill ok">4.6</span></div>
   </div>
   <div class="col">
-    <div class="h" style="color:var(--amber-700)">Large / UI only · ≥ 3:1</div>
-    <div class="r"><span class="cory-gradient-text" style="font-weight:800;font-size:24px">94%</span><span class="pill ok">gradient-brand-text 3.3+</span></div>
+    <div class="h" style="color:var(--text-warning)">Large / UI only · ≥ 3:1</div>
+    <div class="r"><span class="cory-gradient-text" style="font-weight:800;font-size:24px">94%</span><span class="pill ok" title="--gradient-brand-text">brand-text 3.3+</span></div>
     <div class="r"><span class="btn" style="background:var(--gradient-brand)">Decorative</span><span class="pill lg">2.2–3.4</span></div>
     <div class="r"><span style="border:1px solid var(--border-interactive);padding:4px 10px;border-radius:8px;font-size:12px">border-interactive</span><span class="pill ok">4.2</span></div>
     <div class="r"><span style="border:1px solid var(--border-strong);padding:4px 10px;border-radius:8px;font-size:12px">border-strong</span><span class="pill lg">1.8</span></div>
-    <div class="r"><code>Links hover to text-link-hover (7.1), never lighter.</code></div>
+    <p class="note">Links hover to <code>text-link-hover</code> (7.1), never lighter.</p>
   </div>
   <div class="col">
-    <div class="h" style="color:var(--red-700)">Never as information</div>
-    <div class="r"><span style="color:var(--text-disabled)" aria-label="text-disabled, fails at 2.6 to 1, decorative only">text-disabled</span><span class="pill no">2.6</span></div>
-    <div class="r"><span style="color:var(--green-500)">● green-500 text</span><span class="pill no">2.6</span></div>
+    <div class="h" style="color:var(--text-danger)">Never as information</div>
+    <!-- deliberate failing examples: the card shows what not to do -->
+    <div class="r" data-audit-ok="contrast"><span style="color:var(--text-disabled)" aria-label="text-disabled, fails at 2.6 to 1, decorative only">text-disabled</span><span class="pill no">2.6</span></div>
+    <div class="r" data-audit-ok="contrast"><span style="color:var(--green-500)">● green-500 text</span><span class="pill no">2.6</span></div>
     <div class="r"><span style="color:var(--text-success)">● text-success</span><span class="pill ok">4.7</span></div>
-    <div class="r"><span style="color:var(--red-500)">red-500 text</span><span class="pill no">3.9</span></div>
+    <div class="r" data-audit-ok="contrast"><span style="color:var(--red-500)">red-500 text</span><span class="pill no">3.9</span></div>
     <div class="r"><span style="color:var(--text-danger)">text-danger</span><span class="pill ok">5.4</span></div>
-    <div class="r"><code>Borders alone never signal state, add icon, text, or fill.</code></div>
+    <p class="note">Borders alone never signal state: add icon, text, or fill.</p>
   </div>
 </body>
 </html>

@@ -27,9 +27,9 @@ a{color:var(--text-link)}a:hover{color:var(--text-link-hover)}
 .card.amber{background:var(--amber-100);border-color:#F6DDAE}
 h1,h2,h3{margin:0;color:var(--navy-800);text-wrap:balance}
 h2{font-size:calc(22*var(--u));font-weight:800;letter-spacing:-.02em;line-height:1.15}
-h3{font-size:calc(15.5*var(--u));font-weight:800;letter-spacing:-.01em;line-height:1.25}
+h3,h2.as-h3{font-size:calc(15.5*var(--u));font-weight:800;letter-spacing:-.01em;line-height:1.25}
 .eyebrow{font-size:calc(12*var(--u));font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-700)}
-.ttl{display:flex;align-items:center;gap:calc(10*var(--u))}.ttl>h3{flex:1;min-width:0}.in[style*="space-between"]>.pg-foot{margin-top:0}
+.ttl{display:flex;align-items:center;gap:calc(10*var(--u))}.ttl>h3,.ttl>h2{flex:1;min-width:0}.in[style*="space-between"]>.pg-foot{margin-top:0}
 .ic{flex:none;width:calc(34*var(--u));height:calc(34*var(--u));border-radius:calc(10*var(--u));background:var(--blue-100);color:var(--blue-700);display:grid;place-items:center}
 .ic svg{width:calc(18*var(--u));height:calc(18*var(--u));stroke-width:2}
 .ic.dark{background:var(--gradient-brand-135);color:#fff}
@@ -97,7 +97,7 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 <body>
 <doc-page>
 
-<section class="page" id="p1" data-screen-label="01 Overview"><div class="in" style="justify-content:space-between">
+<section class="page" id="p1" data-theme="light" data-screen-label="01 Overview"><div class="in" style="justify-content:space-between">
 <div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Overview</span></div>
 <div class="hero">
 <div class="eyebrow" style="color:var(--cyan-400);position:relative;z-index:1">Saudi Arabia · AI Product &amp; Solutions</div>
@@ -111,11 +111,11 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 </div>
 <div class="grid" style="grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)">
 <div class="card blue">
-<div class="ttl"><span class="ic dark"><i data-lucide="target"></i></span><h3>Goal</h3></div>
+<div class="ttl"><span class="ic dark"><i data-lucide="target"></i></span><h2 class="as-h3">Goal</h2></div>
 <p>Prepare for Saudi Arabia roles in AI Product Management, AI Solutions and Digital Transformation while maintaining Colaberry employment, learning practical Arabic and completing selected credentials.</p>
 </div>
 <div class="card">
-<div class="ttl"><span class="ic"><i data-lucide="clock-3"></i></span><h3>Assumptions</h3></div>
+<div class="ttl"><span class="ic"><i data-lucide="clock-3"></i></span><h2 class="as-h3">Assumptions</h2></div>
 <p>Work typically <b class="mono" style="color:var(--navy-800)">3 pm–11 pm</b>; protect sleep, gym, family time and current income. Aim for <b style="color:var(--navy-800)">8–10 study hours weekly</b>, with optional increases when workload allows.</p>
 </div>
 </div>
@@ -130,7 +130,7 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 <div class="pg-foot"><span>Mohammad Abdul Aleem · Sep 27 – Dec 26, 2026</span><span class="num">01 / 07</span></div>
 </div></section>
 
-<section class="page" id="p2" data-screen-label="02 Positioning"><div class="in">
+<section class="page" id="p2" data-theme="light" data-screen-label="02 Positioning"><div class="in">
 <div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Positioning &amp; target roles</span></div>
 <div class="sec"><h2>Career positioning</h2><span class="rule"></span></div>
 <div class="grid" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)">
@@ -148,7 +148,7 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 <div class="pg-foot"><span>Mohammad Abdul Aleem · Sep 27 – Dec 26, 2026</span><span class="num">02 / 07</span></div>
 </div></section>
 
-<section class="page" id="p3" data-screen-label="03 Months 1-2"><div class="in">
+<section class="page" id="p3" data-theme="light" data-screen-label="03 Months 1-2"><div class="in">
 <div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Months 1 – 2</span></div>
 <div class="mhead"><div class="n">M<b>01</b></div><div><h2>Foundation</h2><div class="dt">Sep 27 – Oct 26</div></div></div>
 <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
@@ -169,7 +169,7 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 <div class="pg-foot"><span>Mohammad Abdul Aleem · Sep 27 – Dec 26, 2026</span><span class="num">03 / 07</span></div>
 </div></section>
 
-<section class="page" id="p4" data-screen-label="04 Credentials & Month 3"><div class="in" style="justify-content:space-between">
+<section class="page" id="p4" data-theme="light" data-screen-label="04 Credentials & Month 3"><div class="in" style="justify-content:space-between">
 <div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Credentials &amp; Month 3</span></div><div class="sec"><h2>Certification sequence</h2><span class="rule"></span></div>
 <div class="grid roomy" style="grid-template-columns:repeat(3,minmax(0,1fr))">
 <div class="card white"><div class="top" style="display:flex;justify-content:space-between;align-items:center;gap:calc(8*var(--u))"><span class="ic dark"><i data-lucide="badge-check"></i></span><span class="tag" style="background:var(--navy-800);color:#fff;border-color:var(--navy-800)">Priority 1</span></div><h3>Professional Scrum Product Owner I (PSPO I)</h3><p class="muted small" style="font-weight:600">Scrum.org</p><p>Confirm current exam details and fees with Scrum.org.</p></div>
@@ -189,7 +189,7 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 <div class="pg-foot"><span>Mohammad Abdul Aleem · Sep 27 – Dec 26, 2026</span><span class="num">04 / 07</span></div>
 </div></section>
 
-<section class="page" id="p5" data-screen-label="05 Schedule & Arabic"><div class="in">
+<section class="page" id="p5" data-theme="light" data-screen-label="05 Schedule & Arabic"><div class="in">
 <div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Weekly rhythm &amp; Arabic plan</span></div><div class="sec" ><h2>Weekly schedule around work</h2><span class="rule"></span></div>
 <div class="sched">
 <div class="h">Day</div><div class="h">Focus</div><div class="h">Suggested time</div>
@@ -222,7 +222,7 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 <div class="pg-foot"><span>Mohammad Abdul Aleem · Sep 27 – Dec 26, 2026</span><span class="num">05 / 07</span></div>
 </div></section>
 
-<section class="page" id="p6" data-screen-label="06 Phrases & quality bar"><div class="in"><div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Arabic phrases &amp; quality bar</span></div><div class="sec"><h2>Useful phrases</h2><span class="rule"></span></div>
+<section class="page" id="p6" data-theme="light" data-screen-label="06 Phrases & quality bar"><div class="in"><div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Arabic phrases &amp; quality bar</span></div><div class="sec"><h2>Useful phrases</h2><span class="rule"></span></div>
 <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr">
 <div class="card white" style="grid-column:span 2"><div class="ttl" style="justify-content:space-between"><span class="ic sm"><i data-lucide="hand"></i></span><span class="tag">Introduction</span></div><p class="ar" lang="ar">السلام عليكم، اسمي عبد العليم.</p><p style="font-weight:700;color:var(--navy-800)"><i>As-salamu alaykum, ismi Abdul Aleem.</i></p><p class="muted">Peace be upon you. My name is Abdul Aleem.</p></div>
 <div class="card white" style="grid-column:span 2"><div class="ttl" style="justify-content:space-between"><span class="ic sm"><i data-lucide="briefcase"></i></span><span class="tag">Experience</span></div><p class="ar" lang="ar">لدي أكثر من ١٣ سنة من الخبرة في تصميم المنتجات والتقنية.</p><p class="muted">I have more than 13 years of experience in product design and technology.</p></div>
@@ -238,7 +238,7 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 <li><i data-lucide="check"></i><span>Tailor CVs to product management and AI solutions; keep employment titles accurate.</span></li>
 <li><i data-lucide="check"></i><span>Check vacancy requirements for Arabic, Saudi-market experience, sponsorship, relocation and location.</span></li>
 </ul></div>
-<div class="pg-foot"><span>Mohammad Abdul Aleem · Sep 27 – Dec 26, 2026</span><span class="num">06 / 07</span></div></div></section><section class="page" id="p7" data-screen-label="07 Saudi checks & Day 90"><div class="in"><div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Employment checks &amp; Day 90 review</span></div><div class="sec"><h2>Saudi travel and employment checks</h2><span class="rule"></span></div><div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="card amber"><div class="ttl"><span class="ic amber"><i data-lucide="alert-triangle"></i></span><h3>Visa ≠ work permit</h3></div><p>A business/visit trip is not permission to work. Confirm the correct employment visa and work authorisation before starting.</p></div><div class="card amber"><div class="ttl"><span class="ic amber"><i data-lucide="file-signature"></i></span><h3>Verify every term</h3></div><p>Verify employer, written contract, job title, salary, housing, transport, insurance, flights, leave, probation and relocation terms.</p></div><div class="card amber"><div class="ttl"><span class="ic amber"><i data-lucide="languages"></i></span><h3>Bilingual contract</h3></div><p>Ensure Arabic and English contract versions agree; verify agents and visa requirements through official channels.</p></div><div class="card amber"><div class="ttl"><span class="ic amber"><i data-lucide="ban"></i></span><h3>No ‘free visa’</h3></div><p>Do not pay for a purported ‘free visa’ or rely on verbal assurances.</p></div></div><div class="card ink" style="flex:1;gap:calc(14*var(--u));padding:calc(22*var(--u)) calc(24*var(--u))">
+<div class="pg-foot"><span>Mohammad Abdul Aleem · Sep 27 – Dec 26, 2026</span><span class="num">06 / 07</span></div></div></section><section class="page" id="p7" data-theme="light" data-screen-label="07 Saudi checks & Day 90"><div class="in"><div class="pg-head"><span><b>90-Day Career Transformation Plan</b></span><span>Employment checks &amp; Day 90 review</span></div><div class="sec"><h2>Saudi travel and employment checks</h2><span class="rule"></span></div><div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="card amber"><div class="ttl"><span class="ic amber"><i data-lucide="alert-triangle"></i></span><h3>Visa ≠ work permit</h3></div><p>A business/visit trip is not permission to work. Confirm the correct employment visa and work authorisation before starting.</p></div><div class="card amber"><div class="ttl"><span class="ic amber"><i data-lucide="file-signature"></i></span><h3>Verify every term</h3></div><p>Verify employer, written contract, job title, salary, housing, transport, insurance, flights, leave, probation and relocation terms.</p></div><div class="card amber"><div class="ttl"><span class="ic amber"><i data-lucide="languages"></i></span><h3>Bilingual contract</h3></div><p>Ensure Arabic and English contract versions agree; verify agents and visa requirements through official channels.</p></div><div class="card amber"><div class="ttl"><span class="ic amber"><i data-lucide="ban"></i></span><h3>No ‘free visa’</h3></div><p>Do not pay for a purported ‘free visa’ or rely on verbal assurances.</p></div></div><div class="card ink" style="flex:1;gap:calc(14*var(--u));padding:calc(22*var(--u)) calc(24*var(--u))">
 <div class="ttl"><span class="ic dark"><i data-lucide="flag-triangle-right"></i></span><div><div class="eyebrow" style="color:var(--cyan-400)">Dec 26, 2026</div><h2>Day 90 review</h2></div></div>
 <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(10*var(--u));flex:1;grid-auto-rows:1fr">
 <div style="display:flex;gap:calc(10*var(--u));align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:calc(14*var(--u));padding:calc(14*var(--u)) calc(16*var(--u));align-items:center"><span class="check" style="border-color:var(--cyan-400);background:transparent;margin-top:0;width:calc(22*var(--u));height:calc(22*var(--u))"></span><span style="color:#fff;font-size:calc(15*var(--u));font-weight:600;line-height:1.4">Remain employed and maintain performance.</span></div>
@@ -249,7 +249,7 @@ ul.clean li svg{flex:none;width:calc(16*var(--u));height:calc(16*var(--u));margi
 <div style="display:flex;gap:calc(10*var(--u));align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:calc(14*var(--u));padding:calc(14*var(--u)) calc(16*var(--u));align-items:center"><span class="check" style="border-color:var(--cyan-400);background:transparent;margin-top:0;width:calc(22*var(--u));height:calc(22*var(--u))"></span><span style="color:#fff;font-size:calc(15*var(--u));font-weight:600;line-height:1.4">Targeted Saudi applications and recruiter conversations underway.</span></div>
 </div>
 </div>
-<div class="card" style="flex-direction:row;align-items:flex-start;gap:calc(12*var(--u));padding:calc(12*var(--u)) calc(16*var(--u))"><span class="ic sm"><i data-lucide="info"></i></span><p class="small">This is a practical plan, not a guarantee of employment or salary. Verify certification details, visa rules and job requirements with official providers and authorities before spending money or travelling.</p></div>
+<div class="card" style="flex-direction:row;align-items:flex-start;gap:calc(12*var(--u));padding:calc(12*var(--u)) calc(16*var(--u))"><span class="ic sm"><i data-lucide="info"></i></span><p class="small" style="max-width:40em">This is a practical plan, not a guarantee of employment or salary. Verify certification details, visa rules and job requirements with official providers and authorities before spending money or travelling.</p></div>
 <div class="pg-foot"><span>Mohammad Abdul Aleem · Sep 27 – Dec 26, 2026</span><span class="num">07 / 07</span></div></div></section>
 
 </doc-page>

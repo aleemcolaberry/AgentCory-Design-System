@@ -7,26 +7,26 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#E2E5EE;min-height:100vh}
 body{display:flex;align-items:flex-start;justify-content:center;overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;color:#0B1F36}
-a{color:#1B79EC}a:hover{color:#1568D4}
+a{color:#1568D4}a:hover{color:#1568D4}
 #stage{transform-origin:top center}
 .post{width:1080px;height:1350px;background:#F4F5FA;padding:48px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:230px 300px 150px minmax(0,1fr) 76px;gap:16px;position:relative;overflow:hidden}
 .post::before{content:"";position:absolute;width:640px;height:640px;right:-260px;top:-280px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.24),transparent 65%);pointer-events:none}
 .gt{background:linear-gradient(90deg,#258AFD,#29BEDD);-webkit-background-clip:text;background-clip:text;color:transparent}
 .tile{position:relative;border-radius:24px;background:#FFFFFF;border:1px solid #E2E5EE;box-shadow:0 1px 2px rgba(11,31,54,.04),0 8px 24px rgba(11,31,54,.06);padding:28px;min-width:0;min-height:0;overflow:hidden}
-.tag{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#1B79EC;white-space:nowrap}
+.tag{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#1568D4;white-space:nowrap}
 .tag i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#258AFD,#29BEDD);color:#FFFFFF;display:grid;place-items:center;font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:0;flex:none}
 .head{grid-column:span 12;display:flex;flex-direction:column;justify-content:center;gap:20px;background:transparent;border:none;box-shadow:none;padding:0 4px;overflow:visible}
-.pill{align-self:flex-start;display:flex;align-items:center;gap:8px;height:34px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1px solid #E2E5EE;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1B79EC;white-space:nowrap}
+.pill{align-self:flex-start;display:flex;align-items:center;gap:8px;height:34px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1px solid #E2E5EE;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1568D4;white-space:nowrap}
 .pill svg{width:15px;height:15px}
 .head h1{font-size:78px;line-height:1.02;font-weight:800;letter-spacing:-.035em}
 .head h1 span{display:block;padding-bottom:.1em;margin-bottom:-.1em}
 .t-src{grid-column:span 5;display:flex;flex-direction:column;justify-content:space-between}
 .dsic{width:60px;height:60px;border-radius:18px;background:#0B1F36;color:#FFFFFF;display:grid;place-items:center}
 .dsic svg{width:30px;height:30px}
-.t-src h3{font-size:34px;line-height:1.08;font-weight:800;letter-spacing:-.025em}
+.t-src h2{font-size:34px;line-height:1.08;font-weight:800;letter-spacing:-.025em}
 .t-assets{grid-column:span 7;background:#EAF3FF;border-color:#CFE3FF;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;padding:20px}
 .asset{border-radius:18px;background:#FFFFFF;border:1px solid #DCE9FB;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
-.asset svg{width:26px;height:26px;color:#1B79EC}
+.asset svg{width:26px;height:26px;color:#1568D4}
 .asset span{font-size:21px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
 .t-mcp{grid-column:span 12;background:linear-gradient(120deg,#0B1F36 0%,#143457 100%);border:none;box-shadow:0 12px 32px rgba(11,31,54,.2);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 36px}
 .t-mcp::after{content:"";position:absolute;width:460px;height:460px;border-radius:50%;left:-140px;top:-160px;background:radial-gradient(circle,rgba(37,138,253,.4),transparent 65%);pointer-events:none}
@@ -41,7 +41,7 @@ a{color:#1B79EC}a:hover{color:#1568D4}
 .flow svg{width:18px;height:18px;color:#29BEDD}
 .t-tools{grid-column:span 12;display:flex;flex-direction:column;gap:20px}
 .th{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.th h3{font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-.03em;margin-top:10px}
+.th h2{font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-.03em;margin-top:10px}
 .th small{font-size:15px;font-weight:600;color:#525A6B;white-space:nowrap}
 .grid{flex:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:1fr 1fr;gap:12px;min-height:0}
 .tool{border-radius:18px;background:#F4F5FA;border:1px solid #E2E5EE;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:0}
@@ -52,18 +52,18 @@ a{color:#1B79EC}a:hover{color:#1568D4}
 .who{display:flex;align-items:center;gap:14px}
 .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#258AFD,#29BEDD);color:#FFFFFF;display:grid;place-items:center;font-weight:800;font-size:16px;flex:none}
 .who b{display:block;font-size:17px;font-weight:800}
-.who small{font-size:14px;color:#525A6B;font-weight:500;white-space:nowrap}
+.who small{font-size:14px;color:#525A6B;font-weight:500}
 .cta{display:flex;gap:10px}
 .cta span{display:flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;border:1px solid #D5D9E4;background:#FFFFFF;font-size:14px;font-weight:700;white-space:nowrap}
 .cta span.n{background:#0B1F36;border-color:transparent;color:#FFFFFF}
-.cta svg{width:16px;height:16px;color:#1B79EC}.cta span.n svg{color:#29BEDD}
+.cta svg{width:16px;height:16px;color:#1568D4}.cta span.n svg{color:#29BEDD}
 .bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:8px;padding:6px;border-radius:999px;background:#FFFFFF;border:1px solid #D5D9E4;box-shadow:0 8px 24px rgba(11,31,54,.12);z-index:10}
 .bar button{white-space:nowrap;height:38px;padding:0 16px;border-radius:999px;border:none;background:linear-gradient(90deg,#258AFD,#29BEDD);font:700 13.5px 'Plus Jakarta Sans',sans-serif;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;gap:8px}
 .bar button svg{width:16px;height:16px}
 </style></head>
 <body>
 <div id="stage">
-<div class="post" id="post" data-screen-label="MCP gives AI context v2">
+<div class="post" id="post" data-theme="light" data-screen-label="MCP gives AI context v2">
 <div class="tile head">
 <span class="pill"><i data-lucide="sparkles"></i>Design systems × AI</span>
 <h1><span>AI can generate.</span><span class="gt">MCP gives it context.</span></h1>
@@ -71,7 +71,7 @@ a{color:#1B79EC}a:hover{color:#1568D4}
 <div class="tile t-src">
 <div class="tag"><i>1</i>The source</div>
 <div class="dsic"><i data-lucide="flower-2"></i></div>
-<h3>Supernova<br>Design System</h3>
+<h2>Supernova<br>Design System</h2>
 </div>
 <div class="tile t-assets">
 <div class="asset"><i data-lucide="component"></i><span>Components</span></div>
@@ -88,7 +88,7 @@ a{color:#1B79EC}a:hover{color:#1568D4}
 <div class="flow"><span>Design system</span><i data-lucide="arrow-right"></i><span>AI tools</span></div>
 </div>
 <div class="tile t-tools">
-<div class="th"><div><div class="tag"><i>3</i>The output</div><h3>AI <span class="gt">Tools</span></h3></div><small>Context-aware, on-brand output</small></div>
+<div class="th"><div><div class="tag"><i>3</i>The output</div><h2>AI <span class="gt">Tools</span></h2></div><small>Context-aware, on-brand output</small></div>
 <div class="grid">
 <div class="tool"><div class="logo"><img src="logos/claude.png" alt="Claude"></div><span>Claude</span></div>
 <div class="tool"><div class="logo"><img src="logos/figma-make.png" alt="Figma Make"></div><span>Figma Make</span></div>

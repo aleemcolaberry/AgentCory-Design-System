@@ -1983,7 +1983,7 @@ function Input({
   const fieldId = id || (label ? `f-${String(label).replace(/\s+/g, '-').toLowerCase()}` : undefined);
   const msgId = fieldId ? `${fieldId}-msg` : undefined;
   const Tag = multiline ? 'textarea' : 'input';
-  const border = error ? 'var(--fill-danger)' : warning ? 'var(--fill-warning)' : success ? 'var(--fill-success)' : focus ? 'var(--border-focus)' : 'var(--border-strong)';
+  const border = error ? 'var(--fill-danger)' : warning ? 'var(--fill-warning)' : success ? 'var(--fill-success)' : focus ? 'var(--border-focus)' : 'var(--border-interactive)';
   const msg = error || warning || success || hint;
   const msgColor = error ? 'var(--text-danger)' : warning ? 'var(--text-warning)' : success ? 'var(--text-success)' : 'var(--text-muted)';
   const pad = multiline ? '12px 14px' : '11px 14px';
@@ -2110,7 +2110,7 @@ function Select({
   const msgId = fieldId ? `${fieldId}-msg` : undefined;
   const empty = !loading && options.length === 0;
   const inert = disabled || loading || empty;
-  const border = error ? 'var(--fill-danger)' : success ? 'var(--fill-success)' : focus ? 'var(--border-focus)' : 'var(--border-strong)';
+  const border = error ? 'var(--fill-danger)' : success ? 'var(--fill-success)' : focus ? 'var(--border-focus)' : 'var(--border-interactive)';
   const msg = error || success || hint;
   const msgColor = error ? 'var(--text-danger)' : success ? 'var(--text-success)' : 'var(--text-muted)';
   const ph = loading ? loadingMessage : empty ? emptyMessage : placeholder;
@@ -4250,10 +4250,11 @@ function MediaFrame({
     style: {
       position: 'absolute',
       inset: 0,
-      background: 'linear-gradient(180deg, rgba(11,31,54,0) 30%, rgba(11,31,54,0.84) 100%)',
+      background: 'linear-gradient(180deg, rgba(11,31,54,0) 15%, rgba(11,31,54,0.78) 50%, rgba(11,31,54,0.94) 100%)',
       pointerEvents: 'none'
     }
   }), overlay && /*#__PURE__*/React.createElement("div", {
+    "data-audit-ok": "contrast overlap",
     style: {
       position: 'absolute',
       insetInline: 20,
