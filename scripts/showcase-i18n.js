@@ -45,7 +45,7 @@
     "Hi, I'm Cory 👋 Ready to see what I can do?": 'مرحباً، أنا كوري 👋 هل أنت مستعد لترى ما يمكنني فعله؟',
     'Show me the fall deadlines': 'أرني مواعيد التقديم للخريف', 'Focus me, blue ring, soft glow.': 'ركّز هنا: حلقة زرقاء وتوهّج ناعم.', '● Always on': '● متاح دائماً',
     'Templates': 'القوالب', 'Four starting points,': 'أربع نقاط انطلاق،', 'ready to copy.': 'جاهزة للنسخ.',
-    'Previews of four of the twenty-three templates, every one built entirely from the system you just scrolled through.': 'معاينات لأربعة قوالب، وكل قالب مبني بالكامل من النظام الذي تصفحته للتو.',
+    'Previews of four of the twenty-five templates, every one built entirely from the system you just scrolled through.': 'معاينات لأربعة قوالب، وكل قالب مبني بالكامل من النظام الذي تصفحته للتو.',
     'Landing Page': 'الصفحة الرئيسية', 'Full marketing homepage, hero to footer': 'صفحة تسويقية كاملة من الواجهة إلى التذييل', 'Open': 'افتح',
     'Pitch Deck': 'عرض تقديمي', '6-slide 16:9 sales deck': 'عرض مبيعات من 6 شرائح بمقاس 16:9', 'One-Pager': 'صفحة واحدة',
     'Printable Letter-size overview': 'ملخص قابل للطباعة بمقاس Letter', 'Outreach Email': 'بريد التواصل', '600px marketing email from Cory': 'بريد تسويقي بعرض 600px من كوري',

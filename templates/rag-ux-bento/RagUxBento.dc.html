@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Styles load from the markup, not from script, so the first paint is already styled (no flash, no layout shift) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="UX of RAG Bento Post" description="4:5 LinkedIn post: RAG answer UI with inline citations, reference panel and sidebar, plus before/after and Retrieve, Ground, Visualize pipeline" -->
+<helmet><script src="./ds-base.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}a{color:#1568D4}a:hover{color:#0E4FA3}</style></helmet>
+<button onClick="{{ download }}" style="position:fixed;inset-inline-end:24px;bottom:24px;z-index:50;display:flex;align-items:center;gap:10px;padding:14px 22px;border:0;border-radius:999px;background:#0B1F36;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;font-weight:700;white-space:nowrap;cursor:pointer;box-shadow:0 10px 28px rgba(11,31,54,.25)">{{ dlLabel }}</button>
+<div class="fit-box" style="width:calc(1080px * var(--fit, 1));height:calc(1350px * var(--fit, 1));margin-inline:auto"><div class="fit-canvas" data-fit-canvas style="width:1080px;height:1350px;transform:scale(var(--fit, 1))"><div ref="{{ canvasRef }}" data-theme="light" data-screen-label="UX of RAG Bento" style="width:1080px;height:1350px;box-sizing:border-box;padding:56px;background:#F4F5FA;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F36;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden">
+<div style="position:absolute;inset-inline-start:-200px;top:-260px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(37,138,253,.20),rgba(37,138,253,0) 70%);pointer-events:none"></div>
+<div style="position:absolute;inset-inline-end:-180px;top:120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.22),rgba(41,190,221,0) 70%);pointer-events:none"></div>
+<div style="position:relative;flex:none;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+<span style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E3E7EF;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1568D4"><img data-icon="sparkles" data-color="#1568D4" alt="" style="width:18px;height:18px;display:block">Retrieval-Augmented Generation</span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#4F5F75;white-space:nowrap">3 UI patterns</span>
+</div>
+<h1 style="margin:0;font-size:92px;line-height:1.16;font-weight:800;letter-spacing:-.045em">The UX of <span style="display:inline-block;padding-bottom:.08em;background:linear-gradient(90deg,#1B79EC,#1193B5);-webkit-background-clip:text;background-clip:text;color:transparent">RAG</span></h1>
+<p style="margin:0;max-width:840px;font-size:22px;line-height:1.4;color:#4A5B70;text-wrap:pretty">From isolated answers to grounded insights. Design every AI answer so people can see, check and trust its sources.</p>
+</div>
+<div style="position:relative;flex:1;min-height:0;padding:4px;border-radius:30px;background:linear-gradient(120deg,#258AFD,#29BEDD);box-shadow:0 22px 48px rgba(37,138,253,.24)">
+<div style="width:100%;height:100%;box-sizing:border-box;border-radius:26px;background:#fff;display:flex;flex-direction:column;overflow:hidden">
+<div style="flex:none;height:52px;box-sizing:border-box;padding:0 20px;border-bottom:1px solid #E3E7EF;display:flex;align-items:center;justify-content:space-between;gap:16px">
+<div style="display:flex;align-items:center;gap:10px;min-width:0"><span style="width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#258AFD,#29BEDD);display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="sparkles" data-color="#FFFFFF" alt="" style="width:16px;height:16px;display:block"></span><span style="font-size:16px;font-weight:800;white-space:nowrap">AI Assistant</span></div>
+<span style="display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#E6F6EE;font-size:13px;font-weight:700;color:#0F6B43;white-space:nowrap"><span style="width:8px;height:8px;border-radius:50%;background:#159A62;flex:none"></span>Connected to RAG</span>
+</div>
+<div style="flex:1;min-height:0;display:grid;grid-template-columns:68px minmax(0,1fr) 330px">
+<div style="background:#F8F9FC;border-inline-end:1px solid #E3E7EF;padding:16px 0;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0">
+<span style="width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-icon="house" data-color="#4F5F75" alt="" style="width:20px;height:20px;display:block"></span>
+<span style="width:40px;height:40px;border-radius:12px;background:#EAF3FF;display:flex;align-items:center;justify-content:center"><img data-icon="search" data-color="#1568D4" alt="" style="width:20px;height:20px;display:block"></span>
+<span style="width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-icon="library" data-color="#4F5F75" alt="" style="width:20px;height:20px;display:block"></span>
+<span style="width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-icon="layout-grid" data-color="#4F5F75" alt="" style="width:20px;height:20px;display:block"></span>
+<span style="width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center"><img data-icon="history" data-color="#4F5F75" alt="" style="width:20px;height:20px;display:block"></span>
+<sc-if value="{{ showBadges }}" hint-placeholder-val="{{ true }}"><span style="margin-top:auto;width:26px;height:26px;border-radius:50%;background:#FFC53D;color:#0B1F36;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 0 0 3px #fff">3</span></sc-if>
+</div>
+<div style="padding:20px 22px;display:flex;flex-direction:column;gap:14px;min-width:0;min-height:0">
+<div style="align-self:flex-end;max-width:80%;padding:10px 16px;border-radius:16px 16px 4px 16px;background:#EAF3FF;font-size:15px;line-height:1.4;font-weight:600;color:#0B1F36">What is driving EV market growth in 2025?</div>
+<div style="display:flex;gap:12px;min-width:0">
+<span style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#258AFD,#29BEDD);display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="sparkles" data-color="#FFFFFF" alt="" style="width:16px;height:16px;display:block"></span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px">
+<span style="font-size:15px;line-height:1.45;color:#0B1F36;padding-top:5px">EV growth in 2025 comes from three grounded factors:</span>
+<div style="display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:8px 10px;border:1px solid transparent;border-radius:12px">
+<span style="width:24px;height:24px;border-radius:50%;background:#E3F6FA;color:#0E7189;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">1</span>
+<div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:15px;font-weight:800">Government incentives</span><span style="display:flex;flex-wrap:wrap;align-items:center;column-gap:6px;row-gap:2px;min-width:0"><span style="font-size:13px;line-height:1.45;color:#4A5B70">Tax credits and emission rules keep adoption rising.</span><span style="flex:none;white-space:nowrap;line-height:1.5;padding:0 7px;border-radius:6px;background:#EAF3FF;color:#1568D4;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700">[1]</span></span></div>
+</div>
+<div style="display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:8px 10px;border:1px solid #BFD9FF;border-radius:12px;background:#F2F7FF">
+<span style="width:24px;height:24px;border-radius:50%;background:#E3F6FA;color:#0E7189;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">2</span>
+<div style="display:flex;flex-direction:column;gap:2px;min-width:0"><div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:15px;font-weight:800">Cheaper, better batteries</span><sc-if value="{{ showBadges }}" hint-placeholder-val="{{ true }}"><span style="width:26px;height:26px;border-radius:50%;background:#FFC53D;color:#0B1F36;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">1</span></sc-if></div><span style="display:flex;flex-wrap:wrap;align-items:center;column-gap:6px;row-gap:2px;min-width:0"><span style="font-size:13px;line-height:1.45;color:#4A5B70">Lower costs and higher density make EVs affordable.</span><span style="flex:none;white-space:nowrap;line-height:1.5;padding:0 7px;border-radius:6px;background:#1568D4;color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700">[2]</span></span></div>
+</div>
+<div style="display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:8px 10px;border:1px solid transparent;border-radius:12px">
+<span style="width:24px;height:24px;border-radius:50%;background:#E3F6FA;color:#0E7189;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">3</span>
+<div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:15px;font-weight:800">Wider charging networks</span><span style="display:flex;flex-wrap:wrap;align-items:center;column-gap:6px;row-gap:2px;min-width:0"><span style="font-size:13px;line-height:1.45;color:#4A5B70">More public chargers reduce range anxiety.</span><span style="flex:none;white-space:nowrap;line-height:1.5;padding:0 7px;border-radius:6px;background:#EAF3FF;color:#1568D4;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700">[3]</span></span></div>
+</div>
+</div>
+</div>
+<div style="margin-top:auto;padding-inline-start:44px;display:flex;flex-direction:column;gap:10px;min-width:0">
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#4F5F75">Based on 3 trusted sources · Updated Mar 2025</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:10px;border:1px solid #E3E7EF;font-size:13px;font-weight:700;color:#0B1F36;white-space:nowrap"><img data-icon="list" data-color="#1568D4" alt="" style="width:15px;height:15px;display:block">Show sources</span>
+<span style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:10px;border:1px solid #E3E7EF;font-size:13px;font-weight:700;color:#0B1F36;white-space:nowrap"><img data-icon="git-compare" data-color="#1568D4" alt="" style="width:15px;height:15px;display:block">Compare</span>
+<span style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:10px;border:1px solid #E3E7EF;font-size:13px;font-weight:700;color:#0B1F36;white-space:nowrap"><img data-icon="bookmark" data-color="#1568D4" alt="" style="width:15px;height:15px;display:block">Save</span>
+</div>
+</div>
+</div>
+<div style="background:#F8F9FC;border-inline-start:1px solid #E3E7EF;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0;min-height:0">
+<div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px;font-weight:800;white-space:nowrap">References</span><span style="padding:1px 8px;border-radius:999px;background:#E3E7EF;font-size:12px;font-weight:800;color:#0B1F36">3</span><sc-if value="{{ showBadges }}" hint-placeholder-val="{{ true }}"><span style="width:26px;height:26px;border-radius:50%;background:#FFC53D;color:#0B1F36;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">2</span></sc-if><img data-icon="x" data-color="#4F5F75" alt="" style="width:18px;height:18px;display:block;margin-inline-start:auto"></div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:14px;padding:11px 13px;display:flex;flex-direction:column;gap:4px;min-width:0">
+<div style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:20px;height:20px;border-radius:6px;background:#E3F6FA;color:#0E7189;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">1</span><span style="flex:1;min-width:0;font-size:14px;font-weight:800">IEA · EV Outlook</span><span style="padding:1px 7px;border-radius:6px;background:#F4F5FA;font-size:12px;font-weight:700;color:#4A5B70;white-space:nowrap">p. 12</span></div>
+<span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#4F5F75">iea.org/ev-outlook-2025</span>
+<span style="font-size:13px;line-height:1.4;color:#4A5B70">“Policy support remains a key driver of EV adoption.”</span>
+</div>
+<div style="background:#fff;border:2px solid #258AFD;border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;min-width:0;box-shadow:0 8px 20px rgba(37,138,253,.18)">
+<div style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:20px;height:20px;border-radius:6px;background:#1568D4;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">2</span><span style="flex:1;min-width:0;font-size:14px;font-weight:800">McKinsey · Batteries</span><span style="padding:1px 7px;border-radius:6px;background:#EAF3FF;font-size:12px;font-weight:700;color:#1568D4;white-space:nowrap">p. 8</span></div>
+<span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#4F5F75">mckinsey.com/ev-battery</span>
+<span style="font-size:13px;line-height:1.4;color:#4A5B70">“Battery costs have fallen 60% since 2015.”</span>
+</div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:14px;padding:11px 13px;display:flex;flex-direction:column;gap:4px;min-width:0">
+<div style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:20px;height:20px;border-radius:6px;background:#E3F6FA;color:#0E7189;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">3</span><span style="flex:1;min-width:0;font-size:14px;font-weight:800">Bloomberg · Charging</span><span style="padding:1px 7px;border-radius:6px;background:#F4F5FA;font-size:12px;font-weight:700;color:#4A5B70;white-space:nowrap">p. 5</span></div>
+<span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#4F5F75">bloomberg.com/ev-charging</span>
+<span style="font-size:13px;line-height:1.4;color:#4A5B70">“Public charging points set to grow 40% in 2025.”</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="position:relative;flex:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px;display:flex;gap:14px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:none"><span style="width:44px;height:44px;border-radius:12px;background:#EAF3FF;display:flex;align-items:center;justify-content:center"><img data-icon="quote" data-color="#1568D4" alt="" style="width:22px;height:22px;display:block"></span><sc-if value="{{ showBadges }}" hint-placeholder-val="{{ true }}"><span style="width:26px;height:26px;border-radius:50%;background:#FFC53D;color:#0B1F36;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">1</span></sc-if></div>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="font-size:20px;line-height:1.2;font-weight:800;letter-spacing:-.01em">Inline citations</span><span style="font-size:15px;line-height:1.45;color:#4A5B70;text-wrap:pretty">Tie each claim to its source, right in the sentence.</span></div>
+</div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px;display:flex;gap:14px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:none"><span style="width:44px;height:44px;border-radius:12px;background:#EAF3FF;display:flex;align-items:center;justify-content:center"><img data-icon="panel-right" data-color="#1568D4" alt="" style="width:22px;height:22px;display:block"></span><sc-if value="{{ showBadges }}" hint-placeholder-val="{{ true }}"><span style="width:26px;height:26px;border-radius:50%;background:#FFC53D;color:#0B1F36;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">2</span></sc-if></div>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="font-size:20px;line-height:1.2;font-weight:800;letter-spacing:-.01em">Reference panel</span><span style="font-size:15px;line-height:1.45;color:#4A5B70;text-wrap:pretty">Show title, link, quote and page beside the answer.</span></div>
+</div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:20px;display:flex;gap:14px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:none"><span style="width:44px;height:44px;border-radius:12px;background:#EAF3FF;display:flex;align-items:center;justify-content:center"><img data-icon="panel-left" data-color="#1568D4" alt="" style="width:22px;height:22px;display:block"></span><sc-if value="{{ showBadges }}" hint-placeholder-val="{{ true }}"><span style="width:26px;height:26px;border-radius:50%;background:#FFC53D;color:#0B1F36;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">3</span></sc-if></div>
+<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="font-size:20px;line-height:1.2;font-weight:800;letter-spacing:-.01em">Readable sidebar</span><span style="font-size:15px;line-height:1.45;color:#4A5B70;text-wrap:pretty">Keep history and source status one glance away.</span></div>
+</div>
+</div>
+<div style="position:relative;flex:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<span style="display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;color:#B4232A"><img data-icon="shield-alert" data-color="#B4232A" alt="" style="width:16px;height:16px;display:block">BEFORE</span>
+<span style="font-size:24px;line-height:1.15;font-weight:800;letter-spacing:-.02em">Black-box answers</span>
+<span style="font-size:15px;line-height:1.45;color:#4A5B70;text-wrap:pretty">Answers feel complete, but nobody can see where they came from.</span>
+<div style="margin-top:auto;padding-top:6px;display:flex;flex-wrap:wrap;gap:6px">
+<span style="padding:5px 10px;border-radius:999px;background:#FDECEC;font-size:13px;font-weight:700;color:#9B1C22;white-space:nowrap">No sources</span>
+<span style="padding:5px 10px;border-radius:999px;background:#FDECEC;font-size:13px;font-weight:700;color:#9B1C22;white-space:nowrap">No context</span>
+<span style="padding:5px 10px;border-radius:999px;background:#FDECEC;font-size:13px;font-weight:700;color:#9B1C22;white-space:nowrap">Hard to verify</span>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<span style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;color:#1568D4">HOW RAG GROUNDS IT</span>
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;align-items:center;gap:12px;min-width:0"><span style="width:40px;height:40px;border-radius:12px;background:#E3F6FA;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="file-search" data-color="#138BA8" alt="" style="width:20px;height:20px;display:block"></span><div style="display:flex;flex-direction:column;min-width:0"><span style="font-size:17px;font-weight:800">Retrieve</span><span style="font-size:13px;line-height:1.35;color:#4A5B70">Pull data from trusted sources</span></div></div>
+<img data-icon="arrow-down" data-color="#9AA7B8" alt="" style="width:16px;height:16px;display:block;margin-inline-start:12px">
+<div style="display:flex;align-items:center;gap:12px;min-width:0"><span style="width:40px;height:40px;border-radius:12px;background:#E3F6FA;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="link-2" data-color="#138BA8" alt="" style="width:20px;height:20px;display:block"></span><div style="display:flex;flex-direction:column;min-width:0"><span style="font-size:17px;font-weight:800">Ground</span><span style="font-size:13px;line-height:1.35;color:#4A5B70">Attach citations and context</span></div></div>
+<img data-icon="arrow-down" data-color="#9AA7B8" alt="" style="width:16px;height:16px;display:block;margin-inline-start:12px">
+<div style="display:flex;align-items:center;gap:12px;min-width:0"><span style="width:40px;height:40px;border-radius:12px;background:#E3F6FA;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="layout-panel-left" data-color="#138BA8" alt="" style="width:20px;height:20px;display:block"></span><div style="display:flex;flex-direction:column;min-width:0"><span style="font-size:17px;font-weight:800">Visualize</span><span style="font-size:13px;line-height:1.35;color:#4A5B70">Annotations, panels, sidebars</span></div></div>
+</div>
+</div>
+<div style="background:linear-gradient(150deg,#1568D4,#0E7F9E);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 12px 30px rgba(21,104,212,.28);min-width:0">
+<span style="display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;color:#fff"><img data-icon="badge-check" data-color="#FFC53D" alt="" style="width:16px;height:16px;display:block">AFTER</span>
+<span class="cory-on-ink" style="font-size:24px;line-height:1.15;font-weight:800;letter-spacing:-.02em;color:#fff">Grounded answers</span>
+<span style="font-size:15px;line-height:1.45;color:#fff;text-wrap:pretty">People see the source, get the context and explore with confidence.</span>
+<div style="margin-top:auto;padding-top:6px;display:flex;flex-wrap:wrap;gap:6px">
+<span style="padding:5px 10px;border-radius:999px;background:#fff;font-size:13px;font-weight:700;color:#0E4FA3;white-space:nowrap">Inline citations</span>
+<span style="padding:5px 10px;border-radius:999px;background:#fff;font-size:13px;font-weight:700;color:#0E4FA3;white-space:nowrap">Reference panel</span>
+<span style="padding:5px 10px;border-radius:999px;background:#fff;font-size:13px;font-weight:700;color:#0E4FA3;white-space:nowrap">Clear context</span>
+</div>
+</div>
+</div>
+<sc-if value="{{ showFooter }}" hint-placeholder-val="{{ true }}">
+<div style="position:relative;flex:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:18px;border-top:1px solid #DCE1EA">
+<div style="display:flex;align-items:center;gap:14px;min-width:0"><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none"><div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:18px;font-weight:800;white-space:nowrap">Md Abdul Aleem</span><span style="font-size:14px;color:#4F5F75">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div></div>
+<span style="flex:none;display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:#0B1F36;color:#fff;font-size:16px;font-weight:700;white-space:nowrap">Follow for more <span style="font-size:18px">→</span></span>
+</div>
+</sc-if>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;showBadges&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showFooter&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { busy: false };
+  canvasRef = React.createRef();
+  icons = {};
+  loads = [];
+  applyIcons() {
+    const root = this.canvasRef.current; if (!root) return;
+    root.querySelectorAll('img[data-icon]').forEach(img => {
+      const u = this.icons[img.dataset.icon + '|' + img.dataset.color];
+      if (u && img.src !== u) img.src = u;
+    });
+  }
+  componentDidMount() {
+    const root = this.canvasRef.current; if (!root) return;
+    const keys = new Set([...root.querySelectorAll('img[data-icon]')].map(i => i.dataset.icon + '|' + i.dataset.color));
+    this.loads = [...keys].map(k => {
+      const [n, c] = k.split('|');
+      return fetch('https://unpkg.com/lucide-static@0.469.0/icons/' + n + '.svg').then(r => { if (!r.ok) throw new Error('icon ' + n); return r.text(); }).then(t => {
+        this.icons[k] = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t.replace(/currentColor/g, c));
+        this.applyIcons();
+      }).catch(e => console.warn(e.message));
+    });
+  }
+  componentDidUpdate() { this.applyIcons(); }
+  download = async () => {
+    const node = this.canvasRef.current;
+    if (!node || this.state.busy) return;
+    this.setState({ busy: true });
+    try {
+      if (!window.htmlToImage) await (window.coryEnsureHtmlToImage ? window.coryEnsureHtmlToImage() : Promise.reject(new Error('image library not loaded')));
+      await document.fonts.ready;
+      await Promise.all(this.loads);
+      this.applyIcons();
+      await Promise.all([...node.querySelectorAll('img')].map(i => i.src ? i.decode().catch(() => {}) : null));
+      const url = await window.htmlToImage.toPng(node, { pixelRatio: 2, width: 1080, height: 1350, cacheBust: true });
+      if (window.coryExportPng) await window.coryExportPng(url, 'ux-of-rag-bento.png'); else { const a = document.createElement('a'); a.href = url; a.download = 'ux-of-rag-bento.png'; document.body.appendChild(a); a.click(); a.remove(); }
+    } catch (e) { console.error('PNG export failed', e); if (window.coryExportFailed) window.coryExportFailed(e); }
+    this.setState({ busy: false });
+  };
+  renderVals() {
+    const p = this.props;
+    return { canvasRef: this.canvasRef, download: this.download, dlLabel: this.state.busy ? 'Exporting…' : 'Download PNG ↓', showBadges: p.showBadges ?? true, showFooter: p.showFooter ?? true };
+  }
+}
+</script>
+</body>
+</html>

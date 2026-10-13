@@ -13,7 +13,7 @@
 <body>
 <x-dc>
 <!-- @template name="HCD Maps Bento Post" description="4:5 social post: Journey, Service and Ecosystem maps for AI-native product design, with illustrated hero + author footer" -->
-<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script><script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}a{color:#1568D4;text-decoration:none}a:hover{color:#258AFD}</style></helmet>
+<helmet><script src="./ds-base.js"></script><script src="./image-slot.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}a{color:#1568D4;text-decoration:none}a:hover{color:#258AFD}</style></helmet>
 <button onClick="{{ download }}" style="position:fixed;inset-inline-end:24px;bottom:24px;z-index:50;display:flex;align-items:center;gap:10px;padding:14px 22px;border:0;border-radius:999px;background:#0B1F36;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;font-weight:700;white-space:nowrap;cursor:pointer;box-shadow:0 10px 28px rgba(11,31,54,.3)" style-hover="background:#1B4068">{{ dlLabel }}</button>
 <div class="fit-box" style="width:calc(1080px * var(--fit, 1));height:calc(1350px * var(--fit, 1));margin-inline:auto"><div class="fit-canvas" data-fit-canvas style="width:1080px;height:1350px;transform:scale(var(--fit, 1))"><div ref="{{ canvasRef }}" data-theme="light" data-screen-label="HCD Maps Bento" style="width:1080px;height:1350px;box-sizing:border-box;padding:46px 52px 38px;background:#F4F5FA;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F36;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden">
 <div style="position:absolute;inset-inline-end:-200px;top:-240px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.2),rgba(41,190,221,0) 70%);pointer-events:none"></div>
@@ -134,9 +134,10 @@ class Component extends DCLogic {
   }
   download = async () => {
     const node = this.canvasRef.current;
-    if (!node || !window.htmlToImage || this.state.busy) return;
+    if (!node || this.state.busy) return;
     this.setState({ busy: true });
     try {
+      if (!window.htmlToImage) await (window.coryEnsureHtmlToImage ? window.coryEnsureHtmlToImage() : Promise.reject(new Error('image library not loaded')));
       await document.fonts.ready;
       const slot = node.querySelector('image-slot');
       let stand = null;
@@ -158,10 +159,8 @@ class Component extends DCLogic {
         if (stand) stand.remove();
         if (slot) slot.style.display = 'block';
       }
-      const a = document.createElement('a');
-      a.href = url; a.download = 'hcd-maps-bento.png';
-      document.body.appendChild(a); a.click(); a.remove();
-    } catch (e) { console.error('PNG export failed', e); }
+      if (window.coryExportPng) await window.coryExportPng(url, 'hcd-maps-bento.png'); else { const a = document.createElement('a'); a.href = url; a.download = 'hcd-maps-bento.png'; document.body.appendChild(a); a.click(); a.remove(); }
+    } catch (e) { console.error('PNG export failed', e); if (window.coryExportFailed) window.coryExportFailed(e); }
     this.setState({ busy: false });
   };
   renderVals() {

@@ -11,6 +11,16 @@
 - Before any page, card, kit or template ships, run `_audit/Audit.html` (default, `?set=templates`, `?set=fit`, `?set=responsive`, `?set=type`) and make the `type` and `clip` counts read 0 for that page. Headings on dark or brand surfaces use `.cory-on-ink` so navy never sits on navy.
 - RTL-ready: use logical CSS properties only (inline-start/end, never left/right), multiply horizontal motion by var(--dir), keep numbers/code/emails LTR (.cory-ltr), never letter-space or split Arabic into letters.
 
+## LinkedIn post images (where they live)
+- The user will keep sending reference images to turn into LinkedIn post images. Every new post goes in `posts/<slug>/` (entry `posts/<slug>/<Slug>.dc.html` via dc_write, plus `author-avatar.png`, `ds-base.js` with `base = '../..'`, and `post-caption.md` for the LinkedIn caption). Never put new posts under `templates/` or the project root.
+- Default format 4:5 (1080x1350), AgentCory light mode, bento layout, Download PNG button, author footer. Add each new post to the `templates` set in `_audit/Audit.html`.
+
+## Social post PNG export (hard rule, every LinkedIn/social post)
+- Every social post ships with a fixed `Download PNG` button (outside the artboard, never captured) that exports the exact artboard at native size (1080x1350 for 4:5) at pixelRatio 2 via html-to-image, only after `document.fonts.ready` and after every icon and image has loaded.
+- The PNG must match the preview exactly: no text overflow, no clipping, no wrapped short labels, no missing icons, no broken images, no overlapping elements, no glows or shadows cut at card edges.
+- Export never navigates: after `toPng`, call `window.coryExportPng(dataUrl, 'name.png')` (from `scripts/png-export.js`, loaded by every `ds-base.js`). It opens a Save / Copy image dialog. Never create a hidden `<a download>` and `click()` it: the host preview treats that as leaving the page and asks to close the tab. Load html-to-image on demand with `window.coryEnsureHtmlToImage()`, never as a blocking `<script>` in the helmet. On failure call `window.coryExportFailed(e)` so the user sees why.
+- Before handing over, run `_audit/Audit.html?set=one&page=<post path>&vp=1280x1500` and confirm `type` and `clip` read 0, then check the exported PNG. If anything fails, fix the layout (shorten copy or rebalance the grid); never shrink or clip the box.
+
 ## Accessibility and quality gate (every new or edited page, card, kit, template, export)
 This is a release gate, not a guideline. A page that fails any line below does not ship. Target: WCAG 2.2 AA.
 

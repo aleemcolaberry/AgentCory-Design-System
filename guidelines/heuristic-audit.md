@@ -120,6 +120,9 @@ Scope: the design system only (the nested `AgentCory System Brief/` site is sepa
 - Live pages gained preconnects, a direct font link, a favicon link and a meta description.
 - Not changed: about 60 MB of PNG and PDF deliverables in `exports/` and `archive/` are tracked in git. They slow a clone, not a page; moving them is a decision for the owner.
 
+## Re-sync with Claude Design (October 13, 2026)
+Claude Design had moved on since the export this repo was built from. Brought in, without overwriting local fixes: three LinkedIn posts (`posts/ruflow-ecosystem-bento`, `-v2`, `-v3`, each with its caption), two templates (`directory-map-bento`, `rag-ux-bento`), `scripts/png-export.js` (export opens a Save / Copy dialog and loads html-to-image on demand), the matching `ds-base.js`, the export change in seven templates, and two new sections in `CLAUDE.md` (where posts live, the PNG export rule). Text files were recovered byte for byte and checked against the remote sizes. The five new pages got the local treatment (styles linked in the head, `lang`, pinned theme, audit set) and pass the audit in both themes; three small contrast flags on them were fixed. Not synced: Claude Design's regenerated `_ds_bundle.js` and manifest (the local bundle carries fixes theirs lacks) and its scratch screenshots in `_audit/`.
+
 ## Known, intentional
 - The Contrast card's "Never as information" column deliberately renders three failing samples (text-disabled, green-500, red-500) beside their ratios; they are teaching examples, not UI.
 - The Showcase marquee and template rail report "text exceeds container" in the probe: the marquee is `aria-hidden` moving decoration and the rail is scroll-pinned (horizontal scroll-snap below 960 and under reduced motion); both are reachable (keyboard focus scrolls the rail).

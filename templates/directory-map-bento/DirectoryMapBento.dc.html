@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Styles load from the markup, not from script, so the first paint is already styled (no flash, no layout shift) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="stylesheet" href="../../styles.css">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Ruflo Toolbox Bento Post" description="4:5 LinkedIn post: the Ruflo Claude Code toolbox as a bento, three hero stats (agents, skills, commands), designer coverage, repo map, judgment note, start-small steps and the author footer" -->
+<helmet><script src="./ds-base.js"></script><style>.fit-canvas{transform-origin:top left}[dir="rtl"] .fit-canvas{transform-origin:top right}body{margin:0;background:#E9ECF3}a{color:#1568D4;text-decoration:none}a:hover{color:#0E4FA3}</style></helmet>
+<button onClick="{{ download }}" style="position:fixed;inset-inline-end:24px;bottom:24px;z-index:50;display:flex;align-items:center;gap:10px;padding:14px 22px;border:0;border-radius:999px;background:#0B1F36;color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;font-weight:700;white-space:nowrap;cursor:pointer;box-shadow:0 10px 28px rgba(11,31,54,.25)">{{ dlLabel }}</button>
+<div class="fit-box" style="width:calc(1080px * var(--fit, 1));height:calc(1350px * var(--fit, 1));margin-inline:auto"><div class="fit-canvas" data-fit-canvas style="width:1080px;height:1350px;transform:scale(var(--fit, 1))"><div ref="{{ canvasRef }}" data-theme="light" data-screen-label="Ruflo Toolbox Bento" style="width:1080px;height:1350px;box-sizing:border-box;padding:52px;background:#F4F5FA;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0B1F36;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden">
+<sc-if value="{{ showGlow }}" hint-placeholder-val="{{ true }}">
+<div style="position:absolute;inset-inline-start:-200px;top:-260px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(37,138,253,.20),rgba(37,138,253,0) 70%);pointer-events:none"></div>
+<div style="position:absolute;inset-inline-end:-180px;top:140px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.22),rgba(41,190,221,0) 70%);pointer-events:none"></div>
+</sc-if>
+<div style="position:relative;flex:none;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+<span style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid #E3E7EF;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1568D4;white-space:nowrap"><img data-icon="folder-tree" data-color="#1568D4" alt="" style="width:18px;height:18px;display:block">Ruflo · Claude Code toolbox</span>
+<span class="cory-ltr" style="flex:none;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:#4F5F75;white-space:nowrap">github.com/ruvnet/ruflo</span>
+</div>
+<h1 style="margin:0;max-width:940px;font-size:72px;line-height:1.08;font-weight:800;letter-spacing:-.04em;color:#0B1F36;text-wrap:balance">The biggest <span style="color:#1568D4">Claude Code</span> toolbox I’ve found</h1>
+<p style="margin:0;max-width:860px;font-size:21px;line-height:1.45;color:#4A5B70;text-wrap:pretty">Agents, skills and commands for Claude Code, bundled in one GitHub repo.</p>
+</div>
+<div style="position:relative;flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto auto;gap:16px">
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<span style="width:44px;height:44px;border-radius:12px;background:#EAF3FF;display:flex;align-items:center;justify-content:center"><img data-icon="users" data-color="#1568D4" alt="" style="width:22px;height:22px;display:block"></span>
+<span class="cory-ltr" style="margin-top:6px;font-size:64px;line-height:1;font-weight:800;letter-spacing:-.04em;color:#1568D4;white-space:nowrap">30+</span>
+<span style="font-size:16px;line-height:1.4;font-weight:600;color:#0B1F36;text-wrap:pretty">AI agents that can work together on complex tasks.</span>
+<span class="cory-ltr" style="margin-top:auto;align-self:flex-start;padding:4px 10px;border-radius:8px;background:#F4F5FA;border:1px solid #E3E7EF;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#4A5B70;white-space:nowrap">.claude/agents/ · 34</span>
+</div>
+<div class="cory-on-ink" style="background:linear-gradient(150deg,#1568D4,#0E7F9E);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px;box-shadow:0 12px 30px rgba(21,104,212,.28);min-width:0;position:relative;overflow:hidden">
+<div style="position:absolute;inset-inline-end:-60px;top:-70px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.24),rgba(255,255,255,0) 70%);pointer-events:none"></div>
+<div style="position:absolute;inset-inline:0;top:60px;height:120px;background-image:radial-gradient(rgba(255,255,255,.3) 1.5px,transparent 1.7px);background-size:14px 14px;-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent);mask-image:linear-gradient(180deg,#000 30%,transparent);pointer-events:none"></div>
+<span style="position:relative;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center"><img data-icon="bot" data-color="#FFFFFF" alt="" style="width:22px;height:22px;display:block"></span>
+<span class="cory-ltr" style="position:relative;margin-top:6px;font-size:72px;line-height:1;font-weight:800;letter-spacing:-.04em;color:#fff;white-space:nowrap">1,500+</span>
+<span style="position:relative;font-size:16px;line-height:1.4;font-weight:600;color:#fff;text-wrap:pretty">agent skills across design, development, marketing and more.</span>
+<span class="cory-ltr" style="position:relative;margin-top:auto;align-self:flex-start;padding:4px 10px;border-radius:8px;background:rgba(11,31,54,.32);border:1px solid rgba(255,255,255,.36);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#fff;white-space:nowrap">.agents/skills/ · 1,521</span>
+</div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<span style="width:44px;height:44px;border-radius:12px;background:#E3F6FA;display:flex;align-items:center;justify-content:center"><img data-icon="terminal" data-color="#0E7F9E" alt="" style="width:22px;height:22px;display:block"></span>
+<span class="cory-ltr" style="margin-top:6px;font-size:64px;line-height:1;font-weight:800;letter-spacing:-.04em;color:#0E7F9E;white-space:nowrap">170+</span>
+<span style="font-size:16px;line-height:1.4;font-weight:600;color:#0B1F36;text-wrap:pretty">commands that automate common workflows.</span>
+<span class="cory-ltr" style="margin-top:auto;align-self:flex-start;padding:4px 10px;border-radius:8px;background:#F4F5FA;border:1px solid #E3E7EF;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#4A5B70;white-space:nowrap">.claude/commands/ · 172</span>
+</div>
+<div style="grid-column:1 / span 2;background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:14px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<div style="display:flex;align-items:center;gap:12px;min-width:0">
+<span style="width:44px;height:44px;border-radius:12px;background:#E3F6FA;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="palette" data-color="#0E7F9E" alt="" style="width:22px;height:22px;display:block"></span>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0"><h2 style="margin:0;font-size:18px;line-height:1.25;font-weight:800;letter-spacing:-.01em;color:#0B1F36">What caught my eye as a designer</h2><span style="font-size:14px;line-height:1.3;color:#4F5F75">Skills built for our side of the work</span></div>
+</div>
+<div style="flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+<div style="background:#F8F9FC;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;min-width:0"><span style="width:38px;height:38px;border-radius:10px;background:#EAF3FF;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="layout-dashboard" data-color="#1568D4" alt="" style="width:20px;height:20px;display:block"></span><span style="flex:1;min-width:0;font-size:16px;line-height:1.3;font-weight:700;color:#0B1F36">UI and UX</span></div>
+<div style="background:#F8F9FC;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;min-width:0"><span style="width:38px;height:38px;border-radius:10px;background:#EAF3FF;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="swatch-book" data-color="#1568D4" alt="" style="width:20px;height:20px;display:block"></span><span style="flex:1;min-width:0;font-size:16px;line-height:1.3;font-weight:700;color:#0B1F36">Design systems</span></div>
+<div style="background:#F8F9FC;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;min-width:0"><span style="width:38px;height:38px;border-radius:10px;background:#EAF3FF;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="figma" data-color="#1568D4" alt="" style="width:20px;height:20px;display:block"></span><span style="flex:1;min-width:0;font-size:16px;line-height:1.3;font-weight:700;color:#0B1F36">Figma</span></div>
+<div style="background:#F8F9FC;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;min-width:0"><span style="width:38px;height:38px;border-radius:10px;background:#EAF3FF;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="code" data-color="#1568D4" alt="" style="width:20px;height:20px;display:block"></span><span style="flex:1;min-width:0;font-size:16px;line-height:1.3;font-weight:700;color:#0B1F36">Frontend development</span></div>
+</div>
+</div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:14px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<div style="display:flex;align-items:center;gap:12px;min-width:0">
+<span style="width:44px;height:44px;border-radius:12px;background:#EEF1F6;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="folder-git-2" data-color="#0B1F36" alt="" style="width:22px;height:22px;display:block"></span>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0"><h2 style="margin:0;font-size:18px;line-height:1.25;font-weight:800;letter-spacing:-.01em;color:#0B1F36">Where it lives</h2><span style="font-size:14px;line-height:1.3;color:#4F5F75">Top of the repo tree</span></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:6px">
+<span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;line-height:1.5;color:#0B1F36">Ruflo/</span>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;min-width:0"><span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;line-height:1.5;color:#0B1F36;white-space:nowrap"><span style="color:#4F5F75">├── </span>.claude/</span><span class="cory-ltr" style="flex:none;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#1568D4;white-space:nowrap">12 entries</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;min-width:0"><span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;line-height:1.5;color:#0B1F36;white-space:nowrap"><span style="color:#4F5F75">├── </span>.agents/skills/</span><span class="cory-ltr" style="flex:none;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#1568D4;white-space:nowrap">1,521</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;min-width:0"><span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;line-height:1.5;color:#0B1F36;white-space:nowrap"><span style="color:#4F5F75">├── </span>src/</span><span class="cory-ltr" style="flex:none;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#1568D4;white-space:nowrap">7 repos</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;min-width:0"><span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;line-height:1.5;color:#0B1F36;white-space:nowrap"><span style="color:#4F5F75">├── </span>v3/</span><span class="cory-ltr" style="flex:none;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#1568D4;white-space:nowrap">21 packages</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;min-width:0"><span class="cory-ltr" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;line-height:1.5;color:#0B1F36;white-space:nowrap"><span style="color:#4F5F75">└── </span>CLAUDE.md</span><span class="cory-ltr" style="flex:none;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#1568D4;white-space:nowrap">39 KB</span></div>
+</div>
+</div>
+<div class="cory-on-ink" style="grid-column:1 / span 2;background:#0B1F36;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0;position:relative;overflow:hidden">
+<div style="position:absolute;inset-inline-end:-90px;bottom:-110px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(41,190,221,.36),rgba(41,190,221,0) 70%);pointer-events:none"></div>
+<span style="position:relative;display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.06em;color:#29BEDD"><img data-icon="scale" data-color="#29BEDD" alt="" style="width:16px;height:16px;display:block">THE CATCH</span>
+<h2 style="position:relative;margin:0;max-width:600px;font-size:27px;line-height:1.2;font-weight:800;letter-spacing:-.02em;color:#fff;text-wrap:balance">A toolbox this large is only as useful as the judgment behind it.</h2>
+<span style="position:relative;max-width:600px;font-size:15px;line-height:1.5;color:#fff;text-wrap:pretty">Agents move fast, but they still need clear rules for what a good result is, especially for components and patterns that have to stay consistent across a product.</span>
+<sc-if value="{{ showQuestion }}" hint-placeholder-val="{{ true }}">
+<span style="position:relative;display:block;margin-top:auto;padding-top:4px;font-size:16px;line-height:1.35;font-weight:700;color:#29BEDD;text-wrap:pretty">Which part of your design workflow would you hand to an agent first? <img class="cory-flip-rtl" data-icon="arrow-right" data-color="#29BEDD" alt="" style="width:20px;height:20px;display:inline-block;vertical-align:-4px;margin-inline-start:4px"></span>
+</sc-if>
+</div>
+<div style="background:#fff;border:1px solid #E3E7EF;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:14px;box-shadow:0 1px 3px rgba(11,31,54,.06);min-width:0">
+<div style="display:flex;align-items:center;gap:12px;min-width:0">
+<span style="width:44px;height:44px;border-radius:12px;background:#EAF3FF;display:flex;align-items:center;justify-content:center;flex:none"><img data-icon="list-checks" data-color="#1568D4" alt="" style="width:22px;height:22px;display:block"></span>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0"><h2 style="margin:0;font-size:18px;line-height:1.25;font-weight:800;letter-spacing:-.01em;color:#0B1F36">Start small</h2><span style="font-size:14px;line-height:1.3;color:#4F5F75">Before adding more</span></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:10px">
+<div style="display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start"><span style="width:26px;height:26px;border-radius:50%;background:#EAF3FF;color:#1568D4;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">1</span><span style="font-size:14px;line-height:1.45;color:#0B1F36;text-wrap:pretty;padding-top:3px">Pick one workflow you repeat every week.</span></div>
+<div style="display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start"><span style="width:26px;height:26px;border-radius:50%;background:#EAF3FF;color:#1568D4;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">2</span><span style="font-size:14px;line-height:1.45;color:#0B1F36;text-wrap:pretty;padding-top:3px">Try the skills built for it.</span></div>
+<div style="display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start"><span style="width:26px;height:26px;border-radius:50%;background:#EAF3FF;color:#1568D4;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">3</span><span style="font-size:14px;line-height:1.45;color:#0B1F36;text-wrap:pretty;padding-top:3px">Check the output against your own standard, then add more.</span></div>
+</div>
+</div>
+</div>
+<sc-if value="{{ showFooter }}" hint-placeholder-val="{{ true }}">
+<div style="position:relative;flex:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:18px;border-top:1px solid #DCE1EA">
+<div style="flex:1;display:flex;align-items:center;gap:14px;min-width:0"><img src="./author-avatar.png" alt="Md Abdul Aleem" style="width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none"><div style="flex:1;display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:18px;font-weight:800">Md Abdul Aleem</span><span style="font-size:14px;line-height:1.35;color:#4F5F75">Frontier Product Designer and Analyst | Colaberry | Ex-NTTDATA</span></div></div>
+<span style="flex:none;display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:#0B1F36;color:#fff;font-size:16px;font-weight:700">Save for later <span class="cory-arrow" style="font-size:18px">→</span></span>
+</div>
+</sc-if>
+</div></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;showFooter&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showQuestion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showGlow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Background&quot;}}">
+class Component extends DCLogic {
+  state = { busy: false };
+  canvasRef = React.createRef();
+  icons = {};
+  loads = [];
+  applyIcons() {
+    const root = this.canvasRef.current; if (!root) return;
+    root.querySelectorAll('img[data-icon]').forEach(img => {
+      const u = this.icons[img.dataset.icon + '|' + img.dataset.color];
+      if (u && img.src !== u) img.src = u;
+    });
+  }
+  componentDidMount() {
+    const root = this.canvasRef.current; if (!root) return;
+    const keys = new Set([...root.querySelectorAll('img[data-icon]')].map(i => i.dataset.icon + '|' + i.dataset.color));
+    this.loads = [...keys].map(k => {
+      const [n, c] = k.split('|');
+      return fetch('https://unpkg.com/lucide-static@0.469.0/icons/' + n + '.svg').then(r => { if (!r.ok) throw new Error('icon ' + n); return r.text(); }).then(t => {
+        this.icons[k] = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(t.replace(/currentColor/g, c));
+        this.applyIcons();
+      }).catch(e => console.warn(e.message));
+    });
+  }
+  componentDidUpdate() { this.applyIcons(); }
+  download = async () => {
+    const node = this.canvasRef.current;
+    if (!node || this.state.busy) return;
+    this.setState({ busy: true });
+    try {
+      if (!window.htmlToImage) await (window.coryEnsureHtmlToImage ? window.coryEnsureHtmlToImage() : Promise.reject(new Error('image library not loaded')));
+      await document.fonts.ready;
+      await Promise.all(this.loads);
+      this.applyIcons();
+      await Promise.all([...node.querySelectorAll('img')].map(i => i.src ? i.decode().catch(() => {}) : null));
+      const url = await window.htmlToImage.toPng(node, { pixelRatio: 2, width: 1080, height: 1350, cacheBust: true });
+      if (window.coryExportPng) await window.coryExportPng(url, 'ruflo-toolbox-bento.png'); else { const a = document.createElement('a'); a.href = url; a.download = 'ruflo-toolbox-bento.png'; document.body.appendChild(a); a.click(); a.remove(); }
+    } catch (e) { console.error('PNG export failed', e); if (window.coryExportFailed) window.coryExportFailed(e); }
+    this.setState({ busy: false });
+  };
+  renderVals() {
+    const p = this.props;
+    return { canvasRef: this.canvasRef, download: this.download, dlLabel: this.state.busy ? 'Exporting…' : 'Download PNG ↓', showFooter: p.showFooter ?? true, showQuestion: p.showQuestion ?? true, showGlow: p.showGlow ?? true };
+  }
+}
+</script>
+</body>
+</html>
