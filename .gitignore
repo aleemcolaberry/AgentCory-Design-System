@@ -29,3 +29,6 @@ uploads/*
 !uploads/Logo_Cory-BpxDw6Ld.svg
 AgentCory System Brief/uploads/
 .claude/
+
+# Claude Code personal settings
+.claude/settings.local.json
